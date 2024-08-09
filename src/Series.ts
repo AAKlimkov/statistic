@@ -8,7 +8,7 @@ export interface User {
 }
 
 interface Game {
-  role: string;
+  role: "Мирный" | "Шериф" | "Мафия" | "Дон";
   winPoint: number;
   judgePoint: number;
   isFirstKilled: boolean;
@@ -97,7 +97,7 @@ interface commonInfo {
   game4: gameInfo;
   game5: gameInfo;
   totalJudgePoint: number;
-  totalBestMove: number
+  totalBestMove: number;
 }
 
 interface gameInfo {
