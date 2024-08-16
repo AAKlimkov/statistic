@@ -1,6 +1,6 @@
 // calculateSeriesInfo.ts
 
-import { User } from "./Series";
+import { User } from "./User";
 
 export interface CommonInfo {
   game1: GameInfo;
