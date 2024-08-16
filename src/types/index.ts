@@ -1,10 +1,6 @@
 export interface User {
   name: string;
-  game1: Game;
-  game2: Game;
-  game3: Game;
-  game4: Game;
-  game5: Game;
+  [key: string]: Game | string;
 }
 
 export interface Game {
@@ -33,18 +29,18 @@ export interface GameStats {
 export interface PlayerGameStats {
   name: string;
   games: GameStats[];
-  totalJudgePoints: number;
-  totalBestMoves: number;
-  maxWinStreak: number;
-  maxLoseStreak: number;
-  maxCitizenWins: number;
-  citizenWinsSeries: number[];
-  mafiaWinsSeries: number[];
-  maxMafiaWins: number;
-  gameTotals: Record<string, number>;
-  gamePositionTotals: number[];
-  winSeries: string[];
-  loseSeries: string[];
+  totalJudgePoints?: number;
+  totalBestMoves?: number;
+  maxWinStreak?: number;
+  maxLoseStreak?: number;
+  maxCitizenWins?: number;
+  citizenWinsSeries?: number[];
+  mafiaWinsSeries?: number[];
+  maxMafiaWins?: number;
+  gameTotals?: Record<string, number>;
+  gamePositionTotals?: number[];
+  winSeries?: number[];
+  loseSeries?: number[];
 }
 
 export interface GameSum {

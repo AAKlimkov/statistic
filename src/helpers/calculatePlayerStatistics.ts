@@ -1,4 +1,5 @@
-import { PlayerGameStats } from "./types";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { PlayerGameStats } from "../types";
 
 export const calculatePlayerStatistics = (
   playersStats: PlayerGameStats[]
@@ -10,14 +11,14 @@ export const calculatePlayerStatistics = (
     let currentLoseStreak = 0;
     let maxWinStreak = 0;
     let maxLoseStreak = 0;
-    let maxCitizenWins = 0;
-    let maxMafiaWins = 0;
+    const maxCitizenWins = 0;
+    const maxMafiaWins = 0;
     let currentCitizenWins = 0;
     let currentMafiaWins = 0;
-    let winSeries: string[] = [];
-    let loseSeries: string[] = [];
-    let currentWinSeries: string[] = [];
-    let currentLoseSeries: string[] = [];
+    let winSeries: number[] = [];
+    let loseSeries: number[] = [];
+    let currentWinSeries: number[] = [];
+    let currentLoseSeries: number[] = [];
 
     // Maps to keep track of cumulative points and positions
     const gameTotals: Record<string, number> = {};

@@ -13,7 +13,7 @@ export const convertSeriesToPlayerStats = (
       }
 
       for (let i = 1; i <= 5; i++) {
-        const game: Game = player[`game${i}`];
+        const game = player[`game${i}`] as Game | undefined;
         if (game) {
           const gameStats: GameStats = {
             series: `Серия ${serieIndex + 1}`,

@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import { parseData } from "./helpers/parseData";
-import { calculateSeriesInfo } from "./helpers/calculateSeriesInfo";
+import { calculatePlayerStatistics } from "./helpers/calculatePlayerStatistics";
+import { convertSeriesToPlayerStats } from "./helpers/convertSeriesToPlayerStats";
 import { PlayerGameStats, GameSum } from "./types";
 import {
   Table,
@@ -12,14 +14,11 @@ import {
   TableRow,
   Paper,
 } from "@mui/material";
-import { calculatePlayerStatistics } from "./helpers/calculatePlayerStatistics";
-import { convertSeriesToPlayerStats } from "./helpers/convertSeriesToPlayerStats";
 
 const App: React.FC = () => {
-  const [playersStats, setPlayersStats] = useState<
-    Record<string, PlayerGameStats>
-  >({});
+  const [playersStats, setPlayersStats] = useState<PlayerGameStats[]>([]);
   const [gamesSum, setGamesSum] = useState<Record<number, GameSum>>({});
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const globalGameNumber = { count: 1 }; // Глобальный счетчик игр
 
   useEffect(() => {
@@ -29,7 +28,6 @@ const App: React.FC = () => {
           await fetch("table.xlsx").then((res) => res.arrayBuffer()),
           { type: "array" }
         );
-        const allPlayersStats: Record<string, PlayerGameStats> = {};
         const sums: Record<number, GameSum> = {};
         const users = [];
         for (let i = 1; i <= 48; i++) {
@@ -37,32 +35,22 @@ const App: React.FC = () => {
           const sheet = workbook.Sheets[sheetName];
           if (sheet) {
             const rawData = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-            const usersTemp = parseData(rawData);
+            const usersTemp = parseData(rawData as any[][]);
             users.push(usersTemp);
-            calculateSeriesInfo(
-              usersTemp,
-              allPlayersStats,
-              sums,
-              sheetName,
-              globalGameNumber
-            );
           }
         }
 
-        setPlayersStats(allPlayersStats);
         setGamesSum(sums);
         const users1 = convertSeriesToPlayerStats(users);
         const stats = calculatePlayerStatistics(users1);
         setPlayersStats(stats);
-        console.log(stats);
-        
       } catch (error) {
         console.error("Error processing Excel file:", error);
       }
     };
 
     fetchData();
-  }, []);
+  }, [globalGameNumber]);
 
   return (
     <div>
@@ -114,14 +102,14 @@ const App: React.FC = () => {
           <TableBody>
             {Object.entries(playersStats).map(([playerName, stats], index) => (
               <TableRow key={index}>
-                <TableCell>{stats.name}</TableCell>
+                <TableCell>{playerName || stats.name}</TableCell>
                 <TableCell>{stats.maxWinStreak}</TableCell>
-                <TableCell>{stats.winSeries.join(", ")}</TableCell>
+                <TableCell>{stats.winSeries!.join(", ")}</TableCell>
                 <TableCell>{stats.maxLoseStreak}</TableCell>
                 {/* <TableCell>{stats.maxCitizenWins}</TableCell> */}
                 {/* <TableCell>{stats.maxCitizenWinsGames.join(", ")}</TableCell> */}
                 {/* <TableCell>{stats.maxMafiaWins}</TableCell> */}
-                <TableCell>{stats.loseSeries.join(", ")}</TableCell>
+                <TableCell>{stats.loseSeries!.join(", ")}</TableCell>
               </TableRow>
             ))}
           </TableBody>
