@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from "react";
 import * as XLSX from "xlsx";
 import { parseData } from "./helpers/parseData";
 import { calculatePlayerStatistics } from "./helpers/calculatePlayerStatistics";
 import { convertSeriesToPlayerStats } from "./helpers/convertSeriesToPlayerStats";
-import { PlayerGameStats, GameSum } from "./types";
+import { PlayerGameStats } from "./types";
 import {
   Table,
   TableBody,
@@ -17,7 +18,6 @@ import {
 
 const App: React.FC = () => {
   const [playersStats, setPlayersStats] = useState<PlayerGameStats[]>([]);
-  const [gamesSum, setGamesSum] = useState<Record<number, GameSum>>({});
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const globalGameNumber = { count: 1 }; // Глобальный счетчик игр
 
@@ -28,7 +28,6 @@ const App: React.FC = () => {
           await fetch("table.xlsx").then((res) => res.arrayBuffer()),
           { type: "array" }
         );
-        const sums: Record<number, GameSum> = {};
         const users = [];
         for (let i = 1; i <= 48; i++) {
           const sheetName = `${i} серия`;
@@ -40,7 +39,6 @@ const App: React.FC = () => {
           }
         }
 
-        setGamesSum(sums);
         const users1 = convertSeriesToPlayerStats(users);
         const stats = calculatePlayerStatistics(users1);
         setPlayersStats(stats);
@@ -54,7 +52,7 @@ const App: React.FC = () => {
 
   return (
     <div>
-      <h1>Общая информация по играм</h1>
+      {/* <h1>Общая информация по играм</h1>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -80,7 +78,7 @@ const App: React.FC = () => {
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer> */}
 
       <h1>Статистика игроков</h1>
       <TableContainer component={Paper}>
@@ -100,9 +98,9 @@ const App: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {Object.entries(playersStats).map(([playerName, stats], index) => (
+            {Object.entries(playersStats).map(([_playerName, stats], index) => (
               <TableRow key={index}>
-                <TableCell>{playerName || stats.name}</TableCell>
+                <TableCell>{stats.name}</TableCell>
                 <TableCell>{stats.maxWinStreak}</TableCell>
                 <TableCell>{stats.winSeries!.join(", ")}</TableCell>
                 <TableCell>{stats.maxLoseStreak}</TableCell>
