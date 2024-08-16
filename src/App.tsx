@@ -101,13 +101,13 @@ const App: React.FC = () => {
             <TableRow>
               <TableCell>Игрок</TableCell>
               <TableCell>Максимальный стрик побед</TableCell>
+              <TableCell>Серии с максимальным стриком побед</TableCell>
               <TableCell>Максимальный стрик проигрышей</TableCell>
-              <TableCell>Максимальное количество побед за граждан</TableCell>
+              {/* <TableCell>Максимальное количество побед за граждан</TableCell> */}
               {/* <TableCell>
                 Серии с максимальным стриком побед за граждан
               </TableCell> */}
-              <TableCell>Максимальное количество побед за мафию</TableCell>
-              <TableCell>Серии с максимальным стриком побед</TableCell>
+              {/* <TableCell>Максимальное количество побед за мафию</TableCell> */}
               <TableCell>Серии с максимальным стриком проигрышей</TableCell>
             </TableRow>
           </TableHead>
@@ -116,11 +116,11 @@ const App: React.FC = () => {
               <TableRow key={index}>
                 <TableCell>{stats.name}</TableCell>
                 <TableCell>{stats.maxWinStreak}</TableCell>
-                <TableCell>{stats.maxLoseStreak}</TableCell>
-                <TableCell>{stats.maxCitizenWins}</TableCell>
-                {/* <TableCell>{stats.maxCitizenWinsGames.join(", ")}</TableCell> */}
-                <TableCell>{stats.maxMafiaWins}</TableCell>
                 <TableCell>{stats.winSeries.join(", ")}</TableCell>
+                <TableCell>{stats.maxLoseStreak}</TableCell>
+                {/* <TableCell>{stats.maxCitizenWins}</TableCell> */}
+                {/* <TableCell>{stats.maxCitizenWinsGames.join(", ")}</TableCell> */}
+                {/* <TableCell>{stats.maxMafiaWins}</TableCell> */}
                 <TableCell>{stats.loseSeries.join(", ")}</TableCell>
               </TableRow>
             ))}
