@@ -5693,7 +5693,7 @@ export const series51 = [
       },
     },
     {
-      name: "Лайт",
+      name: "Light",
       game1: {
         role: "Мафия",
         winPoint: 0,
