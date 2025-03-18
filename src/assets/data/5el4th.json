@@ -1,0 +1,9990 @@
+{
+  "404": {
+    "totalGames": 14,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 8,
+        "wins": 3,
+        "points": [
+          1,
+          6,
+          2,
+          2,
+          4.5,
+          1.25,
+          5.75,
+          2.25
+        ],
+        "judgePoints": [
+          1,
+          2.5,
+          2,
+          2,
+          2,
+          1.25,
+          3.25,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "37.50",
+        "avgPoints": "3.09",
+        "avgJudgePoints": "2.03"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          6,
+          6.5,
+          5.5
+        ],
+        "judgePoints": [
+          3.5,
+          4,
+          3.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "6.00",
+        "avgJudgePoints": "3.67"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          3.25,
+          5.5,
+          2.5
+        ],
+        "judgePoints": [
+          3.25,
+          3,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.75",
+        "avgJudgePoints": "3.08"
+      }
+    },
+    "totalPoints": [
+      1,
+      6,
+      6,
+      3.25,
+      2,
+      2,
+      4.5,
+      1.25,
+      5.75,
+      2.25,
+      6.5,
+      5.5,
+      2.5,
+      5.5
+    ],
+    "totalJudgePoints": [
+      1,
+      2.5,
+      3.5,
+      3.25,
+      2,
+      2,
+      2,
+      1.25,
+      3.25,
+      2.25,
+      4,
+      3,
+      3,
+      3.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "50.00",
+    "avgPoints": "3.86",
+    "avgJudgePoints": "2.61"
+  },
+  "Love": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          4.75,
+          5,
+          3.25,
+          6,
+          3.5
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          2.75,
+          2.5,
+          3.5
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "4.50",
+        "avgJudgePoints": "2.70"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6.5,
+          6.75
+        ],
+        "judgePoints": [
+          4,
+          4.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.63",
+        "avgJudgePoints": "4.13"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6.5,
+      4.75,
+      5,
+      3.25,
+      6.75,
+      6,
+      3.5
+    ],
+    "totalJudgePoints": [
+      4,
+      2.25,
+      2.5,
+      2.75,
+      4.25,
+      2.5,
+      3.5
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.11",
+    "avgJudgePoints": "3.11"
+  },
+  "Суета": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          6,
+          3,
+          2.25
+        ],
+        "judgePoints": [
+          3.5,
+          3,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.75",
+        "avgJudgePoints": "2.92"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          6,
+          3,
+          4.75
+        ],
+        "judgePoints": [
+          3.5,
+          3,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "4.58",
+        "avgJudgePoints": "2.92"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2
+        ],
+        "judgePoints": [
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.00",
+        "avgJudgePoints": "2.00"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6,
+      3,
+      6,
+      3,
+      2.25,
+      2,
+      4.75
+    ],
+    "totalJudgePoints": [
+      3.5,
+      3,
+      3.5,
+      3,
+      2.25,
+      2,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.86",
+    "avgJudgePoints": "2.79"
+  },
+  "Марго": {
+    "totalGames": 14,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 9,
+        "wins": 4,
+        "points": [
+          5,
+          5.25,
+          2.5,
+          3,
+          4.75,
+          3.5,
+          2.75,
+          4.75,
+          6.25
+        ],
+        "judgePoints": [
+          2,
+          2.75,
+          2.5,
+          2,
+          2.25,
+          3.5,
+          2.25,
+          3.25,
+          3.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "44.44",
+        "avgPoints": "4.19",
+        "avgJudgePoints": "2.69"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          5.75,
+          1.5,
+          5.75
+        ],
+        "judgePoints": [
+          3.25,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "4.33",
+        "avgJudgePoints": "2.83"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.75
+        ],
+        "judgePoints": [
+          4.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.75",
+        "avgJudgePoints": "4.25"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6
+        ],
+        "judgePoints": [
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.00",
+        "avgJudgePoints": "3.50"
+      }
+    },
+    "totalPoints": [
+      5.75,
+      5,
+      5.25,
+      2.5,
+      3,
+      4.75,
+      3.5,
+      2.75,
+      1.5,
+      4.75,
+      6,
+      6.25,
+      5.75,
+      6.75
+    ],
+    "totalJudgePoints": [
+      3.25,
+      2,
+      2.75,
+      2.5,
+      2,
+      2.25,
+      3.5,
+      2.25,
+      2,
+      3.25,
+      3.5,
+      3.75,
+      3.25,
+      4.25
+    ],
+    "totalLH": 0,
+    "totalSI": 2,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.54",
+    "avgJudgePoints": "2.89"
+  },
+  "Morti": {
+    "totalGames": 21,
+    "totalWins": 11,
+    "roleStats": {
+      "Мирный": {
+        "games": 11,
+        "wins": 6,
+        "points": [
+          3.25,
+          7,
+          1.25,
+          2,
+          6,
+          1.5,
+          5.25,
+          6.5,
+          6.25,
+          5.5,
+          2.25
+        ],
+        "judgePoints": [
+          2.75,
+          4.5,
+          1.25,
+          2,
+          3.5,
+          1.5,
+          2.75,
+          4,
+          3.75,
+          3,
+          2.25
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 0,
+        "winRate": "54.55",
+        "avgPoints": "4.25",
+        "avgJudgePoints": "2.84"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          6.25,
+          2.5,
+          5.25
+        ],
+        "judgePoints": [
+          3.75,
+          2.5,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "4.67",
+        "avgJudgePoints": "3.00"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.75,
+          5.25,
+          0.5
+        ],
+        "judgePoints": [
+          1.75,
+          2.75,
+          0.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "1.67"
+      },
+      "Шериф": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          5.5,
+          5.5,
+          2,
+          3.25
+        ],
+        "judgePoints": [
+          3,
+          3,
+          2.5,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.06",
+        "avgJudgePoints": "2.94"
+      }
+    },
+    "totalPoints": [
+      3.25,
+      7,
+      1.75,
+      6.25,
+      1.25,
+      5.5,
+      5.25,
+      2,
+      6,
+      1.5,
+      2.5,
+      5.25,
+      5.5,
+      2,
+      0.5,
+      6.5,
+      3.25,
+      6.25,
+      5.5,
+      2.25,
+      5.25
+    ],
+    "totalJudgePoints": [
+      2.75,
+      4.5,
+      1.75,
+      3.75,
+      1.25,
+      3,
+      2.75,
+      2,
+      3.5,
+      1.5,
+      2.5,
+      2.75,
+      3,
+      2.5,
+      0.5,
+      4,
+      3.25,
+      3.75,
+      3,
+      2.25,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "52.38",
+    "avgPoints": "4.02",
+    "avgJudgePoints": "2.71"
+  },
+  "Бестия": {
+    "totalGames": 21,
+    "totalWins": 10,
+    "roleStats": {
+      "Мирный": {
+        "games": 13,
+        "wins": 6,
+        "points": [
+          1.75,
+          4.25,
+          5.25,
+          2,
+          1.75,
+          4.75,
+          1.5,
+          6,
+          1.75,
+          6.25,
+          3.25,
+          3.25,
+          4.25
+        ],
+        "judgePoints": [
+          1.75,
+          1.75,
+          2.75,
+          1.5,
+          1.75,
+          2.25,
+          1.5,
+          3.5,
+          1.75,
+          2.75,
+          3.25,
+          3.25,
+          1.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "46.15",
+        "avgPoints": "3.54",
+        "avgJudgePoints": "2.27"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          6.25,
+          6,
+          2,
+          1.25,
+          6.25
+        ],
+        "judgePoints": [
+          3.75,
+          3.5,
+          2,
+          1.25,
+          3.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "60.00",
+        "avgPoints": "4.35",
+        "avgJudgePoints": "2.85"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          2.5,
+          2.5
+        ],
+        "judgePoints": [
+          2.5,
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      4.25,
+      5.25,
+      6.25,
+      6,
+      2,
+      2,
+      1.75,
+      4.75,
+      1.5,
+      2.5,
+      1.25,
+      6,
+      1.75,
+      5.5,
+      6.25,
+      6.25,
+      3.25,
+      2.5,
+      3.25,
+      4.25
+    ],
+    "totalJudgePoints": [
+      1.75,
+      1.75,
+      2.75,
+      3.75,
+      3.5,
+      2,
+      1.5,
+      1.75,
+      2.25,
+      1.5,
+      2.5,
+      1.25,
+      3.5,
+      1.75,
+      3,
+      2.75,
+      3.75,
+      3.25,
+      2.5,
+      3.25,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "47.62",
+    "avgPoints": "3.73",
+    "avgJudgePoints": "2.46"
+  },
+  "Седой": {
+    "totalGames": 42,
+    "totalWins": 22,
+    "roleStats": {
+      "Мирный": {
+        "games": 22,
+        "wins": 8,
+        "points": [
+          1.75,
+          1.75,
+          2,
+          5.25,
+          3,
+          2.5,
+          4.25,
+          6.5,
+          2.75,
+          2.5,
+          5.5,
+          2.75,
+          6,
+          3.75,
+          4.75,
+          0,
+          4.75,
+          2.75,
+          1.75,
+          1.75,
+          3.25,
+          5.25
+        ],
+        "judgePoints": [
+          1.75,
+          1.75,
+          2,
+          2.75,
+          3,
+          2.5,
+          1.75,
+          4,
+          2.75,
+          2,
+          3,
+          2.75,
+          3.5,
+          2.75,
+          2.25,
+          0,
+          1.75,
+          2.75,
+          1.75,
+          1.75,
+          2.75,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "36.36",
+        "avgPoints": "3.39",
+        "avgJudgePoints": "2.36"
+      },
+      "Мафия": {
+        "games": 12,
+        "wins": 9,
+        "points": [
+          6,
+          1.75,
+          2.25,
+          5.5,
+          4.75,
+          2.5,
+          6,
+          6,
+          6.5,
+          6.25,
+          6.25,
+          5.75
+        ],
+        "judgePoints": [
+          3.5,
+          1.75,
+          2.25,
+          3,
+          2.25,
+          2.5,
+          3.5,
+          3.5,
+          4,
+          3.75,
+          3.75,
+          3.25
+        ],
+        "bestWinStreak": 6,
+        "currentStreak": 6,
+        "winRate": "75.00",
+        "avgPoints": "4.96",
+        "avgJudgePoints": "3.08"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          1.75,
+          6,
+          6.5
+        ],
+        "judgePoints": [
+          1.75,
+          3.5,
+          4
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "66.67",
+        "avgPoints": "4.75",
+        "avgJudgePoints": "3.08"
+      },
+      "Шериф": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          5.75,
+          5,
+          6.25,
+          0.5,
+          1.75
+        ],
+        "judgePoints": [
+          3.25,
+          2.5,
+          3.75,
+          0.5,
+          1.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "3.85",
+        "avgJudgePoints": "2.35"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      5.75,
+      5,
+      1.75,
+      2,
+      5.25,
+      3,
+      6,
+      1.75,
+      2.5,
+      4.25,
+      6.25,
+      2.25,
+      5.5,
+      0.5,
+      1.75,
+      4.75,
+      2.5,
+      6.5,
+      6,
+      2.75,
+      2.5,
+      5.5,
+      2.75,
+      6,
+      3.75,
+      4.75,
+      6,
+      0,
+      4.75,
+      2.75,
+      6.5,
+      6,
+      6.5,
+      1.75,
+      1.75,
+      6.25,
+      1.75,
+      3.25,
+      6.25,
+      5.75,
+      5.25
+    ],
+    "totalJudgePoints": [
+      1.75,
+      3.25,
+      2.5,
+      1.75,
+      2,
+      2.75,
+      3,
+      3.5,
+      1.75,
+      2.5,
+      1.75,
+      3.75,
+      2.25,
+      3,
+      0.5,
+      1.75,
+      2.25,
+      2.5,
+      4,
+      3.5,
+      2.75,
+      2,
+      3,
+      2.75,
+      3.5,
+      2.75,
+      2.25,
+      3.5,
+      0,
+      1.75,
+      2.75,
+      4,
+      3.5,
+      4,
+      1.75,
+      1.75,
+      3.75,
+      1.75,
+      2.75,
+      3.75,
+      3.25,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "52.38",
+    "avgPoints": "3.99",
+    "avgJudgePoints": "2.62"
+  },
+  "Ketamin": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.5,
+          3,
+          6
+        ],
+        "judgePoints": [
+          2.5,
+          3,
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "3.50",
+        "avgJudgePoints": "3.00"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.5
+        ],
+        "judgePoints": [
+          1.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.50",
+        "avgJudgePoints": "1.50"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2,
+          5
+        ],
+        "judgePoints": [
+          2,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.50",
+        "avgJudgePoints": "2.25"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          0
+        ],
+        "judgePoints": [
+          0.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "0.00",
+        "avgJudgePoints": "0.50"
+      }
+    },
+    "totalPoints": [
+      1.5,
+      2,
+      1.5,
+      5,
+      3,
+      6,
+      0
+    ],
+    "totalJudgePoints": [
+      2.5,
+      2,
+      1.5,
+      2.5,
+      3,
+      3.5,
+      0.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "2.71",
+    "avgJudgePoints": "2.21"
+  },
+  "GALAY": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          1.5,
+          4.5,
+          1.75,
+          2.5
+        ],
+        "judgePoints": [
+          1.5,
+          2,
+          1.75,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "2.56",
+        "avgJudgePoints": "1.94"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          2.25,
+          0.5,
+          4.75
+        ],
+        "judgePoints": [
+          2.25,
+          1.5,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.00"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1.5,
+      4.5,
+      2.25,
+      1.75,
+      2.5,
+      0.5,
+      4.75
+    ],
+    "totalJudgePoints": [
+      1.5,
+      2,
+      2.25,
+      1.75,
+      2.5,
+      1.5,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": -1,
+    "winRate": "28.57",
+    "avgPoints": "2.54",
+    "avgJudgePoints": "1.96"
+  },
+  "Curly": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          1.5,
+          5.25,
+          5.5,
+          5,
+          2
+        ],
+        "judgePoints": [
+          1.5,
+          2.75,
+          2.5,
+          2.5,
+          2
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "3.85",
+        "avgJudgePoints": "2.25"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6
+        ],
+        "judgePoints": [
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.00",
+        "avgJudgePoints": "3.50"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.75
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.75",
+        "avgJudgePoints": "2.75"
+      }
+    },
+    "totalPoints": [
+      1.5,
+      5.25,
+      5.5,
+      2.75,
+      6,
+      5,
+      2
+    ],
+    "totalJudgePoints": [
+      1.5,
+      2.75,
+      2.5,
+      2.75,
+      3.5,
+      2.5,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.00",
+    "avgJudgePoints": "2.50"
+  },
+  "Паника": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          5.25,
+          2,
+          5.5,
+          2.5
+        ],
+        "judgePoints": [
+          2.75,
+          2,
+          3,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.81",
+        "avgJudgePoints": "2.56"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.25
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.25",
+        "avgJudgePoints": "2.75"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          1.25,
+          1.75
+        ],
+        "judgePoints": [
+          2.25,
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.50",
+        "avgJudgePoints": "2.00"
+      }
+    },
+    "totalPoints": [
+      1.25,
+      2.25,
+      5.25,
+      2,
+      1.75,
+      5.5,
+      2.5
+    ],
+    "totalJudgePoints": [
+      2.25,
+      2.75,
+      2.75,
+      2,
+      1.75,
+      3,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "2.93",
+    "avgJudgePoints": "2.43"
+  },
+  "NLIP": {
+    "totalGames": 7,
+    "totalWins": 6,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 4,
+        "points": [
+          3.75,
+          7,
+          7.25,
+          5.5,
+          3.25
+        ],
+        "judgePoints": [
+          1.25,
+          3.5,
+          4.75,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 0,
+        "winRate": "80.00",
+        "avgPoints": "5.35",
+        "avgJudgePoints": "2.95"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6.25,
+          6.75
+        ],
+        "judgePoints": [
+          3.75,
+          4.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6.25,
+      3.75,
+      6.75,
+      7,
+      7.25,
+      5.5,
+      3.25
+    ],
+    "totalJudgePoints": [
+      3.75,
+      1.25,
+      4.25,
+      3.5,
+      4.75,
+      2,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "85.71",
+    "avgPoints": "5.68",
+    "avgJudgePoints": "3.25"
+  },
+  "Зверюга": {
+    "totalGames": 14,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 9,
+        "wins": 5,
+        "points": [
+          5,
+          3.5,
+          5.75,
+          0.25,
+          1.75,
+          6,
+          7,
+          7,
+          2.5
+        ],
+        "judgePoints": [
+          2,
+          3.5,
+          3.25,
+          0.25,
+          2.75,
+          3.5,
+          4.5,
+          3.5,
+          2.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "55.56",
+        "avgPoints": "4.31",
+        "avgJudgePoints": "2.86"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          6.25,
+          2.5,
+          6.25
+        ],
+        "judgePoints": [
+          3.75,
+          2.5,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "3.33"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2.25,
+          6.25
+        ],
+        "judgePoints": [
+          2.25,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.25",
+        "avgJudgePoints": "3.00"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6.25,
+      5,
+      3.5,
+      5.75,
+      2.25,
+      2.5,
+      0.25,
+      1.75,
+      6.25,
+      6,
+      7,
+      7,
+      2.5,
+      6.25
+    ],
+    "totalJudgePoints": [
+      3.75,
+      2,
+      3.5,
+      3.25,
+      2.25,
+      2.5,
+      0.25,
+      2.75,
+      3.75,
+      3.5,
+      4.5,
+      3.5,
+      2.5,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.45",
+    "avgJudgePoints": "2.98"
+  },
+  "WhoIsWho": {
+    "totalGames": 14,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 3,
+        "points": [
+          4,
+          4.5,
+          5.25,
+          1.75,
+          3,
+          3.25
+        ],
+        "judgePoints": [
+          4,
+          2,
+          2.75,
+          1.75,
+          1.5,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.63",
+        "avgJudgePoints": "2.54"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          6,
+          6,
+          5.75
+        ],
+        "judgePoints": [
+          3.5,
+          3.5,
+          3.25
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.92",
+        "avgJudgePoints": "3.42"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          1.75,
+          1
+        ],
+        "judgePoints": [
+          2.25,
+          1.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.38",
+        "avgJudgePoints": "1.88"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          4.25,
+          5.75,
+          3
+        ],
+        "judgePoints": [
+          3.25,
+          3.25,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "4.33",
+        "avgJudgePoints": "3.17"
+      }
+    },
+    "totalPoints": [
+      4.25,
+      1.75,
+      4,
+      4.5,
+      5.25,
+      1,
+      1.75,
+      5.75,
+      6,
+      6,
+      3,
+      3.25,
+      3,
+      5.75
+    ],
+    "totalJudgePoints": [
+      3.25,
+      2.25,
+      4,
+      2,
+      2.75,
+      1.5,
+      1.75,
+      3.25,
+      3.5,
+      3.5,
+      1.5,
+      3.25,
+      3,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": -1,
+    "winRate": "50.00",
+    "avgPoints": "3.95",
+    "avgJudgePoints": "2.77"
+  },
+  "SCHOKK": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          1.75,
+          2,
+          5.25,
+          5.25
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          2.75,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "50.00",
+        "avgPoints": "3.56",
+        "avgJudgePoints": "2.31"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          2,
+          2.5,
+          5.5
+        ],
+        "judgePoints": [
+          2,
+          3,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "3.33",
+        "avgJudgePoints": "2.67"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1.75,
+      2,
+      2,
+      2.5,
+      5.25,
+      5.25,
+      5.5
+    ],
+    "totalJudgePoints": [
+      1.75,
+      2,
+      2,
+      3,
+      2.75,
+      2.75,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.46",
+    "avgJudgePoints": "2.46"
+  },
+  "Юрия": {
+    "totalGames": 14,
+    "totalWins": 9,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 4,
+        "points": [
+          1.75,
+          5.75,
+          5,
+          5,
+          4.5,
+          2
+        ],
+        "judgePoints": [
+          1.75,
+          3.25,
+          2.5,
+          2.5,
+          2,
+          2
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 0,
+        "winRate": "66.67",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "2.33"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          4.75,
+          2.5,
+          6.75,
+          2.5
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          4.25,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.13",
+        "avgJudgePoints": "2.88"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          7,
+          6.5,
+          6
+        ],
+        "judgePoints": [
+          4.5,
+          4,
+          3.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      5.75,
+      4.75,
+      5,
+      2.5,
+      5,
+      7,
+      6.5,
+      4.5,
+      2.5,
+      2,
+      6.75,
+      6,
+      2.5
+    ],
+    "totalJudgePoints": [
+      1.75,
+      3.25,
+      2.25,
+      2.5,
+      2.5,
+      2.5,
+      4.5,
+      4,
+      2,
+      2.5,
+      2,
+      4.25,
+      3.5,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "64.29",
+    "avgPoints": "4.46",
+    "avgJudgePoints": "2.86"
+  },
+  "Оскар": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          1.75,
+          5.25,
+          4,
+          2
+        ],
+        "judgePoints": [
+          1.75,
+          2.75,
+          1.5,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "2.00"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          6.75,
+          3.25,
+          5.5
+        ],
+        "judgePoints": [
+          4.25,
+          2.75,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "5.17",
+        "avgJudgePoints": "3.33"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      6.75,
+      3.25,
+      5.5,
+      5.25,
+      4,
+      2
+    ],
+    "totalJudgePoints": [
+      1.75,
+      4.25,
+      2.75,
+      3,
+      2.75,
+      1.5,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.07",
+    "avgJudgePoints": "2.57"
+  },
+  "Гермес": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 4,
+        "points": [
+          0.75,
+          7.25,
+          6.5,
+          5.75,
+          6,
+          3
+        ],
+        "judgePoints": [
+          2.75,
+          4.75,
+          4,
+          2.75,
+          3.5,
+          2
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 0,
+        "winRate": "66.67",
+        "avgPoints": "4.88",
+        "avgJudgePoints": "3.29"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "3.75"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      0.75,
+      7.25,
+      6.25,
+      6.5,
+      5.75,
+      6,
+      3
+    ],
+    "totalJudgePoints": [
+      2.75,
+      4.75,
+      3.75,
+      4,
+      2.75,
+      3.5,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.07",
+    "avgJudgePoints": "3.36"
+  },
+  "Андерсен": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          4.5,
+          6.25,
+          3.25
+        ],
+        "judgePoints": [
+          2,
+          3.75,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "66.67",
+        "avgPoints": "4.67",
+        "avgJudgePoints": "3.00"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6.5,
+          5.25
+        ],
+        "judgePoints": [
+          4,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.88",
+        "avgJudgePoints": "3.38"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          3.5,
+          5.75
+        ],
+        "judgePoints": [
+          3.5,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.63",
+        "avgJudgePoints": "2.88"
+      }
+    },
+    "totalPoints": [
+      6.5,
+      3.5,
+      5.75,
+      4.5,
+      6.25,
+      5.25,
+      3.25
+    ],
+    "totalJudgePoints": [
+      4,
+      3.5,
+      2.25,
+      2,
+      3.75,
+      2.75,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.00",
+    "avgJudgePoints": "3.07"
+  },
+  "Сахарочек": {
+    "totalGames": 21,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 14,
+        "wins": 4,
+        "points": [
+          3,
+          5.5,
+          2,
+          2.25,
+          2.75,
+          2,
+          2,
+          4.25,
+          2,
+          5,
+          2,
+          2,
+          4.5,
+          3
+        ],
+        "judgePoints": [
+          3,
+          3,
+          2,
+          2.25,
+          2.75,
+          2,
+          2,
+          1.75,
+          2,
+          2.5,
+          2,
+          2,
+          2.5,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "28.57",
+        "avgPoints": "3.02",
+        "avgJudgePoints": "2.34"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.75,
+          3.5
+        ],
+        "judgePoints": [
+          3.25,
+          1
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "4.63",
+        "avgJudgePoints": "2.13"
+      },
+      "Дон": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          3,
+          1.75,
+          5.5,
+          1.5
+        ],
+        "judgePoints": [
+          3,
+          1.75,
+          3,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "2.94",
+        "avgJudgePoints": "2.31"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      5.75,
+      3,
+      3,
+      1.75,
+      5.5,
+      5.5,
+      2,
+      5.5,
+      2.25,
+      2.75,
+      1.5,
+      2,
+      2,
+      4.25,
+      2,
+      5,
+      2,
+      2,
+      4.5,
+      3,
+      3.5
+    ],
+    "totalJudgePoints": [
+      3.25,
+      3,
+      3,
+      1.75,
+      3,
+      3,
+      2,
+      3,
+      2.25,
+      2.75,
+      1.5,
+      2,
+      2,
+      1.75,
+      2,
+      2.5,
+      2,
+      2,
+      2.5,
+      3,
+      1
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "38.10",
+    "avgPoints": "3.27",
+    "avgJudgePoints": "2.35"
+  },
+  "Infinity": {
+    "totalGames": 21,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 12,
+        "wins": 3,
+        "points": [
+          1.5,
+          2.25,
+          3.25,
+          7.5,
+          2.75,
+          2,
+          5.75,
+          1.75,
+          3.25,
+          2,
+          2.5,
+          5.75
+        ],
+        "judgePoints": [
+          1.5,
+          2.25,
+          2.75,
+          5,
+          2.75,
+          2,
+          3.25,
+          1.75,
+          2.75,
+          2,
+          2.5,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "25.00",
+        "avgPoints": "3.35",
+        "avgJudgePoints": "2.65"
+      },
+      "Мафия": {
+        "games": 6,
+        "wins": 2,
+        "points": [
+          2.25,
+          2.5,
+          6.5,
+          4.75,
+          2.5,
+          2
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          4,
+          2.25,
+          2.5,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.42",
+        "avgJudgePoints": "2.58"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5,
+          5
+        ],
+        "judgePoints": [
+          2.5,
+          2.5
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "2.50"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.25
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "2.75"
+      }
+    },
+    "totalPoints": [
+      5,
+      5,
+      2.25,
+      2.5,
+      5.25,
+      6.5,
+      1.5,
+      2.25,
+      3.25,
+      7.5,
+      4.75,
+      2.75,
+      2,
+      2.5,
+      5.75,
+      1.75,
+      3.25,
+      2,
+      2,
+      2.5,
+      5.75
+    ],
+    "totalJudgePoints": [
+      2.5,
+      2.5,
+      2.25,
+      2.5,
+      2.75,
+      4,
+      1.5,
+      2.25,
+      2.75,
+      5,
+      2.25,
+      2.75,
+      2,
+      2.5,
+      3.25,
+      1.75,
+      2.75,
+      2,
+      2,
+      2.5,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "38.10",
+    "avgPoints": "3.62",
+    "avgJudgePoints": "2.62"
+  },
+  "Dimmi": {
+    "totalGames": 28,
+    "totalWins": 10,
+    "roleStats": {
+      "Мирный": {
+        "games": 18,
+        "wins": 7,
+        "points": [
+          2.25,
+          4,
+          6,
+          4.25,
+          2.25,
+          2,
+          1,
+          1.75,
+          3.25,
+          6,
+          2.75,
+          3,
+          2.25,
+          5,
+          6.25,
+          4.5,
+          1.25,
+          4.5
+        ],
+        "judgePoints": [
+          2.25,
+          1.5,
+          3.5,
+          2.25,
+          2.25,
+          2,
+          1,
+          1.75,
+          3.25,
+          3.5,
+          2.75,
+          3.5,
+          2.25,
+          2.5,
+          3.75,
+          4.5,
+          1.25,
+          2
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 1,
+        "winRate": "38.89",
+        "avgPoints": "3.46",
+        "avgJudgePoints": "2.54"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 2,
+        "points": [
+          5.75,
+          2.75,
+          4.75,
+          2,
+          2.5
+        ],
+        "judgePoints": [
+          3.25,
+          2.75,
+          2.25,
+          2,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "40.00",
+        "avgPoints": "3.55",
+        "avgJudgePoints": "2.55"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2.5,
+          6.75
+        ],
+        "judgePoints": [
+          2.5,
+          4.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.63",
+        "avgJudgePoints": "3.38"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          2.5,
+          3.25,
+          5.25
+        ],
+        "judgePoints": [
+          2,
+          3.25,
+          4.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.67",
+        "avgJudgePoints": "3.17"
+      }
+    },
+    "totalPoints": [
+      2.5,
+      2.25,
+      4,
+      6,
+      4.25,
+      2.25,
+      2,
+      5.75,
+      1,
+      1.75,
+      3.25,
+      3.25,
+      6,
+      2.75,
+      4.75,
+      2.75,
+      2.5,
+      3,
+      5.25,
+      2.25,
+      5,
+      2,
+      6.25,
+      4.5,
+      1.25,
+      4.5,
+      6.75,
+      2.5
+    ],
+    "totalJudgePoints": [
+      2,
+      2.25,
+      1.5,
+      3.5,
+      2.25,
+      2.25,
+      2,
+      3.25,
+      1,
+      1.75,
+      3.25,
+      3.25,
+      3.5,
+      2.75,
+      2.25,
+      2.75,
+      2.5,
+      3.5,
+      4.25,
+      2.25,
+      2.5,
+      2,
+      3.75,
+      4.5,
+      1.25,
+      2,
+      4.25,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "3.58",
+    "avgJudgePoints": "2.67"
+  },
+  "Вертинский": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 1,
+        "points": [
+          2.5,
+          3,
+          5.25,
+          2.25,
+          3.5
+        ],
+        "judgePoints": [
+          2.5,
+          2.5,
+          2.75,
+          2.25,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "20.00",
+        "avgPoints": "3.30",
+        "avgJudgePoints": "2.50"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "2.50"
+      }
+    },
+    "totalPoints": [
+      2.5,
+      3,
+      5.25,
+      5,
+      1.75,
+      2.25,
+      3.5
+    ],
+    "totalJudgePoints": [
+      2.5,
+      2.5,
+      2.75,
+      2.5,
+      1.75,
+      2.25,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.32",
+    "avgJudgePoints": "2.39"
+  },
+  "Juventini": {
+    "totalGames": 14,
+    "totalWins": 6,
+    "roleStats": {
+      "Мирный": {
+        "games": 10,
+        "wins": 4,
+        "points": [
+          2.25,
+          3,
+          5.5,
+          5.75,
+          4.75,
+          3,
+          4.5,
+          1.75,
+          1.75,
+          3
+        ],
+        "judgePoints": [
+          2.25,
+          3,
+          3,
+          3.25,
+          2.25,
+          3,
+          2,
+          1.75,
+          1.75,
+          3
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "40.00",
+        "avgPoints": "3.52",
+        "avgJudgePoints": "2.52"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2,
+          4.5
+        ],
+        "judgePoints": [
+          2,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "2.00"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      }
+    },
+    "totalPoints": [
+      2.25,
+      3,
+      5.5,
+      5.75,
+      4.75,
+      3,
+      5.75,
+      4.5,
+      1.75,
+      2.5,
+      2,
+      1.75,
+      4.5,
+      3
+    ],
+    "totalJudgePoints": [
+      2.25,
+      3,
+      3,
+      3.25,
+      2.25,
+      3,
+      3.25,
+      2,
+      1.75,
+      2.5,
+      2,
+      1.75,
+      2,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.57",
+    "avgJudgePoints": "2.50"
+  },
+  "Домовенок": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          1.75,
+          2,
+          5.25,
+          6.75
+        ],
+        "judgePoints": [
+          2.75,
+          2,
+          2.75,
+          4.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "50.00",
+        "avgPoints": "3.94",
+        "avgJudgePoints": "2.94"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.25
+        ],
+        "judgePoints": [
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.25",
+        "avgJudgePoints": "2.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          3,
+          2
+        ],
+        "judgePoints": [
+          2.5,
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.25"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      2,
+      5.25,
+      2.25,
+      6.75,
+      3,
+      2
+    ],
+    "totalJudgePoints": [
+      2.75,
+      2,
+      2.75,
+      2.25,
+      4.25,
+      2.5,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.29",
+    "avgJudgePoints": "2.64"
+  },
+  "Adele": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          1.75,
+          5.25,
+          3.5,
+          1.75
+        ],
+        "judgePoints": [
+          1.75,
+          2.75,
+          3.5,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "3.06",
+        "avgJudgePoints": "2.44"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          5.75,
+          2,
+          2
+        ],
+        "judgePoints": [
+          3.25,
+          2,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "2.42"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1.75,
+      5.75,
+      2,
+      5.25,
+      2,
+      3.5,
+      1.75
+    ],
+    "totalJudgePoints": [
+      1.75,
+      3.25,
+      2,
+      2.75,
+      2,
+      3.5,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.14",
+    "avgJudgePoints": "2.43"
+  },
+  "Сотрудник": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 2,
+        "points": [
+          1.75,
+          2,
+          4.5,
+          6.25,
+          2.75
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          2,
+          2.75,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "40.00",
+        "avgPoints": "3.45",
+        "avgJudgePoints": "2.25"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2,
+          6.25
+        ],
+        "judgePoints": [
+          2,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.13",
+        "avgJudgePoints": "2.88"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1.75,
+      2,
+      4.5,
+      6.25,
+      2,
+      2.75,
+      6.25
+    ],
+    "totalJudgePoints": [
+      1.75,
+      2,
+      2,
+      2.75,
+      2,
+      2.75,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.64",
+    "avgJudgePoints": "2.43"
+  },
+  "Наполеон": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 1,
+        "points": [
+          7,
+          1.5,
+          2.25,
+          3.5,
+          2.75
+        ],
+        "judgePoints": [
+          3.5,
+          1.5,
+          2.25,
+          2.5,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "20.00",
+        "avgPoints": "3.40",
+        "avgJudgePoints": "2.50"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          3,
+          6.75
+        ],
+        "judgePoints": [
+          3,
+          4.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.88",
+        "avgJudgePoints": "3.63"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      7,
+      1.5,
+      2.25,
+      3,
+      3.5,
+      6.75,
+      2.75
+    ],
+    "totalJudgePoints": [
+      3.5,
+      1.5,
+      2.25,
+      3,
+      2.5,
+      4.25,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.82",
+    "avgJudgePoints": "2.82"
+  },
+  "Хрум": {
+    "totalGames": 35,
+    "totalWins": 20,
+    "roleStats": {
+      "Мирный": {
+        "games": 21,
+        "wins": 10,
+        "points": [
+          6.5,
+          1.75,
+          6.5,
+          1.25,
+          1.5,
+          4.25,
+          0.75,
+          5.25,
+          4.25,
+          5,
+          2,
+          5,
+          2.25,
+          5.25,
+          0,
+          6.5,
+          2.5,
+          1.5,
+          2.75,
+          5.5,
+          2.25
+        ],
+        "judgePoints": [
+          4,
+          1.75,
+          4,
+          1.25,
+          1.5,
+          1.75,
+          0.75,
+          2.75,
+          1.75,
+          2.5,
+          2,
+          2.5,
+          2.25,
+          2.25,
+          0,
+          4,
+          2,
+          1.5,
+          2.75,
+          3,
+          2.25
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "47.62",
+        "avgPoints": "3.45",
+        "avgJudgePoints": "2.21"
+      },
+      "Мафия": {
+        "games": 9,
+        "wins": 8,
+        "points": [
+          5.75,
+          7,
+          6,
+          6.5,
+          5.5,
+          3.25,
+          6,
+          5.5,
+          5.25
+        ],
+        "judgePoints": [
+          3.25,
+          4.5,
+          3.5,
+          4,
+          3.5,
+          3.25,
+          3.5,
+          3,
+          2.75
+        ],
+        "bestWinStreak": 5,
+        "currentStreak": 3,
+        "winRate": "88.89",
+        "avgPoints": "5.64",
+        "avgJudgePoints": "3.47"
+      },
+      "Дон": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          5.5,
+          3.25,
+          2,
+          5.75
+        ],
+        "judgePoints": [
+          3,
+          3.25,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.13",
+        "avgJudgePoints": "2.88"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      }
+    },
+    "totalPoints": [
+      6.5,
+      1.75,
+      5.75,
+      6.5,
+      5.5,
+      1.25,
+      1.5,
+      4.25,
+      1.75,
+      0.75,
+      5.25,
+      7,
+      6,
+      4.25,
+      3.25,
+      5,
+      2,
+      6.5,
+      5,
+      2.25,
+      5.25,
+      0,
+      2,
+      5.5,
+      3.25,
+      6,
+      6.5,
+      2.5,
+      5.5,
+      1.5,
+      5.25,
+      2.75,
+      5.5,
+      5.75,
+      2.25
+    ],
+    "totalJudgePoints": [
+      4,
+      1.75,
+      3.25,
+      4,
+      3,
+      1.25,
+      1.5,
+      1.75,
+      1.75,
+      0.75,
+      2.75,
+      4.5,
+      3.5,
+      1.75,
+      3.25,
+      2.5,
+      2,
+      4,
+      2.5,
+      2.25,
+      2.25,
+      0,
+      2,
+      3.5,
+      3.25,
+      3.5,
+      4,
+      2,
+      3,
+      1.5,
+      2.75,
+      2.75,
+      3,
+      3.25,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.04",
+    "avgJudgePoints": "2.60"
+  },
+  "Стрекоза": {
+    "totalGames": 35,
+    "totalWins": 11,
+    "roleStats": {
+      "Мирный": {
+        "games": 23,
+        "wins": 5,
+        "points": [
+          6.25,
+          2,
+          6,
+          1.5,
+          2.25,
+          4,
+          1.75,
+          2,
+          2.75,
+          3.25,
+          2.25,
+          6.25,
+          3.25,
+          2.5,
+          5.25,
+          3.75,
+          5.25,
+          3.25,
+          2.25,
+          1.75,
+          1.75,
+          2.25,
+          2
+        ],
+        "judgePoints": [
+          3.75,
+          2,
+          3.5,
+          2,
+          2.75,
+          4,
+          1.75,
+          2,
+          2.75,
+          3.25,
+          1.75,
+          3.75,
+          3.25,
+          2.5,
+          2.75,
+          3.75,
+          2.75,
+          3.25,
+          2.25,
+          1.75,
+          1.75,
+          1.75,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "21.74",
+        "avgPoints": "3.20",
+        "avgJudgePoints": "2.65"
+      },
+      "Мафия": {
+        "games": 7,
+        "wins": 4,
+        "points": [
+          5.75,
+          2.25,
+          2.25,
+          5,
+          5.75,
+          6.25,
+          2.75
+        ],
+        "judgePoints": [
+          3.75,
+          2.25,
+          2.25,
+          3,
+          3.25,
+          3.75,
+          2.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "57.14",
+        "avgPoints": "4.29",
+        "avgJudgePoints": "3.00"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6.25,
+          6.75
+        ],
+        "judgePoints": [
+          3.75,
+          4.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          4.25,
+          2.75,
+          2.5
+        ],
+        "judgePoints": [
+          3.25,
+          2.75,
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.17",
+        "avgJudgePoints": "2.83"
+      }
+    },
+    "totalPoints": [
+      6.25,
+      5.75,
+      2,
+      6,
+      1.5,
+      2.25,
+      4,
+      1.75,
+      2,
+      2.75,
+      6.25,
+      3.25,
+      2.25,
+      2.25,
+      2.25,
+      6.25,
+      3.25,
+      2.5,
+      5.25,
+      6.75,
+      3.75,
+      4.25,
+      5.25,
+      3.25,
+      2.25,
+      5,
+      1.75,
+      5.75,
+      6.25,
+      1.75,
+      2.25,
+      2.75,
+      2,
+      2.5,
+      2.75
+    ],
+    "totalJudgePoints": [
+      3.75,
+      3.75,
+      2,
+      3.5,
+      2,
+      2.75,
+      4,
+      1.75,
+      2,
+      2.75,
+      3.75,
+      3.25,
+      2.25,
+      2.25,
+      1.75,
+      3.75,
+      3.25,
+      2.5,
+      2.75,
+      4.25,
+      3.75,
+      3.25,
+      2.75,
+      3.25,
+      2.25,
+      3,
+      1.75,
+      3.25,
+      3.75,
+      1.75,
+      1.75,
+      2.75,
+      2,
+      2.5,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "31.43",
+    "avgPoints": "3.60",
+    "avgJudgePoints": "2.81"
+  },
+  "Рыжая": {
+    "totalGames": 14,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 9,
+        "wins": 3,
+        "points": [
+          5.5,
+          2,
+          2,
+          3.25,
+          3.5,
+          2,
+          5.75,
+          2.75,
+          5
+        ],
+        "judgePoints": [
+          3,
+          2,
+          2,
+          3.25,
+          3.5,
+          2,
+          3.25,
+          2.75,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "3.53",
+        "avgJudgePoints": "2.69"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          1.5,
+          6.75,
+          6.5
+        ],
+        "judgePoints": [
+          1.5,
+          4.25,
+          4
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "66.67",
+        "avgPoints": "4.92",
+        "avgJudgePoints": "3.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          3,
+          2
+        ],
+        "judgePoints": [
+          3,
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      }
+    },
+    "totalPoints": [
+      5.5,
+      3,
+      2,
+      1.5,
+      2,
+      3.25,
+      3.5,
+      6.75,
+      2,
+      5.75,
+      6.5,
+      2.75,
+      2,
+      5
+    ],
+    "totalJudgePoints": [
+      3,
+      3,
+      2,
+      1.5,
+      2,
+      3.25,
+      3.5,
+      4.25,
+      2,
+      3.25,
+      4,
+      2.75,
+      2,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "3.68",
+    "avgJudgePoints": "2.79"
+  },
+  "Мишель": {
+    "totalGames": 21,
+    "totalWins": 10,
+    "roleStats": {
+      "Мирный": {
+        "games": 11,
+        "wins": 3,
+        "points": [
+          4.5,
+          2.5,
+          1.5,
+          3.25,
+          3.5,
+          5.25,
+          1.5,
+          2.75,
+          4.75,
+          2.5,
+          1.75
+        ],
+        "judgePoints": [
+          2,
+          2.5,
+          1.5,
+          3.25,
+          2.5,
+          2.75,
+          1.5,
+          2.75,
+          2.25,
+          2.5,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "27.27",
+        "avgPoints": "3.07",
+        "avgJudgePoints": "2.30"
+      },
+      "Мафия": {
+        "games": 6,
+        "wins": 5,
+        "points": [
+          6.25,
+          6.5,
+          2.5,
+          4.75,
+          5.25,
+          3.75
+        ],
+        "judgePoints": [
+          3.75,
+          4,
+          2.5,
+          2.25,
+          2.75,
+          1.25
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "83.33",
+        "avgPoints": "4.83",
+        "avgJudgePoints": "2.75"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.75"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          5.5,
+          3,
+          1
+        ],
+        "judgePoints": [
+          2.5,
+          2.5,
+          1
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.17",
+        "avgJudgePoints": "2.00"
+      }
+    },
+    "totalPoints": [
+      4.5,
+      2.5,
+      1.5,
+      5.5,
+      6.25,
+      3.25,
+      3.5,
+      6.5,
+      2.5,
+      3,
+      4.75,
+      5.25,
+      1.5,
+      2.75,
+      5.25,
+      4.75,
+      2.5,
+      3.75,
+      5.75,
+      1,
+      1.75
+    ],
+    "totalJudgePoints": [
+      2,
+      2.5,
+      1.5,
+      2.5,
+      3.75,
+      3.25,
+      2.5,
+      4,
+      2.5,
+      2.5,
+      2.25,
+      2.75,
+      1.5,
+      2.75,
+      2.75,
+      2.25,
+      2.5,
+      1.25,
+      3.75,
+      1,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "47.62",
+    "avgPoints": "3.71",
+    "avgJudgePoints": "2.45"
+  },
+  "Фримен": {
+    "totalGames": 35,
+    "totalWins": 14,
+    "roleStats": {
+      "Мирный": {
+        "games": 21,
+        "wins": 6,
+        "points": [
+          2.25,
+          2.5,
+          5.5,
+          2,
+          2.5,
+          3.5,
+          5.25,
+          6.25,
+          1.5,
+          2,
+          5,
+          2.5,
+          3.5,
+          6.25,
+          2,
+          4.5,
+          4,
+          2.25,
+          2.75,
+          2,
+          2
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          3,
+          2,
+          2.5,
+          3.5,
+          2.25,
+          3.75,
+          1.5,
+          2,
+          2.5,
+          3,
+          3.5,
+          2.75,
+          2,
+          2,
+          3,
+          2.25,
+          1.75,
+          2,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "28.57",
+        "avgPoints": "3.33",
+        "avgJudgePoints": "2.48"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 4,
+        "points": [
+          2.5,
+          5.5,
+          6.5,
+          6.25,
+          4.75
+        ],
+        "judgePoints": [
+          2.5,
+          3,
+          4,
+          3.75,
+          2.25
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 4,
+        "winRate": "80.00",
+        "avgPoints": "5.10",
+        "avgJudgePoints": "3.10"
+      },
+      "Дон": {
+        "games": 5,
+        "wins": 4,
+        "points": [
+          5.5,
+          6.25,
+          5.5,
+          6.5,
+          2
+        ],
+        "judgePoints": [
+          3,
+          3.75,
+          3.5,
+          4,
+          2
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 0,
+        "winRate": "80.00",
+        "avgPoints": "5.15",
+        "avgJudgePoints": "3.25"
+      },
+      "Шериф": {
+        "games": 4,
+        "wins": 0,
+        "points": [
+          2,
+          1,
+          1.75,
+          3.25
+        ],
+        "judgePoints": [
+          2,
+          1,
+          1.75,
+          3.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.00",
+        "avgJudgePoints": "2.00"
+      }
+    },
+    "totalPoints": [
+      2.5,
+      2.25,
+      2.5,
+      5.5,
+      5.5,
+      6.5,
+      6.25,
+      2,
+      2,
+      2.5,
+      4.75,
+      3.5,
+      5.25,
+      6.25,
+      1.5,
+      2,
+      5,
+      2.5,
+      3.5,
+      5.5,
+      6.25,
+      2,
+      4.5,
+      4,
+      2.25,
+      1,
+      2.75,
+      6.25,
+      2,
+      2,
+      1.75,
+      5.5,
+      3.25,
+      6.5,
+      2
+    ],
+    "totalJudgePoints": [
+      2.5,
+      2.25,
+      2.5,
+      3,
+      3,
+      4,
+      3.75,
+      2,
+      2,
+      2.5,
+      2.25,
+      3.5,
+      2.25,
+      3.75,
+      1.5,
+      2,
+      2.5,
+      3,
+      3.5,
+      3,
+      2.75,
+      2,
+      2,
+      3,
+      2.25,
+      1,
+      1.75,
+      3.75,
+      2,
+      2,
+      1.75,
+      3.5,
+      3.25,
+      4,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "40.00",
+    "avgPoints": "3.69",
+    "avgJudgePoints": "2.62"
+  },
+  "Продюсер": {
+    "totalGames": 21,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 14,
+        "wins": 3,
+        "points": [
+          3.25,
+          2.5,
+          5.25,
+          2.25,
+          3,
+          5.75,
+          3.5,
+          5.75,
+          2,
+          1.75,
+          2.75,
+          2,
+          2.25,
+          3
+        ],
+        "judgePoints": [
+          3.25,
+          2,
+          2.75,
+          2.25,
+          2,
+          3.25,
+          2.5,
+          3.25,
+          2,
+          1.75,
+          2.75,
+          2,
+          1.75,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "21.43",
+        "avgPoints": "3.21",
+        "avgJudgePoints": "2.46"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 3,
+        "points": [
+          2.25,
+          5.25,
+          5.5,
+          6
+        ],
+        "judgePoints": [
+          2.25,
+          2.75,
+          3,
+          3.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "75.00",
+        "avgPoints": "4.75",
+        "avgJudgePoints": "2.88"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          3.75,
+          6.25
+        ],
+        "judgePoints": [
+          3.75,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "3.75"
+      }
+    },
+    "totalPoints": [
+      2.25,
+      3.25,
+      2.5,
+      5.25,
+      2.25,
+      3,
+      3.75,
+      5.25,
+      5.75,
+      3.5,
+      5.75,
+      2,
+      1.75,
+      1.75,
+      5.5,
+      2.75,
+      6,
+      2,
+      2.25,
+      3,
+      6.25
+    ],
+    "totalJudgePoints": [
+      2.25,
+      3.25,
+      2,
+      2.75,
+      2.25,
+      2,
+      3.75,
+      2.75,
+      3.25,
+      2.5,
+      3.25,
+      2,
+      1.75,
+      1.75,
+      3,
+      2.75,
+      3.5,
+      2,
+      1.75,
+      3,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "33.33",
+    "avgPoints": "3.61",
+    "avgJudgePoints": "2.63"
+  },
+  "Antihype": {
+    "totalGames": 21,
+    "totalWins": 9,
+    "roleStats": {
+      "Мирный": {
+        "games": 8,
+        "wins": 2,
+        "points": [
+          7.5,
+          2.25,
+          2.5,
+          3,
+          1,
+          5,
+          1.5,
+          1.75
+        ],
+        "judgePoints": [
+          5,
+          2.25,
+          2.5,
+          2.5,
+          1,
+          2.5,
+          1.5,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "3.06",
+        "avgJudgePoints": "2.38"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          1.75,
+          6.25,
+          2,
+          4.75
+        ],
+        "judgePoints": [
+          1.75,
+          3.75,
+          2,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.69",
+        "avgJudgePoints": "2.44"
+      },
+      "Дон": {
+        "games": 7,
+        "wins": 5,
+        "points": [
+          0.5,
+          5.5,
+          5.75,
+          5,
+          5,
+          5.5,
+          1.75
+        ],
+        "judgePoints": [
+          0.5,
+          3,
+          3.25,
+          2.5,
+          2.5,
+          3,
+          1.75
+        ],
+        "bestWinStreak": 5,
+        "currentStreak": 0,
+        "winRate": "71.43",
+        "avgPoints": "4.14",
+        "avgJudgePoints": "2.36"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          2,
+          2.25
+        ],
+        "judgePoints": [
+          2,
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.13",
+        "avgJudgePoints": "2.13"
+      }
+    },
+    "totalPoints": [
+      0.5,
+      5.5,
+      5.75,
+      7.5,
+      2,
+      2.25,
+      5,
+      5,
+      2.5,
+      5.5,
+      3,
+      1,
+      1.75,
+      5,
+      1.5,
+      6.25,
+      2,
+      2.25,
+      4.75,
+      1.75,
+      1.75
+    ],
+    "totalJudgePoints": [
+      0.5,
+      3,
+      3.25,
+      5,
+      2,
+      2.25,
+      2.5,
+      2.5,
+      2.5,
+      3,
+      2.5,
+      1,
+      1.75,
+      2.5,
+      1.5,
+      3.75,
+      2,
+      2.25,
+      2.25,
+      1.75,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.45",
+    "avgJudgePoints": "2.36"
+  },
+  "Красавчик": {
+    "totalGames": 21,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 15,
+        "wins": 4,
+        "points": [
+          1.5,
+          3.75,
+          1.75,
+          2.5,
+          6,
+          5.25,
+          1.5,
+          1.75,
+          4.25,
+          6.25,
+          2.75,
+          3,
+          2.75,
+          2.25,
+          4.75
+        ],
+        "judgePoints": [
+          1.5,
+          3.75,
+          1.75,
+          2,
+          3.5,
+          2.75,
+          2.5,
+          1.75,
+          3.25,
+          3.75,
+          2.75,
+          3,
+          2.25,
+          2.25,
+          2.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "26.67",
+        "avgPoints": "3.33",
+        "avgJudgePoints": "2.60"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          6.5,
+          5.25,
+          6.25,
+          2.25,
+          2.5
+        ],
+        "judgePoints": [
+          4,
+          2.75,
+          3.75,
+          2.25,
+          2.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "4.55",
+        "avgJudgePoints": "3.05"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      6.5,
+      1.5,
+      3.75,
+      1.75,
+      2.5,
+      6,
+      5.25,
+      1.5,
+      1.75,
+      5.5,
+      4.25,
+      5.25,
+      6.25,
+      6.25,
+      2.25,
+      2.75,
+      2.5,
+      3,
+      2.75,
+      2.25,
+      4.75
+    ],
+    "totalJudgePoints": [
+      4,
+      1.5,
+      3.75,
+      1.75,
+      2,
+      3.5,
+      2.75,
+      2.5,
+      1.75,
+      3,
+      3.25,
+      2.75,
+      3.75,
+      3.75,
+      2.25,
+      2.75,
+      2.5,
+      3,
+      2.25,
+      2.25,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "38.10",
+    "avgPoints": "3.73",
+    "avgJudgePoints": "2.73"
+  },
+  "Бабочка": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          2.25,
+          3.5,
+          3.25,
+          5.25
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          3.25,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "25.00",
+        "avgPoints": "3.56",
+        "avgJudgePoints": "2.69"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.75,
+          5.75
+        ],
+        "judgePoints": [
+          3.25,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "3.75"
+      }
+    },
+    "totalPoints": [
+      2.25,
+      5.75,
+      3.5,
+      3.25,
+      5.75,
+      5.25,
+      6.25
+    ],
+    "totalJudgePoints": [
+      2.25,
+      3.25,
+      2.5,
+      3.25,
+      3.25,
+      2.75,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.57",
+    "avgJudgePoints": "3.00"
+  },
+  "Matilda": {
+    "totalGames": 21,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 12,
+        "wins": 3,
+        "points": [
+          2,
+          5,
+          2,
+          1.75,
+          2.75,
+          3,
+          1.5,
+          6,
+          3,
+          5.25,
+          1.5,
+          1.5
+        ],
+        "judgePoints": [
+          2,
+          2.5,
+          2,
+          1.75,
+          2.75,
+          3,
+          1.5,
+          3.5,
+          2.5,
+          2.75,
+          1.5,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "2.94",
+        "avgJudgePoints": "2.27"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          6,
+          5.5,
+          6.25
+        ],
+        "judgePoints": [
+          3.5,
+          3,
+          3.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.92",
+        "avgJudgePoints": "3.42"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          5,
+          1.5,
+          1.5
+        ],
+        "judgePoints": [
+          2.5,
+          1.5,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "2.67",
+        "avgJudgePoints": "1.83"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          2,
+          1.75,
+          1.5
+        ],
+        "judgePoints": [
+          2,
+          1.75,
+          1.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      }
+    },
+    "totalPoints": [
+      2,
+      2,
+      1.75,
+      1.5,
+      5,
+      5,
+      1.5,
+      2,
+      6,
+      1.75,
+      2.75,
+      1.5,
+      3,
+      5.5,
+      1.5,
+      6,
+      6.25,
+      3,
+      5.25,
+      1.5,
+      1.5
+    ],
+    "totalJudgePoints": [
+      2,
+      2,
+      1.75,
+      1.5,
+      2.5,
+      2.5,
+      1.5,
+      2,
+      3.5,
+      1.75,
+      2.75,
+      1.5,
+      3,
+      3,
+      1.5,
+      3.5,
+      3.75,
+      2.5,
+      2.75,
+      1.5,
+      1.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "33.33",
+    "avgPoints": "3.15",
+    "avgJudgePoints": "2.30"
+  },
+  "Cherry pick": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 2,
+        "points": [
+          2,
+          2.25,
+          1.75,
+          3,
+          6.25,
+          8
+        ],
+        "judgePoints": [
+          2,
+          1.75,
+          1.75,
+          3,
+          3.75,
+          4
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "33.33",
+        "avgPoints": "3.88",
+        "avgJudgePoints": "2.71"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "2.50"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      2,
+      2.25,
+      5,
+      1.75,
+      3,
+      6.25,
+      8
+    ],
+    "totalJudgePoints": [
+      2,
+      1.75,
+      2.5,
+      1.75,
+      3,
+      3.75,
+      4
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "4.04",
+    "avgJudgePoints": "2.68"
+  },
+  "Голубоглазая": {
+    "totalGames": 14,
+    "totalWins": 6,
+    "roleStats": {
+      "Мирный": {
+        "games": 8,
+        "wins": 2,
+        "points": [
+          1.75,
+          2.75,
+          2,
+          3.75,
+          5.5,
+          3.5,
+          4.25,
+          2
+        ],
+        "judgePoints": [
+          2.25,
+          2.75,
+          2,
+          1.25,
+          3,
+          3.5,
+          4.25,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "3.19",
+        "avgJudgePoints": "2.63"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6.5,
+          5.25
+        ],
+        "judgePoints": [
+          4,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.88",
+        "avgJudgePoints": "3.38"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          6.25,
+          1.5
+        ],
+        "judgePoints": [
+          3.75,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.88",
+        "avgJudgePoints": "2.63"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2.75,
+          5.25
+        ],
+        "judgePoints": [
+          2.75,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "2.75"
+      }
+    },
+    "totalPoints": [
+      1.75,
+      6.25,
+      2.75,
+      2,
+      6.5,
+      1.5,
+      3.75,
+      2.75,
+      5.25,
+      5.5,
+      3.5,
+      4.25,
+      2,
+      5.25
+    ],
+    "totalJudgePoints": [
+      2.25,
+      3.75,
+      2.75,
+      2,
+      4,
+      1.5,
+      1.25,
+      2.75,
+      2.75,
+      3,
+      3.5,
+      4.25,
+      2,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.79",
+    "avgJudgePoints": "2.75"
+  },
+  "Castor Troy": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1,
+          1.25,
+          4.75
+        ],
+        "judgePoints": [
+          2,
+          1.25,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "2.33",
+        "avgJudgePoints": "1.83"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          5.75,
+          6,
+          5
+        ],
+        "judgePoints": [
+          3.25,
+          3.5,
+          2.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.58",
+        "avgJudgePoints": "3.08"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.5
+        ],
+        "judgePoints": [
+          4
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      }
+    },
+    "totalPoints": [
+      1,
+      5.75,
+      6,
+      5,
+      1.25,
+      6.5,
+      4.75
+    ],
+    "totalJudgePoints": [
+      2,
+      3.25,
+      3.5,
+      2.5,
+      1.25,
+      4,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "4.32",
+    "avgJudgePoints": "2.68"
+  },
+  "Спирит": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          1.5,
+          5,
+          2.25,
+          5.5
+        ],
+        "judgePoints": [
+          1.5,
+          2.5,
+          2.25,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.56",
+        "avgJudgePoints": "2.31"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          4.25,
+          3.5,
+          6
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          3.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "4.58",
+        "avgJudgePoints": "2.42"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      4.25,
+      1.5,
+      5,
+      3.5,
+      6,
+      2.25,
+      5.5
+    ],
+    "totalJudgePoints": [
+      1.75,
+      1.5,
+      2.5,
+      2,
+      3.5,
+      2.25,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": -1,
+    "winRate": "71.43",
+    "avgPoints": "4.00",
+    "avgJudgePoints": "2.36"
+  },
+  "Круэлла": {
+    "totalGames": 21,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 15,
+        "wins": 3,
+        "points": [
+          2.75,
+          6.25,
+          4.5,
+          1.75,
+          3.25,
+          2.25,
+          1.75,
+          2.75,
+          6,
+          2,
+          2.25,
+          2.75,
+          2.5,
+          3.5,
+          5.75
+        ],
+        "judgePoints": [
+          2.75,
+          2.75,
+          4.5,
+          1.75,
+          2.25,
+          2.25,
+          1.75,
+          2.25,
+          3.5,
+          2,
+          2.25,
+          2.25,
+          2.5,
+          3.5,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "20.00",
+        "avgPoints": "3.33",
+        "avgJudgePoints": "2.57"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 3,
+        "points": [
+          2.5,
+          4.5,
+          6,
+          6
+        ],
+        "judgePoints": [
+          2.5,
+          2,
+          3.5,
+          3.5
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "75.00",
+        "avgPoints": "4.75",
+        "avgJudgePoints": "2.88"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.5
+        ],
+        "judgePoints": [
+          4
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          3.25
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "3.25"
+      }
+    },
+    "totalPoints": [
+      2.75,
+      6.5,
+      6.25,
+      4.5,
+      1.75,
+      3.25,
+      2.5,
+      2.25,
+      3.25,
+      1.75,
+      2.75,
+      6,
+      4.5,
+      2,
+      2.25,
+      2.75,
+      6,
+      2.5,
+      6,
+      3.5,
+      5.75
+    ],
+    "totalJudgePoints": [
+      2.75,
+      4,
+      2.75,
+      4.5,
+      1.75,
+      2.25,
+      2.5,
+      2.25,
+      3.25,
+      1.75,
+      2.25,
+      3.5,
+      2,
+      2,
+      2.25,
+      2.25,
+      3.5,
+      2.5,
+      3.5,
+      3.5,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 2,
+    "totalPenalties": 0,
+    "winRate": "33.33",
+    "avgPoints": "3.75",
+    "avgJudgePoints": "2.73"
+  },
+  "Natsy": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          2.75,
+          1,
+          3.25,
+          6.5
+        ],
+        "judgePoints": [
+          2.25,
+          1,
+          3.25,
+          4
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "25.00",
+        "avgPoints": "3.38",
+        "avgJudgePoints": "2.63"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          1.5,
+          5.75
+        ],
+        "judgePoints": [
+          2,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.63",
+        "avgJudgePoints": "2.63"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      }
+    },
+    "totalPoints": [
+      2.75,
+      1.75,
+      1.5,
+      1,
+      3.25,
+      5.75,
+      6.5
+    ],
+    "totalJudgePoints": [
+      2.25,
+      1.75,
+      2,
+      1,
+      3.25,
+      3.25,
+      4
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.21",
+    "avgJudgePoints": "2.50"
+  },
+  "Стратег": {
+    "totalGames": 14,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 8,
+        "wins": 1,
+        "points": [
+          2.25,
+          2.75,
+          1,
+          2.75,
+          4.5,
+          6.5,
+          1,
+          1.25
+        ],
+        "judgePoints": [
+          2.25,
+          2.75,
+          1,
+          2.75,
+          3.5,
+          4,
+          1,
+          1.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "12.50",
+        "avgPoints": "2.75",
+        "avgJudgePoints": "2.31"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          2,
+          2
+        ],
+        "judgePoints": [
+          2,
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.00",
+        "avgJudgePoints": "2.00"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.75,
+          2,
+          7
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          4.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "3.58",
+        "avgJudgePoints": "2.75"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.75
+        ],
+        "judgePoints": [
+          4.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.75",
+        "avgJudgePoints": "4.25"
+      }
+    },
+    "totalPoints": [
+      2.25,
+      6.75,
+      2.75,
+      1.75,
+      2,
+      1,
+      2.75,
+      2,
+      4.5,
+      7,
+      6.5,
+      1,
+      1.25,
+      2
+    ],
+    "totalJudgePoints": [
+      2.25,
+      4.25,
+      2.75,
+      1.75,
+      2,
+      1,
+      2.75,
+      2,
+      3.5,
+      4.5,
+      4,
+      1,
+      1.25,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "21.43",
+    "avgPoints": "3.11",
+    "avgJudgePoints": "2.50"
+  },
+  "Teslex": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5,
+          5.5
+        ],
+        "judgePoints": [
+          2.5,
+          3
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "2.75"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          0.5,
+          2.25
+        ],
+        "judgePoints": [
+          0.5,
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.38",
+        "avgJudgePoints": "1.38"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          4.25
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "4.25",
+        "avgJudgePoints": "1.75"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          3,
+          3
+        ],
+        "judgePoints": [
+          3,
+          3
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.00",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      0.5,
+      2.25,
+      4.25,
+      5,
+      5.5,
+      3,
+      3
+    ],
+    "totalJudgePoints": [
+      0.5,
+      2.25,
+      1.75,
+      2.5,
+      3,
+      3,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.36",
+    "avgJudgePoints": "2.29"
+  },
+  "E": {
+    "totalGames": 21,
+    "totalWins": 9,
+    "roleStats": {
+      "Мирный": {
+        "games": 15,
+        "wins": 6,
+        "points": [
+          0.5,
+          6,
+          2.5,
+          4,
+          1.75,
+          1.25,
+          6.5,
+          5.5,
+          1.75,
+          3.25,
+          6,
+          5.5,
+          2.5,
+          2.75,
+          3.25
+        ],
+        "judgePoints": [
+          0.5,
+          3.5,
+          2.5,
+          1.5,
+          1.75,
+          1.25,
+          4,
+          3,
+          1.75,
+          3.25,
+          3.5,
+          2,
+          2.5,
+          1.75,
+          1.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "40.00",
+        "avgPoints": "3.53",
+        "avgJudgePoints": "2.30"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5.75,
+          2.25
+        ],
+        "judgePoints": [
+          3.25,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "3.00"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          6,
+          2,
+          2.25,
+          5
+        ],
+        "judgePoints": [
+          3.5,
+          2,
+          2.25,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.81",
+        "avgJudgePoints": "2.56"
+      }
+    },
+    "totalPoints": [
+      0.5,
+      6,
+      2.5,
+      4,
+      6,
+      1.75,
+      1.25,
+      6.5,
+      2,
+      5.5,
+      2.25,
+      1.75,
+      3.25,
+      6,
+      5.5,
+      2.5,
+      5.75,
+      2.25,
+      2.75,
+      3.25,
+      5
+    ],
+    "totalJudgePoints": [
+      0.5,
+      3.5,
+      2.5,
+      1.5,
+      3.5,
+      1.75,
+      1.25,
+      4,
+      2,
+      3,
+      2.25,
+      1.75,
+      3.25,
+      3.5,
+      2,
+      2.5,
+      3.25,
+      2.75,
+      1.75,
+      1.75,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 2,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.63",
+    "avgJudgePoints": "2.42"
+  },
+  "Никнейм": {
+    "totalGames": 35,
+    "totalWins": 17,
+    "roleStats": {
+      "Мирный": {
+        "games": 24,
+        "wins": 10,
+        "points": [
+          0.5,
+          5.5,
+          3,
+          5.5,
+          2.25,
+          3,
+          6.25,
+          3.5,
+          5.25,
+          2.5,
+          5,
+          5.25,
+          3,
+          2.75,
+          5.5,
+          6.5,
+          3,
+          6.5,
+          3,
+          3.25,
+          2.75,
+          1.75,
+          2,
+          5.25
+        ],
+        "judgePoints": [
+          0.5,
+          3,
+          3,
+          2.5,
+          2.25,
+          3,
+          2.75,
+          2.5,
+          2.75,
+          2.5,
+          2.5,
+          2.75,
+          3,
+          2.75,
+          2.5,
+          4,
+          3,
+          4,
+          3,
+          3.25,
+          2.25,
+          1.75,
+          2,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "41.67",
+        "avgPoints": "3.86",
+        "avgJudgePoints": "2.68"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 4,
+        "points": [
+          1.5,
+          5.5,
+          5,
+          5.5,
+          5
+        ],
+        "judgePoints": [
+          1.5,
+          3,
+          2.5,
+          3,
+          2.5
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 4,
+        "winRate": "80.00",
+        "avgPoints": "4.50",
+        "avgJudgePoints": "2.50"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          5.75,
+          5.5,
+          6.5
+        ],
+        "judgePoints": [
+          3.25,
+          3,
+          4
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.92",
+        "avgJudgePoints": "3.42"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          3,
+          2.5,
+          3.5
+        ],
+        "judgePoints": [
+          3,
+          2.5,
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.00",
+        "avgJudgePoints": "2.67"
+      }
+    },
+    "totalPoints": [
+      0.5,
+      5.5,
+      3,
+      5.5,
+      1.5,
+      2.25,
+      3,
+      6.25,
+      3.5,
+      5.25,
+      2.5,
+      5.5,
+      5,
+      5,
+      5.25,
+      3,
+      2.75,
+      5.5,
+      3,
+      2.5,
+      6.5,
+      3,
+      6.5,
+      3,
+      3.25,
+      2.75,
+      5.75,
+      3.5,
+      1.75,
+      5.5,
+      5.5,
+      5,
+      6.5,
+      2,
+      5.25
+    ],
+    "totalJudgePoints": [
+      0.5,
+      3,
+      3,
+      2.5,
+      1.5,
+      2.25,
+      3,
+      2.75,
+      2.5,
+      2.75,
+      2.5,
+      3,
+      2.5,
+      2.5,
+      2.75,
+      3,
+      2.75,
+      2.5,
+      3,
+      2.5,
+      4,
+      3,
+      4,
+      3,
+      3.25,
+      2.25,
+      3.25,
+      2.5,
+      1.75,
+      3,
+      3,
+      2.5,
+      4,
+      2,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 2,
+    "totalPenalties": 0,
+    "winRate": "48.57",
+    "avgPoints": "4.06",
+    "avgJudgePoints": "2.71"
+  },
+  "Bublik": {
+    "totalGames": 14,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 2,
+        "points": [
+          7.25,
+          1.75,
+          6,
+          3.75,
+          5.25,
+          3.25
+        ],
+        "judgePoints": [
+          4.75,
+          1.75,
+          3.5,
+          2.75,
+          3.75,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "4.54",
+        "avgJudgePoints": "3.13"
+      },
+      "Мафия": {
+        "games": 6,
+        "wins": 3,
+        "points": [
+          0.5,
+          2.75,
+          6.25,
+          5.75,
+          5.5,
+          2
+        ],
+        "judgePoints": [
+          0.5,
+          2.75,
+          3.75,
+          3.25,
+          3,
+          2
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.79",
+        "avgJudgePoints": "2.54"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          2.75,
+          4
+        ],
+        "judgePoints": [
+          2.75,
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.38",
+        "avgJudgePoints": "2.38"
+      }
+    },
+    "totalPoints": [
+      0.5,
+      7.25,
+      1.75,
+      2.75,
+      6,
+      3.75,
+      6.25,
+      2.75,
+      5.75,
+      5.25,
+      5.5,
+      2,
+      3.25,
+      4
+    ],
+    "totalJudgePoints": [
+      0.5,
+      4.75,
+      1.75,
+      2.75,
+      3.5,
+      2.75,
+      3.75,
+      2.75,
+      3.25,
+      3.75,
+      3,
+      2,
+      2.25,
+      2
+    ],
+    "totalLH": 1,
+    "totalSI": 2,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "4.05",
+    "avgJudgePoints": "2.77"
+  },
+  "Грибочки": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 7,
+        "wins": 3,
+        "points": [
+          0.5,
+          6.25,
+          1.75,
+          5.75,
+          5,
+          2.75,
+          1.75
+        ],
+        "judgePoints": [
+          0.5,
+          3.75,
+          1.75,
+          3.25,
+          2,
+          2.75,
+          1.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "42.86",
+        "avgPoints": "3.39",
+        "avgJudgePoints": "2.25"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      0.5,
+      6.25,
+      1.75,
+      5.75,
+      5,
+      2.75,
+      1.75
+    ],
+    "totalJudgePoints": [
+      0.5,
+      3.75,
+      1.75,
+      3.25,
+      2,
+      2.75,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.39",
+    "avgJudgePoints": "2.25"
+  },
+  "Бастурма": {
+    "totalGames": 21,
+    "totalWins": 13,
+    "roleStats": {
+      "Мирный": {
+        "games": 15,
+        "wins": 8,
+        "points": [
+          0.5,
+          5.5,
+          6,
+          2,
+          6,
+          1.75,
+          6,
+          2.25,
+          2.5,
+          3.25,
+          5.75,
+          5,
+          5.75,
+          2.5,
+          5
+        ],
+        "judgePoints": [
+          0.5,
+          2.5,
+          3.5,
+          2,
+          3.5,
+          2.25,
+          3.5,
+          2.25,
+          2.5,
+          3.25,
+          3.25,
+          2.5,
+          3.25,
+          2.5,
+          2
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 1,
+        "winRate": "53.33",
+        "avgPoints": "3.98",
+        "avgJudgePoints": "2.62"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 4,
+        "points": [
+          6.5,
+          2.25,
+          4.75,
+          6,
+          6.25
+        ],
+        "judgePoints": [
+          4,
+          2.25,
+          2.25,
+          3.5,
+          3.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "80.00",
+        "avgPoints": "5.15",
+        "avgJudgePoints": "3.15"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "3.75"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      0.5,
+      5.5,
+      6.5,
+      6,
+      2.25,
+      4.75,
+      2,
+      6,
+      1.75,
+      6,
+      2.25,
+      2.5,
+      3.25,
+      5.75,
+      5,
+      6,
+      6.25,
+      5.75,
+      2.5,
+      6.25,
+      5
+    ],
+    "totalJudgePoints": [
+      0.5,
+      2.5,
+      4,
+      3.5,
+      2.25,
+      2.25,
+      2,
+      3.5,
+      2.25,
+      3.5,
+      2.25,
+      2.5,
+      3.25,
+      3.25,
+      2.5,
+      3.5,
+      3.75,
+      3.25,
+      2.5,
+      3.75,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "61.90",
+    "avgPoints": "4.37",
+    "avgJudgePoints": "2.80"
+  },
+  "Луна": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          6,
+          6.5,
+          2,
+          3.75,
+          6.25
+        ],
+        "judgePoints": [
+          3.5,
+          4,
+          2,
+          3.75,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "60.00",
+        "avgPoints": "4.90",
+        "avgJudgePoints": "3.30"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6,
+      5.75,
+      6.5,
+      2,
+      5.5,
+      3.75,
+      6.25
+    ],
+    "totalJudgePoints": [
+      3.5,
+      3.25,
+      4,
+      2,
+      3,
+      3.75,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.11",
+    "avgJudgePoints": "3.25"
+  },
+  "Light": {
+    "totalGames": 14,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 0,
+        "points": [
+          2.25,
+          1.5,
+          2.75,
+          4.25,
+          2.75
+        ],
+        "judgePoints": [
+          2.25,
+          1.5,
+          2.75,
+          4.25,
+          2.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.70",
+        "avgJudgePoints": "2.70"
+      },
+      "Мафия": {
+        "games": 5,
+        "wins": 2,
+        "points": [
+          2.5,
+          5,
+          2,
+          2.75,
+          4.75
+        ],
+        "judgePoints": [
+          2.5,
+          2.5,
+          2,
+          2.75,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "40.00",
+        "avgPoints": "3.40",
+        "avgJudgePoints": "2.40"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          5.75,
+          2,
+          3.5
+        ],
+        "judgePoints": [
+          3.25,
+          2,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.75",
+        "avgJudgePoints": "2.58"
+      }
+    },
+    "totalPoints": [
+      5.75,
+      2.25,
+      2.5,
+      5,
+      2,
+      1.5,
+      2,
+      2.75,
+      2.75,
+      4.25,
+      4.75,
+      2.75,
+      3.5,
+      2.5
+    ],
+    "totalJudgePoints": [
+      3.25,
+      2.25,
+      2.5,
+      2.5,
+      2,
+      1.5,
+      2,
+      2.75,
+      2.75,
+      4.25,
+      2.25,
+      2.75,
+      2.5,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "21.43",
+    "avgPoints": "3.16",
+    "avgJudgePoints": "2.55"
+  },
+  "Крот": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          5.75,
+          3,
+          2
+        ],
+        "judgePoints": [
+          3.25,
+          2.5,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.58",
+        "avgJudgePoints": "2.58"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          5.75,
+          4,
+          6
+        ],
+        "judgePoints": [
+          3.25,
+          2.5,
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "3.08"
+      }
+    },
+    "totalPoints": [
+      5.75,
+      5.75,
+      5.75,
+      3,
+      2,
+      4,
+      6
+    ],
+    "totalJudgePoints": [
+      3.25,
+      3.25,
+      3.25,
+      2.5,
+      2,
+      2.5,
+      3.5
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.61",
+    "avgJudgePoints": "2.89"
+  },
+  "Аш": {
+    "totalGames": 7,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          4.75,
+          5.25,
+          5.5
+        ],
+        "judgePoints": [
+          2.25,
+          2.75,
+          3
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.17",
+        "avgJudgePoints": "2.67"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5,
+          4.75
+        ],
+        "judgePoints": [
+          2.5,
+          2.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "4.88",
+        "avgJudgePoints": "2.38"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.75,
+          5.75
+        ],
+        "judgePoints": [
+          3.25,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      4.75,
+      5,
+      5.25,
+      5.75,
+      5.75,
+      4.75,
+      5.5
+    ],
+    "totalJudgePoints": [
+      2.25,
+      2.5,
+      2.75,
+      3.25,
+      3.25,
+      2.25,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "100.00",
+    "avgPoints": "5.25",
+    "avgJudgePoints": "2.75"
+  },
+  "Ace": {
+    "totalGames": 7,
+    "totalWins": 1,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 1,
+        "points": [
+          2.75,
+          5.25,
+          2,
+          2.5,
+          4
+        ],
+        "judgePoints": [
+          2.75,
+          2.75,
+          2,
+          2.5,
+          4
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "20.00",
+        "avgPoints": "3.30",
+        "avgJudgePoints": "2.80"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.25
+        ],
+        "judgePoints": [
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.25",
+        "avgJudgePoints": "2.25"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1
+        ],
+        "judgePoints": [
+          1
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.00",
+        "avgJudgePoints": "1.00"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      2.25,
+      2.75,
+      5.25,
+      2,
+      2.5,
+      4,
+      1
+    ],
+    "totalJudgePoints": [
+      2.25,
+      2.75,
+      2.75,
+      2,
+      2.5,
+      4,
+      1
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "14.29",
+    "avgPoints": "2.82",
+    "avgJudgePoints": "2.46"
+  },
+  "Вторник": {
+    "totalGames": 7,
+    "totalWins": 2,
+    "roleStats": {
+      "Мирный": {
+        "games": 2,
+        "wins": 0,
+        "points": [
+          3,
+          1.75
+        ],
+        "judgePoints": [
+          3,
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.38",
+        "avgJudgePoints": "2.38"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          6.25,
+          1.75
+        ],
+        "judgePoints": [
+          4.25,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "3.00"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.75,
+          2,
+          5.75
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "3.17",
+        "avgJudgePoints": "2.33"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1.75,
+      3,
+      2,
+      6.25,
+      1.75,
+      5.75,
+      1.75
+    ],
+    "totalJudgePoints": [
+      1.75,
+      3,
+      2,
+      4.25,
+      1.75,
+      3.25,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.18",
+    "avgJudgePoints": "2.54"
+  },
+  "Фермер": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          6.25,
+          4.75,
+          2.5
+        ],
+        "judgePoints": [
+          3.75,
+          2.25,
+          2.5
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "66.67",
+        "avgPoints": "4.50",
+        "avgJudgePoints": "2.83"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.75,
+          5.5
+        ],
+        "judgePoints": [
+          3.25,
+          3
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.63",
+        "avgJudgePoints": "3.13"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.25
+        ],
+        "judgePoints": [
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.25",
+        "avgJudgePoints": "2.25"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          3
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.00",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      6.25,
+      5.75,
+      3,
+      4.75,
+      5.5,
+      2.5,
+      2.25
+    ],
+    "totalJudgePoints": [
+      3.75,
+      3.25,
+      3,
+      2.25,
+      3,
+      2.5,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.29",
+    "avgJudgePoints": "2.86"
+  },
+  "LEO": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.75,
+          0.75,
+          5.5
+        ],
+        "judgePoints": [
+          1.75,
+          0.75,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "2.67",
+        "avgJudgePoints": "1.83"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          2.5,
+          4.75,
+          2.25
+        ],
+        "judgePoints": [
+          2.5,
+          2.25,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.17",
+        "avgJudgePoints": "2.33"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.50"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      2.5,
+      1.75,
+      0.75,
+      5.5,
+      5.5,
+      4.75,
+      2.25
+    ],
+    "totalJudgePoints": [
+      2.5,
+      1.75,
+      0.75,
+      3,
+      3.5,
+      2.25,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.29",
+    "avgJudgePoints": "2.29"
+  },
+  "Джордж": {
+    "totalGames": 21,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 13,
+        "wins": 1,
+        "points": [
+          2.75,
+          2.75,
+          2,
+          5.25,
+          1.25,
+          2,
+          2.5,
+          3.75,
+          1.5,
+          1.5,
+          2,
+          1.25,
+          1.75
+        ],
+        "judgePoints": [
+          2.75,
+          2.75,
+          2,
+          2.75,
+          1.25,
+          2,
+          2.5,
+          3.75,
+          1.5,
+          1.5,
+          2,
+          1.25,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "7.69",
+        "avgPoints": "2.33",
+        "avgJudgePoints": "2.13"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          2,
+          2,
+          2.25
+        ],
+        "judgePoints": [
+          2,
+          2,
+          2.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.08",
+        "avgJudgePoints": "2.08"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          1.5,
+          5.75
+        ],
+        "judgePoints": [
+          1.5,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.63",
+        "avgJudgePoints": "2.63"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          4.5,
+          2.25,
+          5.25
+        ],
+        "judgePoints": [
+          2,
+          2.25,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "2.33"
+      }
+    },
+    "totalPoints": [
+      1.5,
+      5.75,
+      2.75,
+      4.5,
+      2.75,
+      2,
+      5.25,
+      2.25,
+      2,
+      1.25,
+      5.25,
+      2,
+      2,
+      2.5,
+      3.75,
+      2.25,
+      1.5,
+      1.5,
+      2,
+      1.25,
+      1.75
+    ],
+    "totalJudgePoints": [
+      1.5,
+      3.75,
+      2.75,
+      2,
+      2.75,
+      2,
+      2.75,
+      2.25,
+      2,
+      1.25,
+      2.75,
+      2,
+      2,
+      2.5,
+      3.75,
+      2.25,
+      1.5,
+      1.5,
+      2,
+      1.25,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "19.05",
+    "avgPoints": "2.65",
+    "avgJudgePoints": "2.20"
+  },
+  "Волга": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          6.25,
+          6.25,
+          3.5,
+          6.5,
+          1.75
+        ],
+        "judgePoints": [
+          3.75,
+          3.75,
+          3.5,
+          4,
+          1.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "4.85",
+        "avgJudgePoints": "3.35"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5.25,
+          2
+        ],
+        "judgePoints": [
+          2.75,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.63",
+        "avgJudgePoints": "2.38"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      6.25,
+      6.25,
+      3.5,
+      5.25,
+      6.5,
+      1.75,
+      2
+    ],
+    "totalJudgePoints": [
+      3.75,
+      3.75,
+      3.5,
+      2.75,
+      4,
+      1.75,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "57.14",
+    "avgPoints": "4.50",
+    "avgJudgePoints": "3.07"
+  },
+  "WellDone (RU)": {
+    "totalGames": 21,
+    "totalWins": 10,
+    "roleStats": {
+      "Мирный": {
+        "games": 8,
+        "wins": 2,
+        "points": [
+          5.5,
+          5.25,
+          4,
+          2.25,
+          2,
+          3,
+          3.75,
+          2
+        ],
+        "judgePoints": [
+          3,
+          2.75,
+          4,
+          2.25,
+          2,
+          3,
+          3.75,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "3.47",
+        "avgJudgePoints": "2.84"
+      },
+      "Мафия": {
+        "games": 7,
+        "wins": 5,
+        "points": [
+          2.5,
+          5.5,
+          6,
+          1.5,
+          6.25,
+          6.25,
+          6.25
+        ],
+        "judgePoints": [
+          2.5,
+          3,
+          3.5,
+          1.5,
+          3.75,
+          3.75,
+          3.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "71.43",
+        "avgPoints": "4.89",
+        "avgJudgePoints": "3.11"
+      },
+      "Дон": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          6.75,
+          2,
+          3.75
+        ],
+        "judgePoints": [
+          4.25,
+          2,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "4.17",
+        "avgJudgePoints": "3.33"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          2.25,
+          6.5,
+          6.75
+        ],
+        "judgePoints": [
+          2.25,
+          4,
+          4.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "66.67",
+        "avgPoints": "5.17",
+        "avgJudgePoints": "3.50"
+      }
+    },
+    "totalPoints": [
+      5.5,
+      5.25,
+      4,
+      6.75,
+      2.5,
+      5.5,
+      2,
+      6,
+      1.5,
+      2.25,
+      3.75,
+      6.25,
+      6.5,
+      2.25,
+      2,
+      3,
+      6.25,
+      6.25,
+      6.75,
+      3.75,
+      2
+    ],
+    "totalJudgePoints": [
+      3,
+      2.75,
+      4,
+      4.25,
+      2.5,
+      3,
+      2,
+      3.5,
+      1.5,
+      2.25,
+      3.75,
+      3.75,
+      4,
+      2.25,
+      2,
+      3,
+      3.75,
+      3.75,
+      4.25,
+      3.75,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "47.62",
+    "avgPoints": "4.29",
+    "avgJudgePoints": "3.10"
+  },
+  "Шоу Бой": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 4,
+        "points": [
+          5.5,
+          6.75,
+          3.5,
+          5.5,
+          2.25,
+          6.5
+        ],
+        "judgePoints": [
+          3,
+          4.25,
+          3.5,
+          3,
+          2.25,
+          4
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "5.00",
+        "avgJudgePoints": "3.33"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.25
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "2.75"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      5.5,
+      6.75,
+      5.25,
+      3.5,
+      5.5,
+      2.25,
+      6.5
+    ],
+    "totalJudgePoints": [
+      3,
+      4.25,
+      2.75,
+      3.5,
+      3,
+      2.25,
+      4
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.04",
+    "avgJudgePoints": "3.25"
+  },
+  "Stacy": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 2,
+        "points": [
+          5,
+          1.75,
+          2.25,
+          1.75,
+          4.75
+        ],
+        "judgePoints": [
+          2,
+          1.75,
+          2.25,
+          1.75,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "40.00",
+        "avgPoints": "3.10",
+        "avgJudgePoints": "2.00"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1
+        ],
+        "judgePoints": [
+          1
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.00",
+        "avgJudgePoints": "1.00"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "1.75"
+      }
+    },
+    "totalPoints": [
+      5,
+      1,
+      1.75,
+      2.25,
+      5.75,
+      1.75,
+      4.75
+    ],
+    "totalJudgePoints": [
+      2,
+      1,
+      1.75,
+      2.25,
+      1.75,
+      1.75,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.18",
+    "avgJudgePoints": "1.82"
+  },
+  "Тандем": {
+    "totalGames": 21,
+    "totalWins": 9,
+    "roleStats": {
+      "Мирный": {
+        "games": 13,
+        "wins": 6,
+        "points": [
+          4.5,
+          6,
+          1.75,
+          6,
+          6,
+          3.5,
+          5.25,
+          6.5,
+          1.75,
+          2.25,
+          2.75,
+          3,
+          2.75
+        ],
+        "judgePoints": [
+          2,
+          3.5,
+          1.75,
+          3.5,
+          3.5,
+          3.5,
+          2.75,
+          4,
+          1.75,
+          2.25,
+          2.25,
+          3,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "46.15",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "2.81"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 2,
+        "points": [
+          4.75,
+          2.5,
+          6.25
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "66.67",
+        "avgPoints": "4.50",
+        "avgJudgePoints": "2.83"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2,
+          5.5
+        ],
+        "judgePoints": [
+          2,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.75",
+        "avgJudgePoints": "2.50"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          2.25,
+          1.75,
+          3.75
+        ],
+        "judgePoints": [
+          2.25,
+          1.75,
+          3.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.58",
+        "avgJudgePoints": "2.58"
+      }
+    },
+    "totalPoints": [
+      4.5,
+      2,
+      4.75,
+      2.25,
+      6,
+      1.75,
+      6,
+      5.5,
+      6,
+      3.5,
+      5.25,
+      1.75,
+      6.5,
+      1.75,
+      2.25,
+      2.75,
+      3,
+      3.75,
+      2.5,
+      6.25,
+      2.75
+    ],
+    "totalJudgePoints": [
+      2,
+      2,
+      2.25,
+      2.25,
+      3.5,
+      1.75,
+      3.5,
+      3,
+      3.5,
+      3.5,
+      2.75,
+      1.75,
+      4,
+      1.75,
+      2.25,
+      2.25,
+      3,
+      3.75,
+      2.5,
+      3.75,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.85",
+    "avgJudgePoints": "2.75"
+  },
+  "Домовой": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 2,
+        "points": [
+          4.25,
+          2.5,
+          2.25,
+          5.75
+        ],
+        "judgePoints": [
+          1.75,
+          2,
+          2.25,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.69",
+        "avgJudgePoints": "2.31"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          1.5,
+          2,
+          4.75
+        ],
+        "judgePoints": [
+          1.5,
+          2,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "33.33",
+        "avgPoints": "2.75",
+        "avgJudgePoints": "1.92"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      4.25,
+      1.5,
+      2.5,
+      2.25,
+      2,
+      4.75,
+      5.75
+    ],
+    "totalJudgePoints": [
+      1.75,
+      1.5,
+      2,
+      2.25,
+      2,
+      2.25,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.29",
+    "avgJudgePoints": "2.14"
+  },
+  "Кармен": {
+    "totalGames": 21,
+    "totalWins": 8,
+    "roleStats": {
+      "Мирный": {
+        "games": 13,
+        "wins": 4,
+        "points": [
+          3.25,
+          4,
+          5.75,
+          5.25,
+          2.5,
+          6,
+          1.75,
+          1,
+          3.25,
+          3.25,
+          3,
+          4.75,
+          1.25
+        ],
+        "judgePoints": [
+          3.25,
+          3,
+          3.25,
+          2.75,
+          2.5,
+          3.5,
+          1.75,
+          1,
+          3.25,
+          3.25,
+          3,
+          2.75,
+          1.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "30.77",
+        "avgPoints": "3.46",
+        "avgJudgePoints": "2.65"
+      },
+      "Мафия": {
+        "games": 6,
+        "wins": 3,
+        "points": [
+          2.75,
+          4.5,
+          1.25,
+          1.5,
+          6,
+          4.5
+        ],
+        "judgePoints": [
+          2.75,
+          2,
+          1.25,
+          1.5,
+          3.5,
+          2
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "50.00",
+        "avgPoints": "3.42",
+        "avgJudgePoints": "2.17"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5.75,
+          4
+        ],
+        "judgePoints": [
+          3.25,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.88",
+        "avgJudgePoints": "2.88"
+      }
+    },
+    "totalPoints": [
+      2.75,
+      5.75,
+      3.25,
+      4,
+      5.75,
+      4,
+      5.25,
+      2.5,
+      6,
+      4.5,
+      1.25,
+      1.75,
+      1.5,
+      6,
+      1,
+      3.25,
+      3.25,
+      3,
+      4.75,
+      1.25,
+      4.5
+    ],
+    "totalJudgePoints": [
+      2.75,
+      3.25,
+      3.25,
+      3,
+      3.25,
+      2.5,
+      2.75,
+      2.5,
+      3.5,
+      2,
+      1.25,
+      1.75,
+      1.5,
+      3.5,
+      1,
+      3.25,
+      3.25,
+      3,
+      2.75,
+      1.25,
+      2
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "38.10",
+    "avgPoints": "3.58",
+    "avgJudgePoints": "2.54"
+  },
+  "Маваши": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 3,
+        "points": [
+          2.75,
+          6.5,
+          5.75,
+          7,
+          1.75
+        ],
+        "judgePoints": [
+          2.75,
+          3.5,
+          3.25,
+          4.5,
+          1.75
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 0,
+        "winRate": "60.00",
+        "avgPoints": "4.75",
+        "avgJudgePoints": "3.15"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.5,
+          5.75
+        ],
+        "judgePoints": [
+          3,
+          3.25
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "5.63",
+        "avgJudgePoints": "3.13"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      2.75,
+      6.5,
+      5.5,
+      5.75,
+      5.75,
+      7,
+      1.75
+    ],
+    "totalJudgePoints": [
+      2.75,
+      3.5,
+      3,
+      3.25,
+      3.25,
+      4.5,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "5.00",
+    "avgJudgePoints": "3.14"
+  },
+  "EZY BLACK": {
+    "totalGames": 14,
+    "totalWins": 6,
+    "roleStats": {
+      "Мирный": {
+        "games": 11,
+        "wins": 4,
+        "points": [
+          2.75,
+          6.25,
+          3,
+          5,
+          2,
+          6,
+          1.25,
+          1.25,
+          5.75,
+          3,
+          1.5
+        ],
+        "judgePoints": [
+          2.75,
+          3.75,
+          3,
+          2,
+          2,
+          2.5,
+          1.25,
+          1.25,
+          3.25,
+          3,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "36.36",
+        "avgPoints": "3.43",
+        "avgJudgePoints": "2.39"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.25
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "2.75"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.5
+        ],
+        "judgePoints": [
+          4
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.50",
+        "avgJudgePoints": "4.00"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          1.75
+        ],
+        "judgePoints": [
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.75",
+        "avgJudgePoints": "1.75"
+      }
+    },
+    "totalPoints": [
+      2.75,
+      6.25,
+      3,
+      5,
+      2,
+      6,
+      1.75,
+      5.25,
+      1.25,
+      6.5,
+      1.25,
+      5.75,
+      3,
+      1.5
+    ],
+    "totalJudgePoints": [
+      2.75,
+      3.75,
+      3,
+      2,
+      2,
+      2.5,
+      1.75,
+      2.75,
+      1.25,
+      4,
+      1.25,
+      3.25,
+      3,
+      1.5
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.66",
+    "avgJudgePoints": "2.48"
+  },
+  "Мона": {
+    "totalGames": 14,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 9,
+        "wins": 2,
+        "points": [
+          2.5,
+          3.5,
+          4,
+          1.75,
+          6,
+          3,
+          2.75,
+          1.5,
+          1.75
+        ],
+        "judgePoints": [
+          2.5,
+          3.5,
+          1.5,
+          1.75,
+          3.5,
+          3,
+          2.75,
+          2,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "22.22",
+        "avgPoints": "2.97",
+        "avgJudgePoints": "2.47"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.75
+        ],
+        "judgePoints": [
+          4.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.75",
+        "avgJudgePoints": "4.25"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5,
+          1
+        ],
+        "judgePoints": [
+          2.5,
+          1
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.00",
+        "avgJudgePoints": "1.75"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          6.25,
+          2.5
+        ],
+        "judgePoints": [
+          3.75,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "4.38",
+        "avgJudgePoints": "3.13"
+      }
+    },
+    "totalPoints": [
+      2.5,
+      6.25,
+      3.5,
+      4,
+      1.75,
+      6,
+      5,
+      3,
+      1,
+      6.75,
+      2.5,
+      2.75,
+      1.5,
+      1.75
+    ],
+    "totalJudgePoints": [
+      2.5,
+      3.75,
+      3.5,
+      1.5,
+      1.75,
+      3.5,
+      2.5,
+      3,
+      1,
+      4.25,
+      2.5,
+      2.75,
+      2,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "3.45",
+    "avgJudgePoints": "2.59"
+  },
+  "Алиса": {
+    "totalGames": 7,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2.5,
+          4.5
+        ],
+        "judgePoints": [
+          2.5,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.50",
+        "avgJudgePoints": "2.25"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 4,
+        "wins": 4,
+        "points": [
+          5.5,
+          4.5,
+          5.75,
+          6.5
+        ],
+        "judgePoints": [
+          3,
+          2,
+          3.25,
+          4
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 4,
+        "winRate": "100.00",
+        "avgPoints": "5.56",
+        "avgJudgePoints": "3.06"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          3.25
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "3.25"
+      }
+    },
+    "totalPoints": [
+      5.5,
+      4.5,
+      2.5,
+      5.75,
+      4.5,
+      3.25,
+      6.5
+    ],
+    "totalJudgePoints": [
+      3,
+      2,
+      2.5,
+      3.25,
+      2,
+      3.25,
+      4
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "71.43",
+    "avgPoints": "4.64",
+    "avgJudgePoints": "2.86"
+  },
+  "Марш": {
+    "totalGames": 7,
+    "totalWins": 1,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 1,
+        "points": [
+          4.5,
+          2.75,
+          1,
+          4.75,
+          1.25,
+          3.5
+        ],
+        "judgePoints": [
+          3,
+          2.75,
+          1,
+          2.25,
+          1.25,
+          3.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "16.67",
+        "avgPoints": "2.96",
+        "avgJudgePoints": "2.29"
+      },
+      "Мафия": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          3
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "3.00",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      4.5,
+      2.75,
+      3,
+      1,
+      4.75,
+      1.25,
+      3.5
+    ],
+    "totalJudgePoints": [
+      3,
+      2.75,
+      3,
+      1,
+      2.25,
+      1.25,
+      3.5
+    ],
+    "totalLH": 1,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "14.29",
+    "avgPoints": "2.96",
+    "avgJudgePoints": "2.39"
+  },
+  "SEO": {
+    "totalGames": 14,
+    "totalWins": 7,
+    "roleStats": {
+      "Мирный": {
+        "games": 7,
+        "wins": 2,
+        "points": [
+          6.25,
+          2.5,
+          1.75,
+          5.5,
+          2.25,
+          1.5,
+          2.25
+        ],
+        "judgePoints": [
+          3.75,
+          2.5,
+          1.75,
+          3,
+          2.25,
+          1.5,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "28.57",
+        "avgPoints": "3.14",
+        "avgJudgePoints": "2.43"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 4,
+        "points": [
+          5.75,
+          4.75,
+          4.5,
+          5.75
+        ],
+        "judgePoints": [
+          3.25,
+          2.25,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 4,
+        "currentStreak": 4,
+        "winRate": "100.00",
+        "avgPoints": "5.19",
+        "avgJudgePoints": "2.69"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2.5
+        ],
+        "judgePoints": [
+          2.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.50",
+        "avgJudgePoints": "2.50"
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5,
+          2.25
+        ],
+        "judgePoints": [
+          2.5,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.63",
+        "avgJudgePoints": "2.38"
+      }
+    },
+    "totalPoints": [
+      5.75,
+      6.25,
+      4.75,
+      2.5,
+      4.5,
+      1.75,
+      5.5,
+      2.25,
+      5,
+      1.5,
+      2.25,
+      2.5,
+      5.75,
+      2.25
+    ],
+    "totalJudgePoints": [
+      3.25,
+      3.75,
+      2.25,
+      2.5,
+      2,
+      1.75,
+      3,
+      2.25,
+      2.5,
+      1.5,
+      2.25,
+      2.5,
+      3.25,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "50.00",
+    "avgPoints": "3.75",
+    "avgJudgePoints": "2.50"
+  },
+  "Физик": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 1,
+        "points": [
+          1.5,
+          3,
+          1.75,
+          3.75,
+          5.5
+        ],
+        "judgePoints": [
+          1.5,
+          2.5,
+          1.75,
+          3.75,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "20.00",
+        "avgPoints": "3.10",
+        "avgJudgePoints": "2.50"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "3.75"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      }
+    },
+    "totalPoints": [
+      5.25,
+      5.5,
+      1.5,
+      3,
+      1.75,
+      3.75,
+      5.5
+    ],
+    "totalJudgePoints": [
+      3.75,
+      3,
+      1.5,
+      2.5,
+      1.75,
+      3.75,
+      3
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.75",
+    "avgJudgePoints": "2.75"
+  },
+  "Добро": {
+    "totalGames": 28,
+    "totalWins": 9,
+    "roleStats": {
+      "Мирный": {
+        "games": 19,
+        "wins": 3,
+        "points": [
+          4,
+          6,
+          2,
+          3,
+          1.5,
+          0.5,
+          5,
+          3,
+          3.5,
+          1.5,
+          2.5,
+          1.5,
+          1.75,
+          2,
+          2.25,
+          1.25,
+          2,
+          1.75,
+          1.5
+        ],
+        "judgePoints": [
+          4,
+          3.5,
+          2,
+          2.5,
+          1.5,
+          1.5,
+          2.5,
+          3,
+          2,
+          1.5,
+          2.5,
+          1.5,
+          1.75,
+          2,
+          2.25,
+          2.25,
+          2,
+          1.75,
+          1.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "15.79",
+        "avgPoints": "2.45",
+        "avgJudgePoints": "2.18"
+      },
+      "Мафия": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          1,
+          5.75,
+          2.25,
+          2.25
+        ],
+        "judgePoints": [
+          1,
+          3.25,
+          2.25,
+          2.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "2.81",
+        "avgJudgePoints": "2.19"
+      },
+      "Дон": {
+        "games": 5,
+        "wins": 5,
+        "points": [
+          4.5,
+          4.75,
+          5.25,
+          6,
+          3.75
+        ],
+        "judgePoints": [
+          2,
+          2.25,
+          2.75,
+          3.5,
+          1.25
+        ],
+        "bestWinStreak": 5,
+        "currentStreak": 5,
+        "winRate": "100.00",
+        "avgPoints": "4.85",
+        "avgJudgePoints": "2.35"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      4,
+      6,
+      4.5,
+      2,
+      3,
+      1.5,
+      1,
+      0.5,
+      5,
+      4.75,
+      3,
+      3.5,
+      5.75,
+      5.25,
+      6,
+      2.25,
+      3.75,
+      1.5,
+      2.5,
+      1.5,
+      1.75,
+      2,
+      2.25,
+      1.25,
+      2,
+      1.75,
+      1.5,
+      2.25
+    ],
+    "totalJudgePoints": [
+      4,
+      3.5,
+      2,
+      2,
+      2.5,
+      1.5,
+      1,
+      1.5,
+      2.5,
+      2.25,
+      3,
+      2,
+      3.25,
+      2.75,
+      3.5,
+      2.25,
+      1.25,
+      1.5,
+      2.5,
+      1.5,
+      1.75,
+      2,
+      2.25,
+      2.25,
+      2,
+      1.75,
+      1.5,
+      2.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": -2,
+    "winRate": "32.14",
+    "avgPoints": "2.93",
+    "avgJudgePoints": "2.21"
+  },
+  "Свич": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          3,
+          2.75,
+          1.5,
+          7.75
+        ],
+        "judgePoints": [
+          3,
+          2.25,
+          2.5,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "25.00",
+        "avgPoints": "3.75",
+        "avgJudgePoints": "2.88"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.25
+        ],
+        "judgePoints": [
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.25",
+        "avgJudgePoints": "2.75"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          1.75,
+          6.25
+        ],
+        "judgePoints": [
+          1.75,
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "4.00",
+        "avgJudgePoints": "2.75"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      3,
+      1.75,
+      2.75,
+      6.25,
+      1.5,
+      5.25,
+      7.75
+    ],
+    "totalJudgePoints": [
+      3,
+      1.75,
+      2.25,
+      3.75,
+      2.5,
+      2.75,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": -1,
+    "winRate": "42.86",
+    "avgPoints": "4.04",
+    "avgJudgePoints": "2.82"
+  },
+  "Самозванка": {
+    "totalGames": 14,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 6,
+        "wins": 2,
+        "points": [
+          1.75,
+          1.5,
+          2,
+          5.5,
+          6,
+          4.25
+        ],
+        "judgePoints": [
+          1.75,
+          1.5,
+          2,
+          3,
+          2.5,
+          2.75
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.50",
+        "avgJudgePoints": "2.25"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 1,
+        "points": [
+          2.25,
+          5,
+          3
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "33.33",
+        "avgPoints": "3.42",
+        "avgJudgePoints": "2.58"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          6,
+          6
+        ],
+        "judgePoints": [
+          3.5,
+          3.5
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.00",
+        "avgJudgePoints": "3.50"
+      },
+      "Шериф": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          3,
+          2.75,
+          0
+        ],
+        "judgePoints": [
+          3,
+          2.75,
+          0.5
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "1.92",
+        "avgJudgePoints": "2.08"
+      }
+    },
+    "totalPoints": [
+      3,
+      2.25,
+      1.75,
+      1.5,
+      2.75,
+      2,
+      5.5,
+      6,
+      6,
+      5,
+      6,
+      3,
+      4.25,
+      0
+    ],
+    "totalJudgePoints": [
+      3,
+      2.25,
+      1.75,
+      1.5,
+      2.75,
+      2,
+      3,
+      3.5,
+      2.5,
+      2.5,
+      3.5,
+      3,
+      2.75,
+      0.5
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "3.50",
+    "avgJudgePoints": "2.46"
+  },
+  "Чешир": {
+    "totalGames": 7,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 4,
+        "wins": 1,
+        "points": [
+          2.25,
+          6.25,
+          4,
+          1.75
+        ],
+        "judgePoints": [
+          1.75,
+          3.75,
+          4,
+          1.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "25.00",
+        "avgPoints": "3.56",
+        "avgJudgePoints": "2.81"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          5.5,
+          7
+        ],
+        "judgePoints": [
+          4,
+          4.5
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "4.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "3.75"
+      }
+    },
+    "totalPoints": [
+      2.25,
+      6.25,
+      4,
+      5.5,
+      1.75,
+      7,
+      6.25
+    ],
+    "totalJudgePoints": [
+      1.75,
+      3.75,
+      4,
+      4,
+      1.75,
+      4.5,
+      3.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": -1,
+    "winRate": "57.14",
+    "avgPoints": "4.71",
+    "avgJudgePoints": "3.36"
+  },
+  "Лисёнок": {
+    "totalGames": 14,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 10,
+        "wins": 2,
+        "points": [
+          1,
+          5,
+          2.5,
+          2,
+          1.75,
+          5,
+          1.75,
+          1.75,
+          2.5,
+          2.75
+        ],
+        "judgePoints": [
+          1,
+          2.5,
+          2.5,
+          2,
+          1.75,
+          2.5,
+          1.75,
+          1.75,
+          2.5,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "20.00",
+        "avgPoints": "2.60",
+        "avgJudgePoints": "2.10"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          5.5,
+          1
+        ],
+        "judgePoints": [
+          3,
+          1
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "2.00"
+      },
+      "Дон": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          4.75,
+          3
+        ],
+        "judgePoints": [
+          2.25,
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.88",
+        "avgJudgePoints": "2.63"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      1,
+      5,
+      2.5,
+      2,
+      4.75,
+      1.75,
+      5,
+      5.5,
+      3,
+      1.75,
+      1.75,
+      1,
+      2.5,
+      2.75
+    ],
+    "totalJudgePoints": [
+      1,
+      2.5,
+      2.5,
+      2,
+      2.25,
+      1.75,
+      2.5,
+      3,
+      3,
+      1.75,
+      1.75,
+      1,
+      2.5,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "2.88",
+    "avgJudgePoints": "2.16"
+  },
+  "Маяк": {
+    "totalGames": 14,
+    "totalWins": 4,
+    "roleStats": {
+      "Мирный": {
+        "games": 10,
+        "wins": 2,
+        "points": [
+          2.5,
+          1.75,
+          5,
+          2.5,
+          3,
+          2.5,
+          2.25,
+          1.25,
+          3.25,
+          5.75
+        ],
+        "judgePoints": [
+          2.5,
+          1.75,
+          2.5,
+          2.5,
+          2.5,
+          2.5,
+          2.25,
+          1.25,
+          3.25,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "20.00",
+        "avgPoints": "2.98",
+        "avgJudgePoints": "2.42"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          2,
+          5.75
+        ],
+        "judgePoints": [
+          2,
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "50.00",
+        "avgPoints": "3.88",
+        "avgJudgePoints": "2.63"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.75
+        ],
+        "judgePoints": [
+          3.25
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.75",
+        "avgJudgePoints": "3.25"
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2
+        ],
+        "judgePoints": [
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.00",
+        "avgJudgePoints": "2.00"
+      }
+    },
+    "totalPoints": [
+      2,
+      2,
+      2.5,
+      1.75,
+      5,
+      2.5,
+      3,
+      5.75,
+      2.5,
+      2.25,
+      1.25,
+      3.25,
+      5.75,
+      5.75
+    ],
+    "totalJudgePoints": [
+      2,
+      2,
+      2.5,
+      1.75,
+      2.5,
+      2.5,
+      2.5,
+      3.25,
+      2.5,
+      2.25,
+      1.25,
+      3.25,
+      3.25,
+      3.25
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "28.57",
+    "avgPoints": "3.23",
+    "avgJudgePoints": "2.48"
+  },
+  "Ёж": {
+    "totalGames": 14,
+    "totalWins": 5,
+    "roleStats": {
+      "Мирный": {
+        "games": 10,
+        "wins": 2,
+        "points": [
+          4.25,
+          1.5,
+          2.25,
+          2,
+          1.5,
+          2,
+          2.5,
+          3.75,
+          1.5,
+          5
+        ],
+        "judgePoints": [
+          1.75,
+          1.5,
+          2.25,
+          2,
+          1.5,
+          2,
+          2.5,
+          3.75,
+          1.5,
+          2.5
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "20.00",
+        "avgPoints": "2.63",
+        "avgJudgePoints": "2.13"
+      },
+      "Мафия": {
+        "games": 3,
+        "wins": 3,
+        "points": [
+          6,
+          4.5,
+          5.75
+        ],
+        "judgePoints": [
+          3.5,
+          2,
+          3.25
+        ],
+        "bestWinStreak": 3,
+        "currentStreak": 3,
+        "winRate": "100.00",
+        "avgPoints": "5.42",
+        "avgJudgePoints": "2.92"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 1,
+        "wins": 0,
+        "points": [
+          2
+        ],
+        "judgePoints": [
+          2
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.00",
+        "avgJudgePoints": "2.00"
+      }
+    },
+    "totalPoints": [
+      6,
+      4.25,
+      4.5,
+      1.5,
+      2.25,
+      2,
+      5.75,
+      1.5,
+      2,
+      2,
+      2.5,
+      3.75,
+      1.5,
+      5
+    ],
+    "totalJudgePoints": [
+      3.5,
+      1.75,
+      2,
+      1.5,
+      2.25,
+      2,
+      3.25,
+      1.5,
+      2,
+      2,
+      2.5,
+      3.75,
+      1.5,
+      2.5
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "35.71",
+    "avgPoints": "3.18",
+    "avgJudgePoints": "2.29"
+  },
+  "Парадокс": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 3,
+        "wins": 0,
+        "points": [
+          2,
+          2.75,
+          1.75
+        ],
+        "judgePoints": [
+          2,
+          2.75,
+          1.75
+        ],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": "0.00",
+        "avgPoints": "2.17",
+        "avgJudgePoints": "2.17"
+      },
+      "Мафия": {
+        "games": 2,
+        "wins": 2,
+        "points": [
+          7,
+          6.5
+        ],
+        "judgePoints": [
+          4.5,
+          4
+        ],
+        "bestWinStreak": 2,
+        "currentStreak": 2,
+        "winRate": "100.00",
+        "avgPoints": "6.75",
+        "avgJudgePoints": "4.25"
+      },
+      "Дон": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      },
+      "Шериф": {
+        "games": 2,
+        "wins": 1,
+        "points": [
+          4.25,
+          2
+        ],
+        "judgePoints": [
+          1.75,
+          2
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 0,
+        "winRate": "50.00",
+        "avgPoints": "3.13",
+        "avgJudgePoints": "1.88"
+      }
+    },
+    "totalPoints": [
+      2,
+      4.25,
+      2,
+      7,
+      2.75,
+      6.5,
+      1.75
+    ],
+    "totalJudgePoints": [
+      2,
+      1.75,
+      2,
+      4.5,
+      2.75,
+      4,
+      1.75
+    ],
+    "totalLH": 0,
+    "totalSI": 0,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "3.75",
+    "avgJudgePoints": "2.68"
+  },
+  "Янай": {
+    "totalGames": 7,
+    "totalWins": 3,
+    "roleStats": {
+      "Мирный": {
+        "games": 5,
+        "wins": 1,
+        "points": [
+          2.75,
+          2.5,
+          2,
+          3.75,
+          5.25
+        ],
+        "judgePoints": [
+          2.25,
+          2.5,
+          2,
+          2.75,
+          2.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "20.00",
+        "avgPoints": "3.25",
+        "avgJudgePoints": "2.45"
+      },
+      "Мафия": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          6.25
+        ],
+        "judgePoints": [
+          3.75
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "6.25",
+        "avgJudgePoints": "3.75"
+      },
+      "Дон": {
+        "games": 1,
+        "wins": 1,
+        "points": [
+          5.5
+        ],
+        "judgePoints": [
+          3
+        ],
+        "bestWinStreak": 1,
+        "currentStreak": 1,
+        "winRate": "100.00",
+        "avgPoints": "5.50",
+        "avgJudgePoints": "3.00"
+      },
+      "Шериф": {
+        "games": 0,
+        "wins": 0,
+        "points": [],
+        "judgePoints": [],
+        "bestWinStreak": 0,
+        "currentStreak": 0,
+        "winRate": 0,
+        "avgPoints": 0,
+        "avgJudgePoints": 0
+      }
+    },
+    "totalPoints": [
+      2.75,
+      5.5,
+      2.5,
+      6.25,
+      2,
+      3.75,
+      5.25
+    ],
+    "totalJudgePoints": [
+      2.25,
+      3,
+      2.5,
+      3.75,
+      2,
+      2.75,
+      2.75
+    ],
+    "totalLH": 0,
+    "totalSI": 1,
+    "totalPenalties": 0,
+    "winRate": "42.86",
+    "avgPoints": "4.00",
+    "avgJudgePoints": "2.71"
+  }
+}
