@@ -1,4 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import {
+	Link,
+	Route,
+	BrowserRouter as Router,
+	Routes,
+	useParams,
+} from 'react-router-dom'
+import PlayerStats from './components/PlayerStats'
 
 const files = import.meta.glob('/src/assets/data/*.json', { eager: true })
 
@@ -71,105 +79,79 @@ const App = () => {
 	}
 
 	return (
-		<div className='container'>
-			<h1>Статистика игроков</h1>
+		<Router>
+			<div className='container'>
+				<h1>Статистика игроков</h1>
 
-			<div className='filters'>
-				<select
-					value={selectedFile}
-					onChange={e => setSelectedFile(e.target.value)}
-				>
-					{fileList.map(file => (
-						<option key={file} value={file}>
-							{file}
-						</option>
-					))}
-				</select>
-
-				<input
-					type='text'
-					placeholder='Поиск по имени...'
-					value={search}
-					onChange={e => setSearch(e.target.value)}
-				/>
-				<input
-					type='number'
-					placeholder='Мин. игр'
-					onChange={e =>
-						setFilter({ ...filter, minGames: Number(e.target.value) })
-					}
-				/>
-				<input
-					type='number'
-					placeholder='Макс. игр'
-					onChange={e =>
-						setFilter({ ...filter, maxGames: Number(e.target.value) })
-					}
-				/>
-			</div>
-
-			<table>
-				<thead>
-					<tr>
-						<th onClick={() => handleSort('name')}>
-							Игрок{' '}
-							{sortConfig.key === 'name'
-								? sortConfig.direction === 'asc'
-									? '🔼'
-									: '🔽'
-								: ''}
-						</th>
-						<th onClick={() => handleSort('totalGames')}>
-							Игр{' '}
-							{sortConfig.key === 'totalGames'
-								? sortConfig.direction === 'asc'
-									? '🔼'
-									: '🔽'
-								: ''}
-						</th>
-						<th onClick={() => handleSort('winRate')}>
-							Винрейт{' '}
-							{sortConfig.key === 'winRate'
-								? sortConfig.direction === 'asc'
-									? '🔼'
-									: '🔽'
-								: ''}
-						</th>
-						<th onClick={() => handleSort('avgPoints')}>
-							Средний балл{' '}
-							{sortConfig.key === 'avgPoints'
-								? sortConfig.direction === 'asc'
-									? '🔼'
-									: '🔽'
-								: ''}
-						</th>
-					</tr>
-				</thead>
-				<tbody>
-					{currentPlayers.map((player, index) => (
-						<tr key={index}>
-							<td>{player.name}</td>
-							<td>{player.totalGames}</td>
-							<td>{player.winRate}%</td>
-							<td>{player.avgPoints}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
-
-			<div className='pagination'>
-				{Array.from({ length: totalPages }, (_, i) => (
-					<button
-						key={i}
-						onClick={() => setCurrentPage(i + 1)}
-						className={currentPage === i + 1 ? 'active' : ''}
+				<div className='filters'>
+					<select
+						value={selectedFile}
+						onChange={e => setSelectedFile(e.target.value)}
 					>
-						{i + 1}
-					</button>
-				))}
+						{fileList.map(file => (
+							<option key={file} value={file}>
+								{file}
+							</option>
+						))}
+					</select>
+
+					<input
+						type='text'
+						placeholder='Поиск по имени...'
+						value={search}
+						onChange={e => setSearch(e.target.value)}
+					/>
+				</div>
+
+				<table>
+					<thead>
+						<tr>
+							<th onClick={() => handleSort('name')}>Игрок</th>
+							<th onClick={() => handleSort('totalGames')}>Игр</th>
+							<th onClick={() => handleSort('RatingNew')}>Рейтинг</th>
+						</tr>
+					</thead>
+					<tbody>
+						{currentPlayers.map((player, index) => (
+							<tr key={index}>
+								<td>
+									<Link to={`/player/${player.name}`}>{player.name}</Link>
+								</td>
+								<td>{player.totalGames}</td>
+								<td>{player.ratingHistory[player.ratingHistory.length - 1]}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+
+				<div className='pagination'>
+					{Array.from({ length: totalPages }, (_, i) => (
+						<button
+							key={i}
+							onClick={() => setCurrentPage(i + 1)}
+							className={currentPage === i + 1 ? 'active' : ''}
+						>
+							{i + 1}
+						</button>
+					))}
+				</div>
 			</div>
-		</div>
+
+			<Routes>
+				<Route
+					path='/player/:name'
+					element={<PlayerPage playersData={playersData} />}
+				/>
+			</Routes>
+		</Router>
 	)
+}
+
+const PlayerPage = ({ playersData }) => {
+	const { name } = useParams()
+	const player = playersData[name] || {}
+
+	return <PlayerStats player={player} name={name} />
 }
 
 export default App

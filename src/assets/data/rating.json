@@ -18,6 +18,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.08",
         "avgJudgePoints": "2.25"
@@ -33,6 +38,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.00",
         "avgJudgePoints": "2.50"
@@ -48,6 +56,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -59,6 +70,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -81,6 +93,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Оскар",
     "winRate": "60.00",
     "avgPoints": "4.15",
     "avgJudgePoints": "2.65"
@@ -108,6 +128,13 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "20.00",
         "avgPoints": "3.15",
         "avgJudgePoints": "2.65"
@@ -129,6 +156,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "3.06",
         "avgJudgePoints": "2.44"
@@ -146,6 +179,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.88",
         "avgJudgePoints": "2.63"
@@ -157,6 +194,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -191,6 +229,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Мишель",
     "winRate": "27.27",
     "avgPoints": "3.25",
     "avgJudgePoints": "2.57"
@@ -224,6 +276,16 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "37.50",
         "avgPoints": "3.75",
         "avgJudgePoints": "2.75"
@@ -243,6 +305,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.17",
         "avgJudgePoints": "2.67"
@@ -264,6 +331,12 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "75.00",
         "avgPoints": "5.13",
         "avgJudgePoints": "3.25"
@@ -279,6 +352,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "3.00"
@@ -323,6 +399,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Бамблби",
     "winRate": "50.00",
     "avgPoints": "4.13",
     "avgJudgePoints": "2.88"
@@ -356,6 +451,16 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "3.31",
         "avgJudgePoints": "2.56"
@@ -373,6 +478,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.25",
         "avgJudgePoints": "2.25"
@@ -388,6 +497,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.75",
         "avgJudgePoints": "2.75"
@@ -413,6 +525,14 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "16.67",
         "avgPoints": "3.79",
         "avgJudgePoints": "2.71"
@@ -459,6 +579,26 @@
     "totalLH": 0,
     "totalSI": 2,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Bublik",
     "winRate": "23.53",
     "avgPoints": "3.44",
     "avgJudgePoints": "2.59"
@@ -494,6 +634,17 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.53",
         "avgJudgePoints": "2.64"
@@ -517,6 +668,13 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "60.00",
         "avgPoints": "4.45",
         "avgJudgePoints": "2.95"
@@ -528,6 +686,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -545,6 +704,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.63",
         "avgJudgePoints": "2.38"
@@ -589,6 +752,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Седой",
     "winRate": "37.50",
     "avgPoints": "3.70",
     "avgJudgePoints": "2.70"
@@ -632,6 +814,21 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "30.77",
         "avgPoints": "3.17",
         "avgJudgePoints": "2.33"
@@ -649,6 +846,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.75",
         "avgJudgePoints": "3.25"
@@ -664,6 +865,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.25"
@@ -675,6 +879,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -719,6 +924,25 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": -1,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Love",
     "winRate": "37.50",
     "avgPoints": "3.44",
     "avgJudgePoints": "2.44"
@@ -742,6 +966,11 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "1.67",
         "avgJudgePoints": "1.67"
@@ -757,6 +986,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.25",
         "avgJudgePoints": "3.25"
@@ -772,6 +1004,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -783,6 +1018,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -805,6 +1041,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Оладушек",
     "winRate": "20.00",
     "avgPoints": "2.95",
     "avgJudgePoints": "2.45"
@@ -826,6 +1070,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.00",
         "avgJudgePoints": "2.00"
@@ -845,6 +1093,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.25",
         "avgJudgePoints": "2.58"
@@ -856,6 +1109,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -867,6 +1121,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -889,6 +1144,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Morti",
     "winRate": "40.00",
     "avgPoints": "3.35",
     "avgJudgePoints": "2.35"
@@ -918,6 +1181,14 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.38",
         "avgJudgePoints": "2.46"
@@ -935,6 +1206,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.13",
         "avgJudgePoints": "2.88"
@@ -954,6 +1229,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.17",
         "avgJudgePoints": "3.33"
@@ -965,6 +1245,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -999,6 +1280,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": -2,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "SOVEST",
     "winRate": "54.55",
     "avgPoints": "3.91",
     "avgJudgePoints": "2.77"
@@ -1026,6 +1321,13 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "20.00",
         "avgPoints": "2.75",
         "avgJudgePoints": "2.25"
@@ -1037,6 +1339,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1048,6 +1351,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1059,6 +1363,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1081,6 +1386,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "WhoIsWho",
     "winRate": "20.00",
     "avgPoints": "2.75",
     "avgJudgePoints": "2.25"
@@ -1112,6 +1425,15 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "42.86",
         "avgPoints": "3.71",
         "avgJudgePoints": "2.64"
@@ -1127,6 +1449,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.25",
         "avgJudgePoints": "3.75"
@@ -1138,6 +1463,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1157,6 +1483,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "4.83",
         "avgJudgePoints": "3.33"
@@ -1191,6 +1522,20 @@
     "totalLH": 1,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "NME",
     "winRate": "45.45",
     "avgPoints": "4.25",
     "avgJudgePoints": "2.93"
@@ -1238,6 +1583,23 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "60.00",
         "avgPoints": "4.50",
         "avgJudgePoints": "2.90"
@@ -1263,6 +1625,14 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "83.33",
         "avgPoints": "5.38",
         "avgJudgePoints": "3.29"
@@ -1280,6 +1650,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.25"
@@ -1297,6 +1671,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "3.00"
@@ -1359,6 +1737,34 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Свич",
     "winRate": "60.00",
     "avgPoints": "4.51",
     "avgJudgePoints": "2.95"
@@ -1386,6 +1792,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "40.00",
         "avgPoints": "3.70",
         "avgJudgePoints": "2.50"
@@ -1405,6 +1818,11 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.25"
@@ -1420,6 +1838,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.75"
@@ -1437,6 +1858,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "3.13"
@@ -1471,6 +1896,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Марго",
     "winRate": "18.18",
     "avgPoints": "3.11",
     "avgJudgePoints": "2.57"
@@ -1518,6 +1957,23 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "53.33",
         "avgPoints": "4.00",
         "avgJudgePoints": "2.67"
@@ -1537,6 +1993,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "3.92",
         "avgJudgePoints": "2.25"
@@ -1560,6 +2021,13 @@
         ],
         "bestWinStreak": 5,
         "currentStreak": 5,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.45",
         "avgJudgePoints": "3.35"
@@ -1571,6 +2039,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1629,6 +2098,32 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Крот",
     "winRate": "65.22",
     "avgPoints": "4.30",
     "avgJudgePoints": "2.76"
@@ -1652,6 +2147,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.17",
         "avgJudgePoints": "2.33"
@@ -1663,6 +2163,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1680,6 +2181,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.38",
         "avgJudgePoints": "3.13"
@@ -1691,6 +2196,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1713,6 +2219,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Марш",
     "winRate": "40.00",
     "avgPoints": "3.65",
     "avgJudgePoints": "2.65"
@@ -1742,6 +2256,14 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.17",
         "avgJudgePoints": "2.33"
@@ -1759,6 +2281,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.13",
         "avgJudgePoints": "2.88"
@@ -1776,6 +2302,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.13",
         "avgJudgePoints": "2.88"
@@ -1787,6 +2317,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1819,6 +2350,19 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Dimmi",
     "winRate": "40.00",
     "avgPoints": "3.55",
     "avgJudgePoints": "2.55"
@@ -1842,6 +2386,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.50"
@@ -1859,6 +2408,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.13",
         "avgJudgePoints": "2.88"
@@ -1870,6 +2423,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1881,6 +2435,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -1903,6 +2458,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Манекен",
     "winRate": "40.00",
     "avgPoints": "3.75",
     "avgJudgePoints": "2.65"
@@ -1940,6 +2503,18 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "40.00",
         "avgPoints": "3.45",
         "avgJudgePoints": "2.30"
@@ -1959,6 +2534,11 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.17",
         "avgJudgePoints": "3.67"
@@ -1974,6 +2554,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -1991,6 +2574,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.13",
         "avgJudgePoints": "3.63"
@@ -2035,6 +2622,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Продюсер",
     "winRate": "62.50",
     "avgPoints": "4.48",
     "avgJudgePoints": "2.83"
@@ -2060,6 +2666,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "2.63",
         "avgJudgePoints": "2.00"
@@ -2075,6 +2687,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.00",
         "avgJudgePoints": "2.00"
@@ -2086,6 +2701,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2097,6 +2713,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2119,6 +2736,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Алиса",
     "winRate": "20.00",
     "avgPoints": "2.50",
     "avgJudgePoints": "2.00"
@@ -2146,6 +2771,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "40.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "2.20"
@@ -2157,6 +2789,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2168,6 +2801,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2179,6 +2813,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2201,6 +2836,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Adele",
     "winRate": "40.00",
     "avgPoints": "3.00",
     "avgJudgePoints": "2.20"
@@ -2226,6 +2869,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "3.19",
         "avgJudgePoints": "2.56"
@@ -2237,6 +2886,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2252,6 +2902,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.25",
         "avgJudgePoints": "3.75"
@@ -2263,6 +2916,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2285,6 +2939,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Волга",
     "winRate": "40.00",
     "avgPoints": "3.80",
     "avgJudgePoints": "2.80"
@@ -2320,6 +2982,17 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.67",
         "avgJudgePoints": "2.67"
@@ -2343,6 +3016,13 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "80.00",
         "avgPoints": "5.10",
         "avgJudgePoints": "3.10"
@@ -2360,6 +3040,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.38",
         "avgJudgePoints": "2.38"
@@ -2371,6 +3055,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2415,6 +3100,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Хрум",
     "winRate": "25.00",
     "avgPoints": "3.39",
     "avgJudgePoints": "2.77"
@@ -2442,6 +3146,13 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 4,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "80.00",
         "avgPoints": "4.25",
         "avgJudgePoints": "2.25"
@@ -2459,6 +3170,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.25",
         "avgJudgePoints": "2.75"
@@ -2478,6 +3193,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.25",
         "avgJudgePoints": "2.58"
@@ -2493,6 +3213,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "5.50",
         "avgJudgePoints": "4.00"
@@ -2527,6 +3250,20 @@
     "totalLH": 1,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "SCHOKK",
     "winRate": "72.73",
     "avgPoints": "4.55",
     "avgJudgePoints": "2.59"
@@ -2566,6 +3303,19 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "27.27",
         "avgPoints": "3.66",
         "avgJudgePoints": "2.89"
@@ -2587,6 +3337,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.06",
         "avgJudgePoints": "2.81"
@@ -2606,6 +3362,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.67",
         "avgJudgePoints": "3.00"
@@ -2627,6 +3388,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.88"
@@ -2683,6 +3450,31 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Stacy",
     "winRate": "36.36",
     "avgPoints": "3.84",
     "avgJudgePoints": "2.89"
@@ -2730,6 +3522,23 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.67"
@@ -2757,6 +3566,15 @@
         ],
         "bestWinStreak": 7,
         "currentStreak": 7,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.57",
         "avgJudgePoints": "3.07"
@@ -2772,6 +3590,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.50",
         "avgJudgePoints": "2.50"
@@ -2797,6 +3618,14 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.08",
         "avgJudgePoints": "2.67"
@@ -2867,6 +3696,38 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "A1",
     "winRate": "51.72",
     "avgPoints": "4.09",
     "avgJudgePoints": "2.76"
@@ -2890,6 +3751,11 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.17",
         "avgJudgePoints": "2.00"
@@ -2907,6 +3773,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "2.13"
@@ -2918,6 +3788,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2929,6 +3800,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -2951,6 +3823,14 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Infinity",
     "winRate": "20.00",
     "avgPoints": "2.65",
     "avgJudgePoints": "2.05"
@@ -3002,6 +3882,25 @@
         ],
         "bestWinStreak": 5,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "47.06",
         "avgPoints": "3.68",
         "avgJudgePoints": "2.47"
@@ -3021,6 +3920,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.33",
         "avgJudgePoints": "2.67"
@@ -3036,6 +3940,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.75",
         "avgJudgePoints": "4.25"
@@ -3055,6 +3962,11 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.00",
         "avgJudgePoints": "3.50"
@@ -3115,6 +4027,33 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Луна",
     "winRate": "58.33",
     "avgPoints": "4.18",
     "avgJudgePoints": "2.70"
@@ -3142,6 +4081,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "60.00",
         "avgPoints": "3.75",
         "avgJudgePoints": "2.25"
@@ -3159,6 +4105,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.00",
         "avgJudgePoints": "2.75"
@@ -3176,6 +4126,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "2.13"
@@ -3193,6 +4147,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.00"
@@ -3227,6 +4185,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Правда",
     "winRate": "45.45",
     "avgPoints": "3.45",
     "avgJudgePoints": "2.27"
@@ -3248,6 +4220,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.00",
         "avgJudgePoints": "2.00"
@@ -3265,6 +4241,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "2.13"
@@ -3276,6 +4256,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3291,6 +4272,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "5.25",
         "avgJudgePoints": "3.75"
@@ -3313,6 +4297,14 @@
     "totalLH": 1,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Matilda",
     "winRate": "20.00",
     "avgPoints": "3.20",
     "avgJudgePoints": "2.40"
@@ -3346,6 +4338,16 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "12.50",
         "avgPoints": "2.91",
         "avgJudgePoints": "2.59"
@@ -3361,6 +4363,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.00",
         "avgJudgePoints": "3.50"
@@ -3372,6 +4377,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3387,6 +4393,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "2.50"
@@ -3419,6 +4428,19 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Сотрудник",
     "winRate": "20.00",
     "avgPoints": "3.23",
     "avgJudgePoints": "2.67"
@@ -3458,6 +4480,19 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "45.45",
         "avgPoints": "4.11",
         "avgJudgePoints": "2.98"
@@ -3473,6 +4508,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.75",
         "avgJudgePoints": "2.75"
@@ -3490,6 +4528,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.00",
         "avgJudgePoints": "2.75"
@@ -3507,6 +4549,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "3.38"
@@ -3551,6 +4597,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Физик",
     "winRate": "37.50",
     "avgPoints": "3.92",
     "avgJudgePoints": "2.98"
@@ -3586,6 +4651,17 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "5.06",
         "avgJudgePoints": "3.22"
@@ -3597,6 +4673,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3608,6 +4685,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3625,6 +4703,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.75",
         "avgJudgePoints": "2.50"
@@ -3659,6 +4741,20 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Шоу Бой",
     "winRate": "63.64",
     "avgPoints": "4.82",
     "avgJudgePoints": "3.09"
@@ -3692,6 +4788,16 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "37.50",
         "avgPoints": "3.69",
         "avgJudgePoints": "2.75"
@@ -3711,6 +4817,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.67"
@@ -3722,6 +4833,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3733,6 +4845,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3767,6 +4880,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Хамилка",
     "winRate": "36.36",
     "avgPoints": "3.64",
     "avgJudgePoints": "2.73"
@@ -3792,6 +4919,12 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "25.00",
         "avgPoints": "2.81",
         "avgJudgePoints": "2.19"
@@ -3815,6 +4948,13 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "40.00",
         "avgPoints": "3.40",
         "avgJudgePoints": "2.40"
@@ -3826,6 +4966,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -3841,6 +4982,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.50",
         "avgJudgePoints": "2.50"
@@ -3873,6 +5017,19 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Мона",
     "winRate": "40.00",
     "avgPoints": "3.38",
     "avgJudgePoints": "2.33"
@@ -3920,6 +5077,23 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.53",
         "avgJudgePoints": "2.67"
@@ -3947,6 +5121,15 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 4,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "71.43",
         "avgPoints": "4.25",
         "avgJudgePoints": "2.54"
@@ -3970,6 +5153,13 @@
         ],
         "bestWinStreak": 5,
         "currentStreak": 5,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.95",
         "avgJudgePoints": "3.45"
@@ -3987,6 +5177,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.88",
         "avgJudgePoints": "3.38"
@@ -4057,6 +5251,38 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Зеркало",
     "winRate": "58.62",
     "avgPoints": "4.28",
     "avgJudgePoints": "2.82"
@@ -4084,6 +5310,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "40.00",
         "avgPoints": "3.90",
         "avgJudgePoints": "2.90"
@@ -4099,6 +5332,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "1.75",
         "avgJudgePoints": "1.75"
@@ -4114,6 +5350,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "4.75",
         "avgJudgePoints": "2.25"
@@ -4133,6 +5372,11 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.08"
@@ -4165,6 +5409,19 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Пила",
     "winRate": "30.00",
     "avgPoints": "3.27",
     "avgJudgePoints": "2.48"
@@ -4202,6 +5459,18 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "70.00",
         "avgPoints": "3.98",
         "avgJudgePoints": "2.13"
@@ -4225,6 +5494,13 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "80.00",
         "avgPoints": "4.70",
         "avgJudgePoints": "2.70"
@@ -4240,6 +5516,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.25",
         "avgJudgePoints": "3.25"
@@ -4251,6 +5530,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -4295,6 +5575,25 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Light",
     "winRate": "68.75",
     "avgPoints": "4.16",
     "avgJudgePoints": "2.38"
@@ -4324,6 +5623,14 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.33"
@@ -4339,6 +5646,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.00",
         "avgJudgePoints": "2.50"
@@ -4356,6 +5666,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.38",
         "avgJudgePoints": "2.38"
@@ -4371,6 +5685,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.25",
         "avgJudgePoints": "3.75"
@@ -4403,6 +5720,19 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Спирит",
     "winRate": "20.00",
     "avgPoints": "2.95",
     "avgJudgePoints": "2.50"
@@ -4434,6 +5764,15 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "57.14",
         "avgPoints": "3.89",
         "avgJudgePoints": "2.46"
@@ -4453,6 +5792,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.33",
         "avgJudgePoints": "2.50"
@@ -4464,6 +5808,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -4479,6 +5824,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -4513,6 +5861,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Curly",
     "winRate": "54.55",
     "avgPoints": "3.98",
     "avgJudgePoints": "2.61"
@@ -4534,6 +5896,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.63",
         "avgJudgePoints": "2.38"
@@ -4551,6 +5917,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.88",
         "avgJudgePoints": "2.63"
@@ -4566,6 +5936,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.50",
         "avgJudgePoints": "2.50"
@@ -4577,6 +5950,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -4599,6 +5973,14 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Вертинский",
     "winRate": "40.00",
     "avgPoints": "3.90",
     "avgJudgePoints": "2.50"
@@ -4642,6 +6024,21 @@
         ],
         "bestWinStreak": 5,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "53.85",
         "avgPoints": "4.17",
         "avgJudgePoints": "2.63"
@@ -4661,6 +6058,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.08",
         "avgJudgePoints": "2.42"
@@ -4678,6 +6080,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.13",
         "avgJudgePoints": "3.63"
@@ -4695,6 +6101,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "5.75",
         "avgJudgePoints": "4.00"
@@ -4747,6 +6157,29 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Зверюга",
     "winRate": "60.00",
     "avgPoints": "4.51",
     "avgJudgePoints": "2.84"
@@ -4770,6 +6203,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.50"
@@ -4787,6 +6225,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.75",
         "avgJudgePoints": "2.50"
@@ -4798,6 +6240,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -4813,6 +6256,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "4.50",
         "avgJudgePoints": "3.00"
@@ -4837,6 +6283,15 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Боня",
     "winRate": "33.33",
     "avgPoints": "3.75",
     "avgJudgePoints": "2.58"
@@ -4866,6 +6321,14 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "16.67",
         "avgPoints": "4.04",
         "avgJudgePoints": "3.63"
@@ -4885,6 +6348,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.17",
         "avgJudgePoints": "2.50"
@@ -4904,6 +6372,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.17",
         "avgJudgePoints": "2.33"
@@ -4919,6 +6392,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "4.00",
         "avgJudgePoints": "3.00"
@@ -4957,6 +6433,22 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Наполеон",
     "winRate": "30.77",
     "avgPoints": "3.87",
     "avgJudgePoints": "3.02"
@@ -4988,6 +6480,15 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "28.57",
         "avgPoints": "4.32",
         "avgJudgePoints": "3.32"
@@ -5003,6 +6504,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "3.00"
@@ -5020,6 +6524,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.13",
         "avgJudgePoints": "3.63"
@@ -5037,6 +6545,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.25",
         "avgJudgePoints": "3.00"
@@ -5073,6 +6585,21 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Инсомнич",
     "winRate": "41.67",
     "avgPoints": "4.50",
     "avgJudgePoints": "3.29"
@@ -5114,6 +6641,20 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.58",
         "avgJudgePoints": "2.71"
@@ -5129,6 +6670,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -5140,6 +6684,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5155,6 +6700,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.25",
         "avgJudgePoints": "2.25"
@@ -5195,6 +6743,23 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Coach",
     "winRate": "42.86",
     "avgPoints": "3.91",
     "avgJudgePoints": "2.77"
@@ -5230,6 +6795,17 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "44.44",
         "avgPoints": "3.72",
         "avgJudgePoints": "2.50"
@@ -5247,6 +6823,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.63",
         "avgJudgePoints": "4.13"
@@ -5258,6 +6838,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5277,6 +6858,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.50"
@@ -5317,6 +6903,23 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "NLIP",
     "winRate": "50.00",
     "avgPoints": "4.09",
     "avgJudgePoints": "2.73"
@@ -5352,6 +6955,17 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.42",
         "avgJudgePoints": "2.47"
@@ -5369,6 +6983,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.38",
         "avgJudgePoints": "2.13"
@@ -5388,6 +7006,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "5.17",
         "avgJudgePoints": "3.50"
@@ -5399,6 +7022,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5439,6 +7063,23 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Cristo",
     "winRate": "42.86",
     "avgPoints": "3.79",
     "avgJudgePoints": "2.64"
@@ -5468,6 +7109,14 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "16.67",
         "avgPoints": "3.50",
         "avgJudgePoints": "2.67"
@@ -5483,6 +7132,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.50",
         "avgJudgePoints": "2.50"
@@ -5494,6 +7146,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5505,6 +7158,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5531,6 +7185,16 @@
     "totalLH": 1,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Есаул",
     "winRate": "14.29",
     "avgPoints": "3.36",
     "avgJudgePoints": "2.64"
@@ -5558,6 +7222,13 @@
         ],
         "bestWinStreak": 4,
         "currentStreak": 4,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "80.00",
         "avgPoints": "4.75",
         "avgJudgePoints": "3.05"
@@ -5579,6 +7250,12 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 3,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "75.00",
         "avgPoints": "5.69",
         "avgJudgePoints": "3.81"
@@ -5594,6 +7271,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.25",
         "avgJudgePoints": "3.25"
@@ -5615,6 +7295,12 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.25",
         "avgJudgePoints": "2.88"
@@ -5655,6 +7341,23 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": -1,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Флэш",
     "winRate": "57.14",
     "avgPoints": "4.63",
     "avgJudgePoints": "3.23"
@@ -5686,6 +7389,15 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "28.57",
         "avgPoints": "2.57",
         "avgJudgePoints": "2.14"
@@ -5705,6 +7417,11 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "66.67",
         "avgPoints": "4.17",
         "avgJudgePoints": "2.50"
@@ -5720,6 +7437,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.50",
         "avgJudgePoints": "2.50"
@@ -5731,6 +7451,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5765,6 +7486,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Baymax",
     "winRate": "36.36",
     "avgPoints": "3.00",
     "avgJudgePoints": "2.27"
@@ -5792,6 +7527,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "80.00",
         "avgPoints": "5.10",
         "avgJudgePoints": "3.10"
@@ -5815,6 +7557,13 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "60.00",
         "avgPoints": "4.30",
         "avgJudgePoints": "2.80"
@@ -5826,6 +7575,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5841,6 +7591,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "3.00",
         "avgJudgePoints": "3.00"
@@ -5875,6 +7628,20 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Ketamin",
     "winRate": "63.64",
     "avgPoints": "4.55",
     "avgJudgePoints": "2.95"
@@ -5910,6 +7677,17 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "44.44",
         "avgPoints": "4.08",
         "avgJudgePoints": "2.75"
@@ -5921,6 +7699,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5932,6 +7711,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -5949,6 +7729,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "5.75",
         "avgJudgePoints": "3.50"
@@ -5983,6 +7767,20 @@
     "totalLH": 0,
     "totalSI": 1,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Чешир",
     "winRate": "54.55",
     "avgPoints": "4.39",
     "avgJudgePoints": "2.89"
@@ -6026,6 +7824,21 @@
         ],
         "bestWinStreak": 3,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "38.46",
         "avgPoints": "3.73",
         "avgJudgePoints": "2.65"
@@ -6043,6 +7856,10 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.38",
         "avgJudgePoints": "2.38"
@@ -6058,6 +7875,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.50",
         "avgJudgePoints": "4.00"
@@ -6075,6 +7895,10 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "6.13",
         "avgJudgePoints": "3.63"
@@ -6123,6 +7947,27 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Писатель",
     "winRate": "44.44",
     "avgPoints": "4.00",
     "avgJudgePoints": "2.81"
@@ -6154,6 +7999,15 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "42.86",
         "avgPoints": "4.04",
         "avgJudgePoints": "2.96"
@@ -6175,6 +8029,12 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 1,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "75.00",
         "avgPoints": "4.75",
         "avgJudgePoints": "2.88"
@@ -6192,6 +8052,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.25",
         "avgJudgePoints": "3.00"
@@ -6203,6 +8067,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -6241,6 +8106,22 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Дракарис",
     "winRate": "53.85",
     "avgPoints": "4.29",
     "avgJudgePoints": "2.94"
@@ -6264,6 +8145,11 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0,
+          0
+        ],
         "winRate": "33.33",
         "avgPoints": "3.25",
         "avgJudgePoints": "2.25"
@@ -6281,6 +8167,10 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 0,
+        "ratingChanges": [
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "3.75",
         "avgJudgePoints": "2.50"
@@ -6296,6 +8186,9 @@
         ],
         "bestWinStreak": 1,
         "currentStreak": 1,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "100.00",
         "avgPoints": "4.75",
         "avgJudgePoints": "2.25"
@@ -6307,6 +8200,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -6331,6 +8225,15 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Добро",
     "winRate": "50.00",
     "avgPoints": "3.67",
     "avgJudgePoints": "2.33"
@@ -6356,6 +8259,12 @@
         ],
         "bestWinStreak": 2,
         "currentStreak": 2,
+        "ratingChanges": [
+          0,
+          0,
+          0,
+          0
+        ],
         "winRate": "50.00",
         "avgPoints": "4.00",
         "avgJudgePoints": "2.75"
@@ -6371,6 +8280,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "2.25",
         "avgJudgePoints": "2.25"
@@ -6386,6 +8298,9 @@
         ],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [
+          0
+        ],
         "winRate": "0.00",
         "avgPoints": "1.75",
         "avgJudgePoints": "1.75"
@@ -6397,6 +8312,7 @@
         "judgePoints": [],
         "bestWinStreak": 0,
         "currentStreak": 0,
+        "ratingChanges": [],
         "winRate": 0,
         "avgPoints": 0,
         "avgJudgePoints": 0
@@ -6421,6 +8337,15 @@
     "totalLH": 0,
     "totalSI": 0,
     "totalPenalties": 0,
+    "ratingHistory": [
+      1000,
+      1000,
+      1000,
+      1000,
+      1000,
+      1000
+    ],
+    "name": "Jazz",
     "winRate": "33.33",
     "avgPoints": "3.33",
     "avgJudgePoints": "2.50"
