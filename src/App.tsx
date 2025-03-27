@@ -19,7 +19,7 @@ const App = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [sortConfig, setSortConfig] = useState({
 		key: 'totalGames',
-		direction: 'asc',
+		direction: 'desc',
 	})
 
 	const playersPerPage = 10
