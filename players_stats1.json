@@ -640,7 +640,7 @@
 		"avgPoints": "3.82",
 		"avgJudgePoints": "2.50"
 	},
-	"Крестный отец": {
+	"Крестный отец (BLR)": {
 		"totalGames": 20,
 		"totalWins": 20,
 		"roleStats": {
@@ -3348,7 +3348,7 @@
 		"avgPoints": "3.39",
 		"avgJudgePoints": "2.43"
 	},
-	"Cherry Pick": {
+	"Cherry pick": {
 		"totalGames": 40,
 		"totalWins": 40,
 		"roleStats": {
@@ -5006,7 +5006,7 @@
 		"avgPoints": "3.99",
 		"avgJudgePoints": "2.68"
 	},
-	"Крестный отец": {
+	"Крестный отец (BLR)": {
 		"totalGames": 20,
 		"totalWins": 20,
 		"roleStats": {

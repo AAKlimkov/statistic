@@ -4288,7 +4288,7 @@
 		"avgPoints": "3.63",
 		"avgJudgePoints": "2.51"
 	},
-	"Cherry Pick": {
+	"Cherry pick": {
 		"totalGames": 40,
 		"totalWins": 14,
 		"roleStats": {
@@ -4370,7 +4370,7 @@
 			1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
 			1000, 1000, 1000, 1000
 		],
-		"name": "Cherry Pick",
+		"name": "Cherry pick",
 		"winRate": "35.00",
 		"avgPoints": "3.48",
 		"avgJudgePoints": "2.58"

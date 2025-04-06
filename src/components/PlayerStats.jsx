@@ -3,8 +3,6 @@ import {
 	Box,
 	Card,
 	CardContent,
-	CircularProgress,
-	Grid,
 	List,
 	ListItem,
 	ListItemText,
@@ -13,6 +11,7 @@ import {
 	Typography,
 } from '@mui/material'
 import React, { useState } from 'react'
+import PlayerDashboard from './PlayerDashboard'
 import PlayerIntersection from './PlayerIntersection'
 import RatingGraph from './RatingGraph'
 
@@ -60,29 +59,7 @@ const PlayerStats = ({ player, name }) => {
 				</Tabs>
 			</Card>
 
-			{selectedTab === 0 && (
-				<Card>
-					<CardContent>
-						<Typography variant='h6'>Основная статистика</Typography>
-						<Grid container spacing={2} alignItems='center' sx={{ mt: 2 }}>
-							<Grid item xs={6}>
-								<CircularProgress variant='determinate' value={61} size={60} />
-								<Typography variant='body2'>
-									62 (61%) Игры за мирного
-								</Typography>
-							</Grid>
-							<Grid item xs={6}>
-								<Typography variant='h6' align='center'>
-									2707.83
-								</Typography>
-								<Typography variant='body2' align='center'>
-									Общий ELO
-								</Typography>
-							</Grid>
-						</Grid>
-					</CardContent>
-				</Card>
-			)}
+			{selectedTab === 0 && <PlayerDashboard data={player} />}
 
 			{selectedTab === 1 && <RatingGraph player={player} />}
 
