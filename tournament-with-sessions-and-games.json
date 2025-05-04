@@ -1,0 +1,99 @@
+{
+  "tournament_name": "ОТКРЫТАЯ СРЕДА 2.0",
+  "url": "https://mediagame.by/tournament/otkrytaia-sreda-20",
+  "sessions": [
+    {
+      "title": "1 серия",
+      "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&series=298",
+      "games": [
+        {
+          "series": "1 серия",
+          "games": [
+            {
+              "title": "Игра №1",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1717"
+            },
+            {
+              "title": "Игра №2",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1718"
+            },
+            {
+              "title": "Игра №3",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1719"
+            },
+            {
+              "title": "Игра №4",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1720"
+            },
+            {
+              "title": "Игра №5",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1721"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2 серия",
+      "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&series=302",
+      "games": [
+        {
+          "series": "2 серия",
+          "games": [
+            {
+              "title": "Игра №1",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1763"
+            },
+            {
+              "title": "Игра №2",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1764"
+            },
+            {
+              "title": "Игра №3",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1765"
+            },
+            {
+              "title": "Игра №4",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1766"
+            },
+            {
+              "title": "Игра №5",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1767"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "3 серия",
+      "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&series=303",
+      "games": [
+        {
+          "series": "3 серия",
+          "games": [
+            {
+              "title": "Игра №1",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1768"
+            },
+            {
+              "title": "Игра №2",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1769"
+            },
+            {
+              "title": "Игра №3",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1770"
+            },
+            {
+              "title": "Игра №4",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1771"
+            },
+            {
+              "title": "Игра №5",
+              "url": "https://mediagame.by/tournament/otkrytaia-sreda-20?tab=results&game=2-1772"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

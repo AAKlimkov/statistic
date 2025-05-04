@@ -3607,7 +3607,7 @@
 		"avgPoints": "3.84",
 		"avgJudgePoints": "2.66"
 	},
-	"Schokk": {
+	"SCHOKK": {
 		"totalGames": 35,
 		"totalWins": 20,
 		"roleStats": {
@@ -3687,7 +3687,7 @@
 			1012, 1000, 1007, 1023, 1011, 1002, 994, 1004, 1023, 1032, 1018, 1023,
 			1034, 1022, 1039, 1049, 1044, 1049, 1055, 1064, 1069, 1065
 		],
-		"name": "Schokk",
+		"name": "SCHOKK",
 		"winRate": "57.14",
 		"avgPoints": "3.94",
 		"avgJudgePoints": "2.54"
@@ -6595,7 +6595,7 @@
 		"avgPoints": "3.40",
 		"avgJudgePoints": "2.32"
 	},
-	" Gadfour": {
+	"Gadfour": {
 		"totalGames": 10,
 		"totalWins": 5,
 		"roleStats": {
@@ -6656,7 +6656,7 @@
 		"ratingHistory": [
 			1015, 1033, 1050, 1066, 1064, 1058, 1071, 1058, 1053, 1046
 		],
-		"name": " Gadfour",
+		"name": "Gadfour",
 		"winRate": "50.00",
 		"avgPoints": "4.20",
 		"avgJudgePoints": "2.95"

@@ -1,0 +1,1508 @@
+[
+  {
+    "nickname": "Coach",
+    "games": 268,
+    "wins": 137,
+    "avgBonus": 2.852
+  },
+  {
+    "nickname": "Флэш",
+    "games": 307,
+    "wins": 150,
+    "avgBonus": 2.894
+  },
+  {
+    "nickname": "NLIP",
+    "games": 335,
+    "wins": 157,
+    "avgBonus": 2.846
+  },
+  {
+    "nickname": "Зверюга",
+    "games": 273,
+    "wins": 141,
+    "avgBonus": 2.801
+  },
+  {
+    "nickname": "Cristo",
+    "games": 323,
+    "wins": 160,
+    "avgBonus": 2.771
+  },
+  {
+    "nickname": "Наполеон",
+    "games": 277,
+    "wins": 129,
+    "avgBonus": 2.826
+  },
+  {
+    "nickname": "Тихий Закат",
+    "games": 186,
+    "wins": 93,
+    "avgBonus": 2.882
+  },
+  {
+    "nickname": "Есаул",
+    "games": 170,
+    "wins": 86,
+    "avgBonus": 2.859
+  },
+  {
+    "nickname": "Артик",
+    "games": 76,
+    "wins": 44,
+    "avgBonus": 2.954
+  },
+  {
+    "nickname": "Градиент",
+    "games": 95,
+    "wins": 49,
+    "avgBonus": 2.958
+  },
+  {
+    "nickname": "BWDMoscow",
+    "games": 100,
+    "wins": 48,
+    "avgBonus": 2.985
+  },
+  {
+    "nickname": "Продюсер",
+    "games": 230,
+    "wins": 115,
+    "avgBonus": 2.773
+  },
+  {
+    "nickname": "Инсомнич",
+    "games": 132,
+    "wins": 66,
+    "avgBonus": 2.864
+  },
+  {
+    "nickname": "Седой",
+    "games": 170,
+    "wins": 90,
+    "avgBonus": 2.684
+  },
+  {
+    "nickname": "Шпиц",
+    "games": 117,
+    "wins": 62,
+    "avgBonus": 2.759
+  },
+  {
+    "nickname": "Фокс",
+    "games": 74,
+    "wins": 42,
+    "avgBonus": 3
+  },
+  {
+    "nickname": "Левша",
+    "games": 160,
+    "wins": 78,
+    "avgBonus": 2.827
+  },
+  {
+    "nickname": "Крёстный Отец (RU)",
+    "games": 74,
+    "wins": 39,
+    "avgBonus": 2.986
+  },
+  {
+    "nickname": "Бестия",
+    "games": 199,
+    "wins": 104,
+    "avgBonus": 2.672
+  },
+  {
+    "nickname": "Физик",
+    "games": 213,
+    "wins": 108,
+    "avgBonus": 2.703
+  },
+  {
+    "nickname": "Правда",
+    "games": 164,
+    "wins": 85,
+    "avgBonus": 2.665
+  },
+  {
+    "nickname": "Свич",
+    "games": 106,
+    "wins": 57,
+    "avgBonus": 2.762
+  },
+  {
+    "nickname": "Админ",
+    "games": 93,
+    "wins": 48,
+    "avgBonus": 2.817
+  },
+  {
+    "nickname": "Луна",
+    "games": 133,
+    "wins": 67,
+    "avgBonus": 2.684
+  },
+  {
+    "nickname": "Юрия",
+    "games": 202,
+    "wins": 100,
+    "avgBonus": 2.699
+  },
+  {
+    "nickname": "Крестный отец (BLR)",
+    "games": 123,
+    "wins": 60,
+    "avgBonus": 2.756
+  },
+  {
+    "nickname": "Шоу Бой",
+    "games": 209,
+    "wins": 104,
+    "avgBonus": 2.677
+  },
+  {
+    "nickname": "Morti",
+    "games": 228,
+    "wins": 110,
+    "avgBonus": 2.661
+  },
+  {
+    "nickname": "Самаритянка",
+    "games": 33,
+    "wins": 21,
+    "avgBonus": 2.818
+  },
+  {
+    "nickname": "РФ",
+    "games": 74,
+    "wins": 34,
+    "avgBonus": 2.764
+  },
+  {
+    "nickname": "Никнейм",
+    "games": 204,
+    "wins": 94,
+    "avgBonus": 2.657
+  },
+  {
+    "nickname": "Young",
+    "games": 100,
+    "wins": 50,
+    "avgBonus": 2.848
+  },
+  {
+    "nickname": "Alice",
+    "games": 163,
+    "wins": 88,
+    "avgBonus": 2.692
+  },
+  {
+    "nickname": "Интерактив",
+    "games": 58,
+    "wins": 27,
+    "avgBonus": 2.97
+  },
+  {
+    "nickname": "Астория",
+    "games": 96,
+    "wins": 48,
+    "avgBonus": 2.74
+  },
+  {
+    "nickname": "Чешир",
+    "games": 107,
+    "wins": 53,
+    "avgBonus": 2.785
+  },
+  {
+    "nickname": "Дракарис",
+    "games": 109,
+    "wins": 54,
+    "avgBonus": 2.796
+  },
+  {
+    "nickname": "Боня",
+    "games": 123,
+    "wins": 63,
+    "avgBonus": 2.679
+  },
+  {
+    "nickname": "Пила",
+    "games": 102,
+    "wins": 52,
+    "avgBonus": 2.77
+  },
+  {
+    "nickname": "Хрум",
+    "games": 269,
+    "wins": 121,
+    "avgBonus": 2.568
+  },
+  {
+    "nickname": "Зеркало",
+    "games": 71,
+    "wins": 39,
+    "avgBonus": 2.757
+  },
+  {
+    "nickname": "Castor Troy",
+    "games": 172,
+    "wins": 85,
+    "avgBonus": 2.68
+  },
+  {
+    "nickname": "A1",
+    "games": 185,
+    "wins": 86,
+    "avgBonus": 2.653
+  },
+  {
+    "nickname": "Ketamin",
+    "games": 146,
+    "wins": 72,
+    "avgBonus": 2.644
+  },
+  {
+    "nickname": "SOVEST",
+    "games": 133,
+    "wins": 67,
+    "avgBonus": 2.688
+  },
+  {
+    "nickname": "Марго",
+    "games": 217,
+    "wins": 93,
+    "avgBonus": 2.668
+  },
+  {
+    "nickname": "Stacy",
+    "games": 165,
+    "wins": 73,
+    "avgBonus": 2.65
+  },
+  {
+    "nickname": "Махинатор",
+    "games": 43,
+    "wins": 25,
+    "avgBonus": 2.994
+  },
+  {
+    "nickname": "Бастурма",
+    "games": 105,
+    "wins": 51,
+    "avgBonus": 2.724
+  },
+  {
+    "nickname": "Старый",
+    "games": 64,
+    "wins": 32,
+    "avgBonus": 2.84
+  },
+  {
+    "nickname": "Писатель",
+    "games": 260,
+    "wins": 112,
+    "avgBonus": 2.602
+  },
+  {
+    "nickname": "Бамблби",
+    "games": 206,
+    "wins": 89,
+    "avgBonus": 2.613
+  },
+  {
+    "nickname": "Аш",
+    "games": 103,
+    "wins": 50,
+    "avgBonus": 2.67
+  },
+  {
+    "nickname": "Крот",
+    "games": 156,
+    "wins": 78,
+    "avgBonus": 2.546
+  },
+  {
+    "nickname": "Curly",
+    "games": 242,
+    "wins": 121,
+    "avgBonus": 2.56
+  },
+  {
+    "nickname": "Жнец",
+    "games": 108,
+    "wins": 51,
+    "avgBonus": 2.708
+  },
+  {
+    "nickname": "Love",
+    "games": 123,
+    "wins": 57,
+    "avgBonus": 2.697
+  },
+  {
+    "nickname": "Красавчик",
+    "games": 213,
+    "wins": 100,
+    "avgBonus": 2.559
+  },
+  {
+    "nickname": "Луи",
+    "games": 36,
+    "wins": 23,
+    "avgBonus": 2.639
+  },
+  {
+    "nickname": "Rocket woman",
+    "games": 82,
+    "wins": 40,
+    "avgBonus": 2.723
+  },
+  {
+    "nickname": "Cherry Pick",
+    "games": 173,
+    "wins": 76,
+    "avgBonus": 2.689
+  },
+  {
+    "nickname": "SCHOKK",
+    "games": 193,
+    "wins": 89,
+    "avgBonus": 2.557
+  },
+  {
+    "nickname": "Волга",
+    "games": 95,
+    "wins": 50,
+    "avgBonus": 2.621
+  },
+  {
+    "nickname": "Скарлетт",
+    "games": 136,
+    "wins": 68,
+    "avgBonus": 2.619
+  },
+  {
+    "nickname": "Мишель",
+    "games": 207,
+    "wins": 94,
+    "avgBonus": 2.577
+  },
+  {
+    "nickname": "Путедьют",
+    "games": 50,
+    "wins": 24,
+    "avgBonus": 2.765
+  },
+  {
+    "nickname": "Хамилка",
+    "games": 39,
+    "wins": 22,
+    "avgBonus": 2.788
+  },
+  {
+    "nickname": "Тандем",
+    "games": 85,
+    "wins": 38,
+    "avgBonus": 2.671
+  },
+  {
+    "nickname": "Ментик",
+    "games": 50,
+    "wins": 24,
+    "avgBonus": 2.885
+  },
+  {
+    "nickname": "Андерсен",
+    "games": 185,
+    "wins": 79,
+    "avgBonus": 2.582
+  },
+  {
+    "nickname": "Bublik",
+    "games": 217,
+    "wins": 93,
+    "avgBonus": 2.537
+  },
+  {
+    "nickname": "Вертинский",
+    "games": 129,
+    "wins": 53,
+    "avgBonus": 2.609
+  },
+  {
+    "nickname": "MSR",
+    "games": 57,
+    "wins": 25,
+    "avgBonus": 2.82
+  },
+  {
+    "nickname": "Мираж",
+    "games": 36,
+    "wins": 21,
+    "avgBonus": 2.792
+  },
+  {
+    "nickname": "Панда из Руанды",
+    "games": 64,
+    "wins": 34,
+    "avgBonus": 2.637
+  },
+  {
+    "nickname": "Авраам",
+    "games": 55,
+    "wins": 26,
+    "avgBonus": 2.595
+  },
+  {
+    "nickname": "Манекен",
+    "games": 120,
+    "wins": 47,
+    "avgBonus": 2.767
+  },
+  {
+    "nickname": "WellDone (RU)",
+    "games": 85,
+    "wins": 36,
+    "avgBonus": 2.768
+  },
+  {
+    "nickname": "Бабочка",
+    "games": 29,
+    "wins": 16,
+    "avgBonus": 2.707
+  },
+  {
+    "nickname": "Валерун-Балерун",
+    "games": 50,
+    "wins": 25,
+    "avgBonus": 2.78
+  },
+  {
+    "nickname": "Гермес",
+    "games": 86,
+    "wins": 43,
+    "avgBonus": 2.75
+  },
+  {
+    "nickname": "NME",
+    "games": 75,
+    "wins": 33,
+    "avgBonus": 2.643
+  },
+  {
+    "nickname": "Армен 24",
+    "games": 22,
+    "wins": 12,
+    "avgBonus": 3.102
+  },
+  {
+    "nickname": "Маваши",
+    "games": 83,
+    "wins": 39,
+    "avgBonus": 2.723
+  },
+  {
+    "nickname": "Лунатик",
+    "games": 50,
+    "wins": 26,
+    "avgBonus": 2.46
+  },
+  {
+    "nickname": "Helga",
+    "games": 90,
+    "wins": 36,
+    "avgBonus": 2.608
+  },
+  {
+    "nickname": "Тиффани",
+    "games": 71,
+    "wins": 34,
+    "avgBonus": 2.669
+  },
+  {
+    "nickname": "WhoIsWho",
+    "games": 214,
+    "wins": 93,
+    "avgBonus": 2.577
+  },
+  {
+    "nickname": "Dimmi",
+    "games": 109,
+    "wins": 44,
+    "avgBonus": 2.674
+  },
+  {
+    "nickname": "Стрекоза",
+    "games": 63,
+    "wins": 25,
+    "avgBonus": 2.802
+  },
+  {
+    "nickname": "UFO",
+    "games": 50,
+    "wins": 22,
+    "avgBonus": 2.62
+  },
+  {
+    "nickname": "Империя",
+    "games": 26,
+    "wins": 14,
+    "avgBonus": 2.731
+  },
+  {
+    "nickname": "Michael",
+    "games": 50,
+    "wins": 25,
+    "avgBonus": 2.62
+  },
+  {
+    "nickname": "Слепой Часовщик",
+    "games": 71,
+    "wins": 30,
+    "avgBonus": 2.662
+  },
+  {
+    "nickname": "Baymax",
+    "games": 114,
+    "wins": 56,
+    "avgBonus": 2.45
+  },
+  {
+    "nickname": "GALAY",
+    "games": 123,
+    "wins": 60,
+    "avgBonus": 2.465
+  },
+  {
+    "nickname": "Марш",
+    "games": 65,
+    "wins": 30,
+    "avgBonus": 2.688
+  },
+  {
+    "nickname": "Lina",
+    "games": 100,
+    "wins": 51,
+    "avgBonus": 2.543
+  },
+  {
+    "nickname": "Домовенок",
+    "games": 125,
+    "wins": 55,
+    "avgBonus": 2.462
+  },
+  {
+    "nickname": "Дровосек",
+    "games": 71,
+    "wins": 35,
+    "avgBonus": 2.592
+  },
+  {
+    "nickname": "Still Rise",
+    "games": 29,
+    "wins": 16,
+    "avgBonus": 2.569
+  },
+  {
+    "nickname": "Злая Киса",
+    "games": 117,
+    "wins": 59,
+    "avgBonus": 2.549
+  },
+  {
+    "nickname": "Суета",
+    "games": 26,
+    "wins": 13,
+    "avgBonus": 2.683
+  },
+  {
+    "nickname": "Оладушек",
+    "games": 86,
+    "wins": 42,
+    "avgBonus": 2.52
+  },
+  {
+    "nickname": "Джейн",
+    "games": 76,
+    "wins": 35,
+    "avgBonus": 2.586
+  },
+  {
+    "nickname": "Пчела",
+    "games": 40,
+    "wins": 17,
+    "avgBonus": 2.7
+  },
+  {
+    "nickname": "Альпачино",
+    "games": 40,
+    "wins": 22,
+    "avgBonus": 2.588
+  },
+  {
+    "nickname": "Искра",
+    "games": 71,
+    "wins": 35,
+    "avgBonus": 2.482
+  },
+  {
+    "nickname": "Макима *",
+    "games": 21,
+    "wins": 13,
+    "avgBonus": 2.643
+  },
+  {
+    "nickname": "Jazz",
+    "games": 113,
+    "wins": 51,
+    "avgBonus": 2.409
+  },
+  {
+    "nickname": "JocK",
+    "games": 14,
+    "wins": 10,
+    "avgBonus": 2.571
+  },
+  {
+    "nickname": "Natsy",
+    "games": 64,
+    "wins": 31,
+    "avgBonus": 2.543
+  },
+  {
+    "nickname": "Люпен",
+    "games": 24,
+    "wins": 12,
+    "avgBonus": 2.708
+  },
+  {
+    "nickname": "Мулан",
+    "games": 21,
+    "wins": 12,
+    "avgBonus": 2.702
+  },
+  {
+    "nickname": "Adele",
+    "games": 59,
+    "wins": 27,
+    "avgBonus": 2.47
+  },
+  {
+    "nickname": "Таварес",
+    "games": 12,
+    "wins": 8,
+    "avgBonus": 2.938
+  },
+  {
+    "nickname": "Спонжик",
+    "games": 50,
+    "wins": 23,
+    "avgBonus": 2.66
+  },
+  {
+    "nickname": "Shrimps",
+    "games": 40,
+    "wins": 21,
+    "avgBonus": 2.569
+  },
+  {
+    "nickname": "Dushes",
+    "games": 22,
+    "wins": 11,
+    "avgBonus": 2.636
+  },
+  {
+    "nickname": "Матушка",
+    "games": 35,
+    "wins": 20,
+    "avgBonus": 2.529
+  },
+  {
+    "nickname": "Параселена",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.679
+  },
+  {
+    "nickname": "Niometr",
+    "games": 14,
+    "wins": 9,
+    "avgBonus": 2.732
+  },
+  {
+    "nickname": "Арс",
+    "games": 22,
+    "wins": 11,
+    "avgBonus": 2.739
+  },
+  {
+    "nickname": "Gnativskaya",
+    "games": 14,
+    "wins": 9,
+    "avgBonus": 2.554
+  },
+  {
+    "nickname": "Light",
+    "games": 158,
+    "wins": 65,
+    "avgBonus": 2.492
+  },
+  {
+    "nickname": "Infinity",
+    "games": 169,
+    "wins": 71,
+    "avgBonus": 2.562
+  },
+  {
+    "nickname": "MUSHU",
+    "games": 21,
+    "wins": 13,
+    "avgBonus": 2.524
+  },
+  {
+    "nickname": "Круэлла",
+    "games": 96,
+    "wins": 33,
+    "avgBonus": 2.594
+  },
+  {
+    "nickname": "Карась",
+    "games": 40,
+    "wins": 20,
+    "avgBonus": 2.5
+  },
+  {
+    "nickname": "СЭНСЭЙ",
+    "games": 50,
+    "wins": 21,
+    "avgBonus": 2.735
+  },
+  {
+    "nickname": "Голубоглазая",
+    "games": 35,
+    "wins": 16,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "Лис",
+    "games": 40,
+    "wins": 20,
+    "avgBonus": 2.588
+  },
+  {
+    "nickname": "Мишка Панда",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.619
+  },
+  {
+    "nickname": "Сахарочек",
+    "games": 77,
+    "wins": 34,
+    "avgBonus": 2.416
+  },
+  {
+    "nickname": "Сергеевна",
+    "games": 14,
+    "wins": 8,
+    "avgBonus": 2.714
+  },
+  {
+    "nickname": "Самозванка",
+    "games": 29,
+    "wins": 13,
+    "avgBonus": 2.5
+  },
+  {
+    "nickname": "Paradox",
+    "games": 13,
+    "wins": 7,
+    "avgBonus": 2.788
+  },
+  {
+    "nickname": "Mars",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.655
+  },
+  {
+    "nickname": "Spirit",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.982
+  },
+  {
+    "nickname": "Пантера",
+    "games": 21,
+    "wins": 12,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "Светлячок",
+    "games": 76,
+    "wins": 37,
+    "avgBonus": 2.441
+  },
+  {
+    "nickname": "Eclair",
+    "games": 15,
+    "wins": 8,
+    "avgBonus": 2.617
+  },
+  {
+    "nickname": "Гаджет",
+    "games": 108,
+    "wins": 46,
+    "avgBonus": 2.475
+  },
+  {
+    "nickname": "Лео",
+    "games": 28,
+    "wins": 12,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "Домовой",
+    "games": 36,
+    "wins": 19,
+    "avgBonus": 2.382
+  },
+  {
+    "nickname": "Арбуз",
+    "games": 14,
+    "wins": 8,
+    "avgBonus": 2.518
+  },
+  {
+    "nickname": "Buffy",
+    "games": 7,
+    "wins": 4,
+    "avgBonus": 2.786
+  },
+  {
+    "nickname": "Лисичка",
+    "games": 104,
+    "wins": 43,
+    "avgBonus": 2.493
+  },
+  {
+    "nickname": "404",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "BMK",
+    "games": 13,
+    "wins": 7,
+    "avgBonus": 2.673
+  },
+  {
+    "nickname": "Грибочки",
+    "games": 105,
+    "wins": 41,
+    "avgBonus": 2.567
+  },
+  {
+    "nickname": "Венеция",
+    "games": 31,
+    "wins": 17,
+    "avgBonus": 2.565
+  },
+  {
+    "nickname": "ЖекиЧан",
+    "games": 7,
+    "wins": 5,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "Рыжая",
+    "games": 137,
+    "wins": 54,
+    "avgBonus": 2.469
+  },
+  {
+    "nickname": "Инсайд",
+    "games": 40,
+    "wins": 16,
+    "avgBonus": 2.656
+  },
+  {
+    "nickname": "Алиса",
+    "games": 32,
+    "wins": 14,
+    "avgBonus": 2.367
+  },
+  {
+    "nickname": "Престиж",
+    "games": 7,
+    "wins": 5,
+    "avgBonus": 2.643
+  },
+  {
+    "nickname": "Teslex",
+    "games": 28,
+    "wins": 12,
+    "avgBonus": 2.455
+  },
+  {
+    "nickname": "Чацкий",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.571
+  },
+  {
+    "nickname": "Кармен",
+    "games": 21,
+    "wins": 8,
+    "avgBonus": 2.536
+  },
+  {
+    "nickname": "Rossoneri",
+    "games": 15,
+    "wins": 6,
+    "avgBonus": 2.733
+  },
+  {
+    "nickname": "124",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.714
+  },
+  {
+    "nickname": "Фермер",
+    "games": 7,
+    "wins": 4,
+    "avgBonus": 2.857
+  },
+  {
+    "nickname": "Freddy Krueger",
+    "games": 50,
+    "wins": 23,
+    "avgBonus": 2.51
+  },
+  {
+    "nickname": "Ледокол",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.536
+  },
+  {
+    "nickname": "Букля",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.964
+  },
+  {
+    "nickname": "Sirena",
+    "games": 21,
+    "wins": 11,
+    "avgBonus": 2.571
+  },
+  {
+    "nickname": "Crash",
+    "games": 40,
+    "wins": 19,
+    "avgBonus": 2.55
+  },
+  {
+    "nickname": "Homych *",
+    "games": 7,
+    "wins": 4,
+    "avgBonus": 2.75
+  },
+  {
+    "nickname": "ЧехонтЭ",
+    "games": 21,
+    "wins": 6,
+    "avgBonus": 2.714
+  },
+  {
+    "nickname": "Dream",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.446
+  },
+  {
+    "nickname": "Juventini",
+    "games": 126,
+    "wins": 47,
+    "avgBonus": 2.419
+  },
+  {
+    "nickname": "Google",
+    "games": 5,
+    "wins": 3,
+    "avgBonus": 3.1
+  },
+  {
+    "nickname": "Fenix",
+    "games": 7,
+    "wins": 4,
+    "avgBonus": 2.714
+  },
+  {
+    "nickname": "Паника",
+    "games": 14,
+    "wins": 5,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "Miliministation",
+    "games": 10,
+    "wins": 6,
+    "avgBonus": 2.55
+  },
+  {
+    "nickname": "Ультра",
+    "games": 21,
+    "wins": 7,
+    "avgBonus": 2.524
+  },
+  {
+    "nickname": "Фримен",
+    "games": 48,
+    "wins": 19,
+    "avgBonus": 2.604
+  },
+  {
+    "nickname": "Анжи",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.679
+  },
+  {
+    "nickname": "Оскар",
+    "games": 52,
+    "wins": 22,
+    "avgBonus": 2.375
+  },
+  {
+    "nickname": "A2",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.345
+  },
+  {
+    "nickname": "EZY BLACK",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.482
+  },
+  {
+    "nickname": "Эндван",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.411
+  },
+  {
+    "nickname": "Амазонка",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.619
+  },
+  {
+    "nickname": "Afer1st",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.607
+  },
+  {
+    "nickname": "SEO",
+    "games": 54,
+    "wins": 22,
+    "avgBonus": 2.481
+  },
+  {
+    "nickname": "Barista",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.571
+  },
+  {
+    "nickname": "Fade",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.732
+  },
+  {
+    "nickname": "Ассорти",
+    "games": 10,
+    "wins": 3,
+    "avgBonus": 2.65
+  },
+  {
+    "nickname": "Tenet",
+    "games": 17,
+    "wins": 6,
+    "avgBonus": 2.632
+  },
+  {
+    "nickname": "V. I. P.",
+    "games": 21,
+    "wins": 8,
+    "avgBonus": 2.44
+  },
+  {
+    "nickname": "E",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.417
+  },
+  {
+    "nickname": "BonAqua",
+    "games": 5,
+    "wins": 3,
+    "avgBonus": 2.35
+  },
+  {
+    "nickname": "Насон",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.714
+  },
+  {
+    "nickname": "Ветулька",
+    "games": 21,
+    "wins": 8,
+    "avgBonus": 2.381
+  },
+  {
+    "nickname": "Алкарис",
+    "games": 56,
+    "wins": 23,
+    "avgBonus": 2.429
+  },
+  {
+    "nickname": "Самбука",
+    "games": 14,
+    "wins": 8,
+    "avgBonus": 2.286
+  },
+  {
+    "nickname": "Донателло",
+    "games": 47,
+    "wins": 17,
+    "avgBonus": 2.473
+  },
+  {
+    "nickname": "Нелли",
+    "games": 21,
+    "wins": 6,
+    "avgBonus": 2.69
+  },
+  {
+    "nickname": "Дантес",
+    "games": 21,
+    "wins": 8,
+    "avgBonus": 2.452
+  },
+  {
+    "nickname": "Etienne",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.464
+  },
+  {
+    "nickname": "Чаплин",
+    "games": 20,
+    "wins": 7,
+    "avgBonus": 2.625
+  },
+  {
+    "nickname": "Вторник",
+    "games": 7,
+    "wins": 2,
+    "avgBonus": 2.536
+  },
+  {
+    "nickname": "Почтенный",
+    "games": 21,
+    "wins": 8,
+    "avgBonus": 2.631
+  },
+  {
+    "nickname": "БМ",
+    "games": 28,
+    "wins": 11,
+    "avgBonus": 2.464
+  },
+  {
+    "nickname": "Ден",
+    "games": 12,
+    "wins": 3,
+    "avgBonus": 2.729
+  },
+  {
+    "nickname": "Лунтик",
+    "games": 14,
+    "wins": 7,
+    "avgBonus": 2.536
+  },
+  {
+    "nickname": "Matilda",
+    "games": 38,
+    "wins": 12,
+    "avgBonus": 2.428
+  },
+  {
+    "nickname": "Шахист",
+    "games": 12,
+    "wins": 5,
+    "avgBonus": 2.521
+  },
+  {
+    "nickname": "Южная",
+    "games": 40,
+    "wins": 15,
+    "avgBonus": 2.719
+  },
+  {
+    "nickname": "Мишок",
+    "games": 62,
+    "wins": 26,
+    "avgBonus": 2.399
+  },
+  {
+    "nickname": "DOCtoR",
+    "games": 65,
+    "wins": 30,
+    "avgBonus": 2.404
+  },
+  {
+    "nickname": "Америка",
+    "games": 36,
+    "wins": 15,
+    "avgBonus": 2.278
+  },
+  {
+    "nickname": "Сотрудник",
+    "games": 24,
+    "wins": 7,
+    "avgBonus": 2.563
+  },
+  {
+    "nickname": "uLTRa",
+    "games": 87,
+    "wins": 33,
+    "avgBonus": 2.325
+  },
+  {
+    "nickname": "Soul",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.286
+  },
+  {
+    "nickname": "Парадокс",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.679
+  },
+  {
+    "nickname": "Клим",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.357
+  },
+  {
+    "nickname": "SR",
+    "games": 21,
+    "wins": 7,
+    "avgBonus": 2.488
+  },
+  {
+    "nickname": "Маяк",
+    "games": 21,
+    "wins": 7,
+    "avgBonus": 2.488
+  },
+  {
+    "nickname": "Король лев",
+    "games": 21,
+    "wins": 6,
+    "avgBonus": 2.5
+  },
+  {
+    "nickname": "Хантер",
+    "games": 14,
+    "wins": 6,
+    "avgBonus": 2.268
+  },
+  {
+    "nickname": "Antihype",
+    "games": 21,
+    "wins": 9,
+    "avgBonus": 2.357
+  },
+  {
+    "nickname": "Спирит",
+    "games": 41,
+    "wins": 18,
+    "avgBonus": 2.415
+  },
+  {
+    "nickname": "Саранча",
+    "games": 40,
+    "wins": 14,
+    "avgBonus": 2.494
+  },
+  {
+    "nickname": "SiD",
+    "games": 7,
+    "wins": 3,
+    "avgBonus": 2.286
+  },
+  {
+    "nickname": "AnnaMor *",
+    "games": 10,
+    "wins": 2,
+    "avgBonus": 2.15
+  },
+  {
+    "nickname": "Джордж",
+    "games": 56,
+    "wins": 22,
+    "avgBonus": 2.388
+  },
+  {
+    "nickname": "Синий Ёжик",
+    "games": 13,
+    "wins": 5,
+    "avgBonus": 2.096
+  },
+  {
+    "nickname": "Стратег",
+    "games": 14,
+    "wins": 3,
+    "avgBonus": 2.5
+  },
+  {
+    "nickname": "Elizavekka",
+    "games": 14,
+    "wins": 4,
+    "avgBonus": 2.232
+  },
+  {
+    "nickname": "Ace",
+    "games": 7,
+    "wins": 1,
+    "avgBonus": 2.464
+  },
+  {
+    "nickname": "Keln",
+    "games": 17,
+    "wins": 6,
+    "avgBonus": 2.574
+  },
+  {
+    "nickname": "NikAS",
+    "games": 21,
+    "wins": 10,
+    "avgBonus": 2.238
+  },
+  {
+    "nickname": "Shaok",
+    "games": 15,
+    "wins": 5,
+    "avgBonus": 2.45
+  },
+  {
+    "nickname": "Янай",
+    "games": 28,
+    "wins": 10,
+    "avgBonus": 2.482
+  },
+  {
+    "nickname": "Gadfour",
+    "games": 50,
+    "wins": 18,
+    "avgBonus": 2.445
+  },
+  {
+    "nickname": "Меломан",
+    "games": 14,
+    "wins": 4,
+    "avgBonus": 2.429
+  },
+  {
+    "nickname": "Шмектис",
+    "games": 7,
+    "wins": 2,
+    "avgBonus": 2.286
+  },
+  {
+    "nickname": "Tardis",
+    "games": 7,
+    "wins": 2,
+    "avgBonus": 2.179
+  },
+  {
+    "nickname": "Ёж",
+    "games": 28,
+    "wins": 9,
+    "avgBonus": 2.268
+  },
+  {
+    "nickname": "Добро",
+    "games": 39,
+    "wins": 14,
+    "avgBonus": 2.186
+  },
+  {
+    "nickname": "No_name",
+    "games": 33,
+    "wins": 12,
+    "avgBonus": 2.303
+  },
+  {
+    "nickname": "Хлоя",
+    "games": 24,
+    "wins": 8,
+    "avgBonus": 2.281
+  },
+  {
+    "nickname": "Bogrolla",
+    "games": 7,
+    "wins": null,
+    "avgBonus": 2.071
+  },
+  {
+    "nickname": "Sound Asleep *",
+    "games": 14,
+    "wins": 5,
+    "avgBonus": 2.143
+  },
+  {
+    "nickname": "Мона",
+    "games": 72,
+    "wins": 26,
+    "avgBonus": 2.344
+  },
+  {
+    "nickname": "Лисёнок",
+    "games": 14,
+    "wins": 4,
+    "avgBonus": 2.161
+  },
+  {
+    "nickname": "Клюква",
+    "games": 29,
+    "wins": 10,
+    "avgBonus": 2.345
+  },
+  {
+    "nickname": "Bolshania",
+    "games": 21,
+    "wins": 6,
+    "avgBonus": 2.429
+  },
+  {
+    "nickname": "WellDone (BLR)",
+    "games": 40,
+    "wins": 13,
+    "avgBonus": 2.169
+  }
+]

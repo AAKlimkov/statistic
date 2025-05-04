@@ -7,9 +7,7 @@ import { launch } from 'puppeteer'
 	for (let gameId = 1623; gameId <= 1634; gameId++) {
 		console.log(gameId)
 
-		// const url = `https://mediagame.by/tournament/otkrytaia-sreda?tab=results&game=${gameId}`
 		const url = `https://mediagame.by/tournament/reitingovyi-kubok?tab=results&game=${gameId}`
-		// const url3 = `https://mediagame.by/tournament/5-element-raund-4?tab=results&game=${gameId}`
 		const page = await browser.newPage()
 		await page.goto(url, { waitUntil: 'networkidle2' })
 

@@ -2301,7 +2301,7 @@
 		"avgPoints": "4.03",
 		"avgJudgePoints": "2.68"
 	},
-	"Schokk": {
+	"SCHOKK": {
 		"totalGames": 35,
 		"totalWins": 20,
 		"roleStats": {
@@ -2380,7 +2380,7 @@
 			1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
 			1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000
 		],
-		"name": "Schokk",
+		"name": "SCHOKK",
 		"winRate": "57.14",
 		"avgPoints": "3.94",
 		"avgJudgePoints": "2.54"
@@ -3499,7 +3499,7 @@
 		"avgPoints": "3.61",
 		"avgJudgePoints": "2.13"
 	},
-	"Ultra": {
+	"ULTRa": {
 		"totalGames": 40,
 		"totalWins": 15,
 		"roleStats": {
@@ -3583,7 +3583,7 @@
 			1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000, 1000,
 			1000, 1000, 1000, 1000
 		],
-		"name": "Ultra",
+		"name": "ULTRa",
 		"winRate": "37.50",
 		"avgPoints": "3.34",
 		"avgJudgePoints": "2.35"
