@@ -10,12 +10,31 @@ import {
 	Tabs,
 	Typography,
 } from '@mui/material'
-import React, { useState } from 'react'
-import PlayerDashboard from './PlayerDashboard'
-import PlayerIntersection from './PlayerIntersection'
+import React, { useEffect, useState } from 'react'
+// import PlayerDashboard from './PlayerDashboard'
+// import PlayerIntersection from './PlayerIntersection'
 import RatingGraph from './RatingGraph'
 
-const PlayerStats = ({ player, name }) => {
+const PlayerStats = ({ id, name }) => {
+	console.log(id)
+	const [player, setPlayer] = useState()
+	useEffect(() => {
+		const fetchPlayers = async () => {
+			try {
+				const res = await fetch(
+					`https://mafia-server-cyan.vercel.app/api/player/${id}/ratingHistory`
+				)
+				const data = await res.json()
+
+				setPlayer(data)
+			} catch (err) {
+				console.error('Ошибка при загрузке игроков:', err)
+			}
+		}
+
+		fetchPlayers()
+	}, [])
+
 	const [selectedTab, setSelectedTab] = useState(0)
 
 	const handleTabChange = (event, newValue) => {
@@ -37,9 +56,7 @@ const PlayerStats = ({ player, name }) => {
 	return (
 		<Box sx={{ maxWidth: 800, margin: 'auto', padding: 3 }}>
 			<Card sx={{ textAlign: 'center', padding: 3, mb: 3 }}>
-				<Avatar sx={{ width: 80, height: 80, margin: 'auto' }}>
-					{name[0]}
-				</Avatar>
+				<Avatar sx={{ width: 80, height: 80, margin: 'auto' }}>{name}</Avatar>
 				<Typography variant='h6' fontWeight={600}>
 					{name}
 				</Typography>
@@ -59,7 +76,7 @@ const PlayerStats = ({ player, name }) => {
 				</Tabs>
 			</Card>
 
-			{selectedTab === 0 && <PlayerDashboard data={player} />}
+			{/* {selectedTab === 0 && <PlayerDashboard data={player} />} */}
 
 			{selectedTab === 1 && <RatingGraph player={player} />}
 
@@ -81,7 +98,7 @@ const PlayerStats = ({ player, name }) => {
 				</Card>
 			)}
 
-			{selectedTab === 3 && <PlayerIntersection playerName={name} />}
+			{/* {selectedTab === 3 && <PlayerIntersection playerName={name} />} */}
 		</Box>
 	)
 }

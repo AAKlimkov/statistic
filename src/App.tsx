@@ -25,6 +25,22 @@ const App = () => {
 	const playersPerPage = 10
 
 	useEffect(() => {
+		const fetchPlayers = async () => {
+			try {
+				const res = await fetch(
+					'https://mafia-server-cyan.vercel.app/api/players'
+				)
+				const data = await res.json()
+				setPlayersData(data)
+			} catch (err) {
+				console.error('Ошибка при загрузке игроков:', err)
+			}
+		}
+
+		fetchPlayers()
+	}, [])
+
+	useEffect(() => {
 		const fileNames = Object.keys(files).map(
 			file => file.split('/').pop() || ''
 		)
@@ -35,22 +51,20 @@ const App = () => {
 		}
 	}, [])
 
-	useEffect(() => {
-		if (selectedFile) {
-			const filePath = `/src/assets/data/${selectedFile}`
-			const data = files[filePath] as { default: Record<string, any> }
-			setPlayersData(data?.default || {})
-		}
-	}, [selectedFile])
+	// useEffect(() => {
+	// 	if (selectedFile) {
+	// 		const filePath = `/src/assets/data/${selectedFile}`
+	// 		const data = files[filePath] as { default: Record<string, any> }
+	// 		setPlayersData(data?.default || {})
+	// 	}
+	// }, [selectedFile])
 
-	const filteredPlayers = Object.entries(playersData)
-		.map(([name, player]) => ({ name, ...player }))
-		.filter(
-			player =>
-				player.name.toLowerCase().includes(search.toLowerCase()) &&
-				player.totalGames >= filter.minGames &&
-				player.totalGames <= filter.maxGames
-		)
+	const filteredPlayers = Object.values(playersData).filter(
+		player =>
+			player.name.toLowerCase().includes(search.toLowerCase()) &&
+			player.games_count >= filter.minGames &&
+			player.games_count <= filter.maxGames
+	)
 
 	const sortedPlayers = [...filteredPlayers].sort((a, b) => {
 		if (a[sortConfig.key] < b[sortConfig.key])
@@ -107,18 +121,20 @@ const App = () => {
 					<thead>
 						<tr>
 							<th onClick={() => handleSort('name')}>Игрок</th>
-							<th onClick={() => handleSort('totalGames')}>Игр</th>
-							<th onClick={() => handleSort('RatingNew')}>Рейтинг</th>
+							<th onClick={() => handleSort('games_count')}>Игр</th>
+							<th onClick={() => handleSort('last_ratingPoints')}>Рейтинг</th>
+							<th onClick={() => handleSort('last_position')}>Позиция</th>
 						</tr>
 					</thead>
 					<tbody>
-						{currentPlayers.map((player, index) => (
-							<tr key={index}>
+						{currentPlayers.map(player => (
+							<tr key={player.id}>
 								<td>
-									<Link to={`/player/${player.name}`}>{player.name}</Link>
+									<Link to={`/player/${player.id}`}>{player.name}</Link>
 								</td>
-								<td>{player.totalGames}</td>
-								<td>{player.ratingHistory[player.ratingHistory.length - 1]}</td>
+								<td>{player.games_count}</td>
+								<td>{player.last_ratingPoints.toFixed(2)}</td>
+								<td>{player.last_position}</td>
 							</tr>
 						))}
 					</tbody>
@@ -139,7 +155,7 @@ const App = () => {
 
 			<Routes>
 				<Route
-					path='/player/:name'
+					path='/player/:id'
 					element={<PlayerPage playersData={playersData} />}
 				/>
 			</Routes>
@@ -148,10 +164,9 @@ const App = () => {
 }
 
 const PlayerPage = ({ playersData }) => {
-	const { name } = useParams()
-	const player = playersData[name] || {}
+	const { id } = useParams()
 
-	return <PlayerStats player={player} name={name} />
+	return <PlayerStats id={id} />
 }
 
 export default App
