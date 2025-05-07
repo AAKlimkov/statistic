@@ -1,5 +1,6 @@
 import {
 	Box,
+	Button,
 	Card,
 	CardContent,
 	List,
@@ -10,6 +11,7 @@ import {
 	Typography,
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PlayerStatistic from './PlayerStatistic'
 // import PlayerIntersection from './PlayerIntersection'
 import RatingGraph from './RatingGraph'
@@ -20,6 +22,8 @@ const PlayerStats = ({ id, name }) => {
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const [selectedTab, setSelectedTab] = useState(0)
+
+	const navigate = useNavigate()
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -52,8 +56,6 @@ const PlayerStats = ({ id, name }) => {
 		fetchData()
 	}, [id])
 
-	console.log(player)
-
 	if (loading) {
 		return <div>Загрузка...</div>
 	}
@@ -72,24 +74,16 @@ const PlayerStats = ({ id, name }) => {
 		{ date: '2025-03-05', result: 'Победа' },
 	]
 
-	const mockInteractions = [
-		{ playerName: 'Игрок1', interaction: 'Поддержка' },
-		{ playerName: 'Игрок2', interaction: 'Поддержка' },
-		{ playerName: 'Игрок3', interaction: 'Конфликт' },
-	]
-
 	return (
 		<Box sx={{ maxWidth: 1200, margin: 'auto', padding: 3 }}>
+			<Button variant='outlined' onClick={() => navigate(-1)} sx={{ mb: 2 }}>
+				← Назад
+			</Button>
+
 			<Card sx={{ textAlign: 'center', padding: 3, mb: 3 }}>
-				{/* <Avatar sx={{ width: 80, height: 80, margin: 'auto' }}>
-					{player[0].name[0]}
-				</Avatar> */}
 				<Typography variant='h6' fontWeight={600}>
 					{player[0].name}
 				</Typography>
-				{/* <Typography variant='body2' color='text.secondary'>
-					на сайте с 2022 года
-				</Typography> */}
 				<Tabs
 					value={selectedTab}
 					onChange={handleTabChange}
@@ -106,7 +100,7 @@ const PlayerStats = ({ id, name }) => {
 			{selectedTab === 0 && <PlayerStatistic statistic={statistic} />}
 
 			{selectedTab === 1 && (
-				<Box sx={{ maxHeight: 'calc(50vh )', overflowY: 'hidden' }}>
+				<Box sx={{ maxHeight: '50vh', overflowY: 'hidden' }}>
 					<RatingGraph player={player} />
 				</Box>
 			)}
