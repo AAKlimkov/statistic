@@ -1,6 +1,5 @@
 import {
 	Box,
-	Button,
 	Card,
 	CardContent,
 	List,
@@ -14,6 +13,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PlayerStatistic from './PlayerStatistic'
 // import PlayerIntersection from './PlayerIntersection'
+import BackButton from './BackButton'
 import RatingGraph from './RatingGraph'
 
 const PlayerStats = ({ id, name }) => {
@@ -76,9 +76,7 @@ const PlayerStats = ({ id, name }) => {
 
 	return (
 		<Box sx={{ maxWidth: 1200, margin: 'auto', padding: 3 }}>
-			<Button variant='outlined' onClick={() => navigate(-1)} sx={{ mb: 2 }}>
-				← Назад
-			</Button>
+			<BackButton />
 
 			<Card sx={{ textAlign: 'center', padding: 3, mb: 3 }}>
 				<Typography variant='h6' fontWeight={600}>
