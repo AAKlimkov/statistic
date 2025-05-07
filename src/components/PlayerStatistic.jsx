@@ -17,7 +17,6 @@ const rolesAll = [
 ]
 
 export default function PlayerStatistic({ statistic }) {
-
 	const totalGames =
 		statistic.find(item => item.category === 'Общее')?.games_count || 0
 
@@ -72,7 +71,10 @@ export default function PlayerStatistic({ statistic }) {
 				justifyContent='space-between'
 			>
 				{/* Блок "Общая статистика" */}
-				<Box flex='1 1 60%' maxWidth='60%'>
+				<Box
+					flex='1 1 100%' // ширина 100% для всех экранов
+					maxWidth='100%' // максимально 100%
+				>
 					<Typography variant='h5' gutterBottom>
 						Общая статистика
 					</Typography>
@@ -109,7 +111,10 @@ export default function PlayerStatistic({ statistic }) {
 				</Box>
 
 				{/* Первая карточка блока "Дополнительные баллы" */}
-				<Box flex='1 1 35%' maxWidth='35%'>
+				<Box
+					flex='1 1 100%' // ширина 100% для всех экранов
+					maxWidth='100%' // максимально 100%
+				>
 					<RoleCard role={roleDataAll[0]} />
 				</Box>
 			</Box>
@@ -118,13 +123,19 @@ export default function PlayerStatistic({ statistic }) {
 			<Card sx={{ p: 2 }}>
 				<Typography variant='h6'>Дополнительные баллы</Typography>
 
-				<Box display='flex' flexWrap='wrap' gap={2} justifyContent='center'>
-					{/* Остальные карточки (по 3 в ряд) */}
+				<Box
+					display='flex'
+					flexDirection='column'
+					gap={2}
+					justifyContent='center'
+				>
+					{/* Остальные карточки, каждая на новом ряду */}
 					{roleDataAll.slice(1).map(role => (
 						<Box
 							key={role.name}
-							flex='1 1 calc(33.333% - 16px)'
-							maxWidth='calc(33.333% - 16px)'
+							sx={{
+								width: '100%', // Каждый Box будет занимать 100% ширины
+							}}
 						>
 							<RoleCard role={role} />
 						</Box>
