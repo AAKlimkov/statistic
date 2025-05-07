@@ -1,0 +1,43 @@
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 16px;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+th,
+td {
+	padding: 8px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+	width: 30%;
+	text-align: center; /* Игрок */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+	width: 15%;
+	text-align: center; /* Игр */
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+	width: 25%;
+	text-align: center; /* Рейтинг */
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+	width: 15%;
+	text-align: right; /* Позиция, например */
+}

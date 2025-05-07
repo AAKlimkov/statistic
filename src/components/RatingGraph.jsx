@@ -43,6 +43,17 @@ const RatingGraph = ({ player }) => {
 					<h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
 						Рейтинг и Позиция для {player[0].name}
 					</h2>
+					{graphData.length > 0 && (
+						<div style={{ marginBottom: '16px', fontSize: '16px' }}>
+							<span>
+								<b>Текущий рейтинг:</b> {graphData[graphData.length - 1].rating}
+							</span>
+							{'  |  '}
+							<span>
+								<b>Текущее место:</b> {graphData[graphData.length - 1].position}
+							</span>
+						</div>
+					)}
 					<ResponsiveContainer width='100%' height={400}>
 						<LineChart data={graphData}>
 							<XAxis dataKey='date' />
