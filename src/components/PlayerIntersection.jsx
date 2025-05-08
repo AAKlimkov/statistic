@@ -10,23 +10,21 @@ import {
 	TableRow,
 	TableSortLabel,
 	Typography,
+	Select,
+	MenuItem,
+	FormControl,
+	InputLabel,
 } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-// import baseUrl from '../constants'
 
 const baseUrl = 'http://localhost:3001'
 
-// Функция для вычисления цвета в ячейке в зависимости от значения (20% - 80%)
 const getCellColor = value => {
-	// Используем регулярное выражение для извлечения процента из строки в формате "число/число (xx.xx%)"
 	const match = value.match(/\((\d+(\.\d+)?)%\)/)
-	if (!match) return '' // Если процент не найден, возвращаем пустую строку
-
-	// Извлекаем процентное значение
+	if (!match) return ''
 	const percentage = parseFloat(match[1])
 
-	// Возвращаем цвет в зависимости от диапазона процента
 	if (percentage <= 20) return 'rgba(255, 99, 71, 0.2)' // Красный
 	if (percentage <= 45) return 'rgba(255, 165, 0, 0.2)' // Оранжевый
 	if (percentage <= 55) return 'rgba(255, 255, 0, 0.2)' // Желтый
@@ -34,15 +32,14 @@ const getCellColor = value => {
 	return 'rgba(34, 139, 34, 0.2)' // Зеленый
 }
 
-const getSortValue = value => {
+const getSortValue = (value, sortBy) => {
 	if (!value) return 0
-	// Пробуем извлечь процент из скобок
-	const match = value.match(/\((\d+(\.\d+)?)%\)/)
-	if (match) return parseFloat(match[1])
-	// Если нет процента — пробуем взять первое число до слеша
+	if (sortBy === 'percent') {
+		const match = value.match(/\((\d+(\.\d+)?)%\)/)
+		if (match) return parseFloat(match[1])
+	}
 	const parts = value.split('/')
 	if (!isNaN(parts[0])) return parseInt(parts[0])
-	// В крайнем случае — вернем 0
 	return 0
 }
 
@@ -56,13 +53,13 @@ const PlayerIntersection = () => {
 	const [sortConfig, setSortConfig] = useState({
 		column: 'Общее',
 		direction: 'asc',
+		sortBy: 'games', // Добавляем параметр для сортировки по количеству игр или проценту
 	})
 
 	useEffect(() => {
 		const fetchData = async () => {
-			setLoading(true) // Устанавливаем состояние загрузки в начало
+			setLoading(true)
 			try {
-				// Первый запрос
 				const response1 = await fetch(
 					`https://mafia-server-cyan.vercel.app/api/player/${playerId.id}/intersections`
 				)
@@ -70,9 +67,8 @@ const PlayerIntersection = () => {
 					throw new Error('Ошибка при получении данных для intersections')
 				}
 				const data1 = await response1.json()
-				setTableData(data1) // Сохраняем данные для таблицы
+				setTableData(data1)
 
-				// Второй запрос
 				const response2 = await fetch(
 					`https://mafia-server-cyan.vercel.app/api/player/${playerId.id}/basestats`
 				)
@@ -80,12 +76,11 @@ const PlayerIntersection = () => {
 					throw new Error('Ошибка при получении данных для basestats')
 				}
 				const data2 = await response2.json()
-				setStats(data2) // Сохраняем данные для базовых статистик
-				console.log(stats)
+				setStats(data2)
 			} catch (err) {
-				setError(err.message) // Обработка ошибок
+				setError(err.message)
 			} finally {
-				setLoading(false) // Завершаем загрузку
+				setLoading(false)
 			}
 		}
 
@@ -97,12 +92,16 @@ const PlayerIntersection = () => {
 		if (sortConfig.column === column && sortConfig.direction === 'asc') {
 			direction = 'desc'
 		}
-		setSortConfig({ column, direction })
+		setSortConfig({ ...sortConfig, column, direction })
+	}
+
+	const handleSortByChange = (event) => {
+		setSortConfig({ ...sortConfig, sortBy: event.target.value })
 	}
 
 	const sortedData = [...tableData].sort((a, b) => {
-		const aValue = getSortValue(a[sortConfig.column])
-		const bValue = getSortValue(b[sortConfig.column])
+		const aValue = getSortValue(a[sortConfig.column], sortConfig.sortBy)
+		const bValue = getSortValue(b[sortConfig.column], sortConfig.sortBy)
 		return sortConfig.direction === 'asc' ? aValue - bValue : bValue - aValue
 	})
 
@@ -114,6 +113,7 @@ const PlayerIntersection = () => {
 		{ label: 'Разноцвет(Мирный)', key: 'РазноцветМирный' },
 		{ label: 'Разноцвет(Черный)', key: 'РазноцветЧерный' },
 	]
+
 	if (loading) return <CircularProgress sx={{ m: 2 }} />
 	if (error) return <Alert severity='error'>{error}</Alert>
 
@@ -135,22 +135,31 @@ const PlayerIntersection = () => {
 				</span>
 			</Typography>
 
+			<FormControl sx={{ m: 2, minWidth: 120 }}>
+				<InputLabel id="sort-by-label">Сортировка по</InputLabel>
+				<Select
+					labelId="sort-by-label"
+					value={sortConfig.sortBy}
+					onChange={handleSortByChange}
+					label="Сортировка по"
+				>
+					<MenuItem value="games">Количество игр</MenuItem>
+					<MenuItem value="percent">Процент побед</MenuItem>
+				</Select>
+			</FormControl>
+
 			<Table>
 				<TableHead>
 					<TableRow>
 						{columns.map(({ label, key }) => (
 							<TableCell
 								key={key}
-								sortDirection={
-									sortConfig.column === key ? sortConfig.direction : false
-								}
+								sortDirection={sortConfig.column === key ? sortConfig.direction : false}
 								sx={{ width: '20%' }}
 							>
 								<TableSortLabel
 									active={sortConfig.column === key}
-									direction={
-										sortConfig.column === key ? sortConfig.direction : 'asc'
-									}
+									direction={sortConfig.column === key ? sortConfig.direction : 'asc'}
 									onClick={() => handleSort(key)}
 								>
 									{label}
@@ -169,7 +178,6 @@ const PlayerIntersection = () => {
 								},
 							}}
 						>
-							{/* Для первого столбца убираем фон */}
 							<TableCell>{row.Противник}</TableCell>
 							<TableCell
 								sx={{
