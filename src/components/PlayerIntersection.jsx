@@ -34,6 +34,18 @@ const getCellColor = value => {
 	return 'rgba(34, 139, 34, 0.2)' // Зеленый
 }
 
+const getSortValue = value => {
+	if (!value) return 0
+	// Пробуем извлечь процент из скобок
+	const match = value.match(/\((\d+(\.\d+)?)%\)/)
+	if (match) return parseFloat(match[1])
+	// Если нет процента — пробуем взять первое число до слеша
+	const parts = value.split('/')
+	if (!isNaN(parts[0])) return parseInt(parts[0])
+	// В крайнем случае — вернем 0
+	return 0
+}
+
 const PlayerIntersection = () => {
 	const playerId = useParams()
 
@@ -89,20 +101,19 @@ const PlayerIntersection = () => {
 	}
 
 	const sortedData = [...tableData].sort((a, b) => {
-		const aValue = parseInt(a[sortConfig.column]?.split('/')[0]) || 0
-		const bValue = parseInt(b[sortConfig.column]?.split('/')[0]) || 0
+		const aValue = getSortValue(a[sortConfig.column])
+		const bValue = getSortValue(b[sortConfig.column])
 		return sortConfig.direction === 'asc' ? aValue - bValue : bValue - aValue
 	})
 
 	const columns = [
-		'Противник',
-		'Общее',
-		'Вместе Мирные',
-		'Вместе Черные',
-		'Разноцвет(Мирный)',
-		'Разноцвет(Черный)',
+		{ label: 'Противник', key: 'Противник' },
+		{ label: 'Общее', key: 'Общее' },
+		{ label: 'Вместе Мирные', key: 'ВместеМирные' },
+		{ label: 'Вместе Черные', key: 'ВместеЧерные' },
+		{ label: 'Разноцвет(Мирный)', key: 'РазноцветМирный' },
+		{ label: 'Разноцвет(Черный)', key: 'РазноцветЧерный' },
 	]
-
 	if (loading) return <CircularProgress sx={{ m: 2 }} />
 	if (error) return <Alert severity='error'>{error}</Alert>
 
@@ -127,22 +138,22 @@ const PlayerIntersection = () => {
 			<Table>
 				<TableHead>
 					<TableRow>
-						{columns.map(column => (
+						{columns.map(({ label, key }) => (
 							<TableCell
-								key={column}
+								key={key}
 								sortDirection={
-									sortConfig.column === column ? sortConfig.direction : false
+									sortConfig.column === key ? sortConfig.direction : false
 								}
-								sx={{ width: '20%' }} // Равная ширина для всех колонок
+								sx={{ width: '20%' }}
 							>
 								<TableSortLabel
-									active={sortConfig.column === column}
+									active={sortConfig.column === key}
 									direction={
-										sortConfig.column === column ? sortConfig.direction : 'asc'
+										sortConfig.column === key ? sortConfig.direction : 'asc'
 									}
-									onClick={() => handleSort(column)}
+									onClick={() => handleSort(key)}
 								>
-									{column}
+									{label}
 								</TableSortLabel>
 							</TableCell>
 						))}
