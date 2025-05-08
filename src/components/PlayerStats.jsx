@@ -7,12 +7,14 @@ import PlayerStatistic from './PlayerStatistic'
 import RatingGraph from './RatingGraph'
 
 const PlayerStats = ({ id, name }) => {
-	const [ratingHistory, setRatingHistory] = useState(null)
+	const [ratingHistory, setRatingHistory] = useState()
 	const [statistic, setStatistic] = useState(null)
 	const [stats, setStats] = useState(null)
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const [selectedTab, setSelectedTab] = useState(0)
+
+	console.log(ratingHistory)
 
 	const navigate = useNavigate()
 
@@ -37,8 +39,11 @@ const PlayerStats = ({ id, name }) => {
 				const statisticData = await statisticRes.json()
 				const statData = await statsRes.json()
 
+				console.log(ratingHistoryData)
+
 				// Сохраняем оба набора данных
 				setRatingHistory(ratingHistoryData)
+
 				setStatistic(statisticData)
 				setStats(statData)
 			} catch (err) {
@@ -69,7 +74,6 @@ const PlayerStats = ({ id, name }) => {
 		{ date: '2025-03-08', result: 'Поражение' },
 		{ date: '2025-03-05', result: 'Победа' },
 	]
-	console.log(stats)
 
 	return (
 		<Box sx={{ maxWidth: 1200, margin: 'auto', padding: 3 }}>

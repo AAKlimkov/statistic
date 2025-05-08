@@ -10,13 +10,14 @@ import {
 	YAxis,
 } from 'recharts'
 
-const RatingGraph = ({ RatingHistory }) => {
-	if (!RatingHistory || RatingHistory.length === 0) {
+const RatingGraph = ({ ratingHistory }) => {
+
+	if (!ratingHistory || ratingHistory.length === 0) {
 		return <div>Нет данных</div>
 	}
 
 	// Сортируем по дате
-	const sorted = [...RatingHistory].sort(
+	const sorted = [...ratingHistory].sort(
 		(a, b) => new Date(a.session_date) - new Date(b.session_date)
 	)
 
@@ -41,7 +42,7 @@ const RatingGraph = ({ RatingHistory }) => {
 			<Card>
 				<CardContent>
 					<h2 style={{ fontSize: '20px', fontWeight: 'bold' }}>
-						Рейтинг и Позиция для {RatingHistory[0].name}
+						Рейтинг и Позиция для {ratingHistory[0].name}
 					</h2>
 					{graphData.length > 0 && (
 						<div style={{ marginBottom: '16px', fontSize: '16px' }}>
