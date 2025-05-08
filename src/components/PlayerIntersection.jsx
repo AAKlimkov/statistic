@@ -1,137 +1,84 @@
-import React, { useState } from 'react'
-import gamesData from '../../rawData/updated_game_results_rating.json'
+import {
+	Alert,
+	CircularProgress,
+	Paper,
+	Table,
+	TableBody,
+	TableCell,
+	TableContainer,
+	TableHead,
+	TableRow,
+	TableSortLabel,
+	Typography,
+} from '@mui/material'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+// import baseUrl from '../constants'
 
-function aggregatePlayerData(playerName) {
-	const result = {}
+const baseUrl = 'http://localhost:3001'
 
-	// Функция для определения победы
-	const isVictory = points => {
-		const parsedPoints = parseFloat(points)
-		return parsedPoints > 0
-	}
+// Функция для вычисления цвета в ячейке в зависимости от значения (20% - 80%)
+const getCellColor = value => {
+	// Используем регулярное выражение для извлечения процента из строки в формате "число/число (xx.xx%)"
+	const match = value.match(/\((\d+(\.\d+)?)%\)/)
+	if (!match) return '' // Если процент не найден, возвращаем пустую строку
 
-	// Проходим по всем играм
-	for (const gameKey in gamesData) {
-		gamesData[gameKey].forEach(game => {
-			if (game.Игрок === playerName) {
-				const role =
-					game.Роль === 'Мафия' || game.Роль === 'Дон' ? 'черный' : 'мирный'
+	// Извлекаем процентное значение
+	const percentage = parseFloat(match[1])
 
-				// Ищем, с кем и в какой роли игрок играл
-				gamesData[gameKey].forEach(otherGame => {
-					if (otherGame.Игрок !== playerName) {
-						const otherRole =
-							otherGame.Роль === 'Мафия' || otherGame.Роль === 'Дон'
-								? 'черный'
-								: 'мирный'
-
-						const opponentName = otherGame.Игрок
-
-						// Инициализируем объект для противника, если еще не существует
-						if (!result[opponentName]) {
-							result[opponentName] = {
-								мирные: { игры: 0, победы: 0 },
-								черные: { игры: 0, победы: 0 },
-								разноцвет_мирный: { игры: 0, победы: 0 },
-								разноцвет_черный: { игры: 0, победы: 0 },
-								общее: { игры: 0, победы: 0 }, // Общее количество игр и побед
-							}
-						}
-
-						let isVictoryForThisGame = false
-						// Логика для подсчета типов игр
-						if (role === 'мирный' && otherRole === 'мирный') {
-							result[opponentName].мирные.игры += 1
-							result[opponentName].общее.игры += 1
-							isVictoryForThisGame = isVictory(game['Баллы за победу'])
-						} else if (role === 'черный' && otherRole === 'черный') {
-							result[opponentName].черные.игры += 1
-							result[opponentName].общее.игры += 1
-							isVictoryForThisGame = isVictory(game['Баллы за победу'])
-						} else if (role === 'мирный' && otherRole === 'черный') {
-							result[opponentName].разноцвет_мирный.игры += 1
-							result[opponentName].общее.игры += 1
-							isVictoryForThisGame = isVictory(game['Баллы за победу'])
-						} else if (role === 'черный' && otherRole === 'мирный') {
-							result[opponentName].разноцвет_черный.игры += 1
-							result[opponentName].общее.игры += 1
-							isVictoryForThisGame = isVictory(game['Баллы за победу'])
-						}
-
-						// Обновляем данные побед
-						if (isVictoryForThisGame) {
-							if (role === 'мирный' && otherRole === 'мирный') {
-								result[opponentName].мирные.победы += 1
-								result[opponentName].общее.победы += 1
-							} else if (role === 'черный' && otherRole === 'черный') {
-								result[opponentName].черные.победы += 1
-								result[opponentName].общее.победы += 1
-							} else if (role === 'мирный' && otherRole === 'черный') {
-								result[opponentName].разноцвет_мирный.победы += 1
-								result[opponentName].общее.победы += 1
-							} else if (role === 'черный' && otherRole === 'мирный') {
-								result[opponentName].разноцвет_черный.победы += 1
-								result[opponentName].общее.победы += 1
-							}
-						}
-					}
-				})
-			}
-		})
-	}
-
-	// Преобразуем данные в массив
-	const aggregatedData = Object.keys(result).map(opponent => {
-		const formatGamesData = (games, wins) => {
-			const winPercentage = games > 0 ? ((wins / games) * 100).toFixed(2) : 0
-			return `${games}/${wins} (${winPercentage}%)`
-		}
-
-		return {
-			Противник: opponent,
-			Общее: formatGamesData(
-				result[opponent].общее.игры,
-				result[opponent].общее.победы
-			),
-			ВместеМирные: formatGamesData(
-				result[opponent].мирные.игры,
-				result[opponent].мирные.победы
-			),
-			ВместеЧерные: formatGamesData(
-				result[opponent].черные.игры,
-				result[opponent].черные.победы
-			),
-			РазноцветМирный: formatGamesData(
-				result[opponent].разноцвет_мирный.игры,
-				result[opponent].разноцвет_мирный.победы
-			),
-			РазноцветЧерный: formatGamesData(
-				result[opponent].разноцвет_черный.игры,
-				result[opponent].разноцвет_черный.победы
-			),
-		}
-	})
-
-	return aggregatedData
+	// Возвращаем цвет в зависимости от диапазона процента
+	if (percentage <= 20) return 'rgba(255, 99, 71, 0.2)' // Красный
+	if (percentage <= 45) return 'rgba(255, 165, 0, 0.2)' // Оранжевый
+	if (percentage <= 55) return 'rgba(255, 255, 0, 0.2)' // Желтый
+	if (percentage <= 80) return 'rgba(144, 238, 144, 0.2)' // Светло-зеленый
+	return 'rgba(34, 139, 34, 0.2)' // Зеленый
 }
 
-const PlayerIntersection = ({ playerName }) => {
-	const [tableData, setTableData] = useState(aggregatePlayerData(playerName))
+const PlayerIntersection = () => {
+	const playerId = useParams()
+
+	const [tableData, setTableData] = useState([])
+	const [stats, setStats] = useState([])
+	const [loading, setLoading] = useState(true)
+	const [error, setError] = useState(null)
 	const [sortConfig, setSortConfig] = useState({
 		column: 'Общее',
 		direction: 'asc',
 	})
 
-	// Функция сортировки
-	const sortedData = [...tableData].sort((a, b) => {
-		const aValue = parseInt(a[sortConfig.column].split('/')[0])
-		const bValue = parseInt(b[sortConfig.column].split('/')[0])
-		if (sortConfig.direction === 'asc') {
-			return aValue - bValue
-		} else {
-			return bValue - aValue
+	useEffect(() => {
+		const fetchData = async () => {
+			setLoading(true) // Устанавливаем состояние загрузки в начало
+			try {
+				// Первый запрос
+				const response1 = await fetch(
+					`https://mafia-server-cyan.vercel.app/api/player/${playerId.id}/intersections`
+				)
+				if (!response1.ok) {
+					throw new Error('Ошибка при получении данных для intersections')
+				}
+				const data1 = await response1.json()
+				setTableData(data1) // Сохраняем данные для таблицы
+
+				// Второй запрос
+				const response2 = await fetch(
+					`https://mafia-server-cyan.vercel.app/api/player/${playerId.id}/basestats`
+				)
+				if (!response2.ok) {
+					throw new Error('Ошибка при получении данных для basestats')
+				}
+				const data2 = await response2.json()
+				setStats(data2) // Сохраняем данные для базовых статистик
+				console.log(stats)
+			} catch (err) {
+				setError(err.message) // Обработка ошибок
+			} finally {
+				setLoading(false) // Завершаем загрузку
+			}
 		}
-	})
+
+		fetchData()
+	}, [playerId])
 
 	const handleSort = column => {
 		let direction = 'asc'
@@ -141,41 +88,123 @@ const PlayerIntersection = ({ playerName }) => {
 		setSortConfig({ column, direction })
 	}
 
-	return (
-		<div>
-			<h1>Таблица для игрока</h1>
+	const sortedData = [...tableData].sort((a, b) => {
+		const aValue = parseInt(a[sortConfig.column]?.split('/')[0]) || 0
+		const bValue = parseInt(b[sortConfig.column]?.split('/')[0]) || 0
+		return sortConfig.direction === 'asc' ? aValue - bValue : bValue - aValue
+	})
 
-			{sortedData.length > 0 && (
-				<table border='1'>
-					<thead>
-						<tr>
-							<th onClick={() => handleSort('Противник')}>Противник</th>
-							<th onClick={() => handleSort('Общее')}>Общее</th>
-							<th onClick={() => handleSort('ВместеМирные')}>Вместе мирные</th>
-							<th onClick={() => handleSort('ВместеЧерные')}>Вместе черные</th>
-							<th onClick={() => handleSort('РазноцветМирный')}>
-								Разноцвет игрок мирный
-							</th>
-							<th onClick={() => handleSort('РазноцветЧерный')}>
-								Разноцвет игрок черный
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						{sortedData.map((row, index) => (
-							<tr key={index}>
-								<td>{row.Противник}</td>
-								<td>{row.Общее}</td>
-								<td>{row.ВместеМирные}</td>
-								<td>{row.ВместеЧерные}</td>
-								<td>{row.РазноцветМирный}</td>
-								<td>{row.РазноцветЧерный}</td>
-							</tr>
+	const columns = [
+		'Противник',
+		'Общее',
+		'Вместе Мирные',
+		'Вместе Черные',
+		'Разноцвет(Мирный)',
+		'Разноцвет(Черный)',
+	]
+
+	if (loading) return <CircularProgress sx={{ m: 2 }} />
+	if (error) return <Alert severity='error'>{error}</Alert>
+
+	return (
+		<TableContainer
+			component={Paper}
+			sx={{ mt: 2, borderRadius: 2, overflow: 'hidden' }}
+		>
+			<Typography variant='h6' sx={{ p: 2 }}>
+				Статистика игрока:
+				<span style={{ marginLeft: '10px' }}>
+					Всего игр: {stats.total_games} ({stats.total_win_pct}%).
+				</span>
+				<span style={{ marginLeft: '10px' }}>
+					Игры за красных: {stats.red_games} ({stats.red_win_pct}%).
+				</span>
+				<span style={{ marginLeft: '10px' }}>
+					Игры за черных: {stats.black_games} ({stats.black_win_pct}%).
+				</span>
+			</Typography>
+
+			<Table>
+				<TableHead>
+					<TableRow>
+						{columns.map(column => (
+							<TableCell
+								key={column}
+								sortDirection={
+									sortConfig.column === column ? sortConfig.direction : false
+								}
+								sx={{ width: '20%' }} // Равная ширина для всех колонок
+							>
+								<TableSortLabel
+									active={sortConfig.column === column}
+									direction={
+										sortConfig.column === column ? sortConfig.direction : 'asc'
+									}
+									onClick={() => handleSort(column)}
+								>
+									{column}
+								</TableSortLabel>
+							</TableCell>
 						))}
-					</tbody>
-				</table>
-			)}
-		</div>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					{sortedData.map((row, index) => (
+						<TableRow
+							key={index}
+							sx={{
+								'&:hover': {
+									backgroundColor: 'rgba(0, 0, 0, 0.1)', // Эффект hover для строк
+								},
+							}}
+						>
+							{/* Для первого столбца убираем фон */}
+							<TableCell>{row.Противник}</TableCell>
+							<TableCell
+								sx={{
+									borderRadius: 1,
+									backgroundColor: getCellColor(row.Общее),
+								}}
+							>
+								{row.Общее}
+							</TableCell>
+							<TableCell
+								sx={{
+									borderRadius: 1,
+									backgroundColor: getCellColor(row.ВместеМирные),
+								}}
+							>
+								{row.ВместеМирные}
+							</TableCell>
+							<TableCell
+								sx={{
+									borderRadius: 1,
+									backgroundColor: getCellColor(row.ВместеЧерные),
+								}}
+							>
+								{row.ВместеЧерные}
+							</TableCell>
+							<TableCell
+								sx={{
+									borderRadius: 1,
+									backgroundColor: getCellColor(row.РазноцветМирный),
+								}}
+							>
+								{row.РазноцветМирный}
+							</TableCell>
+							<TableCell
+								sx={{
+									borderRadius: 1,
+									backgroundColor: getCellColor(row.РазноцветЧерный),
+								}}
+							>
+								{row.РазноцветЧерный}
+							</TableCell>
+						</TableRow>
+					))}
+				</TableBody>
+			</Table>
+		</TableContainer>
 	)
 }
 

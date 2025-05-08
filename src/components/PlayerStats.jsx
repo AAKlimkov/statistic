@@ -1,24 +1,15 @@
-import {
-	Box,
-	Card,
-	CardContent,
-	List,
-	ListItem,
-	ListItemText,
-	Tab,
-	Tabs,
-	Typography,
-} from '@mui/material'
+import { Box, Card, Tab, Tabs, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import PlayerStatistic from './PlayerStatistic'
-// import PlayerIntersection from './PlayerIntersection'
 import BackButton from './BackButton'
+import PlayerIntersection from './PlayerIntersection'
+import PlayerStatistic from './PlayerStatistic'
 import RatingGraph from './RatingGraph'
 
 const PlayerStats = ({ id, name }) => {
-	const [player, setPlayer] = useState(null)
+	const [ratingHistory, setRatingHistory] = useState(null)
 	const [statistic, setStatistic] = useState(null)
+	const [stats, setStats] = useState(null)
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState(null)
 	const [selectedTab, setSelectedTab] = useState(0)
@@ -30,21 +21,26 @@ const PlayerStats = ({ id, name }) => {
 			setLoading(true)
 			try {
 				// Выполняем два запроса параллельно
-				const [ratingHistoryRes, statisticRes] = await Promise.all([
+				const [ratingHistoryRes, statisticRes, statsRes] = await Promise.all([
 					fetch(
 						`https://mafia-server-cyan.vercel.app/api/player/${id}/ratingHistory`
 					),
 					fetch(
 						`https://mafia-server-cyan.vercel.app/api/player/${id}/statistic`
 					),
+					fetch(
+						`https://mafia-server-cyan.vercel.app/api/player/${id}/basestats`
+					),
 				])
 
 				const ratingHistoryData = await ratingHistoryRes.json()
 				const statisticData = await statisticRes.json()
+				const statData = await statsRes.json()
 
 				// Сохраняем оба набора данных
-				setPlayer(ratingHistoryData)
+				setRatingHistory(ratingHistoryData)
 				setStatistic(statisticData)
+				setStats(statData)
 			} catch (err) {
 				setError('Ошибка при загрузке данных.')
 				console.error('Ошибка при загрузке:', err)
@@ -73,6 +69,7 @@ const PlayerStats = ({ id, name }) => {
 		{ date: '2025-03-08', result: 'Поражение' },
 		{ date: '2025-03-05', result: 'Победа' },
 	]
+	console.log(stats)
 
 	return (
 		<Box sx={{ maxWidth: 1200, margin: 'auto', padding: 3 }}>
@@ -80,7 +77,7 @@ const PlayerStats = ({ id, name }) => {
 
 			<Card sx={{ textAlign: 'center', padding: 3, mb: 3 }}>
 				<Typography variant='h6' fontWeight={600}>
-					{player[0].name}
+					{ratingHistory[0].name}
 				</Typography>
 				<Tabs
 					value={selectedTab}
@@ -90,8 +87,8 @@ const PlayerStats = ({ id, name }) => {
 				>
 					<Tab label='Статистика' />
 					<Tab label='Графики' />
-					{/* <Tab label='История игр' />
-					<Tab label='Взаимодействие с игроками' /> */}
+					<Tab label='Взаимодействие с игроками' />
+					{/* <Tab label='История игр' />*/}
 				</Tabs>
 			</Card>
 
@@ -99,11 +96,13 @@ const PlayerStats = ({ id, name }) => {
 
 			{selectedTab === 1 && (
 				<Box sx={{ maxHeight: '50vh', overflowY: 'hidden' }}>
-					<RatingGraph player={player} />
+					<RatingGraph ratingHistory={ratingHistory} />
 				</Box>
 			)}
 
-			{selectedTab === 2 && (
+			{selectedTab === 2 && <PlayerIntersection />}
+
+			{/* {selectedTab === 3 && (
 				<Card>
 					<CardContent>
 						<Typography variant='h6'>История игр</Typography>
@@ -119,9 +118,7 @@ const PlayerStats = ({ id, name }) => {
 						</List>
 					</CardContent>
 				</Card>
-			)}
-
-			{/* {selectedTab === 3 && <PlayerIntersection playerName={name} />} */}
+			)} */}
 		</Box>
 	)
 }
