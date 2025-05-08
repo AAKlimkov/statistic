@@ -18,17 +18,18 @@ export default function RoleCard({ role }) {
 	} = role
 
 	// Преобразуем данные для pie chart из avg_judge
-	const judgeData = Object.keys(avgPointsFull.avg_judge)
-		.filter(key => key !== 'total') // Исключаем 'total'
-		.map(key => {
-			const percent = avgPointsFull.avg_judge[key].percent
-			const count = avgPointsFull.avg_judge[key].count // Добавляем количество
-			return {
-				name: key,
-				value: percent,
-				count, // Добавляем количество
-			}
-		})
+	const judgeData = avgPointsFull?.avg_judge
+		? Object.keys(avgPointsFull.avg_judge)
+				.filter(key => key !== 'total') // Исключаем 'total'
+				.map(key => {
+					const judge = avgPointsFull.avg_judge[key]
+					return {
+						name: key,
+						value: judge.percent,
+						count: judge.count,
+					}
+				})
+		: []
 
 	// Кастомный лейбл для отображения процента и количества
 	const renderLabel = entry => {
