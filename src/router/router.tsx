@@ -1,15 +1,55 @@
 import React from 'react'
-import { createHashRouter } from 'react-router-dom'
+import { createHashRouter, Link } from 'react-router-dom'
 import PlayerPage from '../pages/PlayerPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
+import TournamentPage from '../pages/TournamentPage'
+import TournamentsTablePage from '../pages/TournamentsTablePage'
+
+const Layout = ({ children }) => (
+	<div>
+		<nav
+			style={{ padding: 10, borderBottom: '1px solid #ccc', marginBottom: 20 }}
+		>
+			<Link to='/' style={{ marginRight: 15 }}>
+				Статистика игроков
+			</Link>
+			<Link to='/tournaments'>Статистика турниров</Link>
+		</nav>
+		<main>{children}</main>
+	</div>
+)
 
 export const router = createHashRouter([
 	{
 		path: '/',
-		element: <PlayersTablePage />,
+		element: (
+			<Layout>
+				<PlayersTablePage />
+			</Layout>
+		),
+	},
+	{
+		path: '/tournaments',
+		element: (
+			<Layout>
+				<TournamentsTablePage />
+			</Layout>
+		),
 	},
 	{
 		path: 'player/:id',
-		element: <PlayerPage />,
+		element: (
+			<Layout>
+				<PlayerPage />
+			</Layout>
+		),
+	},
+	{
+		path: 'tournament/:id',
+		element: (
+			<Layout>
+				<TournamentPage />
+			</Layout>
+		),
 	},
 ])

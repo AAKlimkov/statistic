@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './PlayersTable.css'
 
-const files = import.meta.glob('/src/assets/data/*.json', { eager: true })
-
 const PlayersTable = () => {
 	const [playersData, setPlayersData] = useState<Record<string, any>>({})
 	const [search, setSearch] = useState('')

@@ -1,0 +1,127 @@
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 16px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+	font-family: Arial, sans-serif;
+}
+
+th {
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-word;
+	line-height: 1.4;
+	padding: 12px 8px;
+	text-align: center;
+	background-color: #f2f2f2;
+	user-select: none;
+	cursor: pointer;
+}
+
+th:hover {
+	background-color: #e0e0e0;
+}
+
+td {
+	padding: 8px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	text-align: center;
+}
+
+/* Первый столбец — имя игрока — больше места и выравнивание по левому краю */
+th:nth-child(1),
+td:nth-child(1) {
+	width: 28%;
+	text-align: left;
+}
+
+/* Колонки с числовыми значениями — одинаковая ширина */
+th:nth-child(n + 2),
+td:nth-child(n + 2) {
+	width: 10%;
+}
+
+/* Если нужно отдельные ширины по столбцам, можно задать явно: */
+/* Игр */
+th:nth-child(2),
+td:nth-child(2) {
+	width: 10%;
+}
+
+/* Победы красных */
+th:nth-child(3),
+td:nth-child(3) {
+	width: 10%;
+}
+
+/* Победы черных */
+th:nth-child(4),
+td:nth-child(4) {
+	width: 10%;
+}
+
+/* Средние очки */
+th:nth-child(5),
+td:nth-child(5) {
+	width: 10%;
+}
+
+/* Средние очки судей */
+th:nth-child(6),
+td:nth-child(6) {
+	width: 10%;
+}
+
+/* Рейтинг в начале */
+th:nth-child(7),
+td:nth-child(7) {
+	width: 12%;
+	text-align: right;
+}
+
+/* Рейтинг в конце */
+th:nth-child(8),
+td:nth-child(8) {
+	width: 12%;
+	text-align: right;
+}
+
+/* Инпут поиска */
+input[type='text'] {
+	font-size: 16px;
+	padding: 6px 12px;
+	margin-bottom: 16px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 100%;
+	max-width: 400px;
+	box-sizing: border-box;
+}
+
+/* Селект сессий */
+select {
+	font-size: 16px;
+	padding: 6px 12px;
+	margin-bottom: 24px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	min-width: 200px;
+	cursor: pointer;
+}
+
+/* Зебра-стиль для строк */
+tbody tr:nth-child(odd) {
+	background-color: #fafafa;
+}
+
+tbody tr:hover {
+	background-color: #e8f0fe;
+}
