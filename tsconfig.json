@@ -4,6 +4,6 @@
 		"lib": ["esnext", "dom"],
 		"module": "ESNext",
 		"moduleResolution": "bundler",
-		"types": ["vite/client"]
+		"types": ["node", "vite/client"]
 	}
 }

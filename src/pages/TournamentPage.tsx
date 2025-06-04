@@ -1,5 +1,5 @@
 import React from 'react'
-import TournamentTable from '../components/TournamentTable'
+import TournamentTable from '../modules/Tournaments/TournamentTable'
 
 const TournamentPage: React.FC = () => {
 	return (

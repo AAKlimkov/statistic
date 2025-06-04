@@ -1,5 +1,8 @@
 import React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
+import AddFantasyPlayerPage from '../pages/AddFantasyPlayerPage'
+import FantasyPlayerViewPage from '../pages/FantasyPlayerViewPage'
+import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
 import TournamentPage from '../pages/TournamentPage'
@@ -14,6 +17,7 @@ const Layout = ({ children }) => (
 				Статистика игроков
 			</Link>
 			<Link to='/tournaments'>Статистика турниров</Link>
+			<Link to='/fantasyQual'>Фэнтези квалификация</Link>
 		</nav>
 		<main>{children}</main>
 	</div>
@@ -33,6 +37,30 @@ export const router = createHashRouter([
 		element: (
 			<Layout>
 				<TournamentsTablePage />
+			</Layout>
+		),
+	},
+	{
+		path: '/fantasyQual',
+		element: (
+			<Layout>
+				<FantasyTablePage />
+			</Layout>
+		),
+	},
+	{
+		path: '/fantasyQual/:id',
+		element: (
+			<Layout>
+				<FantasyPlayerViewPage />
+			</Layout>
+		),
+	},
+	{
+		path: '/fantasyQual/add',
+		element: (
+			<Layout>
+				<AddFantasyPlayerPage />
 			</Layout>
 		),
 	},

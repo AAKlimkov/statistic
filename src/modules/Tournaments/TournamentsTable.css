@@ -1,0 +1,80 @@
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 16px;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+
+th {
+	white-space: normal;
+
+	word-wrap: break-word;
+	word-break: break-word;
+
+	line-height: 1.4;
+
+	padding: 12px 8px;
+	text-align: center;
+}
+
+td {
+	padding: 8px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* Турнир - больше места */
+th:nth-child(1),
+td:nth-child(1) {
+	width: 28%;
+	text-align: left;
+}
+
+/* Уникальные игроки */
+th:nth-child(2),
+td:nth-child(2) {
+	width: 12%;
+	text-align: center;
+}
+
+/* Всего игр */
+th:nth-child(3),
+td:nth-child(3) {
+	width: 12%;
+	text-align: center;
+}
+
+/* Победы красных */
+th:nth-child(4),
+td:nth-child(4) {
+	width: 12%;
+	text-align: center;
+}
+
+/* Победы черных */
+th:nth-child(5),
+td:nth-child(5) {
+	width: 12%;
+	text-align: center;
+}
+
+/* Средний стартовый рейтинг */
+th:nth-child(6),
+td:nth-child(6) {
+	width: 12%;
+	text-align: right;
+}
+
+/* Средний финальный рейтинг */
+th:nth-child(7),
+td:nth-child(7) {
+	width: 12%;
+	text-align: right;
+}
