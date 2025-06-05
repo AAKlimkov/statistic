@@ -8,6 +8,8 @@ interface Props {
 	setName: (v: string) => void
 	setSecret: (v: string) => void
 	onSubmit: () => void
+	onDelete?: () => void
+	isEdit?: boolean
 }
 
 const FantasyForm: React.FC<Props> = ({
@@ -16,6 +18,8 @@ const FantasyForm: React.FC<Props> = ({
 	setName,
 	setSecret,
 	onSubmit,
+	onDelete,
+	isEdit = false,
 }) => {
 	return (
 		<Box
@@ -31,6 +35,7 @@ const FantasyForm: React.FC<Props> = ({
 				value={name}
 				onChange={e => setName(e.target.value)}
 				placeholder='Имя'
+				disabled={isEdit} // блокируем поле при редактировании
 			/>
 			<InputField
 				value={secret}
@@ -38,9 +43,25 @@ const FantasyForm: React.FC<Props> = ({
 				placeholder='Кодовое слово'
 				type='password'
 			/>
-			<Button variant='contained' color='success' onClick={onSubmit}>
-				Добавить участника
-			</Button>
+			{isEdit ? (
+				<Box sx={{ display: 'flex', gap: 2 }}>
+					<Button
+						variant='contained'
+						color='primary'
+						onClick={onSubmit}
+						fullWidth
+					>
+						Обновить
+					</Button>
+					<Button variant='outlined' color='error' onClick={onDelete} fullWidth>
+						Удалить
+					</Button>
+				</Box>
+			) : (
+				<Button variant='contained' color='success' onClick={onSubmit}>
+					Добавить участника
+				</Button>
+			)}
 		</Box>
 	)
 }

@@ -56,11 +56,13 @@ export default async function handler(req: Request) {
 
 		const { data, error } = await supabase
 			.from('fantasy_picks')
-			.insert(body)
+			.upsert(body, {
+				onConflict: 'fantasy_user_id,qualification_index,player_id',
+			})
 			.select('id, fantasy_user_id, qualification_index, player_id')
 
 		if (error) {
-			console.error('Insert error:', error)
+			console.error('Upsert error:', error)
 			return new Response(JSON.stringify({ error: error.message }), {
 				status: 500,
 				headers: { ...corsHeaders, 'Content-Type': 'application/json' },

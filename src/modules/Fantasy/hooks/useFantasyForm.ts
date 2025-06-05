@@ -50,7 +50,7 @@ export const useFantasyForm = () => {
 		if (!validate()) return null
 
 		try {
-			// Создаем пользователя
+			// 1. Создание игрока
 			const playerRes = await fetch('/api/fantasy_users', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -60,30 +60,61 @@ export const useFantasyForm = () => {
 			if (!playerRes.ok) throw new Error('Ошибка при сохранении игрока')
 			const playerData: PlayerData = await playerRes.json()
 
-			// Отправляем пики параллельно
-			const picksPromises = Object.entries(selected).flatMap(
-				([kvalIndex, players]) =>
-					players.map((player_id: number) =>
-						fetch('/api/fantasy_picks', {
-							method: 'POST',
-							headers: { 'Content-Type': 'application/json' },
-							body: JSON.stringify({
-								fantasy_user_id: playerData.id,
-								qualification_index: Number(kvalIndex),
-								player_id,
-							}),
-						}).then(res => {
-							if (!res.ok) throw new Error('Ошибка при сохранении пиков')
-							return res.json()
-						})
-					)
+			// 2. Подготовка массива пиков
+			const picksPayload: PickData[] = Object.entries(selected).flatMap(
+				([qualification_index, players]) =>
+					players.map(player_id => ({
+						fantasy_user_id: playerData.id,
+						qualification_index: Number(qualification_index),
+						player_id,
+					}))
 			)
 
-			const picks = await Promise.all(picksPromises)
+			// 3. Отправка всех пиков одним запросом
+			const picksRes = await fetch('/api/fantasy_picks', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(picksPayload),
+			})
+
+			if (!picksRes.ok) throw new Error('Ошибка при сохранении пиков')
+			const picks: PickData[] = await picksRes.json()
 
 			showToast('Участник успешно добавлен!', 'success')
-
 			return { player: playerData, picks }
+		} catch (error: any) {
+			showToast(error.message || 'Ошибка при сохранении данных', 'error')
+			return null
+		}
+	}
+
+	const submitEdit = async (
+		fantasy_user_id: number
+	): Promise<PickData[] | null> => {
+		if (!validate()) return null
+
+		try {
+			const picksBody: PickData[] = Object.entries(selected).flatMap(
+				([qualification_index, players]) =>
+					players.map(player_id => ({
+						fantasy_user_id,
+						qualification_index: Number(qualification_index),
+						player_id,
+					}))
+			)
+
+			const picksRes = await fetch('/api/fantasy/user_pick_update', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(picksBody),
+			})
+
+			if (!picksRes.ok) throw new Error('Ошибка при сохранении пиков')
+			const picks: PickData[] = await picksRes.json()
+
+			showToast('Пики успешно обновлены!', 'success')
+
+			return picks
 		} catch (error: any) {
 			showToast(error.message || 'Ошибка при сохранении данных', 'error')
 			return null
@@ -101,5 +132,6 @@ export const useFantasyForm = () => {
 		setToast,
 		handleSelect,
 		submit,
+		submitEdit,
 	}
 }

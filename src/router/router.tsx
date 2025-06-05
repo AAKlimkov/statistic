@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
-import FantasyPlayerViewPage from '../pages/FantasyPlayerViewPage'
+import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
@@ -57,10 +57,10 @@ export const router = createHashRouter([
 		),
 	},
 	{
-		path: '/fantasyQual/:id',
+		path: '/fantasy/player/:userId',
 		element: (
 			<Layout>
-				<FantasyPlayerViewPage />
+				<EditFantasyTeamPage />
 			</Layout>
 		),
 	},

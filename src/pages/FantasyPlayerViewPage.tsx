@@ -6,7 +6,8 @@ import {
 	Paper,
 	Typography,
 } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { qualData } from '../modules/Fantasy/data/qualData'
 

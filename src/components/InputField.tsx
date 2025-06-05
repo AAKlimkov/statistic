@@ -1,10 +1,11 @@
-import React from 'react'
+import * as React from 'react'
 
 interface CustomInputProps {
 	value: string
 	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 	placeholder: string
 	type?: string
+	disabled?: boolean
 }
 
 const inputStyle: React.CSSProperties = {
@@ -21,6 +22,7 @@ const InputField: React.FC<CustomInputProps> = ({
 	onChange,
 	placeholder,
 	type = 'text',
+	disabled = false,
 }) => {
 	return (
 		<input
@@ -29,6 +31,7 @@ const InputField: React.FC<CustomInputProps> = ({
 			onChange={onChange}
 			placeholder={placeholder}
 			style={inputStyle}
+			disabled={disabled}
 		/>
 	)
 }

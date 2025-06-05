@@ -5,7 +5,7 @@ import { SelectedPlayers } from '../types'
 
 interface Props {
 	selected: SelectedPlayers
-	onSelect: (kvalIndex: number, playerId: number) => void
+	onSelect: (kvalIndex: number, player: number) => void
 }
 
 const QualPicks: React.FC<Props> = ({ selected, onSelect }) => {
