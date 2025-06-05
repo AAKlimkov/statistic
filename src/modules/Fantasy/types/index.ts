@@ -24,3 +24,12 @@ export interface PickData {
 	qualification_index: number
 	player_id: number
 }
+
+export interface FantasyUser {
+	id: number
+	name: string
+}
+
+export interface PickDataWithUser extends PickData {
+	fantasy_users: FantasyUser
+}

@@ -39,6 +39,36 @@ export default async function handler(req: Request) {
 			})
 		}
 
+		// Проверка на уникальность по name + secret
+		const { data: existingUser, error: fetchError } = await supabase
+			.from('fantasy_users')
+			.select('id')
+			.eq('name', name)
+			.eq('secret', secret)
+			.single()
+
+		if (existingUser) {
+			return new Response(
+				JSON.stringify({
+					error: 'Пользователь с таким именем и кодовым словом уже существует',
+				}),
+				{
+					status: 409,
+					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+				}
+			)
+		}
+
+		// Игнорируем ошибку «не найдено», это OK
+		if (fetchError && fetchError.code !== 'PGRST116') {
+			console.error('Fetch error:', fetchError)
+			return new Response(JSON.stringify({ error: fetchError.message }), {
+				status: 500,
+				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+			})
+		}
+
+		// Вставка нового пользователя
 		const { data, error } = await supabase
 			.from('fantasy_users')
 			.insert([{ name, secret }])

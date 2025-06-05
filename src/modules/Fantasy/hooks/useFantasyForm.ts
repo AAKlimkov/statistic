@@ -51,7 +51,7 @@ export const useFantasyForm = () => {
 
 		try {
 			// Создаем пользователя
-			const playerRes = await fetch('/api/fantasy_picks', {
+			const playerRes = await fetch('/api/fantasy_users', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ name, secret }),

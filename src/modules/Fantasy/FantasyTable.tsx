@@ -83,9 +83,12 @@ const FantasyTable = () => {
 			<table>
 				<thead>
 					<tr>
-						<th onClick={() => handleSort('name')}>Имя</th>
-						<th onClick={() => handleSort('games_count')}>Количество игр</th>
-						<th onClick={() => handleSort('last_ratingPoints')}>Баллы</th>
+						<th onClick={() => handleSort('name')}>Имя пикера</th>
+						<th onClick={() => handleSort('kval_0_points')}>Квал 1</th>
+						<th onClick={() => handleSort('kval_1_points')}>Квал 2</th>
+						<th onClick={() => handleSort('kval_2_points')}>Квал 3</th>
+						<th onClick={() => handleSort('kval_3_points')}>Квал 4</th>
+						<th onClick={() => handleSort('total_points')}>Итого</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -94,8 +97,11 @@ const FantasyTable = () => {
 							<td>
 								<Link to={`/fantasy/player/${player.id}`}>{player.name}</Link>
 							</td>
-							<td>{player.games_count}</td>
-							<td>{player.last_ratingPoints.toFixed(2)}</td>
+							<td>{player.kval_0_points}</td>
+							<td>{player.kval_1_points}</td>
+							<td>{player.kval_2_points}</td>
+							<td>{player.kval_3_points}</td>
+							<td>{player.total_points}</td>
 						</tr>
 					))}
 				</tbody>
