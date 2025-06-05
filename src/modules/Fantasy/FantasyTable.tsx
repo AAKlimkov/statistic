@@ -3,26 +3,73 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './FantasyTable.css'
 
+interface Pick {
+	playerId: number
+	playerName: string
+}
+
+interface UserData {
+	userId: number
+	name: string
+	picks: Pick[]
+}
+
+type ApiData = Record<string, UserData[]>
+
+interface PlayerRow {
+	id: number
+	name: string
+	kvals: string[] // ники игроков через запятую для каждой квалификации
+	total: number // сумма пиков (прошедших)
+}
+
 const FantasyTable = () => {
-	const [playersData, setPlayersData] = useState([])
+	const [playersData, setPlayersData] = useState<PlayerRow[]>([])
 	const [search, setSearch] = useState('')
 	const [currentPage, setCurrentPage] = useState(1)
-	const [sortConfig, setSortConfig] = useState({
+	const [sortConfig, setSortConfig] = useState<{
+		key: keyof PlayerRow | 'name'
+		direction: 'asc' | 'desc'
+	}>({
 		key: 'name',
 		direction: 'asc',
 	})
 
 	const playersPerPage = 25
 
+	// Функция для трансформации API-данных в формат таблицы
+	const transformData = (data: ApiData): PlayerRow[] => {
+		const usersMap: Record<number, PlayerRow> = {}
+
+		Object.entries(data).forEach(([kvalIndex, users]) => {
+			users.forEach(user => {
+				if (!usersMap[user.userId]) {
+					usersMap[user.userId] = {
+						id: user.userId,
+						name: user.name,
+						kvals: ['', '', '', ''],
+						total: 0,
+					}
+				}
+				const playersNames = user.picks.map(p => p.playerName).join(', ')
+				usersMap[user.userId].kvals[+kvalIndex] = playersNames
+				usersMap[user.userId].total += user.picks.length
+			})
+		})
+
+		return Object.values(usersMap)
+	}
+
 	useEffect(() => {
 		const fetchPlayers = async () => {
 			try {
 				const res = await fetch(
-					'https://mafia-server-cyan.vercel.app/api/fantasy/players'
+					'https://mafia-server-cyan.vercel.app/api/fantasy/allPicks'
 				)
 				if (!res.ok) throw new Error('Ошибка при загрузке игроков')
 				const data = await res.json()
-				setPlayersData(data)
+				const transformed = transformData(data)
+				setPlayersData(transformed)
 			} catch (err) {
 				console.error('Ошибка при загрузке игроков фэнтези:', err)
 			}
@@ -30,21 +77,22 @@ const FantasyTable = () => {
 		fetchPlayers()
 	}, [])
 
-	// Фильтрация по поиску
+	// Фильтрация по имени пользователя
 	const filteredPlayers = playersData.filter(player =>
 		player.name.toLowerCase().includes(search.toLowerCase())
 	)
 
 	// Сортировка
 	const sortedPlayers = [...filteredPlayers].sort((a, b) => {
-		if (typeof a[sortConfig.key] === 'string') {
+		const key = sortConfig.key
+		if (typeof a[key] === 'string') {
 			return sortConfig.direction === 'asc'
-				? a[sortConfig.key].localeCompare(b[sortConfig.key])
-				: b[sortConfig.key].localeCompare(a[sortConfig.key])
+				? (a[key] as string).localeCompare(b[key] as string)
+				: (b[key] as string).localeCompare(a[key] as string)
 		}
 		return sortConfig.direction === 'asc'
-			? a[sortConfig.key] - b[sortConfig.key]
-			: b[sortConfig.key] - a[sortConfig.key]
+			? (a[key] as number) - (b[key] as number)
+			: (b[key] as number) - (a[key] as number)
 	})
 
 	// Пагинация
@@ -57,7 +105,7 @@ const FantasyTable = () => {
 
 	const totalPages = Math.ceil(sortedPlayers.length / playersPerPage)
 
-	const handleSort = key => {
+	const handleSort = (key: keyof PlayerRow | 'name') => {
 		setSortConfig(prevConfig => ({
 			key,
 			direction:
@@ -74,7 +122,7 @@ const FantasyTable = () => {
 			<div className='filters'>
 				<input
 					type='text'
-					placeholder='Поиск по имени игрока...'
+					placeholder='Поиск по имени пикера...'
 					value={search}
 					onChange={e => setSearch(e.target.value)}
 				/>
@@ -84,11 +132,11 @@ const FantasyTable = () => {
 				<thead>
 					<tr>
 						<th onClick={() => handleSort('name')}>Имя пикера</th>
-						<th onClick={() => handleSort('kval_0_points')}>Квал 1</th>
-						<th onClick={() => handleSort('kval_1_points')}>Квал 2</th>
-						<th onClick={() => handleSort('kval_2_points')}>Квал 3</th>
-						<th onClick={() => handleSort('kval_3_points')}>Квал 4</th>
-						<th onClick={() => handleSort('total_points')}>Итого</th>
+						<th onClick={() => handleSort('kvals')}>Квал 1</th>
+						<th onClick={() => handleSort('kvals')}>Квал 2</th>
+						<th onClick={() => handleSort('kvals')}>Квал 3</th>
+						<th onClick={() => handleSort('kvals')}>Квал 4</th>
+						<th onClick={() => handleSort('total')}>Итого</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -97,11 +145,11 @@ const FantasyTable = () => {
 							<td>
 								<Link to={`/fantasy/player/${player.id}`}>{player.name}</Link>
 							</td>
-							<td>{player.kval_0_points}</td>
-							<td>{player.kval_1_points}</td>
-							<td>{player.kval_2_points}</td>
-							<td>{player.kval_3_points}</td>
-							<td>{player.total_points}</td>
+							<td>{player.kvals[0]}</td>
+							<td>{player.kvals[1]}</td>
+							<td>{player.kvals[2]}</td>
+							<td>{player.kvals[3]}</td>
+							<td>{player.total}</td>
 						</tr>
 					))}
 				</tbody>

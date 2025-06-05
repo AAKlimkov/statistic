@@ -25,11 +25,12 @@ export interface PickData {
 	player_id: number
 }
 
-export interface FantasyUser {
+export interface User {
 	id: number
 	name: string
 }
 
 export interface PickDataWithUser extends PickData {
-	fantasy_users: FantasyUser
+	fantasy_users: User
+	players: User
 }

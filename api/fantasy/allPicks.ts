@@ -1,6 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 import { PickDataWithUser } from '../../src/modules/Fantasy/types'
 
+const supabaseUrl = process.env.SUPABASE_URL
+const supabaseAnonKey = process.env.SUPABASE_ANON_KEY
+const supabase = createClient(supabaseUrl!, supabaseAnonKey!)
+
 export const config = {
 	runtime: 'edge',
 }
@@ -25,20 +29,16 @@ export default async function handler(req: Request) {
 		})
 	}
 
-	const supabase = createClient(
-		process.env.SUPABASE_URL!,
-		process.env.SUPABASE_ANON_KEY!
-	)
-
 	try {
 		const { data: picks, error } = (await supabase.from('fantasy_picks')
 			.select(`
-			id,
-			fantasy_user_id,
-			qualification_index,
-			player_id,
-			fantasy_users ( id, name )
-		`)) as { data: PickDataWithUser[] | null; error: any }
+        id,
+        fantasy_user_id,
+        qualification_index,
+        player_id,
+        fantasy_users ( id, name ),
+        players ( id, name )
+      `)) as { data: PickDataWithUser[] | null; error: any }
 
 		if (error) {
 			console.error('Fetch error:', error)
@@ -48,7 +48,6 @@ export default async function handler(req: Request) {
 			})
 		}
 
-		// Группируем по квалификациям
 		const grouped: Record<string, any[]> = {}
 
 		for (const pick of picks || []) {
@@ -65,7 +64,10 @@ export default async function handler(req: Request) {
 				grouped[kval].push(user)
 			}
 
-			user.picks.push({ playerId: pick.player_id })
+			user.picks.push({
+				playerId: pick.player_id,
+				playerName: pick.players.name,
+			})
 		}
 
 		return new Response(JSON.stringify(grouped), {
