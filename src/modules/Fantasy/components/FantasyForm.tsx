@@ -53,9 +53,9 @@ const FantasyForm: React.FC<Props> = ({
 					>
 						Обновить
 					</Button>
-					<Button variant='outlined' color='error' onClick={onDelete} fullWidth>
+					{/* <Button variant='outlined' color='error' onClick={onDelete} fullWidth>
 						Удалить
-					</Button>
+					</Button> */}
 				</Box>
 			) : (
 				<Button variant='contained' color='success' onClick={onSubmit}>

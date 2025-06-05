@@ -53,7 +53,6 @@ const FantasyTable = () => {
 				}
 				const playersNames = user.picks.map(p => p.playerName).join(', ')
 				usersMap[user.userId].kvals[+kvalIndex] = playersNames
-				usersMap[user.userId].total += user.picks.length
 			})
 		})
 

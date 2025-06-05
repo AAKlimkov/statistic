@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { qualData } from '../data/qualData'
 import { PickData, PlayerData, SelectedPlayers, Toast } from '../types'
 
@@ -11,6 +12,8 @@ export const useFantasyForm = () => {
 		message: '',
 		severity: 'success',
 	})
+
+	const navigate = useNavigate()
 
 	const handleSelect = (kvalIndex: number, playerId: number) => {
 		const current = selected[kvalIndex] || []
@@ -81,6 +84,9 @@ export const useFantasyForm = () => {
 			const picks: PickData[] = await picksRes.json()
 
 			showToast('Участник успешно добавлен!', 'success')
+			setTimeout(() => {
+				navigate('/')
+			}, 3000)
 			return { player: playerData, picks }
 		} catch (error: any) {
 			showToast(error.message || 'Ошибка при сохранении данных', 'error')
@@ -103,17 +109,29 @@ export const useFantasyForm = () => {
 					}))
 			)
 
+			const requestBody = {
+				secret,
+				fantasy_user_id,
+				picks: picksBody,
+			}
+
 			const picksRes = await fetch('/api/fantasy/user_pick_update', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(picksBody),
+				body: JSON.stringify(requestBody),
 			})
 
-			if (!picksRes.ok) throw new Error('Ошибка при сохранении пиков')
+			if (!picksRes.ok) {
+				const errData = await picksRes.json()
+				const message =
+					errData?.error === 'Invalid secret word'
+						? '⛔ Неверное кодовое слово. Проверьте ввод.'
+						: 'Ошибка при сохранении пиков'
+				throw new Error(message)
+			}
+
 			const picks: PickData[] = await picksRes.json()
-
 			showToast('Пики успешно обновлены!', 'success')
-
 			return picks
 		} catch (error: any) {
 			showToast(error.message || 'Ошибка при сохранении данных', 'error')

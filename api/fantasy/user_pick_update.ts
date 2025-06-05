@@ -31,9 +31,19 @@ export default async function handler(req: Request) {
 	try {
 		const body = await req.json()
 
-		if (!Array.isArray(body) || body.length === 0) {
+		// Проверка тела
+		if (
+			typeof body !== 'object' ||
+			typeof body.secret !== 'string' ||
+			typeof body.fantasy_user_id !== 'number' ||
+			!Array.isArray(body.picks) ||
+			body.picks.length === 0
+		) {
 			return new Response(
-				JSON.stringify({ error: 'Expected non-empty array' }),
+				JSON.stringify({
+					error:
+						'Expected object with secret, fantasy_user_id and non-empty picks array',
+				}),
 				{
 					status: 400,
 					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -41,7 +51,25 @@ export default async function handler(req: Request) {
 			)
 		}
 
-		for (const item of body) {
+		const { secret, fantasy_user_id, picks } = body
+
+		// Проверяем secret
+		const { data: user, error: userError } = await supabase
+			.from('fantasy_users')
+			.select('id')
+			.eq('id', fantasy_user_id)
+			.eq('secret', secret)
+			.single()
+
+		if (userError || !user) {
+			return new Response(JSON.stringify({ error: 'Invalid secret word' }), {
+				status: 403,
+				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+			})
+		}
+
+		// Валидация picks
+		for (const item of picks) {
 			if (
 				typeof item.fantasy_user_id !== 'number' ||
 				typeof item.qualification_index !== 'number' ||
@@ -54,9 +82,10 @@ export default async function handler(req: Request) {
 			}
 		}
 
+		// Upsert picks
 		const { data, error } = await supabase
 			.from('fantasy_picks')
-			.upsert(body, {
+			.upsert(picks, {
 				onConflict: 'fantasy_user_id,qualification_index,player_id',
 			})
 			.select('id, fantasy_user_id, qualification_index, player_id')
@@ -64,6 +93,22 @@ export default async function handler(req: Request) {
 		if (error) {
 			console.error('Upsert error:', error)
 			return new Response(JSON.stringify({ error: error.message }), {
+				status: 500,
+				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+			})
+		}
+
+		// Удаляем picks, которых нет в пришедшем списке
+		const playerIds = picks.map(p => p.player_id)
+		const { error: delError } = await supabase
+			.from('fantasy_picks')
+			.delete()
+			.eq('fantasy_user_id', fantasy_user_id)
+			.not('player_id', 'in', `(${playerIds.join(',')})`)
+
+		if (delError) {
+			console.error('Delete error:', delError)
+			return new Response(JSON.stringify({ error: delError.message }), {
 				status: 500,
 				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 			})

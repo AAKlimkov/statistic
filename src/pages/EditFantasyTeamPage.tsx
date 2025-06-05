@@ -2,7 +2,6 @@ import { Alert, Box, Snackbar, Typography } from '@mui/material'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import ConfirmModal from '../modules/Fantasy/components/ConfirmModal'
 import FantasyForm from '../modules/Fantasy/components/FantasyForm'
 import QualPicks from '../modules/Fantasy/components/QualPicks'
 import { useFantasyForm } from '../modules/Fantasy/hooks/useFantasyForm'
@@ -80,13 +79,9 @@ const EditFantasyTeamPage: React.FC = () => {
 			setSelected(initialData.selected)
 		}
 	}, [initialData])
-	
 
 	const handleSubmit = async () => {
 		const result = await submitEdit(+userId)
-		if (result) {
-			navigate('/fantasy_teams')
-		}
 	}
 
 	const handleDelete = async () => {
@@ -113,7 +108,6 @@ const EditFantasyTeamPage: React.FC = () => {
 	if (loading) return <div>Загрузка...</div>
 	if (error) return <div>Ошибка: {error}</div>
 	if (!initialData) return null
-	console.log(initialData.selected)
 
 	return (
 		<Box sx={{ p: 4 }}>
@@ -139,18 +133,19 @@ const EditFantasyTeamPage: React.FC = () => {
 				onClose={() => setToast(prev => ({ ...prev, open: false }))}
 				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
 			>
-				<Alert severity={toast.severity} sx={{ width: '100%' }}>
+				<Alert
+					severity={toast.severity}
+					sx={{
+						width: '100%',
+						fontSize: '1.25rem', // увеличить размер текста
+						padding: '16px 24px', // увеличить внутренние отступы
+						minWidth: '300px', // минимум по ширине, чтобы не было слишком узко
+						boxShadow: '0 3px 10px rgba(0,0,0,0.2)', // можно добавить тень для выделения
+					}}
+				>
 					{toast.message}
 				</Alert>
 			</Snackbar>
-
-			<ConfirmModal
-				open={confirmOpen}
-				onClose={() => setConfirmOpen(false)}
-				onConfirm={handleDelete}
-				title='Подтвердите удаление'
-				description='Вы уверены, что хотите удалить участника и все его данные? Это действие необратимо.'
-			/>
 		</Box>
 	)
 }
