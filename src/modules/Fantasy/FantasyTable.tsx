@@ -63,9 +63,7 @@ const FantasyTable = () => {
 	useEffect(() => {
 		const fetchPlayers = async () => {
 			try {
-				const res = await fetch(
-					'https://mafia-server-cyan.vercel.app/api/fantasy/allPicks'
-				)
+				const res = await fetch('/api/fantasy/allPicks')
 				if (!res.ok) throw new Error('Ошибка при загрузке игроков')
 				const data = await res.json()
 				const transformed = transformData(data)
@@ -116,7 +114,7 @@ const FantasyTable = () => {
 	}
 
 	return (
-		<div className='container'>
+		<div className='fantasy-table-container'>
 			<h1>Фэнтези-таблица игроков</h1>
 
 			<div className='filters'>
@@ -155,7 +153,7 @@ const FantasyTable = () => {
 				</tbody>
 			</table>
 
-			<div className='pagination'>
+			<div className='fantasy-table-pagination'>
 				{Array.from({ length: totalPages }, (_, i) => (
 					<button
 						key={i}
