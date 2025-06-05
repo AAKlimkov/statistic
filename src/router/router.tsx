@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
-import AddFantasyPlayerPage from '../pages/AddFantasyPlayerPage'
+import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import FantasyPlayerViewPage from '../pages/FantasyPlayerViewPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
