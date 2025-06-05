@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 
 const API_BASE_URL = import.meta.env.VITE_API_URL_PROD
+
+const VERCEL_TOKEN = import.meta.env.VERCEL_TOKEN
 
 export default function AddPlayerForm() {
 	const [name, setName] = useState('')
@@ -13,10 +16,12 @@ export default function AddPlayerForm() {
 		}
 
 		try {
-			const res = await fetch(`${API_BASE_URL}/api/proxy-save-player`, {
+			const res = await fetch(`/api/save-player`, {
 				method: 'POST',
+
 				headers: {
 					'Content-Type': 'application/json',
+					Authorization: `Bearer ${VERCEL_TOKEN}`,
 				},
 				body: JSON.stringify({ name }),
 			})

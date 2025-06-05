@@ -3,7 +3,7 @@
 		"jsx": "react",
 		"lib": ["esnext", "dom"],
 		"module": "ESNext",
-		"moduleResolution": "bundler",
+		"moduleResolution": "node",
 		"types": ["node", "vite/client"]
 	}
 }

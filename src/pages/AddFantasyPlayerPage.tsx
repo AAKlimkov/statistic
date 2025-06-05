@@ -1,8 +1,8 @@
 import { Alert, Box, Button, Paper, Snackbar, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import InputField from '../components/InputField'
 import { qualData } from '../modules/Fantasy/data/qualData'
-import AddPlayerForm from '../modules/Player/AddPlayerForm'
 
 const AddFantasyPlayerPage = () => {
 	const [name, setName] = useState('')
@@ -14,11 +14,11 @@ const AddFantasyPlayerPage = () => {
 		severity: 'info' as 'success' | 'error',
 	})
 
-	const handleSelect = (kvalIndex, player) => {
+	const handleSelect = (kvalIndex: number, player: string) => {
 		const current = selected[kvalIndex] || []
 		const isSelected = current.includes(player)
 		const updated = isSelected
-			? current.filter(p => p !== player)
+			? current.filter((p: string) => p !== player)
 			: current.length < 4
 			? [...current, player]
 			: current
@@ -96,7 +96,6 @@ const AddFantasyPlayerPage = () => {
 			<Typography variant='h4' gutterBottom>
 				Добавление участника фэнтези-лиги
 			</Typography>
-			<AddPlayerForm />
 			<Box
 				sx={{
 					mb: 4,
@@ -108,12 +107,16 @@ const AddFantasyPlayerPage = () => {
 			>
 				<InputField
 					value={name}
-					onChange={e => setName(e.target.value)}
+					onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+						setName(e.target.value)
+					}
 					placeholder='Имя'
 				/>
 				<InputField
 					value={secret}
-					onChange={e => setSecret(e.target.value)}
+					onChange={(e: { target: { value: React.SetStateAction<string> } }) =>
+						setSecret(e.target.value)
+					}
 					placeholder='Кодовое слово'
 				/>
 			</Box>

@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 import AddFantasyPlayerPage from '../pages/AddFantasyPlayerPage'
 import FantasyPlayerViewPage from '../pages/FantasyPlayerViewPage'

@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
 import { Link } from 'react-router-dom'
 import FantasyTable from '../modules/Fantasy/FantasyTable'
+import * as React from 'react'
 
 const FantasyTablePage = () => {
 	return (

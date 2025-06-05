@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './FantasyTable.css'
 
@@ -17,7 +18,7 @@ const FantasyTable = () => {
 		const fetchPlayers = async () => {
 			try {
 				const res = await fetch(
-					'https://mafia-server-cyan.vercel.app/api/fantasy/players' // замените на актуальный эндпоинт
+					'https://mafia-server-cyan.vercel.app/api/fantasy/players'
 				)
 				if (!res.ok) throw new Error('Ошибка при загрузке игроков')
 				const data = await res.json()
