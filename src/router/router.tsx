@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
+import FantasyMainPage from '../pages/FantasyMainPage'
+import FantasyRulesPage from '../pages/FantasyRulesPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
@@ -26,11 +28,7 @@ const Layout = ({ children }) => (
 export const router = createHashRouter([
 	{
 		path: '/',
-		element: (
-			<Layout>
-				<FantasyTablePage />
-			</Layout>
-		),
+		element: <FantasyMainPage />,
 	},
 	{
 		path: '/players',
@@ -66,9 +64,13 @@ export const router = createHashRouter([
 	},
 	{
 		path: '/fantasyQual/add',
+		element: <AddFantasyPlayerPage />,
+	},
+	{
+		path: '/fantasy/rules',
 		element: (
 			<Layout>
-				<AddFantasyPlayerPage />
+				<FantasyRulesPage />
 			</Layout>
 		),
 	},
