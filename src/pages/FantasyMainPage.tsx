@@ -74,7 +74,7 @@ const HomePage = () => {
 					size='large'
 					fullWidth
 					component={Link}
-					to='/fantasy/rules'
+					to='fantasyRules'
 				>
 					📘 Правила лиги
 				</Button>
