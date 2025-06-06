@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
 	<Box
 		sx={{
 			minHeight: '100vh',
-			backgroundImage: `url(/assets/setka.jpg)`,
+			backgroundImage: `url(/assets/setka_upd.jpg)`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
