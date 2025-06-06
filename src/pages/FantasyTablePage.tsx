@@ -1,7 +1,7 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Paper, Typography } from '@mui/material'
+import * as React from 'react'
 import { Link } from 'react-router-dom'
 import FantasyTable from '../modules/Fantasy/FantasyTable'
-import * as React from 'react'
 
 const FantasyTablePage = () => {
 	return (
@@ -27,7 +27,16 @@ const FantasyTablePage = () => {
 				</Button>
 			</Box>
 
-			<FantasyTable />
+			<Paper
+				elevation={3}
+				sx={{
+					bgcolor: 'rgba(255, 255, 255, 0.9)', // белый фон с легкой прозрачностью
+					padding: 2,
+					borderRadius: 2,
+				}}
+			>
+				<FantasyTable />
+			</Paper>
 		</Box>
 	)
 }

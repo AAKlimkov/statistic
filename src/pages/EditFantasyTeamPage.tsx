@@ -110,7 +110,16 @@ const EditFantasyTeamPage: React.FC = () => {
 	if (!initialData) return null
 
 	return (
-		<Box sx={{ p: 4 }}>
+		<Box
+			sx={{
+				p: 4,
+				backgroundColor: 'rgba(255, 255, 255, 0.9)', // полупрозрачный белый фон
+				borderRadius: 2,
+				boxShadow: 3,
+				maxWidth: 900,
+				margin: 'auto',
+			}}
+		>
 			<Typography variant='h4' gutterBottom>
 				Редактирование участника фэнтези-лиги
 			</Typography>
@@ -137,10 +146,10 @@ const EditFantasyTeamPage: React.FC = () => {
 					severity={toast.severity}
 					sx={{
 						width: '100%',
-						fontSize: '1.25rem', // увеличить размер текста
-						padding: '16px 24px', // увеличить внутренние отступы
-						minWidth: '300px', // минимум по ширине, чтобы не было слишком узко
-						boxShadow: '0 3px 10px rgba(0,0,0,0.2)', // можно добавить тень для выделения
+						fontSize: '1.25rem',
+						padding: '16px 24px',
+						minWidth: '300px',
+						boxShadow: '0 3px 10px rgba(0,0,0,0.2)',
 					}}
 				>
 					{toast.message}

@@ -3,7 +3,16 @@ import * as React from 'react'
 
 const FantasyRulesPage = () => {
 	return (
-		<Container maxWidth='md' sx={{ mt: 6, mb: 8 }}>
+		<Container
+			maxWidth='md'
+			sx={{
+				bgcolor: 'rgba(255, 255, 255, 0.95)',
+				borderRadius: 2,
+				boxShadow: 3,
+				py: 4,
+				px: 3,
+			}}
+		>
 			<Typography variant='h4' gutterBottom>
 				📘 Правила Fantasy Лиги
 			</Typography>
