@@ -64,7 +64,7 @@ const HomePage = () => {
 					size='large'
 					fullWidth
 					component={Link}
-					to='/fantasyQual'
+					to='/fantasyTable'
 				>
 					📊 Посмотреть таблицу
 				</Button>
