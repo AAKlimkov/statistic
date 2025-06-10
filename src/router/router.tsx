@@ -71,6 +71,26 @@ const Layout = ({ children }) => (
 					Правила
 				</Button>
 			</Stack>
+			<Stack>
+				<Button
+					component={Link}
+					to='/tournaments'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Прошлые турниры
+				</Button>
+				<Button
+					component={Link}
+					to='/players'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Игроки
+				</Button>
+			</Stack>
 		</Box>
 
 		<main
@@ -98,19 +118,11 @@ export const router = createHashRouter([
 	},
 	{
 		path: '/players',
-		element: (
-			<Layout>
-				<PlayersTablePage />
-			</Layout>
-		),
+		element: <PlayersTablePage />,
 	},
 	{
 		path: '/tournaments',
-		element: (
-			<Layout>
-				<TournamentsTablePage />
-			</Layout>
-		),
+		element: <TournamentsTablePage />,
 	},
 	{
 		path: '/fantasyTable',
@@ -147,17 +159,13 @@ export const router = createHashRouter([
 	{
 		path: 'player/:id',
 		element: (
-			<Layout>
+
 				<PlayerPage />
-			</Layout>
+
 		),
 	},
 	{
 		path: 'tournament/:id',
-		element: (
-			<Layout>
-				<TournamentPage />
-			</Layout>
-		),
+		element: <TournamentPage />,
 	},
 ])
