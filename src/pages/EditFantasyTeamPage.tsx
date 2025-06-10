@@ -121,7 +121,7 @@ const EditFantasyTeamPage: React.FC = () => {
 			}}
 		>
 			<Typography variant='h4' gutterBottom>
-				Редактирование участника фэнтези-лиги
+				Просмотр участника фэнтези-лиги
 			</Typography>
 
 			<FantasyForm

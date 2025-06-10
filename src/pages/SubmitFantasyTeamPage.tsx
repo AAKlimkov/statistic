@@ -50,13 +50,13 @@ const SubmitFantasyTeamPage: React.FC = () => {
 					Общая таблица
 				</Button>
 			</Box>
-			<FantasyForm
+			{/* <FantasyForm
 				name={name}
 				secret={secret}
 				setName={setName}
 				setSecret={setSecret}
 				onSubmit={submit}
-			/>
+			/> */}
 
 			<QualPicks selected={selected} onSelect={handleSelect} />
 

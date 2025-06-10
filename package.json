@@ -27,7 +27,8 @@
 		"recharts": "^2.15.1",
 		"sqlite": "^5.1.1",
 		"vercel": "^42.3.0",
-		"xlsx": "^0.18.5"
+		"xlsx": "^0.18.5",
+		"xlsx-js-style": "^1.2.0"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.19.0",
@@ -44,7 +45,7 @@
 		"typescript": "^5.8.2",
 		"vite": "^6.1.0"
 	},
-	"description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+	"description": "This is application to fantasy mafia",
 	"main": "allStats.js",
 	"repository": {
 		"type": "git",

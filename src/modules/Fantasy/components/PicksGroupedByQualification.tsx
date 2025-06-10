@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { PickDataWithUser } from '../types'
 import './PicksGroupedByQualification.css'
 
 interface PlayerPick {
@@ -13,9 +14,7 @@ interface UserPick {
 }
 
 interface Props {
-	picks: {
-		[qualificationIndex: string]: UserPick[]
-	}
+	picks: PickDataWithUser[]
 }
 
 export default function PicksGroupedByQualification({ picks }: Props) {
@@ -23,10 +22,13 @@ export default function PicksGroupedByQualification({ picks }: Props) {
 		(a, b) => Number(a) - Number(b)
 	)
 
+	console.log()
+
 	return (
 		<div className='container'>
 			<h1 className='heading'>Статистика выборов игроков по квалификациям</h1>
 
+			<p>Участников: {picks[0].length}</p>
 			{qualificationIndexes.map(qualIndex => {
 				const users = picks[qualIndex]
 				const playerCountMap: Record<number, { name: string; count: number }> =

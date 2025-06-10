@@ -1,132 +1,81 @@
-import { Box, Button, Stack } from '@mui/material'
-import * as React from 'react'
-import { createHashRouter, Link } from 'react-router-dom'
+import { createHashRouter } from 'react-router-dom'
+
+// Layouts - "обертки" для групп страниц
+
+// Компоненты-защитники для роутинга
+
+// --- Импорт всех ваших страниц ---
+// (Вам нужно будет создать эти файлы или убедиться, что они существуют)
+
+// Основные публичные страницы
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
-import PlayerPage from '../pages/PlayerPage'
 import PlayersPickPage from '../pages/PlayersPickPage'
-import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
+
+// Страницы со своей собственной структурой (без PublicLayout)
+import PlayerPage from '../pages/PlayerPage'
+import PlayersTablePage from '../pages/PlayersTablePage'
 import TournamentPage from '../pages/TournamentPage'
 import TournamentsTablePage from '../pages/TournamentsTablePage'
 
-const Layout = ({ children }) => (
-	<Box
-		sx={{
-			minHeight: '100vh',
-			backgroundImage: `url(/assets/setka_upd.jpg)`,
-			backgroundSize: 'cover',
-			backgroundPosition: 'center',
-			backgroundRepeat: 'no-repeat',
-			display: 'flex',
-			flexDirection: 'column',
-			justifyContent: 'space-between',
-			alignItems: 'center',
-		}}
-	>
-		<Box
-			component='nav'
-			sx={{
-				padding: 1,
-				borderBottom: '1px solid #ccc',
-				backgroundColor: 'rgba(255, 255, 255, 0.8)',
-			}}
-		>
-			<Stack direction='row' spacing={2} justifyContent='center'>
-				<Button
-					component={Link}
-					to='/'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Главная
-				</Button>
-				<Button
-					component={Link}
-					to='/fantasyQual/add'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Регистрация
-				</Button>
-				<Button
-					component={Link}
-					to='/fantasyTable'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Таблица
-				</Button>
-				<Button
-					component={Link}
-					to='/fantasyPickRate'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Пикрейт
-				</Button>
-				<Button
-					component={Link}
-					to='/fantasyRules'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Правила
-				</Button>
-			</Stack>
-			<Stack>
-				<Button
-					component={Link}
-					to='/tournaments'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Прошлые турниры
-				</Button>
-				<Button
-					component={Link}
-					to='/players'
-					variant='contained'
-					color='primary'
-					size='small'
-				>
-					Игроки
-				</Button>
-			</Stack>
-		</Box>
+// --- Страницы аутентификации ---
 
-		<main
-			style={{
-				flexGrow: 1,
-				display: 'flex',
-				justifyContent: 'center',
-				alignItems: 'center',
-				padding: 20,
-			}}
-		>
-			{children}
-		</main>
-	</Box>
-)
+// --- Страницы админки ---
+import AdminLayout from '../modules/layouts/AdminLayout'
+import PublicLayout from '../modules/layouts/PublicLayout'
+
+import { ForgotPasswordPage } from '@/modules/auth/pages/ForgotPasswordPage'
+import { FantasyBracketPage } from '@/modules/Fantasy/pages/FantasyBracketPage'
+import { AdminDashboardPage } from '../modules/admin/AdminDashboardPage'
+import { AdminPlayersPage } from '../modules/admin/AdminPlayersPage'
+import { PrivateRoute } from './components/PrivateRoute'
+import { PublicRoute } from './components/PublicRoute'
 
 export const router = createHashRouter([
 	{
+		// === ГРУППА 1: Публичные страницы с общим Layout'ом ===
+		// Все эти страницы будут иметь вашу основную навигацию сверху
 		path: '/',
-		element: (
-			<Layout>
-				<FantasyMainPage />
-			</Layout>
-		),
+		element: <PublicLayout />,
+		children: [
+			{
+				index: true, // Главная страница (path: '/')
+				element: <FantasyMainPage />,
+			},
+			{
+				path: 'fantasyTable',
+				element: <FantasyTablePage />,
+			},
+			{
+				path: 'fantasyPickRate',
+				element: <PlayersPickPage />,
+			},
+			{
+				path: 'fantasyQual/add',
+				element: <AddFantasyPlayerPage />,
+			},
+			{
+				path: 'fantasyRules',
+				element: <FantasyRulesPage />,
+			},
+			{
+				// Роут с параметром для редактирования команды
+				path: 'fantasy/player/:userId',
+				element: <EditFantasyTeamPage />,
+			},
+			{
+				path: 'fantasyQual/add2',
+				element: <FantasyBracketPage />,
+			},
+		],
 	},
 	{
+		// === ГРУППА 2: Публичные страницы без общего Layout'а ===
+		// Эти страницы будут отображаться "как есть", на весь экран.
+		// Это полезно для страниц, где нужна своя, уникальная структура.
 		path: '/players',
 		element: <PlayersTablePage />,
 	},
@@ -135,51 +84,54 @@ export const router = createHashRouter([
 		element: <TournamentsTablePage />,
 	},
 	{
-		path: '/fantasyTable',
-		element: (
-			<Layout>
-				<FantasyTablePage />
-			</Layout>
-		),
-	},
-	{
-		path: '/fantasyPickRate',
-		element: (
-			<Layout>
-				<PlayersPickPage />
-			</Layout>
-		),
-	},
-	{
-		path: '/fantasy/player/:userId',
-		element: (
-			<Layout>
-				<EditFantasyTeamPage />
-			</Layout>
-		),
-	},
-	{
-		path: '/fantasyQual/add',
-		element: (
-			<Layout>
-				<AddFantasyPlayerPage />
-			</Layout>
-		),
-	},
-	{
-		path: 'fantasyRules',
-		element: (
-			<Layout>
-				<FantasyRulesPage />
-			</Layout>
-		),
-	},
-	{
-		path: 'player/:id',
+		path: '/player/:id', // Роут с параметром для страницы игрока
 		element: <PlayerPage />,
 	},
 	{
-		path: 'tournament/:id',
+		path: '/tournament/:id', // Роут с параметром для страницы турнира
 		element: <TournamentPage />,
 	},
+	{
+		// === ГРУППА 3: Страницы для неавторизованных пользователей ===
+		// PublicRoute не пустит сюда уже вошедшего пользователя
+		element: <PublicRoute />,
+		children: [
+			// {
+			// 	path: '/login',
+			// 	element: <LoginPage />,
+			// },
+			// {
+			// 	path: '/register',
+			// 	element: <RegisterPage />,
+			// },
+			{
+				path: '/forgot-password', // добавляем маршрут
+				element: <ForgotPasswordPage />,
+			},
+		],
+	},
+	{
+		// === ГРУППА 4: Приватные страницы админ-панели ===
+		// PrivateRoute сначала проверяет, есть ли пользователь
+		path: '/admin',
+		element: <PrivateRoute />,
+		children: [
+			{
+				// Если проверка пройдена, применяется AdminLayout
+				element: <AdminLayout />,
+				children: [
+					{
+						path: 'dashboard', // path будет /admin/dashboard
+						element: <AdminDashboardPage />,
+					},
+					{
+						path: 'players', // path будет /admin/players
+						element: <AdminPlayersPage />,
+					},
+					// ... другие страницы админки здесь
+				],
+			},
+		],
+	},
+	// { path: '*', element: <NotFoundPage /> } // Можно добавить страницу 404
 ])

@@ -6,9 +6,7 @@ import { PickDataWithUser } from '../modules/Fantasy/types'
 
 export default function PlayersPickPage() {
 	const [rawPicks, setRawPicks] = useState<PickDataWithUser[]>([])
-	const [groupedPicks, setGroupedPicks] = useState<{
-		[qualificationIndex: string]: any[]
-	}>({})
+
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 
@@ -28,47 +26,6 @@ export default function PlayersPickPage() {
 
 		fetchPicks()
 	}, [])
-
-	useEffect(() => {
-		const groupData = () => {
-			const grouped: { [qualificationIndex: string]: any[] } = {}
-
-			rawPicks.forEach(pick => {
-				const qualIndex = pick.qualification_index.toString()
-
-				if (!grouped[qualIndex]) {
-					grouped[qualIndex] = []
-				}
-
-				let userEntry = grouped[qualIndex].find(
-					u => u.userId === pick.fantasy_users.id
-				)
-
-				if (!userEntry) {
-					userEntry = {
-						userId: pick.fantasy_users.id,
-						name: pick.fantasy_users.name,
-						picks: [],
-					}
-					grouped[qualIndex].push(userEntry)
-				}
-
-				userEntry.picks.push({
-					playerId: pick.players.id,
-					playerName: pick.players.name,
-				})
-			})
-
-			setGroupedPicks(grouped)
-		}
-
-		if (rawPicks.length > 0) {
-			groupData()
-		}
-	}, [rawPicks])
-
-	console.log(rawPicks)
-	console.log('groupedPicks:', JSON.stringify(groupedPicks, null, 2))
 
 	if (loading) return <p>Загрузка...</p>
 	if (error) return <p style={{ color: 'red' }}>Ошибка: {error}</p>
