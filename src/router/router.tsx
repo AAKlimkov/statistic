@@ -6,6 +6,7 @@ import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
+import PlayersPickPage from '../pages/PlayersPickPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
@@ -60,6 +61,15 @@ const Layout = ({ children }) => (
 					size='small'
 				>
 					Таблица
+				</Button>
+				<Button
+					component={Link}
+					to='/fantasyPickRate'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Пикрейт
 				</Button>
 				<Button
 					component={Link}
@@ -133,6 +143,14 @@ export const router = createHashRouter([
 		),
 	},
 	{
+		path: '/fantasyPickRate',
+		element: (
+			<Layout>
+				<PlayersPickPage />
+			</Layout>
+		),
+	},
+	{
 		path: '/fantasy/player/:userId',
 		element: (
 			<Layout>
@@ -158,11 +176,7 @@ export const router = createHashRouter([
 	},
 	{
 		path: 'player/:id',
-		element: (
-
-				<PlayerPage />
-
-		),
+		element: <PlayerPage />,
 	},
 	{
 		path: 'tournament/:id',
