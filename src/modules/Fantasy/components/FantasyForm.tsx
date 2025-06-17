@@ -1,4 +1,4 @@
-import { Box, Button } from '@mui/material'
+import { Box } from '@mui/material'
 import * as React from 'react'
 import InputField from '../../../components/InputField'
 
@@ -57,11 +57,12 @@ const FantasyForm: React.FC<Props> = ({
 						Удалить
 					</Button> */}
 				</Box>
-			) : (
-				<Button variant='contained' color='success' onClick={onSubmit}>
-					Добавить участника
-				</Button>
-			)}
+			) : null
+
+			// <Button variant='contained' color='success' onClick={onSubmit}>
+			// 	Добавить участника
+			// </Button>
+			}
 		</Box>
 	)
 }
