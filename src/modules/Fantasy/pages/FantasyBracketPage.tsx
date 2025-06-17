@@ -1,3 +1,5 @@
+// src/pages/Stage2.tsx
+
 import { Box, Button, Paper, Stack, Typography } from '@mui/material'
 import * as React from 'react'
 import { useCallback, useMemo, useState } from 'react'
@@ -14,23 +16,24 @@ import {
 
 // Типы
 export type SelectionStatus = 'winner' | 'lowBracket' | 'loser'
-export type MatchSelections = Record<number, SelectionStatus>
-export type Selections = Record<string, MatchSelections>
+export type MatchSelections = Record<number, SelectionStatus> // { playerId: status }
+export type Selections = Record<string, MatchSelections> // { matchId: { playerId: status } }
 export type Stage = StageType
 
 const allMatchesMap = new Map<string, Match>(
 	[
-		...bracketData.upperBracket.left,
-		...bracketData.upperBracket.right,
-		...bracketData.lowerBracket.left,
-		...bracketData.lowerBracket.right,
-		bracketData.finalStage,
+		...bracketData.upperBracket.left.flatMap(s => s.matches),
+		...bracketData.upperBracket.right.flatMap(s => s.matches),
+		...bracketData.lowerBracket.left.flatMap(s => s.matches),
+		...bracketData.lowerBracket.right.flatMap(s => s.matches),
+		bracketData.finalStage.matches,
 	]
-		.flatMap(stage => stage.matches)
+		.flat()
 		.map(match => [match.id, match])
 )
 
-export const Stage2: React.FC = () => {
+export const FantasyBracketPage: React.FC = () => {
+	// Переименуем Stage2 для ясности
 	const [selections, setSelections] = useState<Selections>({})
 	const { showToast } = useToast()
 
@@ -39,25 +42,31 @@ export const Stage2: React.FC = () => {
 	const handlePlayerSelect = useCallback(
 		(matchId: string, playerId: number, status: SelectionStatus) => {
 			setSelections(prev => {
-				const newMatchSelections = { ...(prev[matchId] || {}) }
+				const newSelections = { ...prev }
+				const newMatchSelections = { ...(newSelections[matchId] || {}) }
 				const matchInfo = getMatchById(matchId)!
+
 				const winnersCount = Object.values(newMatchSelections).filter(
 					s => s === 'winner'
 				).length
 
+				// Если кликаем на ту же иконку, снимаем выбор
 				if (newMatchSelections[playerId] === status) {
 					delete newMatchSelections[playerId]
 				} else {
+					// Проверяем лимит только для победителей
 					if (status === 'winner' && winnersCount >= matchInfo.selectionLimit) {
 						showToast(
 							`Можно выбрать не более ${matchInfo.selectionLimit} победителей!`,
 							'warning'
 						)
-						return prev
+						return prev // Возвращаем предыдущее состояние без изменений
 					}
 					newMatchSelections[playerId] = status
 				}
-				return { ...prev, [matchId]: newMatchSelections }
+
+				newSelections[matchId] = newMatchSelections
+				return newSelections
 			})
 		},
 		[showToast]
@@ -68,20 +77,25 @@ export const Stage2: React.FC = () => {
 
 		const processMatch = (match: Match): Match => {
 			if (processedMatches.has(match.id)) return processedMatches.get(match.id)!
+
 			const newMatch: Match = JSON.parse(JSON.stringify(match))
 
 			if (newMatch.sourceMatchIds) {
 				const dynamicPlayers: Player[] = []
 				newMatch.sourceMatchIds.forEach((source: MatchSource) => {
+					// Рекурсивно обрабатываем матч-источник
 					const sourceMatch = processMatch(getMatchById(source.id)!)
 					const sourceSelections = selections[source.id] || {}
 
-					Object.entries(sourceSelections).forEach(([playerId, status]) => {
-						if (status === source.type) {
-							const player = sourceMatch.players.find(
-								p => p.id === Number(playerId)
-							)
-							if (player) dynamicPlayers.push(player)
+					// **НОВАЯ ЛОГИКА ЗДЕСЬ**
+					// Проходим по всем игрокам матча-источника
+					sourceMatch.players.forEach(player => {
+						if (player.isPlaceholder) return
+
+						const playerStatus = sourceSelections[player.id]
+						// Если статус игрока совпадает с тем, что нам нужно, добавляем его
+						if (playerStatus === source.type) {
+							dynamicPlayers.push(player)
 						}
 					})
 				})
@@ -99,25 +113,38 @@ export const Stage2: React.FC = () => {
 		}
 
 		allMatchesMap.forEach(match => processMatch(match))
-		return Object.fromEntries(processedMatches.entries())
-	}, [selections])
 
-	const getBracketForRender = (originalData: Stage[]) =>
-		originalData.map(s => ({
-			...s,
-			matches: s.matches.map(m => displayedBracket[m.id]),
-		}))
+		const getUpdatedStage = (originalStage: Stage) => ({
+			...originalStage,
+			matches: originalStage.matches.map(m => processedMatches.get(m.id)!),
+		})
+
+		return {
+			upperBracket: {
+				left: bracketData.upperBracket.left.map(getUpdatedStage),
+				right: bracketData.upperBracket.right.map(getUpdatedStage),
+			},
+			lowerBracket: {
+				left: bracketData.lowerBracket.left.map(getUpdatedStage),
+				right: bracketData.lowerBracket.right.map(getUpdatedStage),
+			},
+			finalStage: getUpdatedStage(bracketData.finalStage),
+		}
+	}, [selections])
 
 	const isMatchLocked = (matchId: string): boolean => {
 		const matchInfo = getMatchById(matchId)
 		if (!matchInfo?.sourceMatchIds) return false
 
+		// Матч разблокирован, только если ВСЕ игроки во ВСЕХ матчах-источниках получили статус
 		return !matchInfo.sourceMatchIds.every(source => {
 			const sourceMatchInfo = getMatchById(source.id)!
 			const sourceSelections = selections[source.id] || {}
-			return (
-				Object.keys(sourceSelections).length === sourceMatchInfo.players.length
-			)
+			// Убираем плейсхолдеры из подсчета
+			const realPlayersCount = sourceMatchInfo.players.filter(
+				p => !p.isPlaceholder
+			).length
+			return Object.keys(sourceSelections).length === realPlayersCount
 		})
 	}
 
@@ -155,20 +182,15 @@ export const Stage2: React.FC = () => {
 						alignItems='flex-start'
 						spacing={4}
 					>
-						{/*
-						 *
-						 * ИСПРАВЛЕНИЕ ЗДЕСЬ
-						 *
-						 */}
 						<BracketSection
-							stages={getBracketForRender(bracketData.upperBracket.left)}
+							stages={displayedBracket.upperBracket.left}
 							direction='left-to-right'
 							selections={selections}
 							onPlayerSelect={handlePlayerSelect}
 							isLocked={isMatchLocked}
 						/>
 						<BracketSection
-							stages={getBracketForRender(bracketData.upperBracket.right)}
+							stages={displayedBracket.upperBracket.right}
 							direction='right-to-left'
 							selections={selections}
 							onPlayerSelect={handlePlayerSelect}
@@ -178,12 +200,7 @@ export const Stage2: React.FC = () => {
 
 					{/* === ФИНАЛ (Центральный блок) === */}
 					<StageColumn
-						stage={{
-							...bracketData.finalStage,
-							matches: bracketData.finalStage.matches.map(
-								m => displayedBracket[m.id]
-							),
-						}}
+						stage={displayedBracket.finalStage}
 						selections={selections}
 						onPlayerSelect={handlePlayerSelect}
 						isLocked={isMatchLocked}
@@ -196,20 +213,15 @@ export const Stage2: React.FC = () => {
 						alignItems='flex-start'
 						spacing={4}
 					>
-						{/*
-						 *
-						 * И ИСПРАВЛЕНИЕ ЗДЕСЬ
-						 *
-						 */}
 						<BracketSection
-							stages={getBracketForRender(bracketData.lowerBracket.left)}
+							stages={displayedBracket.lowerBracket.left}
 							direction='left-to-right'
 							selections={selections}
 							onPlayerSelect={handlePlayerSelect}
 							isLocked={isMatchLocked}
 						/>
 						<BracketSection
-							stages={getBracketForRender(bracketData.lowerBracket.right)}
+							stages={displayedBracket.lowerBracket.right}
 							direction='right-to-left'
 							selections={selections}
 							onPlayerSelect={handlePlayerSelect}

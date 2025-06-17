@@ -2,7 +2,7 @@ import { Box, Button, Stack } from '@mui/material'
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
-import { Stage2 } from '../modules/Fantasy/pages/Stage2'
+import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
@@ -161,10 +161,10 @@ export const router = createHashRouter([
 		),
 	},
 	{
-		path: '/stage2',
+		path: '/FantasyBracketPage',
 		element: (
 			<Layout>
-				<Stage2 />
+				<FantasyBracketPage />
 			</Layout>
 		),
 	},

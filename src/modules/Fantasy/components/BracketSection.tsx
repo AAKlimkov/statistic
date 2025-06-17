@@ -4,7 +4,7 @@ import { Box, Stack } from '@mui/material'
 import * as React from 'react'
 import { Fragment } from 'react/jsx-runtime'
 import { Stage } from '../data/summerLeagueData'
-import { Selections, SelectionStatus } from '../pages/Stage2'
+import { Selections, SelectionStatus } from '../pages/FantasyBracketPage'
 import { StageColumn } from './StageColumn'
 
 // Определяем пропсы для нашего компонента

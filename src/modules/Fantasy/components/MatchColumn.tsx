@@ -5,7 +5,7 @@ import HighlightOffIcon from '@mui/icons-material/HighlightOff'
 import { Box, ButtonGroup, IconButton, Paper, Typography } from '@mui/material'
 import * as React from 'react'
 import { Match } from '../data/summerLeagueData'
-import { MatchSelections, SelectionStatus } from '../pages/Stage2'
+import { MatchSelections, SelectionStatus } from '../pages/FantasyBracketPage'
 
 interface MatchColumnProps {
 	match: Match

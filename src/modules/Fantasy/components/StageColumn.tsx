@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from '@mui/material'
 import * as React from 'react'
 
 import { Stage } from '../data/summerLeagueData'
-import { Selections, SelectionStatus } from '../pages/Stage2'
+import { Selections, SelectionStatus } from '../pages/FantasyBracketPage'
 import { MatchColumn } from './MatchColumn'
 
 // Определяем пропсы для нашего компонента
