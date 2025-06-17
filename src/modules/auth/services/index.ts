@@ -1,1 +1,0 @@
-export { resetPasswordForEmail } from './supabase'

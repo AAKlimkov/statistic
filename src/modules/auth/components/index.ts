@@ -1,1 +1,0 @@
-export { AuthFooterLink } from './AuthFooterLink'
