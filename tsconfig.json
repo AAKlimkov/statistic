@@ -1,23 +1,9 @@
 {
 	"compilerOptions": {
-		"jsx": "react-jsx",
+		"jsx": "react",
 		"lib": ["esnext", "dom"],
 		"module": "ESNext",
 		"moduleResolution": "node",
-		"types": ["node", "vite/client"],
-		"baseUrl": "src",
-		"paths": {
-			"@/*": ["*"],
-			"@components/*": ["components/*"],
-			"@pages/*": ["pages/*"],
-			"@hooks/*": ["hooks/*"],
-			"@modules/*": ["modules/*"],
-			"@context/*": ["context/*"],
-			"@types/*": ["types/*"],
-			"@assets/*": ["assets/*"],
-			"@layout/*": ["layout/*"],
-			"@store/*": ["store/*"],
-			"@features/*": ["features/*"]
-		}
+		"types": ["node", "vite/client"]
 	}
 }

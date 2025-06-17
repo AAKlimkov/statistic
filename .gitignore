@@ -10,7 +10,6 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
-.env
 *.local
 .env
 
@@ -26,4 +25,3 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
-

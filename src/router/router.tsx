@@ -1,10 +1,12 @@
 import { Box, Button, Stack } from '@mui/material'
+import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
+import PlayersPickPage from '../pages/PlayersPickPage'
 import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
@@ -62,12 +64,41 @@ const Layout = ({ children }) => (
 				</Button>
 				<Button
 					component={Link}
+					to='/fantasyPickRate'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Пикрейт
+				</Button>
+				<Button
+					component={Link}
 					to='/fantasyRules'
 					variant='contained'
 					color='primary'
 					size='small'
 				>
 					Правила
+				</Button>
+			</Stack>
+			<Stack>
+				<Button
+					component={Link}
+					to='/tournaments'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Прошлые турниры
+				</Button>
+				<Button
+					component={Link}
+					to='/players'
+					variant='contained'
+					color='primary'
+					size='small'
+				>
+					Игроки
 				</Button>
 			</Stack>
 		</Box>
@@ -120,6 +151,14 @@ export const router = createHashRouter([
 		),
 	},
 	{
+		path: '/fantasyPickRate',
+		element: (
+			<Layout>
+				<PlayersPickPage />
+			</Layout>
+		),
+	},
+	{
 		path: '/fantasy/player/:userId',
 		element: (
 			<Layout>
@@ -145,18 +184,10 @@ export const router = createHashRouter([
 	},
 	{
 		path: 'player/:id',
-		element: (
-			<Layout>
-				<PlayerPage />
-			</Layout>
-		),
+		element: <PlayerPage />,
 	},
 	{
 		path: 'tournament/:id',
-		element: (
-			<Layout>
-				<TournamentPage />
-			</Layout>
-		),
+		element: <TournamentPage />,
 	},
 ])

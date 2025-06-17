@@ -1,109 +1,90 @@
-import XLSX from 'xlsx-js-style'
+import XLSX from 'xlsx'
 
-// Нормализация значения
+// Нормализация: убираем все пробелы и приводим к нижнему регистру
 function normalize(value) {
 	return String(value || '')
 		.toLowerCase()
 		.replace(/\s+/g, '')
 }
 
-// Загрузка данных с листов
+// Перевод номера колонки в Excel-стиль (например, 1 → A, 27 → AA)
+function columnToLetter(col) {
+	let letter = ''
+	while (col > 0) {
+		let mod = (col - 1) % 26
+		letter = String.fromCharCode(65 + mod) + letter
+		col = Math.floor((col - mod - 1) / 26)
+	}
+	return letter
+}
+
 function loadSheets(filePath) {
 	const workbook = XLSX.readFile(filePath)
 	const sheets = {}
+
 	for (const sheetName of workbook.SheetNames) {
 		const sheet = workbook.Sheets[sheetName]
 		const json = XLSX.utils.sheet_to_json(sheet, { header: 1 })
-		sheets[sheetName] = json
+		sheets[sheetName] = json.slice(4) // Удаляем первые 4 строки
 	}
+
 	return sheets
 }
 
-// Параметры
+function compareSheets(sheet1, sheet2, sheetName) {
+	const maxRows = Math.max(sheet1.length, sheet2.length)
+	const differences = []
+
+	for (let i = 0; i < maxRows; i++) {
+		const row1 = sheet1[i] || []
+		const row2 = sheet2[i] || []
+		const maxCols = Math.max(row1.length, row2.length)
+
+		for (let j = 0; j < maxCols; j++) {
+			const val1 = normalize(row1[j])
+			const val2 = normalize(row2[j])
+
+			if (val1 !== val2) {
+				differences.push([
+					sheetName,
+					i + 5, // строка (учитывая удалённые 4)
+					columnToLetter(j + 1), // колонка в буквах
+					row1[j] || '',
+					row2[j] || '',
+				])
+			}
+		}
+	}
+
+	return differences
+}
+
 const file1 = './Серия 4. medium.xlsx'
 const file2 = './Серия 4. faceless.xlsx'
 
 const sheets1 = loadSheets(file1)
 const sheets2 = loadSheets(file2)
 
-const workbook = XLSX.utils.book_new()
+let allDifferences = [
+	['Лист', 'Строка', 'Колонка', 'Значение из файла 1', 'Значение из файла 2'],
+]
 
-// Стили
-const highlightStyle = {
-	fill: {
-		patternType: 'solid',
-		fgColor: { rgb: 'FFFF00' }, // жёлтый фон
-	},
-}
-
-const borderStyle = {
-	top: { style: 'thin', color: { rgb: '000000' } },
-	bottom: { style: 'thin', color: { rgb: '000000' } },
-	left: { style: 'thin', color: { rgb: '000000' } },
-	right: { style: 'thin', color: { rgb: '000000' } },
-}
-
-const startRow = 4 // A5
-const endRow = 14 // 15-я строка
-const startCol = 0 // A
-const endCol = 37 // AL
-
-// Обработка каждого листа
 const allSheetNames = new Set([
 	...Object.keys(sheets1),
 	...Object.keys(sheets2),
 ])
 
-for (const sheetName of allSheetNames) {
-	const data1 = sheets1[sheetName] || []
-	const data2 = sheets2[sheetName] || []
-	const maxRows = Math.max(data1.length, data2.length)
-
-	const resultSheet = []
-
-	for (let i = 0; i < maxRows; i++) {
-		const row1 = data1[i] || []
-		const row2 = data2[i] || []
-		const maxCols = Math.max(row1.length, row2.length)
-		const resultRow = []
-
-		for (let j = 0; j < maxCols; j++) {
-			const val1 = row1[j] ?? ''
-			const val2 = row2[j] ?? ''
-
-			if (normalize(val1) !== normalize(val2)) {
-				resultRow[j] = {
-					v: `${val1} (${val2})`,
-					s: highlightStyle,
-				}
-			} else {
-				resultRow[j] = {
-					v: val1,
-				}
-			}
-		}
-
-		resultSheet.push(resultRow)
-	}
-
-	const sheet = XLSX.utils.aoa_to_sheet(resultSheet)
-
-	// Добавляем границы к A5:AL15
-	for (let r = startRow; r <= endRow; r++) {
-		for (let c = startCol; c <= endCol; c++) {
-			const cellRef = XLSX.utils.encode_cell({ r, c })
-			if (!sheet[cellRef]) sheet[cellRef] = { v: '' }
-
-			const existingStyle = sheet[cellRef].s || {}
-			sheet[cellRef].s = {
-				...existingStyle,
-				border: borderStyle,
-			}
-		}
-	}
-
-	XLSX.utils.book_append_sheet(workbook, sheet, sheetName)
+for (const name of allSheetNames) {
+	const sheet1 = sheets1[name] || []
+	const sheet2 = sheets2[name] || []
+	const diffs = compareSheets(sheet1, sheet2, name)
+	allDifferences.push(...diffs)
 }
 
+// Создание Excel с результатами
+const workbook = XLSX.utils.book_new()
+const sheet = XLSX.utils.aoa_to_sheet(allDifferences)
+XLSX.utils.book_append_sheet(workbook, sheet, 'Differences')
 XLSX.writeFile(workbook, './differences.xlsx')
-console.log('✅ Итоговый файл differences.xlsx создан.')
+
+console.log('✅ Различия сохранены в differences.xlsx')

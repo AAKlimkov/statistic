@@ -21,13 +21,13 @@ interface Participant {
 }
 
 const HomePage = () => {
-	// const [participants, setParticipants] = useState<Participant[]>([])
+	const [participants, setParticipants] = useState<Participant[]>([])
 
-	// useEffect(() => {
-	// 	fetch('/api/fantasy_rating')
-	// 		.then(res => res.json())
-	// 		.then(data => setParticipants(data))
-	// }, [])
+	useEffect(() => {
+		fetch('/api/fantasy_rating')
+			.then(res => res.json())
+			.then(data => setParticipants(data))
+	}, [])
 
 	return (
 		<Container

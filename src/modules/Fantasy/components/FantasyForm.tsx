@@ -45,14 +45,14 @@ const FantasyForm: React.FC<Props> = ({
 			/>
 			{isEdit ? (
 				<Box sx={{ display: 'flex', gap: 2 }}>
-					{/* <Button
+					<Button
 						variant='contained'
 						color='primary'
 						onClick={onSubmit}
 						fullWidth
 					>
 						Обновить
-					</Button> */}
+					</Button>
 					{/* <Button variant='outlined' color='error' onClick={onDelete} fullWidth>
 						Удалить
 					</Button> */}
