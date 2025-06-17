@@ -43,25 +43,26 @@ const FantasyForm: React.FC<Props> = ({
 				placeholder='Кодовое слово'
 				type='password'
 			/>
-			{isEdit ? (
-				<Box sx={{ display: 'flex', gap: 2 }}>
-					<Button
-						variant='contained'
-						color='primary'
-						onClick={onSubmit}
-						fullWidth
-					>
-						Обновить
-					</Button>
-					{/* <Button variant='outlined' color='error' onClick={onDelete} fullWidth>
+			{
+				isEdit ? (
+					<Box sx={{ display: 'flex', gap: 2 }}>
+						{/* <Button
+							variant='contained'
+							color='primary'
+							onClick={onSubmit}
+							fullWidth
+						>
+							Обновить
+						</Button> */}
+						{/* <Button variant='outlined' color='error' onClick={onDelete} fullWidth>
 						Удалить
 					</Button> */}
-				</Box>
-			) : null
+					</Box>
+				) : null
 
-			// <Button variant='contained' color='success' onClick={onSubmit}>
-			// 	Добавить участника
-			// </Button>
+				// <Button variant='contained' color='success' onClick={onSubmit}>
+				// 	Добавить участника
+				// </Button>
 			}
 		</Box>
 	)
