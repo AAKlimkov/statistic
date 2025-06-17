@@ -27,7 +27,6 @@ import TournamentsTablePage from '../pages/TournamentsTablePage'
 import AdminLayout from '../modules/layouts/AdminLayout'
 import PublicLayout from '../modules/layouts/PublicLayout'
 
-import { ForgotPasswordPage } from '@/modules/auth/pages/ForgotPasswordPage'
 import { FantasyBracketPage } from '@/modules/Fantasy/pages/FantasyBracketPage'
 import { AdminDashboardPage } from '../modules/admin/AdminDashboardPage'
 import { AdminPlayersPage } from '../modules/admin/AdminPlayersPage'
@@ -104,34 +103,34 @@ export const router = createHashRouter([
 			// 	path: '/register',
 			// 	element: <RegisterPage />,
 			// },
-			{
-				path: '/forgot-password', // добавляем маршрут
-				element: <ForgotPasswordPage />,
-			},
+			// {
+			// 	path: '/forgot-password', // добавляем маршрут
+			// 	element: <ForgotPasswordPage />,
+			// },
 		],
 	},
 	{
 		// === ГРУППА 4: Приватные страницы админ-панели ===
 		// PrivateRoute сначала проверяет, есть ли пользователь
-		path: '/admin',
-		element: <PrivateRoute />,
-		children: [
-			{
-				// Если проверка пройдена, применяется AdminLayout
-				element: <AdminLayout />,
-				children: [
-					{
-						path: 'dashboard', // path будет /admin/dashboard
-						element: <AdminDashboardPage />,
-					},
-					{
-						path: 'players', // path будет /admin/players
-						element: <AdminPlayersPage />,
-					},
-					// ... другие страницы админки здесь
-				],
-			},
-		],
+		// path: '/admin',
+		// element: <PrivateRoute />,
+		// children: [
+		// 	{
+		// 		// Если проверка пройдена, применяется AdminLayout
+		// 		element: <AdminLayout />,
+		// 		children: [
+		// 			{
+		// 				path: 'dashboard', // path будет /admin/dashboard
+		// 				element: <AdminDashboardPage />,
+		// 			},
+		// 			{
+		// 				path: 'players', // path будет /admin/players
+		// 				element: <AdminPlayersPage />,
+		// 			},
+		// 			// ... другие страницы админки здесь
+		// 		],
+		// 	},
+		// ],
 	},
 	// { path: '*', element: <NotFoundPage /> } // Можно добавить страницу 404
 ])
