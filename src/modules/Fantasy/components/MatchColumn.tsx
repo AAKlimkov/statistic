@@ -15,18 +15,21 @@ interface MatchColumnProps {
 		playerId: number,
 		status: SelectionStatus
 	) => void
+	showLowBracketButton?: boolean
 }
 
 export const MatchColumn: React.FC<MatchColumnProps> = ({
 	match,
 	matchSelections,
 	onPlayerSelect,
+	showLowBracketButton = true,
 }) => {
 	return (
 		<Paper
 			elevation={3}
 			sx={{
-				p: 2,
+				// ИЗМЕНЕНИЕ: Уменьшаем внутренний отступ
+				p: 1.5,
 				backgroundColor: 'white',
 				border: '1px solid #ddd',
 				width: '100%',
@@ -84,18 +87,20 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 									)}
 								</IconButton>
 
-								<IconButton
-									onClick={() =>
-										onPlayerSelect(match.id, player.id, 'lowBracket')
-									}
-									color={
-										matchSelections[player.id] === 'lowBracket'
-											? 'warning'
-											: 'default'
-									}
-								>
-									<ArrowDownwardIcon />
-								</IconButton>
+								{showLowBracketButton && (
+									<IconButton
+										onClick={() =>
+											onPlayerSelect(match.id, player.id, 'lowBracket')
+										}
+										color={
+											matchSelections[player.id] === 'lowBracket'
+												? 'warning'
+												: 'default'
+										}
+									>
+										<ArrowDownwardIcon />
+									</IconButton>
+								)}
 
 								<IconButton
 									onClick={() => onPlayerSelect(match.id, player.id, 'loser')}

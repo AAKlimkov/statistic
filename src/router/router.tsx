@@ -22,6 +22,9 @@ const Layout = ({ children }) => (
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
+
+			backgroundAttachment: 'fixed',
+
 			display: 'flex',
 			flexDirection: 'column',
 			justifyContent: 'space-between',
@@ -108,10 +111,11 @@ const Layout = ({ children }) => (
 		<main
 			style={{
 				flexGrow: 1,
+				width: '100%',
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				padding: 20,
+				padding: '10px 0',
 			}}
 		>
 			{children}

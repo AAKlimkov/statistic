@@ -1,11 +1,18 @@
-// src/pages/Stage2.tsx
-
-import { Box, Button, Paper, Stack, Typography } from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Box,
+	Button,
+	Paper,
+	Stack,
+	Typography,
+} from '@mui/material'
 import * as React from 'react'
 import { useCallback, useMemo, useState } from 'react'
 import { useToast } from '../../../context/ToastProvider'
-import { BracketSection } from '../components/BracketSection'
-import { StageColumn } from '../components/StageColumn'
+import { MatchColumn } from '../components/MatchColumn'
 import {
 	bracketData,
 	Match,
@@ -14,10 +21,10 @@ import {
 	Stage as StageType,
 } from '../data/summerLeagueData'
 
-// Типы
+// Типы и константы остаются без изменений
 export type SelectionStatus = 'winner' | 'lowBracket' | 'loser'
-export type MatchSelections = Record<number, SelectionStatus> // { playerId: status }
-export type Selections = Record<string, MatchSelections> // { matchId: { playerId: status } }
+export type MatchSelections = Record<number, SelectionStatus>
+export type Selections = Record<string, MatchSelections>
 export type Stage = StageType
 
 const allMatchesMap = new Map<string, Match>(
@@ -33,8 +40,9 @@ const allMatchesMap = new Map<string, Match>(
 )
 
 export const FantasyBracketPage: React.FC = () => {
-	// Переименуем Stage2 для ясности
 	const [selections, setSelections] = useState<Selections>({})
+	// ИЗМЕНЕНИЕ: Состояние для отслеживания открытых Accordion. По умолчанию открываем первый этап.
+	const [expanded, setExpanded] = useState<Set<string>>(new Set(['1/8 Финала']))
 	const { showToast } = useToast()
 
 	const getMatchById = (matchId: string) => allMatchesMap.get(matchId)
@@ -50,17 +58,15 @@ export const FantasyBracketPage: React.FC = () => {
 					s => s === 'winner'
 				).length
 
-				// Если кликаем на ту же иконку, снимаем выбор
 				if (newMatchSelections[playerId] === status) {
 					delete newMatchSelections[playerId]
 				} else {
-					// Проверяем лимит только для победителей
 					if (status === 'winner' && winnersCount >= matchInfo.selectionLimit) {
 						showToast(
 							`Можно выбрать не более ${matchInfo.selectionLimit} победителей!`,
 							'warning'
 						)
-						return prev // Возвращаем предыдущее состояние без изменений
+						return prev
 					}
 					newMatchSelections[playerId] = status
 				}
@@ -72,7 +78,7 @@ export const FantasyBracketPage: React.FC = () => {
 		[showToast]
 	)
 
-	const displayedBracket = useMemo(() => {
+	const { displayedBracket, processedMatchesMap } = useMemo(() => {
 		const processedMatches = new Map<string, Match>()
 
 		const processMatch = (match: Match): Match => {
@@ -83,17 +89,12 @@ export const FantasyBracketPage: React.FC = () => {
 			if (newMatch.sourceMatchIds) {
 				const dynamicPlayers: Player[] = []
 				newMatch.sourceMatchIds.forEach((source: MatchSource) => {
-					// Рекурсивно обрабатываем матч-источник
 					const sourceMatch = processMatch(getMatchById(source.id)!)
 					const sourceSelections = selections[source.id] || {}
 
-					// **НОВАЯ ЛОГИКА ЗДЕСЬ**
-					// Проходим по всем игрокам матча-источника
 					sourceMatch.players.forEach(player => {
 						if (player.isPlaceholder) return
-
 						const playerStatus = sourceSelections[player.id]
-						// Если статус игрока совпадает с тем, что нам нужно, добавляем его
 						if (playerStatus === source.type) {
 							dynamicPlayers.push(player)
 						}
@@ -119,7 +120,7 @@ export const FantasyBracketPage: React.FC = () => {
 			matches: originalStage.matches.map(m => processedMatches.get(m.id)!),
 		})
 
-		return {
+		const bracket = {
 			upperBracket: {
 				left: bracketData.upperBracket.left.map(getUpdatedStage),
 				right: bracketData.upperBracket.right.map(getUpdatedStage),
@@ -130,28 +131,81 @@ export const FantasyBracketPage: React.FC = () => {
 			},
 			finalStage: getUpdatedStage(bracketData.finalStage),
 		}
+		return { displayedBracket: bracket, processedMatchesMap: processedMatches }
 	}, [selections])
 
-	const isMatchLocked = (matchId: string): boolean => {
-		const matchInfo = getMatchById(matchId)
-		if (!matchInfo?.sourceMatchIds) return false
+	const isMatchLocked = useCallback(
+		(matchId: string): boolean => {
+			const matchInfo = getMatchById(matchId)
+			if (!matchInfo?.sourceMatchIds) return false
 
-		// Матч разблокирован, только если ВСЕ игроки во ВСЕХ матчах-источниках получили статус
-		return !matchInfo.sourceMatchIds.every(source => {
-			const sourceMatchInfo = getMatchById(source.id)!
-			const sourceSelections = selections[source.id] || {}
-			// Убираем плейсхолдеры из подсчета
-			const realPlayersCount = sourceMatchInfo.players.filter(
-				p => !p.isPlaceholder
-			).length
-			return Object.keys(sourceSelections).length === realPlayersCount
-		})
-	}
+			return !matchInfo.sourceMatchIds.every(source => {
+				const sourceMatchInfo = processedMatchesMap.get(source.id)!
+				const sourceSelections = selections[source.id] || {}
+				const realPlayersCount = sourceMatchInfo.players.filter(
+					p => !p.isPlaceholder
+				).length
+				if (realPlayersCount === 0) return false
+				return Object.keys(sourceSelections).length === realPlayersCount
+			})
+		},
+		[processedMatchesMap, selections]
+	)
+
+	const organizedLayout = useMemo(() => {
+		const { upperBracket, lowerBracket, finalStage } = displayedBracket
+		return [
+			{
+				title: '1/8 Финала',
+				matches: [
+					...upperBracket.left[0].matches,
+					...upperBracket.right[0].matches,
+				],
+			},
+			{
+				title: '1/4 Финала',
+				matches: [
+					...upperBracket.left[1].matches,
+					...upperBracket.right[1].matches,
+				],
+			},
+			{
+				title: '1/2 Финала',
+				matches: [
+					...upperBracket.left[2].matches,
+					...upperBracket.right[2].matches,
+					...lowerBracket.left[0].matches,
+					...lowerBracket.right[0].matches,
+				],
+			},
+			{
+				title: 'Финал',
+				matches: finalStage.matches,
+			},
+		]
+	}, [displayedBracket])
 
 	const handleSubmit = () => {
 		console.log('Итоговый выбор:', JSON.stringify(selections, null, 2))
 		showToast('Ваш выбор выведен в консоль!', 'info')
 	}
+
+	// ИЗМЕНЕНИЕ: Обработчик для открытия/закрытия Accordion
+	const handleAccordionChange =
+		(panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+			setExpanded(prev => {
+				const newSet = new Set(prev)
+				if (isExpanded) {
+					newSet.add(panel)
+				} else {
+					newSet.delete(panel)
+				}
+				return newSet
+			})
+		}
+
+	// ИЗМЕНЕНИЕ: Список этапов, где не нужна кнопка "в нижнюю сетку"
+	const stagesWithoutLowBracket = ['1/2 Финала', 'Финал']
 
 	return (
 		<Paper
@@ -159,76 +213,71 @@ export const FantasyBracketPage: React.FC = () => {
 			sx={{
 				p: { xs: 1, sm: 2, md: 3 },
 				width: '100%',
-				maxWidth: '95vw',
+				// ИЗМЕНЕНИЕ: убрали maxWidth, чтобы компонент занимал всю ширину
 				bgcolor: 'rgba(255, 255, 255, 0.95)',
 			}}
 		>
 			<Typography variant='h4' component='h1' gutterBottom align='center'>
 				Фэнтези-сетка
 			</Typography>
-			<Box sx={{ overflowX: 'auto', p: 2 }}>
-				<Box
-					sx={{
-						display: 'inline-flex',
-						flexDirection: 'column',
-						alignItems: 'center',
-						gap: 4,
-					}}
-				>
-					{/* === ВЕРХНЯЯ СЕТКА === */}
-					<Stack
-						direction='row'
-						justifyContent='center'
-						alignItems='flex-start'
-						spacing={4}
-					>
-						<BracketSection
-							stages={displayedBracket.upperBracket.left}
-							direction='left-to-right'
-							selections={selections}
-							onPlayerSelect={handlePlayerSelect}
-							isLocked={isMatchLocked}
-						/>
-						<BracketSection
-							stages={displayedBracket.upperBracket.right}
-							direction='right-to-left'
-							selections={selections}
-							onPlayerSelect={handlePlayerSelect}
-							isLocked={isMatchLocked}
-						/>
-					</Stack>
-
-					{/* === ФИНАЛ (Центральный блок) === */}
-					<StageColumn
-						stage={displayedBracket.finalStage}
-						selections={selections}
-						onPlayerSelect={handlePlayerSelect}
-						isLocked={isMatchLocked}
-					/>
-
-					{/* === НИЖНЯЯ СЕТКА === */}
-					<Stack
-						direction='row'
-						justifyContent='center'
-						alignItems='flex-start'
-						spacing={4}
-					>
-						<BracketSection
-							stages={displayedBracket.lowerBracket.left}
-							direction='left-to-right'
-							selections={selections}
-							onPlayerSelect={handlePlayerSelect}
-							isLocked={isMatchLocked}
-						/>
-						<BracketSection
-							stages={displayedBracket.lowerBracket.right}
-							direction='right-to-left'
-							selections={selections}
-							onPlayerSelect={handlePlayerSelect}
-							isLocked={isMatchLocked}
-						/>
-					</Stack>
-				</Box>
+			<Box sx={{ p: { xs: 0, sm: 1 } }}>
+				<Stack direction='column' spacing={2}>
+					{/* ИЗМЕНЕНИЕ: Используем Accordion для каждого этапа */}
+					{organizedLayout.map(stageGroup => (
+						<Accordion
+							key={stageGroup.title}
+							expanded={expanded.has(stageGroup.title)}
+							onChange={handleAccordionChange(stageGroup.title)}
+						>
+							<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+								<Typography
+									variant='h5'
+									component='h2'
+									sx={{ fontWeight: 'bold' }}
+								>
+									{stageGroup.title}
+								</Typography>
+							</AccordionSummary>
+							<AccordionDetails sx={{ overflowX: 'auto' }}>
+								<Stack
+									direction='row'
+									spacing={2}
+									sx={{
+										display: 'inline-flex', // Для корректной работы прокрутки
+										justifyContent: 'space-around',
+										minWidth: '100%', // Чтобы Stack растягивался
+										py: 1,
+									}}
+								>
+									{stageGroup.matches.map(match => (
+										<Box
+											key={match.id}
+											sx={{
+												opacity: isMatchLocked(match.id) ? 0.5 : 1,
+												pointerEvents: isMatchLocked(match.id)
+													? 'none'
+													: 'auto',
+												transition: 'opacity 0.3s ease-in-out',
+												width: 280,
+												flexShrink: 0,
+											}}
+										>
+											<MatchColumn
+												match={match}
+												matchSelections={selections[match.id] || {}}
+												onPlayerSelect={handlePlayerSelect}
+												// ИЗМЕНЕНИЕ: Передаем проп для скрытия кнопки
+												showLowBracketButton={
+													!stagesWithoutLowBracket.includes(stageGroup.title)
+												}
+											/>
+										</Box>
+									))}
+								</Stack>
+							</AccordionDetails>
+						</Accordion>
+					))}
+				</Stack>
 			</Box>
 			<Box sx={{ mt: 3, textAlign: 'center' }}>
 				<Button variant='contained' size='large' onClick={handleSubmit}>
