@@ -33,7 +33,7 @@ const PublicLayout = () => (
 				direction='row'
 				spacing={1}
 				justifyContent='center'
-				flexWrap='wrap' // Позволяет кнопкам переноситься на новую строку на маленьких экранах
+				flexWrap='wrap'
 			>
 				<Button component={Link} to='/' variant='contained' size='small'>
 					Главная
