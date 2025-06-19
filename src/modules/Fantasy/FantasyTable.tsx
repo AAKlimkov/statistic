@@ -50,7 +50,7 @@ const FantasyTable = () => {
 	const transformData = (data: ApiData): PlayerRow[] => {
 		const passedPlayersByQual: Record<string, number[]> = {
 			'0': [51, 109, 77, 193],
-			'1': [],
+			'1': [90, 71, 105, 74],
 			'2': [],
 			'3': [],
 		}

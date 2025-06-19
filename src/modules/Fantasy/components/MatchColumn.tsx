@@ -1,10 +1,18 @@
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
-import CheckCircleFilledIcon from '@mui/icons-material/CheckCircle'
-import CheckCircleIcon from '@mui/icons-material/CheckCircleOutline'
-import HighlightOffIcon from '@mui/icons-material/HighlightOff'
-import { Box, ButtonGroup, IconButton, Paper, Typography } from '@mui/material'
+import CheckIcon from '@mui/icons-material/Check'
+import CloseIcon from '@mui/icons-material/Close'
+import {
+	Box,
+	ButtonGroup,
+	IconButton,
+	MenuItem,
+	Select,
+	Typography,
+} from '@mui/material'
+
 import * as React from 'react'
+import { useMemo } from 'react'
 import { Match } from '../data/summerLeagueData'
+
 import { MatchSelections, SelectionStatus } from '../pages/FantasyBracketPage'
 
 interface MatchColumnProps {
@@ -15,6 +23,10 @@ interface MatchColumnProps {
 		playerId: number,
 		status: SelectionStatus
 	) => void
+	minPlace?: number
+	maxPlace?: number
+	showPlaceColumn?: boolean
+	showWinColumn?: boolean
 	showLowBracketButton?: boolean
 }
 
@@ -22,99 +34,160 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 	match,
 	matchSelections,
 	onPlayerSelect,
+	minPlace = 1,
+	maxPlace = 8,
+	showPlaceColumn = true,
+	showWinColumn = true,
 	showLowBracketButton = true,
 }) => {
+	// Собираем уже занятые места другими игроками в этом матче
+	const occupiedPlaces = useMemo(() => {
+		const places = new Set<number>()
+		Object.entries(matchSelections).forEach(([playerId, status]) => {
+			if (typeof status === 'object' && status.type === 'place') {
+				places.add(status.value)
+			}
+		})
+		return places
+	}, [matchSelections])
+
+	// Проверяем текущее выбранное место игрока (если есть)
+	const getPlaceValue = (playerId: number) => {
+		const status = matchSelections[playerId]
+		if (typeof status === 'object' && status.type === 'place') {
+			return status.value
+		}
+		return ''
+	}
+
+	// Обработчик выбора места
+	const handlePlaceChange = (playerId: number, value: number | '') => {
+		if (value === '') {
+			// Убираем выбор места
+			onPlayerSelect(match.id, playerId, null as any) // удаляем статус
+		} else {
+			onPlayerSelect(match.id, playerId, { type: 'place', value })
+		}
+	}
+
+	// Обработчики победы и поражения
+	const toggleStatus = (playerId: number, status: SelectionStatus) => {
+		const current = matchSelections[playerId]
+		if (current === status) {
+			onPlayerSelect(match.id, playerId, null as any)
+		} else {
+			onPlayerSelect(match.id, playerId, status)
+		}
+	}
+
 	return (
-		<Paper
-			elevation={3}
+		<Box
 			sx={{
-				// ИЗМЕНЕНИЕ: Уменьшаем внутренний отступ
-				p: 1.5,
-				backgroundColor: 'white',
-				border: '1px solid #ddd',
-				width: '100%',
+				border: '1px solid #ccc',
+				borderRadius: 1,
+				p: 1,
+				mb: 1,
+				backgroundColor: '#f9f9f9',
 			}}
 		>
-			<Typography
-				variant='h6'
-				component='h3'
-				align='center'
-				sx={{ fontWeight: 'bold' }}
-			>
-				{match.title}
+			<Typography variant='subtitle1' fontWeight='bold' mb={1}>
+				Матч {match.id}
 			</Typography>
-			<Typography
-				variant='body2'
-				color='text.secondary'
-				align='center'
-				gutterBottom
-			>
-				{match.date}
-			</Typography>
-			<Box sx={{ mt: 1, display: 'flex', flexDirection: 'column', gap: 1 }}>
-				{match.players.map(player => (
+
+			{match.players.map(player => {
+				const placeValue = getPlaceValue(player.id)
+				const isPlaceOccupiedByOther =
+					placeValue !== '' &&
+					[...occupiedPlaces].some(p => p === placeValue && p !== placeValue)
+
+				return (
 					<Box
 						key={player.id}
 						sx={{
 							display: 'flex',
-							justifyContent: 'space-between',
 							alignItems: 'center',
+							mb: 1,
 						}}
 					>
-						<Typography
-							sx={{
-								flexGrow: 1,
-								fontStyle: player.isPlaceholder ? 'italic' : 'normal',
-								color: player.isPlaceholder ? 'text.disabled' : 'text.primary',
-							}}
-						>
-							{player.name}
-						</Typography>
-						{!player.isPlaceholder && (
-							<ButtonGroup size='small' variant='outlined'>
+						<Typography sx={{ flexGrow: 1 }}>{player.name}</Typography>
+
+						<ButtonGroup size='small' variant='outlined'>
+							{/* Победитель */}
+							{showWinColumn && (
 								<IconButton
-									onClick={() => onPlayerSelect(match.id, player.id, 'winner')}
 									color={
-										matchSelections[player.id] === 'winner'
-											? 'success'
+										matchSelections[player.id]?.type === 'winner'
+											? 'primary'
 											: 'default'
 									}
+									onClick={() => toggleStatus(player.id, { type: 'winner' })}
+									title='Выбрать победителя'
 								>
-									{matchSelections[player.id] === 'winner' ? (
-										<CheckCircleFilledIcon />
-									) : (
-										<CheckCircleIcon />
-									)}
+									<CheckIcon />
 								</IconButton>
+							)}
 
-								{showLowBracketButton && (
-									<IconButton
-										onClick={() =>
-											onPlayerSelect(match.id, player.id, 'lowBracket')
-										}
-										color={
-											matchSelections[player.id] === 'lowBracket'
-												? 'warning'
-												: 'default'
-										}
-									>
-										<ArrowDownwardIcon />
-									</IconButton>
-								)}
-
-								<IconButton
-									onClick={() => onPlayerSelect(match.id, player.id, 'loser')}
-									color={
-										matchSelections[player.id] === 'loser' ? 'error' : 'default'
-									}
+							{/* Выбор места */}
+							{showPlaceColumn && (
+								<Select
+									size='small'
+									value={placeValue !== '' ? String(placeValue) : ''}
+									displayEmpty
+									onChange={e => {
+										const val =
+											e.target.value === '' ? '' : Number(e.target.value)
+										handlePlaceChange(player.id, val)
+									}}
+									sx={{ minWidth: 72 }}
+									renderValue={selected => {
+										if (selected === '') return 'Место'
+										return `Место ${selected}`
+									}}
 								>
-									<HighlightOffIcon />
-								</IconButton>
-							</ButtonGroup>
-						)}
+									<MenuItem value=''>
+										<em>Нет</em>
+									</MenuItem>
+									{Array.from(
+										{ length: maxPlace - minPlace + 1 },
+										(_, i) => i + minPlace
+									).map(num => {
+										// Место занято другим игроком, запрещаем выбор
+										const occupiedByOther =
+											[...occupiedPlaces].includes(num) && num !== placeValue
+										return (
+											<MenuItem
+												key={num}
+												value={num}
+												disabled={occupiedByOther}
+											>
+												{`Место ${num}`}
+											</MenuItem>
+										)
+									})}
+								</Select>
+							)}
+
+							{/* Проигравший */}
+							<IconButton
+								color={
+									matchSelections[player.id]?.type === 'loser'
+										? 'error'
+										: 'default'
+								}
+								onClick={() => toggleStatus(player.id, { type: 'loser' })}
+								title='Выбрать проигравшего'
+							>
+								<CloseIcon />
+							</IconButton>
+						</ButtonGroup>
 					</Box>
-				))}
-			</Box>
-		</Paper>
+				)
+			})}
+
+			{/* Можно добавить кнопку для выбора в нижнюю сетку, если нужно */}
+			{showLowBracketButton && (
+				<Box mt={1}>{/* Тут кнопка или что-то ещё */}</Box>
+			)}
+		</Box>
 	)
 }

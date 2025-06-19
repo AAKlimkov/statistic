@@ -51,7 +51,8 @@ const Layout = ({ children }) => (
 				</Button>
 				<Button
 					component={Link}
-					to='/fantasyQual/add'
+					to='/FantasyBracketPage'
+					// to='/fantasyQual/add'
 					variant='contained'
 					color='primary'
 					size='small'
@@ -67,6 +68,8 @@ const Layout = ({ children }) => (
 				>
 					Таблица
 				</Button>
+			</Stack>
+			<Stack>
 				<Button
 					component={Link}
 					to='/fantasyPickRate'
@@ -134,19 +137,11 @@ export const router = createHashRouter([
 	},
 	{
 		path: '/players',
-		element: (
-			<Layout>
-				<PlayersTablePage />
-			</Layout>
-		),
+		element: <PlayersTablePage />,
 	},
 	{
 		path: '/tournaments',
-		element: (
-			<Layout>
-				<TournamentsTablePage />
-			</Layout>
-		),
+		element: <TournamentsTablePage />,
 	},
 	{
 		path: '/fantasyTable',

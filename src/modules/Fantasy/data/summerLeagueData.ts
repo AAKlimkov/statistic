@@ -5,9 +5,11 @@ export interface Player {
 	name: string
 	isPlaceholder?: boolean
 }
+// ИЗМЕНЕНИЕ: Добавляем необязательное поле `takePlaces`
 export interface MatchSource {
 	id: string
-	type: 'winner' | 'lowBracket' | 'lowBracket'
+	type: 'winner' | 'loser' | 'place'
+	takePlaces?: number[]
 }
 export interface Match {
 	id: string
@@ -39,6 +41,7 @@ export const bracketData: BracketData = {
 	upperBracket: {
 		left: [
 			{
+				// 1/8
 				name: '1/8 Финала',
 				matches: [
 					{
@@ -80,6 +83,7 @@ export const bracketData: BracketData = {
 				],
 			},
 			{
+				// 1/4
 				name: '1/4 Финала',
 				matches: [
 					{
@@ -123,6 +127,7 @@ export const bracketData: BracketData = {
 				],
 			},
 			{
+				// 1/2
 				name: '1/2 Финала',
 				matches: [
 					{
@@ -130,21 +135,23 @@ export const bracketData: BracketData = {
 						title: '1/2 #1',
 						date: '16 авг',
 						selectionLimit: 5,
-						sourceMatchIds: [
-							{ id: 'U-1/4-1', type: 'winner' },
-							{ id: 'U-1/4-2', type: 'winner' },
-							{ id: 'L-1/2-B', type: 'winner' },
-						],
-						// Ожидаем: 4+4+1=9 победителей. +1 для соответствия картинке. Итого 10.
 						players: Array.from({ length: 10 }, (_, i) =>
-							createPlaceholder(`Финалист #${i + 1}`)
+							createPlaceholder(`Полуфиналист #${i + 1}`)
 						),
+						// **ИЗМЕНЕНИЕ: Уточняем, кого именно брать**
+						sourceMatchIds: [
+							{ id: 'U-1/4-1', type: 'winner' }, // Все победители (4)
+							{ id: 'U-1/4-2', type: 'winner' }, // Все победители (4)
+							{ id: 'L-1/2-B', type: 'place', takePlaces: [1] }, // 1-е место из 1/2 B
+							{ id: 'L-1/2-C', type: 'place', takePlaces: [2] }, // 2-е место из 1/2 C
+						],
 					},
 				],
 			},
 		],
 		right: [
 			{
+				// 1/8
 				name: '1/8 Финала',
 				matches: [
 					{
@@ -186,6 +193,7 @@ export const bracketData: BracketData = {
 				],
 			},
 			{
+				// 1/4
 				name: '1/4 Финала',
 				matches: [
 					{
@@ -220,15 +228,16 @@ export const bracketData: BracketData = {
 							createPlayer('Юрия'),
 							createPlayer('Morti'),
 							createPlaceholder('Победитель из 1/8 #4'),
-							createPlaceholder('...'),
-							createPlaceholder('...'),
-							createPlaceholder('...'),
-							createPlaceholder('...'),
+							createPlaceholder('Победитель из 1/8 #4'),
+							createPlaceholder('Победитель из 1/8 #4'),
+							createPlaceholder('Победитель из 1/8 #4'),
+							createPlaceholder('Победитель из 1/8 #4'),
 						],
 					},
 				],
 			},
 			{
+				// 1/2
 				name: '1/2 Финала',
 				matches: [
 					{
@@ -236,15 +245,15 @@ export const bracketData: BracketData = {
 						title: '1/2 #2',
 						date: '17 авг',
 						selectionLimit: 5,
-						sourceMatchIds: [
-							{ id: 'U-1/4-3', type: 'winner' },
-							{ id: 'U-1/4-4', type: 'winner' },
-							{ id: 'L-1/2-C', type: 'winner' },
-						],
-						// Ожидаем: 4+4+1=9 победителей. +1 для соответствия картинке. Итого 10.
 						players: Array.from({ length: 10 }, (_, i) =>
-							createPlaceholder(`Финалист #${i + 1}`)
+							createPlaceholder(`Полуфиналист #${i + 1}`)
 						),
+						sourceMatchIds: [
+							{ id: 'U-1/4-3', type: 'winner' }, // Все победители (4)
+							{ id: 'U-1/4-4', type: 'winner' }, // Все победители (4)
+							{ id: 'L-1/2-C', type: 'place', takePlaces: [1] }, // 1-е место из 1/2 C
+							{ id: 'L-1/2-B', type: 'place', takePlaces: [2] }, // 2-е место из 1/2 B
+						],
 					},
 				],
 			},
@@ -261,12 +270,17 @@ export const bracketData: BracketData = {
 						date: '9 авг',
 						selectionLimit: 2,
 						sourceMatchIds: [
-							{ id: 'U-1/8-1', type: 'lowBracket' },
-							{ id: 'U-1/8-2', type: 'lowBracket' },
-							{ id: 'U-1/4-1', type: 'lowBracket' },
-							{ id: 'U-1/4-2', type: 'lowBracket' },
+							{
+								id: 'U-1/8-1',
+								type: 'place',
+								takePlaces: [6],
+							},
+							{ id: 'U-1/8-4', type: 'place', takePlaces: [6] },
+							{ id: 'U-1/4-1', type: 'place', takePlaces: [6, 8] },
+							{ id: 'U-1/4-2', type: 'place', takePlaces: [5, 7] },
+							{ id: 'U-1/4-3', type: 'place', takePlaces: [5, 7] },
+							{ id: 'U-1/4-4', type: 'place', takePlaces: [6, 8] },
 						],
-						// Ожидаем: 5+5+6+6=22 проигравших. Но на картинке 10. Берем 10.
 						players: Array.from({ length: 10 }, (_, i) =>
 							createPlaceholder(`Участник #${i + 1}`)
 						),
@@ -283,16 +297,18 @@ export const bracketData: BracketData = {
 						title: '1/2 C',
 						date: '10 авг',
 						selectionLimit: 2,
-						sourceMatchIds: [
-							{ id: 'U-1/8-3', type: 'lowBracket' },
-							{ id: 'U-1/8-4', type: 'lowBracket' },
-							{ id: 'U-1/4-3', type: 'lowBracket' },
-							{ id: 'U-1/4-4', type: 'lowBracket' },
-						],
-						// Ожидаем: 5+5+5+6=21 проигравших. Но на картинке 10. Берем 10.
+
 						players: Array.from({ length: 10 }, (_, i) =>
 							createPlaceholder(`Участник #${i + 1}`)
 						),
+						sourceMatchIds: [
+							{ id: 'U-1/8-2', type: 'place', takePlaces: [6] },
+							{ id: 'U-1/8-3', type: 'place', takePlaces: [6] },
+							{ id: 'U-1/4-1', type: 'place', takePlaces: [5, 7] },
+							{ id: 'U-1/4-2', type: 'place', takePlaces: [6, 8] },
+							{ id: 'U-1/4-3', type: 'place', takePlaces: [5, 7] },
+							{ id: 'U-1/4-4', type: 'place', takePlaces: [6, 8] },
+						],
 					},
 				],
 			},
@@ -300,21 +316,19 @@ export const bracketData: BracketData = {
 	},
 	finalStage: {
 		name: 'Финал',
-		
 		matches: [
 			{
 				id: 'Final',
 				title: 'Финал',
 				date: '23-24 авг',
 				selectionLimit: 3,
+				players: Array.from({ length: 10 }, (_, i) =>
+					createPlaceholder(`Финалист #${i + 1}`)
+				),
 				sourceMatchIds: [
 					{ id: 'U-1/2-1', type: 'winner' },
 					{ id: 'U-1/2-2', type: 'winner' },
 				],
-				// Ожидаем: 5+5=10 победителей
-				players: Array.from({ length: 10 }, (_, i) =>
-					createPlaceholder(`Финалист #${i + 1}`)
-				),
 			},
 		],
 	},

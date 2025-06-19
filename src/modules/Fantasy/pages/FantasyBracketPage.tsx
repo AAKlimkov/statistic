@@ -21,8 +21,19 @@ import {
 	Stage as StageType,
 } from '../data/summerLeagueData'
 
+interface FantasyPickPayload {
+	fantasy_user_id: number
+	match_id: string
+	player_id: number
+	pick_type: 'winner' | 'loser' | 'place' | 'lowBracket'
+	place_value: number | null // Может быть null
+}
+
 // Типы и константы остаются без изменений
-export type SelectionStatus = 'winner' | 'lowBracket' | 'loser'
+export type SelectionStatus =
+	| { type: 'winner' }
+	| { type: 'loser' }
+	| { type: 'place'; value: number }
 export type MatchSelections = Record<number, SelectionStatus>
 export type Selections = Record<string, MatchSelections>
 export type Stage = StageType
@@ -40,10 +51,65 @@ const allMatchesMap = new Map<string, Match>(
 )
 
 export const FantasyBracketPage: React.FC = () => {
+	const shouldShowPlaceColumn = useCallback((match: Match): boolean => {
+		// Например, не показывать колонку для финала:
+		if (match.title === 'Финал') return false
+		if (match.id === 'U-1/2-2') return false
+		if (match.id === 'U-1/2-1') return false
+
+		return true
+	}, [])
+	const shouldShowWinColumn = useCallback((match: Match): boolean => {
+		if (match.id === 'L-1/2-B') return false
+		if (match.id === 'L-1/2-C') return false
+
+		return true
+	}, [])
+	const getPlaceRangeForStage = useCallback((stageTitle: string) => {
+		switch (stageTitle) {
+			case '1/8 Финала':
+				return { minPlace: 6, maxPlace: 6 }
+			case '1/4 Финала':
+				return { minPlace: 5, maxPlace: 8 }
+			case '1/2 Финала':
+				return { minPlace: 1, maxPlace: 2 }
+			default:
+				return { minPlace: 1, maxPlace: 8 }
+		}
+	}, [])
 	const [selections, setSelections] = useState<Selections>({})
 	// ИЗМЕНЕНИЕ: Состояние для отслеживания открытых Accordion. По умолчанию открываем первый этап.
 	const [expanded, setExpanded] = useState<Set<string>>(new Set(['1/8 Финала']))
 	const { showToast } = useToast()
+
+	const preparePicksForApi = (
+		selections: Selections,
+		userId: number
+	): FantasyPickPayload[] => {
+		const payload: FantasyPickPayload[] = []
+
+		// Итерируемся по всем матчам ('U-1/8-1', 'U-1/4-2', ...)
+		for (const matchId in selections) {
+			const matchSelections = selections[matchId]
+
+			// Итерируемся по всем игрокам в этом матче ('1', '10', ...)
+			for (const playerIdStr in matchSelections) {
+				const playerId = parseInt(playerIdStr, 10)
+				const status = matchSelections[playerId] // { type: 'winner' } или { type: 'place', value: 6 }
+
+				payload.push({
+					fantasy_user_id: userId,
+					match_id: matchId,
+					player_id: playerId,
+					pick_type: status.type,
+					// Если тип 'place', берем value, иначе null
+					place_value: status.type === 'place' ? status.value : null,
+				})
+			}
+		}
+
+		return payload
+	}
 
 	const getMatchById = (matchId: string) => allMatchesMap.get(matchId)
 
@@ -55,13 +121,16 @@ export const FantasyBracketPage: React.FC = () => {
 				const matchInfo = getMatchById(matchId)!
 
 				const winnersCount = Object.values(newMatchSelections).filter(
-					s => s === 'winner'
+					s => s.type === 'winner'
 				).length
 
 				if (newMatchSelections[playerId] === status) {
 					delete newMatchSelections[playerId]
 				} else {
-					if (status === 'winner' && winnersCount >= matchInfo.selectionLimit) {
+					if (
+						status.type === 'winner' &&
+						winnersCount >= matchInfo.selectionLimit
+					) {
 						showToast(
 							`Можно выбрать не более ${matchInfo.selectionLimit} победителей!`,
 							'warning'
@@ -95,7 +164,17 @@ export const FantasyBracketPage: React.FC = () => {
 					sourceMatch.players.forEach(player => {
 						if (player.isPlaceholder) return
 						const playerStatus = sourceSelections[player.id]
-						if (playerStatus === source.type) {
+
+						if (!playerStatus) return
+
+						if (source.type === 'place') {
+							if (
+								playerStatus.type === 'place' &&
+								source.takePlaces?.includes(playerStatus.value)
+							) {
+								dynamicPlayers.push(player)
+							}
+						} else if (playerStatus.type === source.type) {
 							dynamicPlayers.push(player)
 						}
 					})
@@ -186,8 +265,14 @@ export const FantasyBracketPage: React.FC = () => {
 	}, [displayedBracket])
 
 	const handleSubmit = () => {
-		console.log('Итоговый выбор:', JSON.stringify(selections, null, 2))
-		showToast('Ваш выбор выведен в консоль!', 'info')
+		const currentUserId = 123
+
+		const apiPayload = preparePicksForApi(selections, currentUserId)
+
+		console.log(
+			'Подготовленные данные для API:',
+			JSON.stringify(apiPayload, null, 2)
+		)
 	}
 
 	// ИЗМЕНЕНИЕ: Обработчик для открытия/закрытия Accordion
@@ -204,7 +289,6 @@ export const FantasyBracketPage: React.FC = () => {
 			})
 		}
 
-	// ИЗМЕНЕНИЕ: Список этапов, где не нужна кнопка "в нижнюю сетку"
 	const stagesWithoutLowBracket = ['1/2 Финала', 'Финал']
 
 	return (
@@ -213,7 +297,6 @@ export const FantasyBracketPage: React.FC = () => {
 			sx={{
 				p: { xs: 1, sm: 2, md: 3 },
 				width: '100%',
-				// ИЗМЕНЕНИЕ: убрали maxWidth, чтобы компонент занимал всю ширину
 				bgcolor: 'rgba(255, 255, 255, 0.95)',
 			}}
 		>
@@ -243,36 +326,47 @@ export const FantasyBracketPage: React.FC = () => {
 									direction='row'
 									spacing={2}
 									sx={{
-										display: 'inline-flex', // Для корректной работы прокрутки
+										display: 'inline-flex',
 										justifyContent: 'space-around',
-										minWidth: '100%', // Чтобы Stack растягивался
+										minWidth: '100%',
 										py: 1,
 									}}
 								>
-									{stageGroup.matches.map(match => (
-										<Box
-											key={match.id}
-											sx={{
-												opacity: isMatchLocked(match.id) ? 0.5 : 1,
-												pointerEvents: isMatchLocked(match.id)
-													? 'none'
-													: 'auto',
-												transition: 'opacity 0.3s ease-in-out',
-												width: 280,
-												flexShrink: 0,
-											}}
-										>
-											<MatchColumn
-												match={match}
-												matchSelections={selections[match.id] || {}}
-												onPlayerSelect={handlePlayerSelect}
-												// ИЗМЕНЕНИЕ: Передаем проп для скрытия кнопки
-												showLowBracketButton={
-													!stagesWithoutLowBracket.includes(stageGroup.title)
-												}
-											/>
-										</Box>
-									))}
+									{stageGroup.matches.map(match => {
+										const showPlaceColumn = shouldShowPlaceColumn(match)
+										const showWinColumn = shouldShowWinColumn(match)
+										const { minPlace, maxPlace } = getPlaceRangeForStage(
+											stageGroup.title
+										)
+
+										return (
+											<Box
+												key={match.id}
+												sx={{
+													opacity: isMatchLocked(match.id) ? 0.5 : 1,
+													pointerEvents: isMatchLocked(match.id)
+														? 'none'
+														: 'auto',
+													transition: 'opacity 0.3s ease-in-out',
+													width: 280,
+													flexShrink: 0,
+												}}
+											>
+												<MatchColumn
+													match={match}
+													matchSelections={selections[match.id] || {}}
+													onPlayerSelect={handlePlayerSelect}
+													showLowBracketButton={
+														!stagesWithoutLowBracket.includes(stageGroup.title)
+													}
+													minPlace={minPlace}
+													maxPlace={maxPlace}
+													showPlaceColumn={showPlaceColumn} // <- добавляем флаг
+													showWinColumn={showWinColumn} // <- добавляем флаг
+												/>
+											</Box>
+										)
+									})}
 								</Stack>
 							</AccordionDetails>
 						</Accordion>
