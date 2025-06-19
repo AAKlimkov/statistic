@@ -51,7 +51,7 @@ const FantasyTable = () => {
 		const passedPlayersByQual: Record<string, number[]> = {
 			'0': [51, 109, 77, 193],
 			'1': [90, 71, 105, 74],
-			'2': [],
+			'2': [7, 229, 125, 146],
 			'3': [],
 		}
 
