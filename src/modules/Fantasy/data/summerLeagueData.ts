@@ -98,7 +98,7 @@ export const bracketData: BracketData = {
 							createPlayer('Свич'),
 							createPlayer('Луна'),
 							createPlayer('Alice'),
-							createPlaceholder('Победитель из 1/8 #1'),
+							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
@@ -117,7 +117,7 @@ export const bracketData: BracketData = {
 							createPlayer('Чешир'),
 							createPlayer('Дракарис'),
 							createPlayer('Физик'),
-							createPlaceholder('Победитель из 1/8 #2'),
+							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
@@ -132,7 +132,7 @@ export const bracketData: BracketData = {
 				matches: [
 					{
 						id: 'U-1/2-1',
-						title: '1/2 #1',
+						title: '1/2 #1 Верхняя сетка',
 						date: '16 авг',
 						selectionLimit: 5,
 						players: Array.from({ length: 10 }, (_, i) =>
@@ -208,7 +208,7 @@ export const bracketData: BracketData = {
 							createPlayer('Бестия'),
 							createPlayer('Никнейм'),
 							createPlayer('Шоу Бой'),
-							createPlaceholder('Победитель из 1/8 #3'),
+							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
 							createPlaceholder('...'),
@@ -227,11 +227,11 @@ export const bracketData: BracketData = {
 							createPlayer('Пила'),
 							createPlayer('Юрия'),
 							createPlayer('Morti'),
-							createPlaceholder('Победитель из 1/8 #4'),
-							createPlaceholder('Победитель из 1/8 #4'),
-							createPlaceholder('Победитель из 1/8 #4'),
-							createPlaceholder('Победитель из 1/8 #4'),
-							createPlaceholder('Победитель из 1/8 #4'),
+							createPlaceholder('...'),
+							createPlaceholder('...'),
+							createPlaceholder('...'),
+							createPlaceholder('...'),
+							createPlaceholder('...'),
 						],
 					},
 				],
@@ -242,7 +242,7 @@ export const bracketData: BracketData = {
 				matches: [
 					{
 						id: 'U-1/2-2',
-						title: '1/2 #2',
+						title: '1/2 #2 Верхняя сетка',
 						date: '17 авг',
 						selectionLimit: 5,
 						players: Array.from({ length: 10 }, (_, i) =>
@@ -266,7 +266,7 @@ export const bracketData: BracketData = {
 				matches: [
 					{
 						id: 'L-1/2-B',
-						title: '1/2 B',
+						title: '1/2 B Нижняя сетка',
 						date: '9 авг',
 						selectionLimit: 2,
 						sourceMatchIds: [
@@ -294,7 +294,7 @@ export const bracketData: BracketData = {
 				matches: [
 					{
 						id: 'L-1/2-C',
-						title: '1/2 C',
+						title: '1/2 C 1/2 B Нижняя сетка',
 						date: '10 авг',
 						selectionLimit: 2,
 

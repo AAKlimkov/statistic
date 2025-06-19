@@ -34,3 +34,11 @@ export interface PickDataWithUser extends PickData {
 	fantasy_users: User
 	players: User
 }
+
+export interface Stage2PickPayload {
+	fantasy_user_id: number
+	match_id: string
+	player_id: number
+	pick_type: 'winner' | 'loser' | 'place'
+	place_value: number | null
+}

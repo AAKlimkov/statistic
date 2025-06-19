@@ -5,12 +5,12 @@ import {
 	AccordionSummary,
 	Box,
 	Button,
-	Paper,
 	Stack,
 	Typography,
 } from '@mui/material'
 import * as React from 'react'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import InputField from '../../../components/InputField'
 import { useToast } from '../../../context/ToastProvider'
 import { MatchColumn } from '../components/MatchColumn'
 import {
@@ -20,12 +20,13 @@ import {
 	Player,
 	Stage as StageType,
 } from '../data/summerLeagueData'
+import { PlayerData } from '../types'
 
 interface FantasyPickPayload {
 	fantasy_user_id: number
 	match_id: string
 	player_id: number
-	pick_type: 'winner' | 'loser' | 'place' | 'lowBracket'
+	pick_type: 'winner' | 'loser' | 'place'
 	place_value: number | null // Может быть null
 }
 
@@ -49,8 +50,30 @@ const allMatchesMap = new Map<string, Match>(
 		.flat()
 		.map(match => [match.id, match])
 )
+interface PickDataStage2 {
+	fantasy_user_id?: number // не обязателен при подготовке, добавим позже
+	match_id: string
+	player_id: number
+	pick_type: 'winner' | 'loser' | 'place'
+	place_value: number | null
+}
+type Mode = 'create' | 'edit'
 
-export const FantasyBracketPage: React.FC = () => {
+interface FantasyBracketPageProps {
+	name?: string
+	secret?: string
+	mode: Mode
+	userId?: number // для редактирования
+}
+
+export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
+	name = '',
+	secret = '',
+	userId,
+	mode,
+}) => {
+	const [name2, setName2] = useState('')
+	const [secret2, setSecret2] = useState('')
 	const shouldShowPlaceColumn = useCallback((match: Match): boolean => {
 		// Например, не показывать колонку для финала:
 		if (match.title === 'Финал') return false
@@ -82,27 +105,51 @@ export const FantasyBracketPage: React.FC = () => {
 	const [expanded, setExpanded] = useState<Set<string>>(new Set(['1/8 Финала']))
 	const { showToast } = useToast()
 
-	const preparePicksForApi = (
-		selections: Selections,
-		userId: number
-	): FantasyPickPayload[] => {
-		const payload: FantasyPickPayload[] = []
+	useEffect(() => {
+		if (mode === 'edit' && userId) {
+			fetch(`/api/fantasy/fantasy_picks_stage2?user_id=${userId}`)
+				.then(res => res.json())
+				.then((data: PickDataStage2[]) => {
+					// Преобразуем массив пик в selections
+					const newSelections: Selections = {}
 
-		// Итерируемся по всем матчам ('U-1/8-1', 'U-1/4-2', ...)
+					data.forEach(pick => {
+						if (!newSelections[pick.match_id]) {
+							newSelections[pick.match_id] = {}
+						}
+
+						newSelections[pick.match_id][pick.player_id] =
+							pick.pick_type === 'place'
+								? { type: 'place', value: pick.place_value! }
+								: { type: pick.pick_type }
+					})
+
+					setSelections(newSelections)
+				})
+				.catch(() => {
+					showToast('Не удалось загрузить сохраненные пики', 'error')
+				})
+		} else if (mode === 'create') {
+			setSelections({}) // пустое состояние для создания
+		}
+	}, [mode, userId])
+
+	const preparePicksForApi = (
+		selections: Selections
+	): Omit<FantasyPickPayload, 'fantasy_user_id'>[] => {
+		const payload: Omit<FantasyPickPayload, 'fantasy_user_id'>[] = []
+
 		for (const matchId in selections) {
 			const matchSelections = selections[matchId]
 
-			// Итерируемся по всем игрокам в этом матче ('1', '10', ...)
 			for (const playerIdStr in matchSelections) {
 				const playerId = parseInt(playerIdStr, 10)
-				const status = matchSelections[playerId] // { type: 'winner' } или { type: 'place', value: 6 }
+				const status = matchSelections[playerId]
 
 				payload.push({
-					fantasy_user_id: userId,
 					match_id: matchId,
 					player_id: playerId,
 					pick_type: status.type,
-					// Если тип 'place', берем value, иначе null
 					place_value: status.type === 'place' ? status.value : null,
 				})
 			}
@@ -264,15 +311,106 @@ export const FantasyBracketPage: React.FC = () => {
 		]
 	}, [displayedBracket])
 
-	const handleSubmit = () => {
-		const currentUserId = 123
+	const submitEditStage2 = async (
+		username: string,
+		secret: string,
+		picks: PickDataStage2[]
+	): Promise<PickDataStage2[] | null> => {
+		try {
+			const requestBody = {
+				username,
+				secret,
+				picks,
+			}
 
-		const apiPayload = preparePicksForApi(selections, currentUserId)
+			const res = await fetch('/api/fantasy/user_pick_update_stage2', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(requestBody),
+			})
 
-		console.log(
-			'Подготовленные данные для API:',
-			JSON.stringify(apiPayload, null, 2)
-		)
+			if (!res.ok) {
+				const errData = await res.json()
+				const message =
+					errData?.error === 'Invalid username or secret'
+						? '⛔ Неверное имя пользователя или кодовое слово. Проверьте ввод.'
+						: 'Ошибка при сохранении пиков'
+				throw new Error(message)
+			}
+
+			const data: PickDataStage2[] = await res.json()
+			showToast('Пики успешно обновлены!', 'success')
+			return data
+		} catch (error: any) {
+			showToast(error.message || 'Ошибка при сохранении данных', 'error')
+			return null
+		}
+	}
+
+	// Обновлённый handleSubmit, пример
+	const handleSubmit = async e => {
+		e.preventDefault()
+		if ((!name && !name2) || (!secret && !secret2)) {
+			showToast('Введите имя и секрет', 'error')
+			return
+		}
+		let playerData: PlayerData
+		if (mode === 'create') {
+			const payload = {
+				name: name2,
+				secret: secret2,
+			}
+			try {
+				const res = await fetch('/api/fantasy_users', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(payload),
+				})
+
+				const resData = await res.json()
+
+				if (!res.ok) {
+					showToast(resData.error || 'Ошибка при сохранении', 'error')
+					return // ❗ обязательно прерываем — ничего дальше не делать!
+				}
+
+				// Успех — продолжаем
+				playerData = resData
+
+				// Только здесь делаем сброс полей, если нужно
+				// setPicks([]), setName('') и т.п.
+			} catch (error) {
+				console.error(error)
+				showToast('Сетевая ошибка. Попробуйте позже.', 'error')
+			}
+		}
+
+		const picksPayload = preparePicksForApi(selections)
+
+		const requestBody = {
+			username: name || name2,
+			secret: secret || secret2,
+			picks: picksPayload,
+		}
+
+		try {
+			const response = await fetch('/api/fantasy/user_pick_update_stage2', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(requestBody),
+			})
+
+			if (!response.ok) {
+				const err = await response.json()
+				throw new Error(err.error || 'Ошибка при сохранении данных')
+			}
+
+			const updatedPicks = await response.json()
+			showToast('Пики успешно сохранены!', 'success')
+			return updatedPicks
+		} catch (error: any) {
+			showToast(error.message || 'Ошибка при сохранении данных', 'error')
+		}
 	}
 
 	// ИЗМЕНЕНИЕ: Обработчик для открытия/закрытия Accordion
@@ -292,14 +430,36 @@ export const FantasyBracketPage: React.FC = () => {
 	const stagesWithoutLowBracket = ['1/2 Финала', 'Финал']
 
 	return (
-		<Paper
-			elevation={3}
+		<Box
 			sx={{
-				p: { xs: 1, sm: 2, md: 3 },
+				display: 'flex',
+				flexDirection: 'column',
 				width: '100%',
-				bgcolor: 'rgba(255, 255, 255, 0.95)',
+				backgroundColor: 'rgba(255, 255, 255, 0.8)',
 			}}
 		>
+			{mode === 'create' && (
+				<Box
+					sx={{
+						margin: 'auto',
+						display: 'flex',
+						flexDirection: 'column',
+						maxWidth: '400px',
+					}}
+				>
+					<InputField
+						value={name2}
+						onChange={e => setName2(e.target.value)}
+						placeholder='Имя'
+					/>
+					<InputField
+						value={secret2}
+						onChange={e => setSecret2(e.target.value)}
+						placeholder='Кодовое слово'
+						type='password'
+					/>
+				</Box>
+			)}
 			<Typography variant='h4' component='h1' gutterBottom align='center'>
 				Фэнтези-сетка
 			</Typography>
@@ -378,6 +538,6 @@ export const FantasyBracketPage: React.FC = () => {
 					Сохранить выбор
 				</Button>
 			</Box>
-		</Paper>
+		</Box>
 	)
 }

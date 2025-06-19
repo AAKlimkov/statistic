@@ -91,7 +91,7 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 			}}
 		>
 			<Typography variant='subtitle1' fontWeight='bold' mb={1}>
-				Матч {match.id}
+				Матч {match.title}
 			</Typography>
 
 			{match.players.map(player => {

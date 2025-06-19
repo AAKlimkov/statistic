@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { qualData } from '../data/qualData'
-import { PickData, PlayerData, SelectedPlayers, Toast } from '../types'
+import {
+	PickData,
+	PlayerData,
+	SelectedPlayers,
+	Stage2PickPayload,
+	Toast,
+} from '../types'
 
 export const useFantasyForm = () => {
 	const [name, setName] = useState('')
@@ -139,6 +145,57 @@ export const useFantasyForm = () => {
 		}
 	}
 
+	const submitStage2Picks = async (
+		fantasy_user_id: number
+	): Promise<Stage2PickPayload[] | null> => {
+		if (!validate()) return null
+
+		try {
+			// Здесь selected берём из текущего состояния в хуке (замыкание)
+			// selected: Record<number, number[]>
+			const picksBody = Object.entries(selected).flatMap(
+				([qualification_index, players]) =>
+					players.map(player_id => ({
+						fantasy_user_id,
+						qualification_index: Number(qualification_index),
+						player_id,
+					}))
+			)
+
+			const requestBody = {
+				secret,
+				fantasy_user_id,
+				picks: picksBody,
+			}
+
+			const res = await fetch('/api/fantasy/stage2_pick_update', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(requestBody),
+			})
+
+			if (!res.ok) {
+				const errData = await res.json()
+				throw new Error(errData?.error || 'Ошибка при сохранении этапа 2')
+			}
+
+			const result = await res.json()
+			setToast({
+				open: true,
+				severity: 'success',
+				message: 'Пики этапа 2 успешно обновлены!',
+			})
+			return result
+		} catch (err: any) {
+			setToast({
+				open: true,
+				severity: 'error',
+				message: err.message || 'Ошибка при сохранении данных',
+			})
+			return null
+		}
+	}
+
 	return {
 		name,
 		secret,
@@ -151,5 +208,6 @@ export const useFantasyForm = () => {
 		handleSelect,
 		submit,
 		submitEdit,
+		submitStage2Picks,
 	}
 }

@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
 				>
 					Главная
 				</Button>
-				<Button
+				{/* <Button
 					component={Link}
 					to='/FantasyBracketPage'
 					// to='/fantasyQual/add'
@@ -58,7 +58,7 @@ const Layout = ({ children }) => (
 					size='small'
 				>
 					Регистрация
-				</Button>
+				</Button> */}
 				<Button
 					component={Link}
 					to='/fantasyTable'
@@ -163,7 +163,7 @@ export const router = createHashRouter([
 		path: '/FantasyBracketPage',
 		element: (
 			<Layout>
-				<FantasyBracketPage />
+				<FantasyBracketPage mode='create' />
 			</Layout>
 		),
 	},

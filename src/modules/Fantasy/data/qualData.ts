@@ -41,7 +41,7 @@ export const qualData = [
 			{ id: 146, name: 'Суета' },
 			{ id: 249, name: 'Таварес' },
 			{ id: 232, name: 'Mars' },
-			{ id: 239, name: 'Dream' },
+			{ id: 229, name: 'Keln' },
 			{ id: 107, name: 'SEO' },
 			{ id: 202, name: 'Matilda' },
 			{ id: 42, name: 'uLTRa' },

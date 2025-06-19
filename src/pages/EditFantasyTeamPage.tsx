@@ -1,20 +1,35 @@
-import { Alert, Box, Snackbar, Typography } from '@mui/material'
+import { Alert, Box, Snackbar, Tab, Tabs, Typography } from '@mui/material'
 import * as React from 'react'
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import FantasyForm from '../modules/Fantasy/components/FantasyForm'
 import QualPicks from '../modules/Fantasy/components/QualPicks'
 import { useFantasyForm } from '../modules/Fantasy/hooks/useFantasyForm'
+import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
 import { PickData } from '../modules/Fantasy/types'
+
+interface TabPanelProps {
+	children?: React.ReactNode
+	index: number
+	value: number
+}
+function TabPanel(props: TabPanelProps) {
+	const { children, value, index, ...other } = props
+	return (
+		<div role='tabpanel' hidden={value !== index} {...other}>
+			{value === index && <Box sx={{ pt: 3 }}>{children}</Box>}
+		</div>
+	)
+}
 
 const EditFantasyTeamPage: React.FC = () => {
 	const { userId } = useParams<{ userId: string }>()
 	const navigate = useNavigate()
 
+	const [activeTab, setActiveTab] = useState(0)
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 
-	const [confirmOpen, setConfirmOpen] = useState(false)
 	const [initialData, setInitialData] = useState<{
 		name: string
 		secret: string
@@ -33,6 +48,7 @@ const EditFantasyTeamPage: React.FC = () => {
 		setSelected,
 		selected,
 		submitEdit,
+		submitStage2Picks,
 	} = useFantasyForm()
 
 	useEffect(() => {
@@ -84,6 +100,10 @@ const EditFantasyTeamPage: React.FC = () => {
 		const result = await submitEdit(+userId)
 	}
 
+	const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+		setActiveTab(newValue)
+	}
+
 	const handleDelete = async () => {
 		if (!userId) return
 		if (
@@ -116,7 +136,7 @@ const EditFantasyTeamPage: React.FC = () => {
 				backgroundColor: 'rgba(255, 255, 255, 0.9)', // полупрозрачный белый фон
 				borderRadius: 2,
 				boxShadow: 3,
-				maxWidth: 900,
+				maxWidth: '95vw',
 				margin: 'auto',
 			}}
 		>
@@ -134,7 +154,25 @@ const EditFantasyTeamPage: React.FC = () => {
 				isEdit={true}
 			/>
 
-			<QualPicks selected={selected} onSelect={handleSelect} />
+			<Box sx={{ width: '100%', mt: 3 }}>
+				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+					<Tabs value={activeTab} onChange={handleTabChange} centered>
+						<Tab label='Этап 1: Квалификация' />
+						<Tab label='Этап 2: Сетка' />
+					</Tabs>
+				</Box>
+				<TabPanel value={activeTab} index={0}>
+					<QualPicks selected={selected} onSelect={handleSelect} />
+				</TabPanel>
+				<TabPanel value={activeTab} index={1}>
+					<FantasyBracketPage
+						mode='edit'
+						userId={+userId}
+						name={name}
+						secret={secret}
+					/>
+				</TabPanel>
+			</Box>
 
 			<Snackbar
 				open={toast.open}
