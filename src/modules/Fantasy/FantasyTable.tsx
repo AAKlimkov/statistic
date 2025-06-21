@@ -52,7 +52,7 @@ const FantasyTable = () => {
 			'0': [51, 109, 77, 193],
 			'1': [90, 71, 105, 74],
 			'2': [7, 229, 125, 146],
-			'3': [],
+			'3': [192, 225, 55, 231],
 		}
 
 		const usersMap: Record<number, PlayerRow> = {}
