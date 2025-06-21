@@ -50,10 +50,11 @@ export default async function handler(req: Request) {
 		if (existingUser) {
 			return new Response(
 				JSON.stringify({
-					error: 'Пользователь с таким именем и кодовым словом уже существует',
+					message: 'Пользователь уже существует',
+					user: existingUser,
 				}),
 				{
-					status: 409,
+					status: 200,
 					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 				}
 			)
