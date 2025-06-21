@@ -269,11 +269,7 @@ export const bracketData: BracketData = {
 						date: '9 авг',
 						selectionLimit: 2,
 						sourceMatchIds: [
-							{
-								id: 'U-1/8-1',
-								type: 'place',
-								takePlaces: [6],
-							},
+							{ id: 'U-1/8-1', type: 'place', takePlaces: [6] },
 							{ id: 'U-1/8-4', type: 'place', takePlaces: [6] },
 							{ id: 'U-1/4-1', type: 'place', takePlaces: [6, 8] },
 							{ id: 'U-1/4-2', type: 'place', takePlaces: [5, 7] },
@@ -293,7 +289,7 @@ export const bracketData: BracketData = {
 				matches: [
 					{
 						id: 'L-1/2-C',
-						title: '1/2 C 1/2 B Нижняя сетка',
+						title: '1/2 C Нижняя сетка',
 						date: '10 авг',
 						selectionLimit: 2,
 
@@ -305,8 +301,8 @@ export const bracketData: BracketData = {
 							{ id: 'U-1/8-3', type: 'place', takePlaces: [6] },
 							{ id: 'U-1/4-1', type: 'place', takePlaces: [5, 7] },
 							{ id: 'U-1/4-2', type: 'place', takePlaces: [6, 8] },
-							{ id: 'U-1/4-3', type: 'place', takePlaces: [5, 7] },
-							{ id: 'U-1/4-4', type: 'place', takePlaces: [6, 8] },
+							{ id: 'U-1/4-3', type: 'place', takePlaces: [6, 8] },
+							{ id: 'U-1/4-4', type: 'place', takePlaces: [5, 7] },
 						],
 					},
 				],

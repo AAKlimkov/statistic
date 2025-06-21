@@ -176,7 +176,8 @@ export const router = createHashRouter([
 		),
 	},
 	{
-		path: '/fantasyQual/add',
+		path: '/FantasyBracketPage',
+		// path: '/fantasyQual',
 		element: (
 			<Layout>
 				<AddFantasyPlayerPage />
