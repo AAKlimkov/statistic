@@ -163,7 +163,7 @@ export const bracketData: BracketData = {
 							createPlayer(132, 'Астория'),
 							createPlayer(34, 'Cherry Pick'),
 							createPlayer(225, 'Дэн'),
-							createPlayer(141, 'Love'),
+							createPlayer(63, 'Домовенок'),
 							createPlayer(109, 'Люпен'),
 							createPlayer(90, 'Круэлла'),
 							createPlayer(125, 'Авраам'),
