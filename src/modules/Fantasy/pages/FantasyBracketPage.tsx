@@ -424,6 +424,9 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 			<Typography variant='h4' component='h1' gutterBottom align='center'>
 				Фэнтези-сетка
 			</Typography>
+			<Typography variant='h6' component='h1' gutterBottom align='center'>
+				(необходим выбрать всех игроков, даже тех кто вылетает)
+			</Typography>
 			<Box sx={{ p: { xs: 0, sm: 1 } }}>
 				<Stack direction='column' spacing={2}>
 					{organizedLayout.map(stageGroup => (
