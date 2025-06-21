@@ -21,7 +21,7 @@ interface MatchColumnProps {
 	onPlayerSelect: (
 		matchId: string,
 		playerId: number,
-		status: SelectionStatus
+		status: SelectionStatus | undefined
 	) => void
 	minPlace?: number
 	maxPlace?: number
@@ -64,7 +64,7 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 	const handlePlaceChange = (playerId: number, value: number | '') => {
 		if (value === '') {
 			// Убираем выбор места
-			onPlayerSelect(match.id, playerId, null as any) // удаляем статус
+			onPlayerSelect(match.id, playerId, { type: 'loser' })
 		} else {
 			onPlayerSelect(match.id, playerId, { type: 'place', value })
 		}
@@ -74,7 +74,7 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 	const toggleStatus = (playerId: number, status: SelectionStatus) => {
 		const current = matchSelections[playerId]
 		if (current === status) {
-			onPlayerSelect(match.id, playerId, null as any)
+			onPlayerSelect(match.id, playerId, { type: 'loser' })
 		} else {
 			onPlayerSelect(match.id, playerId, status)
 		}
@@ -115,13 +115,14 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 							{/* Победитель */}
 							{showWinColumn && (
 								<IconButton
-									color={
-										matchSelections[player.id]?.type === 'winner'
-											? 'primary'
-											: 'default'
-									}
 									onClick={() => toggleStatus(player.id, { type: 'winner' })}
 									title='Выбрать победителя'
+									sx={{
+										color:
+											matchSelections[player.id]?.type === 'winner'
+												? 'green'
+												: 'inherit',
+									}}
 								>
 									<CheckIcon />
 								</IconButton>

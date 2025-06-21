@@ -311,44 +311,8 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 		]
 	}, [displayedBracket])
 
-	const submitEditStage2 = async (
-		username: string,
-		secret: string,
-		picks: PickDataStage2[]
-	): Promise<PickDataStage2[] | null> => {
-		try {
-			const requestBody = {
-				username,
-				secret,
-				picks,
-			}
-
-			const res = await fetch('/api/fantasy/user_pick_update_stage2', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(requestBody),
-			})
-
-			if (!res.ok) {
-				const errData = await res.json()
-				const message =
-					errData?.error === 'Invalid username or secret'
-						? '⛔ Неверное имя пользователя или кодовое слово. Проверьте ввод.'
-						: 'Ошибка при сохранении пиков'
-				throw new Error(message)
-			}
-
-			const data: PickDataStage2[] = await res.json()
-			showToast('Пики успешно обновлены!', 'success')
-			return data
-		} catch (error: any) {
-			showToast(error.message || 'Ошибка при сохранении данных', 'error')
-			return null
-		}
-	}
-
 	// Обновлённый handleSubmit, пример
-	const handleSubmit = async e => {
+	const handleSubmit = async (e: { preventDefault: () => void }) => {
 		e.preventDefault()
 		if ((!name && !name2) || (!secret && !secret2)) {
 			showToast('Введите имя и секрет', 'error')
@@ -376,9 +340,6 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 
 				// Успех — продолжаем
 				playerData = resData
-
-				// Только здесь делаем сброс полей, если нужно
-				// setPicks([]), setName('') и т.п.
 			} catch (error) {
 				console.error(error)
 				showToast('Сетевая ошибка. Попробуйте позже.', 'error')
@@ -465,7 +426,6 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 			</Typography>
 			<Box sx={{ p: { xs: 0, sm: 1 } }}>
 				<Stack direction='column' spacing={2}>
-					{/* ИЗМЕНЕНИЕ: Используем Accordion для каждого этапа */}
 					{organizedLayout.map(stageGroup => (
 						<Accordion
 							key={stageGroup.title}

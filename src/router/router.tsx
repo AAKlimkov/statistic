@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
 				>
 					Главная
 				</Button>
-				{/* <Button
+				<Button
 					component={Link}
 					to='/FantasyBracketPage'
 					// to='/fantasyQual/add'
@@ -57,8 +57,8 @@ const Layout = ({ children }) => (
 					color='primary'
 					size='small'
 				>
-					Регистрация
-				</Button> */}
+					Регистрация (2 этап)
+				</Button>
 				<Button
 					component={Link}
 					to='/fantasyTable'

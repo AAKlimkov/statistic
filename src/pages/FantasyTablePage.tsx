@@ -1,6 +1,5 @@
-import { Box, Button, Paper, Typography } from '@mui/material'
+import { Box, Paper, Typography } from '@mui/material'
 import * as React from 'react'
-import { Link } from 'react-router-dom'
 import FantasyTable from '../modules/Fantasy/FantasyTable'
 
 const FantasyTablePage = () => {
@@ -17,14 +16,14 @@ const FantasyTablePage = () => {
 				<Typography variant='h4' component='h1'>
 					Фэнтези Лига
 				</Typography>
-				<Button
+				{/* <Button
 					component={Link}
 					to='/fantasyQual/add'
 					variant='contained'
 					color='primary'
 				>
 					Зарегистрировать участника
-				</Button>
+				</Button> */}
 			</Box>
 
 			<Paper

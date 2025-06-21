@@ -26,7 +26,7 @@ const EditFantasyTeamPage: React.FC = () => {
 	const { userId } = useParams<{ userId: string }>()
 	const navigate = useNavigate()
 
-	const [activeTab, setActiveTab] = useState(0)
+	const [activeTab, setActiveTab] = useState(1)
 	const [loading, setLoading] = useState(true)
 	const [error, setError] = useState<string | null>(null)
 

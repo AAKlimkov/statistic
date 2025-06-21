@@ -100,12 +100,12 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	/* Первый столбец (ник) теперь занимает почти всё место */
 	.fantasy-table-container th:first-child,
 	.fantasy-table-container td:first-child {
-		width: 90%;
+		width: 80%;
 	}
 
 	/* Последний столбец (итого) — компактный */
 	.fantasy-table-container th:nth-child(6),
 	.fantasy-table-container td:nth-child(6) {
-		width: 10% !important;
+		width: 20% !important;
 	}
 }
