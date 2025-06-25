@@ -120,8 +120,20 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 									sx={{
 										color:
 											matchSelections[player.id]?.type === 'winner'
-												? 'green'
+												? 'white'
 												: 'inherit',
+										backgroundColor:
+											matchSelections[player.id]?.type === 'winner'
+												? 'green'
+												: 'transparent',
+										borderRadius:
+											matchSelections[player.id]?.type === 'winner'
+												? '50%'
+												: 'none',
+										border:
+											matchSelections[player.id]?.type === 'winner'
+												? '1px solid green'
+												: 'none',
 									}}
 								>
 									<CheckIcon />
@@ -170,13 +182,26 @@ export const MatchColumn: React.FC<MatchColumnProps> = ({
 
 							{/* Проигравший */}
 							<IconButton
-								color={
-									matchSelections[player.id]?.type === 'loser'
-										? 'error'
-										: 'default'
-								}
 								onClick={() => toggleStatus(player.id, { type: 'loser' })}
 								title='Выбрать проигравшего'
+								sx={{
+									color:
+										matchSelections[player.id]?.type === 'loser'
+											? 'white'
+											: 'inherit',
+									backgroundColor:
+										matchSelections[player.id]?.type === 'loser'
+											? 'red'
+											: 'transparent',
+									borderRadius:
+										matchSelections[player.id]?.type === 'loser'
+											? '90%'
+											: 'none',
+									border:
+										matchSelections[player.id]?.type === 'loser'
+											? '1px solid red'
+											: 'none',
+								}}
 							>
 								<CloseIcon />
 							</IconButton>
