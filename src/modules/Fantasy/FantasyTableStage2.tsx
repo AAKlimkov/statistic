@@ -1,18 +1,18 @@
 // /components/fantasy/FantasyBracketTable.tsx (пример пути)
 
+import { Paper } from '@mui/material'
 import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-// ВАЖНО: Импортируем саму структуру данных турнира
-import { Paper } from '@mui/material'
-import './FantasyTableStage2.css' // Используем те же стили
+import './FantasyTableStage2.css'
 import { bracketData, Stage } from './data/summerLeagueData'
 
-// --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (остаются как раньше) ---
+// --- 1. ИНТЕРФЕЙСЫ ---
 interface ApiPick {
 	match_id: string
 	player_id: number
 	pick_type: 'winner' | 'loser' | 'place'
+	place_value: number | null
 }
 interface ApiUserData {
 	fantasy_user_id: number
@@ -23,6 +23,7 @@ interface PickDisplay {
 	playerId: number
 	playerName: string
 	passed: boolean | null
+	displaySuffix?: string
 }
 interface UserRow {
 	id: number
@@ -32,9 +33,8 @@ interface UserRow {
 	total: number
 }
 
-// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ИЗ `bracketData` ---
+// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ---
 
-// Собираем всех уникальных игроков из bracketData
 const allPlayersList = [
 	...bracketData.upperBracket.left.flatMap(s => s.matches),
 	...bracketData.upperBracket.right.flatMap(s => s.matches),
@@ -43,15 +43,13 @@ const allPlayersList = [
 	...bracketData.finalStage.matches,
 ]
 	.flatMap(match => match.players)
-	.filter(player => !player.isPlaceholder) // Исключаем плейсхолдеры
-	// Убираем дубликаты, если игрок участвует в нескольких матчах
+	.filter(player => !player.isPlaceholder)
 	.filter(
 		(player, index, self) => index === self.findIndex(p => p.id === player.id)
 	)
 
 const allPlayersMap = new Map(allPlayersList.map(p => [p.id, p.name]))
 
-// Динамически создаем названия колонок и карту "матч -> стадия"
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: '1/8 Финала', matchIds: new Set() },
 	{ title: '1/4 Финала', matchIds: new Set() },
@@ -61,13 +59,11 @@ const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 
 const matchIdToStageIndex = new Map<string, number>()
 
-// Функция для обхода всех матчей и заполнения конфигурации
-const processStage = (stage: Stage, stageIndexOverride?: number) => {
+// *** ВОТ ИСПРАВЛЕНИЕ: Добавлена недостающая функция ***
+const processStage = (stage: Stage) => {
 	let stageIndex = -1
 	// Определяем индекс по названию
-	if (stageIndexOverride !== undefined) {
-		stageIndex = stageIndexOverride
-	} else if (stage.name.includes('1/8')) stageIndex = 0
+	if (stage.name.includes('1/8')) stageIndex = 0
 	else if (stage.name.includes('1/4')) stageIndex = 1
 	else if (stage.name.includes('1/2')) stageIndex = 2
 	else if (stage.name.includes('Финал')) stageIndex = 3
@@ -80,23 +76,30 @@ const processStage = (stage: Stage, stageIndexOverride?: number) => {
 	}
 }
 
+// Теперь эти вызовы будут работать
 bracketData.upperBracket.left.forEach(s => processStage(s))
 bracketData.upperBracket.right.forEach(s => processStage(s))
 bracketData.lowerBracket.left.forEach(s => processStage(s))
 bracketData.lowerBracket.right.forEach(s => processStage(s))
-processStage(bracketData.finalStage) // У финала нет названия в Stage, поэтому индекс определяем по-другому
+processStage(bracketData.finalStage)
 
-// --- 3. ИСТИННЫЕ ДАННЫЕ (это единственная часть, которую нужно обновлять вручную) ---
-const tournamentResults: Record<string, number[]> = {
-	// Ключ - ID матча, значение - МАССИВ ID победивших игроков.
-	// Это важно, т.к. в некоторых матчах несколько победителей.
-	'U-1/8-1': [27, 192, 105, 146, 193],
-	'U-1/8-2': [15, 85, 55, 229, 51],
-	// ...добавляйте сюда остальные результаты по мере их появления
-	// 'U-1/4-1': [58, 79, ...],
+// --- 3. ИСТИННЫЕ ДАННЫЕ ---
+interface MatchResult {
+	winners?: number[]
+	places?: Record<number, number[]>
+}
+
+const tournamentResults: Record<string, MatchResult> = {
+	'U-1/8-1': {
+		winners: [35, 131, 259, 193],
+		places: {
+			6: [114],
+		},
+	},
 }
 
 const FantasyBracketTable = () => {
+	// ... остальной код компонента без изменений ...
 	const [usersData, setUsersData] = useState<UserRow[]>([])
 	const [search, setSearch] = useState('')
 	const [currentPage, setCurrentPage] = useState(1)
@@ -110,7 +113,6 @@ const FantasyBracketTable = () => {
 
 	const playersPerPage = 25
 
-	// --- 4. ГЛАВНАЯ ФУНКЦИЯ ТРАНСФОРМАЦИИ (теперь использует динамическую конфигурацию) ---
 	const transformData = (data: ApiUserData[]): UserRow[] => {
 		const usersMap: Record<number, UserRow> = {}
 
@@ -128,20 +130,35 @@ const FantasyBracketTable = () => {
 			}
 
 			user.picks.forEach(pick => {
-				if (pick.pick_type !== 'winner') return
-
 				const stageIdx = matchIdToStageIndex.get(pick.match_id)
 				if (stageIdx === undefined) return
 
-				const actualWinners = tournamentResults[pick.match_id]
-				const hasResults = actualWinners !== undefined
-				const isCorrect = hasResults && actualWinners.includes(pick.player_id)
+				const matchResult = tournamentResults[pick.match_id]
+				const hasResults = matchResult !== undefined
+
+				let isCorrect = false
+				let displaySuffix = ''
+
+				if (pick.pick_type === 'winner') {
+					isCorrect =
+						hasResults &&
+						(matchResult.winners?.includes(pick.player_id) ?? false)
+				} else if (pick.pick_type === 'place' && pick.place_value) {
+					isCorrect =
+						hasResults &&
+						(matchResult.places?.[pick.place_value]?.includes(pick.player_id) ??
+							false)
+					displaySuffix = ` (${pick.place_value} место)`
+				} else {
+					return
+				}
 
 				const pickForDisplay: PickDisplay = {
 					playerId: pick.player_id,
 					playerName:
 						allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
 					passed: hasResults ? isCorrect : null,
+					displaySuffix: displaySuffix,
 				}
 
 				const currentUserRow = usersMap[user.fantasy_user_id]
@@ -171,9 +188,6 @@ const FantasyBracketTable = () => {
 		}
 		fetchData()
 	}, [])
-
-	// --- 5. ЛОГИКА СОРТИРОВКИ, ФИЛЬТРАЦИИ И ПАГИНАЦИИ ---
-	// Остается без изменений, так как она уже достаточно гибкая.
 
 	const sortedAndFilteredUsers = useMemo(() => {
 		const filtered = usersData.filter(user =>
@@ -220,7 +234,7 @@ const FantasyBracketTable = () => {
 			</div>
 			<Paper
 				sx={{
-					bgcolor: 'rgba(255, 255, 255, 0.9)', // белый фон с легкой прозрачностью
+					bgcolor: 'rgba(255, 255, 255, 0.9)',
 					padding: 2,
 					borderRadius: 2,
 				}}
@@ -241,7 +255,6 @@ const FantasyBracketTable = () => {
 						{currentUsers.map(user => (
 							<tr key={user.id}>
 								<td>
-									{/* Убедитесь, что роут верный */}
 									<Link to={`/fantasy/bracket-viewer/${user.id}`}>
 										{user.name}
 									</Link>
@@ -251,7 +264,7 @@ const FantasyBracketTable = () => {
 										<div className='picks-cell'>
 											{picks.map(pick => (
 												<span
-													key={pick.playerId}
+													key={`${pick.playerId}-${pick.displaySuffix}`}
 													className={
 														pick.passed === true
 															? 'pick-correct'
@@ -261,6 +274,7 @@ const FantasyBracketTable = () => {
 													}
 												>
 													{pick.playerName}
+													{pick.displaySuffix}
 												</span>
 											))}
 										</div>
