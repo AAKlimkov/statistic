@@ -1,44 +1,175 @@
-/* FantasyTable.css */
+/* === FantasyBracketTable Styles === */
 
-/* ... ваши существующие стили ... */
-
-.picks-cell {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	font-size: 0.9em;
+/* --- Основной контейнер и таблица --- */
+div.fantasy-table-container {
+	width: 100%;
+	max-width: 1400px; /* Ограничиваем максимальную ширину для очень больших экранов */
+	margin: 0 auto;
+	padding: 16px;
+	box-sizing: border-box;
 }
 
-.picks-count {
+div.fantasy-table-container table {
+	width: 100%;
+	border-collapse: collapse; /* Убирает двойные рамки */
+	table-layout: fixed; /* Колонки имеют фиксированную ширину */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: #333;
+	background-color: #fff;
+	border-radius: 8px;
+	overflow: hidden; /* Чтобы скруглённые углы работали с тенью */
+}
+
+/* --- Заголовки и ячейки --- */
+div.fantasy-table-container table th,
+div.fantasy-table-container table td {
+	padding: 12px 10px;
+	border: 1px solid #ddd;
+	text-align: center;
+	vertical-align: top; /* Выравниваем по верху для консистентности */
+}
+
+div.fantasy-table-container table th {
+	background-color: #f8f9fa;
+	font-weight: 600;
+	cursor: pointer;
+	user-select: none; /* Запрещаем выделение текста в заголовке */
+	transition: background-color 0.2s ease;
+}
+
+div.fantasy-table-container table th:hover {
+	background-color: #e9ecef;
+}
+
+/* --- Стилизация специфичных колонок --- */
+/* Первая колонка (Имя) */
+.fantasy-table-container th:first-child,
+.fantasy-table-container td:first-child {
+	width: 20%;
+	text-align: left;
+	font-weight: 500;
+	vertical-align: middle;
+}
+.fantasy-table-container td:first-child a {
+	color: #0056b3;
+	text-decoration: none;
 	font-weight: bold;
-	font-size: 1.1em;
-	margin-top: 4px;
+}
+.fantasy-table-container td:first-child a:hover {
+	text-decoration: underline;
 }
 
-.pick-correct {
-	color: green;
-	text-decoration: none; /* Убираем, если были */
+/* Колонки со стадиями (1/8, 1/4, 1/2, финал) */
+.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
+.fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
+	width: 18%; /* 18% * 4 = 72% */
 }
 
-.pick-incorrect {
-	color: red;
-	text-decoration: line-through;
-}
-
-.pick-pending {
-	color: #555; /* Серый для ожидающих результатов */
-}
-
-td .total-cell {
+/* Последняя колонка (Итого) */
+.fantasy-table-container th:last-child,
+.fantasy-table-container td:last-child {
+	width: 8%; /* 20% + 72% + 8% = 100% */
 	font-weight: bold;
 	font-size: 1.2em;
 }
 
-th {
-	cursor: pointer;
-	user-select: none;
+/* --- Стилизация содержимого ячеек со стадиями --- */
+.picks-cell {
+	display: flex;
+	flex-direction: column; /* Имена игроков друг под другом */
+	align-items: flex-start; /* Выравнивание по левому краю внутри ячейки */
+	font-size: 0.9em;
+	line-height: 1.4;
+	text-align: left; /* Переопределяем центрирование */
 }
 
-th:hover {
-	background-color: #f0f0f0;
+.picks-count {
+	font-weight: bold;
+	font-size: 1.3em;
+	margin-top: 8px;
+	align-self: center; /* Счётчик по центру ячейки */
+	color: #0056b3;
+}
+
+.pick-correct {
+	color: #28a745; /* Зеленый */
+}
+
+.pick-incorrect {
+	color: #dc3545; /* Красный */
+	text-decoration: line-through;
+}
+
+.pick-pending {
+	color: #6c757d; /* Серый */
+}
+
+/* --- Фильтры и Пагинация --- */
+div.fantasy-table-container .filters {
+	margin-bottom: 16px;
+}
+div.fantasy-table-container .filters input {
+	padding: 8px 12px;
+	width: 100%;
+	max-width: 300px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+div.fantasy-table-container .fantasy-table-pagination {
+	margin-top: 20px;
+	text-align: center;
+}
+
+div.fantasy-table-container .fantasy-table-pagination button {
+	margin: 0 4px;
+	padding: 8px 14px;
+	border: 1px solid #ccc;
+	background: white;
+	color: #333;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+div.fantasy-table-container .fantasy-table-pagination button:hover {
+	background-color: #f1f1f1;
+	border-color: #aaa;
+}
+
+div.fantasy-table-container .fantasy-table-pagination button.active {
+	background-color: #0056b3; /* Более темный синий */
+	color: white;
+	border-color: #0056b3;
+	cursor: default;
+}
+
+/* --- Адаптивность для мобильных устройств --- */
+@media screen and (max-width: 768px) {
+	/* Скрываем все колонки со стадиями */
+	.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
+	.fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
+		display: none;
+	}
+
+	/* Уменьшаем паддинги для компактности */
+	div.fantasy-table-container table th,
+	div.fantasy-table-container table td {
+		padding: 8px 10px;
+		font-size: 14px;
+	}
+
+	/* Первый столбец (ник) теперь занимает почти всё место */
+	.fantasy-table-container th:first-child,
+	.fantasy-table-container td:first-child {
+		width: 75%;
+	}
+
+	/* Последний столбец (итого) — компактный */
+	.fantasy-table-container th:last-child,
+	.fantasy-table-container td:last-child {
+		width: 25%;
+	}
 }

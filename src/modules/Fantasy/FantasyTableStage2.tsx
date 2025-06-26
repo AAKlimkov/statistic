@@ -4,7 +4,8 @@ import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 // ВАЖНО: Импортируем саму структуру данных турнира
-import './FantasyTable.css' // Используем те же стили
+import { Paper } from '@mui/material'
+import './FantasyTableStage2.css' // Используем те же стили
 import { bracketData, Stage } from './data/summerLeagueData'
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (остаются как раньше) ---
@@ -217,56 +218,63 @@ const FantasyBracketTable = () => {
 					onChange={e => setSearch(e.target.value)}
 				/>
 			</div>
-
-			<table>
-				<thead>
-					<tr>
-						<th onClick={() => handleSort('name')}>Имя участника</th>
-						{STAGE_CONFIG.map(({ title }, idx) => (
-							<th key={title} onClick={() => handleSort(`stage${idx}`)}>
-								{title}
-							</th>
-						))}
-						<th onClick={() => handleSort('total')}>Итого</th>
-					</tr>
-				</thead>
-				<tbody>
-					{currentUsers.map(user => (
-						<tr key={user.id}>
-							<td>
-								{/* Убедитесь, что роут верный */}
-								<Link to={`/fantasy/bracket-viewer/${user.id}`}>
-									{user.name}
-								</Link>
-							</td>
-							{user.stages.map((picks, stageIdx) => (
-								<td key={stageIdx}>
-									<div className='picks-cell'>
-										{picks.map(pick => (
-											<span
-												key={pick.playerId}
-												className={
-													pick.passed === true
-														? 'pick-correct'
-														: pick.passed === false
-														? 'pick-incorrect'
-														: 'pick-pending'
-												}
-											>
-												{pick.playerName}
-											</span>
-										))}
-									</div>
-									<div className='picks-count'>
-										{user.stagePassedCounts[stageIdx]}
-									</div>
-								</td>
+			<Paper
+				sx={{
+					bgcolor: 'rgba(255, 255, 255, 0.9)', // белый фон с легкой прозрачностью
+					padding: 2,
+					borderRadius: 2,
+				}}
+			>
+				<table>
+					<thead>
+						<tr>
+							<th onClick={() => handleSort('name')}>Имя участника</th>
+							{STAGE_CONFIG.map(({ title }, idx) => (
+								<th key={title} onClick={() => handleSort(`stage${idx}`)}>
+									{title}
+								</th>
 							))}
-							<td className='total-cell'>{user.total}</td>
+							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
-					))}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{currentUsers.map(user => (
+							<tr key={user.id}>
+								<td>
+									{/* Убедитесь, что роут верный */}
+									<Link to={`/fantasy/bracket-viewer/${user.id}`}>
+										{user.name}
+									</Link>
+								</td>
+								{user.stages.map((picks, stageIdx) => (
+									<td key={stageIdx}>
+										<div className='picks-cell'>
+											{picks.map(pick => (
+												<span
+													key={pick.playerId}
+													className={
+														pick.passed === true
+															? 'pick-correct'
+															: pick.passed === false
+															? 'pick-incorrect'
+															: 'pick-pending'
+													}
+												>
+													{pick.playerName}
+												</span>
+											))}
+										</div>
+										<div className='picks-count'>
+											{user.stagePassedCounts[stageIdx]}
+										</div>
+									</td>
+								))}
+								<td className='total-cell'>{user.total}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</Paper>
 
 			<div className='fantasy-table-pagination'>
 				{Array.from({ length: totalPages }, (_, i) => (
