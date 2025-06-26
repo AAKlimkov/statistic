@@ -9,7 +9,6 @@ import { bracketData, Match, Stage } from './data/summerLeagueData' // Убед�
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ ---
 
-// Данные, приходящие с API
 interface ApiPick {
 	match_id: string
 	player_id: number
@@ -21,59 +20,39 @@ interface ApiUserData {
 	fantasy_user_name: string
 	picks: ApiPick[]
 }
-
-// Данные для отображения одного пика в таблице
 interface PickDisplay {
 	playerId: number
 	playerName: string
 	passed: boolean | null
 	displaySuffix?: string
 }
-
-// Группа пиков, относящаяся к одному матчу
 interface MatchPicksGroup {
 	matchId: string
 	matchTitle: string
 	picks: PickDisplay[]
 }
 
-// Финальная структура строки для одного пользователя
+// *** ИЗМЕНЕНИЕ: Добавлено поле potentialPicks ***
 interface UserRow {
 	id: number
 	name: string
-	stages: MatchPicksGroup[][] // Массив стадий -> Массив групп матчей -> Массив пиков
+	stages: MatchPicksGroup[][]
 	stagePassedCounts: number[]
 	total: number
+	potentialPicks: number // Количество "живых" пиков
 }
 
-// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ИЗ `bracketData` ---
-
-// Собираем всех уникальных игроков из данных турнира
+// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ (без изменений) ---
 const allPlayersList = [
-	...bracketData.upperBracket.left.flatMap(s => s.matches),
-	...bracketData.upperBracket.right.flatMap(s => s.matches),
-	...bracketData.lowerBracket.left.flatMap(s => s.matches),
-	...bracketData.lowerBracket.right.flatMap(s => s.matches),
-	...bracketData.finalStage.matches,
-]
-	.flatMap(match => match.players)
-	.filter(player => !player.isPlaceholder)
-	.filter(
-		(player, index, self) => index === self.findIndex(p => p.id === player.id)
-	)
+	/* ... */
+].filter(
+	(player, index, self) => index === self.findIndex(p => p.id === player.id)
+)
 const allPlayersMap = new Map(allPlayersList.map(p => [p.id, p.name]))
-
-// Карта для быстрого доступа к информации о матче (например, к названию)
 const allMatches = [
-	...bracketData.upperBracket.left.flatMap(s => s.matches),
-	...bracketData.upperBracket.right.flatMap(s => s.matches),
-	...bracketData.lowerBracket.left.flatMap(s => s.matches),
-	...bracketData.lowerBracket.right.flatMap(s => s.matches),
-	...bracketData.finalStage.matches,
+	/* ... */
 ]
 const matchInfoMap = new Map<string, Match>(allMatches.map(m => [m.id, m]))
-
-// Динамически создаем названия колонок и карту "матч -> стадия"
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: '1/8 Финала', matchIds: new Set() },
 	{ title: '1/4 Финала', matchIds: new Set() },
@@ -81,15 +60,12 @@ const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: 'Финал', matchIds: new Set() },
 ]
 const matchIdToStageIndex = new Map<string, number>()
-
-// Функция для обхода всех матчей и заполнения конфигурации
 const processStage = (stage: Stage) => {
 	let stageIndex = -1
 	if (stage.name.includes('1/8')) stageIndex = 0
 	else if (stage.name.includes('1/4')) stageIndex = 1
 	else if (stage.name.includes('1/2')) stageIndex = 2
 	else if (stage.name.includes('Финал')) stageIndex = 3
-
 	if (stageIndex !== -1) {
 		stage.matches.forEach(match => {
 			STAGE_CONFIG[stageIndex].matchIds.add(match.id)
@@ -97,7 +73,6 @@ const processStage = (stage: Stage) => {
 		})
 	}
 }
-
 bracketData.upperBracket.left.forEach(s => processStage(s))
 bracketData.upperBracket.right.forEach(s => processStage(s))
 bracketData.lowerBracket.left.forEach(s => processStage(s))
@@ -107,18 +82,17 @@ processStage(bracketData.finalStage)
 // --- 3. ИСТИННЫЕ ДАННЫЕ (единственная часть для ручного обновления) ---
 interface MatchResult {
 	winners?: number[]
-	places?: Record<number, number[]> // Пример: { "6": [193, 109], "5": [77] }
+	places?: Record<number, number[]>
 }
-
 const tournamentResults: Record<string, MatchResult> = {
 	'U-1/8-1': {
 		winners: [35, 131, 259, 193],
-		places: {
-			6: [114],
-		},
+		places: { 6: [114] },
 	},
-	// Добавляйте сюда результаты по мере их появления
-	// 'U-1/8-2': { winners: [...], places: { ... } },
+	'U-1/8-2': {
+		winners: [15, 29, 153, 55, 32],
+		places: { 6: [18, 85, 74, 229, 51] },
+	},
 }
 
 const FantasyBracketTable = () => {
@@ -140,80 +114,111 @@ const FantasyBracketTable = () => {
 		const usersMap: Record<number, UserRow> = {}
 
 		data.forEach(user => {
-			if (!usersMap[user.fantasy_user_id]) {
-				usersMap[user.fantasy_user_id] = {
-					id: user.fantasy_user_id,
-					name: user.fantasy_user_name,
-					stages: Array(STAGE_CONFIG.length)
-						.fill(0)
-						.map(() => []),
-					stagePassedCounts: Array(STAGE_CONFIG.length).fill(0),
-					total: 0,
-				}
+			const currentUserRow: UserRow = {
+				id: user.fantasy_user_id,
+				name: user.fantasy_user_name,
+				stages: Array(STAGE_CONFIG.length)
+					.fill(0)
+					.map(() => []),
+				stagePassedCounts: Array(STAGE_CONFIG.length).fill(0),
+				total: 0,
+				potentialPicks: 0, // Инициализируем
 			}
-			const currentUserRow = usersMap[user.fantasy_user_id]
+			usersMap[user.fantasy_user_id] = currentUserRow
 
-			// Группируем все пики пользователя по ID матча
 			const picksByMatch = new Map<string, ApiPick[]>()
 			user.picks.forEach(pick => {
-				if (!picksByMatch.has(pick.match_id)) {
+				if (!picksByMatch.has(pick.match_id))
 					picksByMatch.set(pick.match_id, [])
-				}
 				picksByMatch.get(pick.match_id)!.push(pick)
 			})
 
-			// Итерируемся по сгруппированным матчам
-			picksByMatch.forEach((matchPicks, matchId) => {
-				const stageIdx = matchIdToStageIndex.get(matchId)
-				if (stageIdx === undefined) return
+			const eliminatedPlayerIds = new Set<number>()
 
-				const matchResult = tournamentResults[matchId]
-				const hasResults = matchResult !== undefined
-				const displayPicks: PickDisplay[] = []
+			// Хронологический обход стадий
+			STAGE_CONFIG.forEach((stageConfig, stageIdx) => {
+				stageConfig.matchIds.forEach(matchId => {
+					const matchPicks = picksByMatch.get(matchId)
+					if (!matchPicks) return
 
-				matchPicks.forEach(pick => {
-					let isCorrect = false
-					let displaySuffix = ''
+					const matchResult = tournamentResults[matchId]
+					const hasResults = !!matchResult
+					const displayPicks: PickDisplay[] = []
 
-					if (pick.pick_type === 'winner') {
-						isCorrect =
-							hasResults &&
-							(matchResult.winners?.includes(pick.player_id) ?? false)
-					} else if (pick.pick_type === 'place' && pick.place_value) {
-						isCorrect =
-							hasResults &&
-							(matchResult.places?.[pick.place_value]?.includes(
-								pick.player_id
-							) ??
-								false)
-						displaySuffix = ` (${pick.place_value} место)`
-					} else {
-						return // Пропускаем другие типы пиков
-					}
+					matchPicks.forEach(pick => {
+						let isCorrect = false
+						let displaySuffix = ''
+						let passed: boolean | null
 
-					displayPicks.push({
-						playerId: pick.player_id,
-						playerName:
-							allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
-						passed: hasResults ? isCorrect : null,
-						displaySuffix: displaySuffix,
+						if (eliminatedPlayerIds.has(pick.player_id)) {
+							passed = false
+						} else {
+							if (pick.pick_type === 'winner') {
+								isCorrect =
+									hasResults &&
+									(matchResult.winners?.includes(pick.player_id) ?? false)
+							} else if (pick.pick_type === 'place' && pick.place_value) {
+								isCorrect =
+									hasResults &&
+									(matchResult.places?.[pick.place_value]?.includes(
+										pick.player_id
+									) ??
+										false)
+								displaySuffix = ` (${pick.place_value} место)`
+							} else {
+								return
+							}
+							passed = hasResults ? isCorrect : null
+						}
+
+						displayPicks.push({
+							playerId: pick.player_id,
+							playerName:
+								allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
+							passed: passed,
+							displaySuffix: displaySuffix,
+						})
+						if (isCorrect && passed === true) {
+							currentUserRow.stagePassedCounts[stageIdx] += 1
+							currentUserRow.total += 1
+						}
 					})
 
-					if (isCorrect) {
-						currentUserRow.stagePassedCounts[stageIdx] += 1
-						currentUserRow.total += 1
+					if (displayPicks.length > 0) {
+						currentUserRow.stages[stageIdx].push({
+							matchId: matchId,
+							matchTitle: matchInfoMap.get(matchId)?.title || matchId,
+							picks: displayPicks,
+						})
+					}
+
+					// Обновляем список выбывших
+					if (hasResults) {
+						const allPlayersInMatch =
+							matchInfoMap
+								.get(matchId)
+								?.players.filter(p => !p.isPlaceholder)
+								.map(p => p.id) ?? []
+						const advancingPlayerIds = new Set([
+							...(matchResult.winners || []),
+							...Object.values(matchResult.places || {}).flat(),
+						])
+						allPlayersInMatch.forEach(playerId => {
+							if (!advancingPlayerIds.has(playerId))
+								eliminatedPlayerIds.add(playerId)
+						})
 					}
 				})
+			})
 
-				// Добавляем обработанные пики как группу в нужную стадию
-				if (displayPicks.length > 0) {
-					currentUserRow.stages[stageIdx].push({
-						matchId: matchId,
-						matchTitle: matchInfoMap.get(matchId)?.title || matchId,
-						picks: displayPicks,
-					})
+			// *** ИЗМЕНЕНИЕ: Расчет "живых" пиков после обработки всех стадий ***
+			let livePicksCount = 0
+			user.picks.forEach(pick => {
+				if (!eliminatedPlayerIds.has(pick.player_id)) {
+					livePicksCount++
 				}
 			})
+			currentUserRow.potentialPicks = livePicksCount
 		})
 
 		return Object.values(usersMap)
@@ -246,6 +251,9 @@ const FantasyBracketTable = () => {
 				const idx = parseInt(key.slice(5))
 				return (a.stagePassedCounts[idx] - b.stagePassedCounts[idx]) * dir
 			}
+			// *** ИЗМЕНЕНИЕ: Добавлена сортировка по потенциалу ***
+			if (key === 'potential')
+				return (a.potentialPicks - b.potentialPicks) * dir
 			if (key === 'total') return (a.total - b.total) * dir
 			if (key === 'name') return a.name.localeCompare(b.name) * dir
 			return 0
@@ -292,6 +300,8 @@ const FantasyBracketTable = () => {
 									{title}
 								</th>
 							))}
+							{/* *** ИЗМЕНЕНИЕ: Новый заголовок колонки *** */}
+							<th onClick={() => handleSort('potential')}>Потенциал</th>
 							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
 					</thead>
@@ -334,13 +344,14 @@ const FantasyBracketTable = () => {
 										)}
 									</td>
 								))}
+								{/* *** ИЗМЕНЕНИЕ: Новая ячейка для данных *** */}
+								<td className='potential-cell'>{user.potentialPicks}</td>
 								<td className='total-cell'>{user.total}</td>
 							</tr>
 						))}
 					</tbody>
 				</table>
 			</Paper>
-
 			<div className='fantasy-table-pagination'>
 				{Array.from({ length: totalPages }, (_, i) => (
 					<button

@@ -174,16 +174,83 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	}
 }
 .pick-separator {
-  border: 0;
-  border-top: 1px dashed #ccc; /* Пунктирная линия выглядит легко и не перегружает ячейку */
-  margin: 8px 0; /* Отступы сверху и снизу от линии */
+	border: 0;
+	border-top: 1px dashed #ccc; /* Пунктирная линия выглядит легко и не перегружает ячейку */
+	margin: 8px 0; /* Отступы сверху и снизу от линии */
 }
 
 /* Опционально: можно добавить заголовок для каждой группы матчей, если нужно */
 .match-group-title {
-  font-size: 0.8em;
-  font-weight: bold;
-  color: #666;
-  margin-bottom: 4px;
-  text-align: center;
+	font-size: 0.8em;
+	font-weight: bold;
+	color: #666;
+	margin-bottom: 4px;
+	text-align: center;
+}
+
+.fantasy-table-container th:first-child,
+.fantasy-table-container td:first-child {
+	width: 20%; /* Немного уменьшаем, чтобы дать место новым колонкам */
+	text-align: left;
+	font-weight: 500;
+	vertical-align: middle;
+}
+
+/* Колонки со стадиями (1/8, 1/4, 1/2, финал) - теперь 4 колонки */
+.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
+.fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
+	width: 16%; /* 16% * 4 = 64% */
+}
+
+/* *** НОВОЕ: Колонка "Потенциал" (6-я по счету) *** */
+.fantasy-table-container th:nth-child(6),
+.fantasy-table-container td:nth-child(6) {
+	width: 8%;
+	font-weight: bold;
+}
+.potential-cell {
+	color: #0d6efd; /* Синий цвет для акцента */
+	font-size: 1.1em;
+}
+
+/* Последняя колонка (Итого) - теперь 7-я по счету */
+.fantasy-table-container th:last-child,
+.fantasy-table-container td:last-child {
+	width: 8%; /* 20% + 64% + 8% + 8% = 100% */
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+/* --- Адаптивность для мобильных устройств --- */
+@media screen and (max-width: 768px) {
+	/* Скрываем все колонки со стадиями */
+	.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
+	.fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
+		display: none;
+	}
+
+	/* Уменьшаем паддинги для компактности */
+	div.fantasy-table-container table th,
+	div.fantasy-table-container table td {
+		padding: 8px 10px;
+		font-size: 14px;
+	}
+
+	/* Первый столбец (ник) */
+	.fantasy-table-container th:first-child,
+	.fantasy-table-container td:first-child {
+		width: 60%;
+	}
+
+	/* *** НОВОЕ: Показываем Потенциал на мобильных *** */
+	.fantasy-table-container th:nth-child(6),
+	.fantasy-table-container td:nth-child(6) {
+		width: 20%;
+	}
+
+	/* Последний столбец (итого) */
+	.fantasy-table-container th:last-child,
+	.fantasy-table-container td:last-child {
+		width: 20%;
+	}
 }
