@@ -7,7 +7,7 @@ export default function FantasyPicksStage2Table() {
 	const [error, setError] = useState(null)
 
 	useEffect(() => {
-		fetch('https://mafia-server-cyan.vercel.app/api/allPicksStage2') // сюда подставь путь к твоему API
+		fetch('/api/fantasy/allPicksStage2') // сюда подставь путь к твоему API
 			.then(res => {
 				if (!res.ok) {
 					throw new Error(`Ошибка загрузки: ${res.statusText}`)
