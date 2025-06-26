@@ -1,0 +1,286 @@
+// /components/fantasy/FantasyBracketTable.tsx (пример пути)
+
+import * as React from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { Link } from 'react-router-dom'
+// ВАЖНО: Импортируем саму структуру данных турнира
+import './FantasyTable.css' // Используем те же стили
+import { bracketData, Stage } from './data/summerLeagueData'
+
+// --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (остаются как раньше) ---
+interface ApiPick {
+	match_id: string
+	player_id: number
+	pick_type: 'winner' | 'loser' | 'place'
+}
+interface ApiUserData {
+	fantasy_user_id: number
+	fantasy_user_name: string
+	picks: ApiPick[]
+}
+interface PickDisplay {
+	playerId: number
+	playerName: string
+	passed: boolean | null
+}
+interface UserRow {
+	id: number
+	name: string
+	stages: PickDisplay[][]
+	stagePassedCounts: number[]
+	total: number
+}
+
+// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ИЗ `bracketData` ---
+
+// Собираем всех уникальных игроков из bracketData
+const allPlayersList = [
+	...bracketData.upperBracket.left.flatMap(s => s.matches),
+	...bracketData.upperBracket.right.flatMap(s => s.matches),
+	...bracketData.lowerBracket.left.flatMap(s => s.matches),
+	...bracketData.lowerBracket.right.flatMap(s => s.matches),
+	...bracketData.finalStage.matches,
+]
+	.flatMap(match => match.players)
+	.filter(player => !player.isPlaceholder) // Исключаем плейсхолдеры
+	// Убираем дубликаты, если игрок участвует в нескольких матчах
+	.filter(
+		(player, index, self) => index === self.findIndex(p => p.id === player.id)
+	)
+
+const allPlayersMap = new Map(allPlayersList.map(p => [p.id, p.name]))
+
+// Динамически создаем названия колонок и карту "матч -> стадия"
+const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
+	{ title: '1/8 Финала', matchIds: new Set() },
+	{ title: '1/4 Финала', matchIds: new Set() },
+	{ title: '1/2 Финала', matchIds: new Set() },
+	{ title: 'Финал', matchIds: new Set() },
+]
+
+const matchIdToStageIndex = new Map<string, number>()
+
+// Функция для обхода всех матчей и заполнения конфигурации
+const processStage = (stage: Stage, stageIndexOverride?: number) => {
+	let stageIndex = -1
+	// Определяем индекс по названию
+	if (stageIndexOverride !== undefined) {
+		stageIndex = stageIndexOverride
+	} else if (stage.name.includes('1/8')) stageIndex = 0
+	else if (stage.name.includes('1/4')) stageIndex = 1
+	else if (stage.name.includes('1/2')) stageIndex = 2
+	else if (stage.name.includes('Финал')) stageIndex = 3
+
+	if (stageIndex !== -1) {
+		stage.matches.forEach(match => {
+			STAGE_CONFIG[stageIndex].matchIds.add(match.id)
+			matchIdToStageIndex.set(match.id, stageIndex)
+		})
+	}
+}
+
+bracketData.upperBracket.left.forEach(s => processStage(s))
+bracketData.upperBracket.right.forEach(s => processStage(s))
+bracketData.lowerBracket.left.forEach(s => processStage(s))
+bracketData.lowerBracket.right.forEach(s => processStage(s))
+processStage(bracketData.finalStage) // У финала нет названия в Stage, поэтому индекс определяем по-другому
+
+// --- 3. ИСТИННЫЕ ДАННЫЕ (это единственная часть, которую нужно обновлять вручную) ---
+const tournamentResults: Record<string, number[]> = {
+	// Ключ - ID матча, значение - МАССИВ ID победивших игроков.
+	// Это важно, т.к. в некоторых матчах несколько победителей.
+	'U-1/8-1': [27, 192, 105, 146, 193],
+	'U-1/8-2': [15, 85, 55, 229, 51],
+	// ...добавляйте сюда остальные результаты по мере их появления
+	// 'U-1/4-1': [58, 79, ...],
+}
+
+const FantasyBracketTable = () => {
+	const [usersData, setUsersData] = useState<UserRow[]>([])
+	const [search, setSearch] = useState('')
+	const [currentPage, setCurrentPage] = useState(1)
+	const [sortConfig, setSortConfig] = useState<{
+		key: string
+		direction: 'asc' | 'desc'
+	}>({
+		key: 'total',
+		direction: 'desc',
+	})
+
+	const playersPerPage = 25
+
+	// --- 4. ГЛАВНАЯ ФУНКЦИЯ ТРАНСФОРМАЦИИ (теперь использует динамическую конфигурацию) ---
+	const transformData = (data: ApiUserData[]): UserRow[] => {
+		const usersMap: Record<number, UserRow> = {}
+
+		data.forEach(user => {
+			if (!usersMap[user.fantasy_user_id]) {
+				usersMap[user.fantasy_user_id] = {
+					id: user.fantasy_user_id,
+					name: user.fantasy_user_name,
+					stages: Array(STAGE_CONFIG.length)
+						.fill(0)
+						.map(() => []),
+					stagePassedCounts: Array(STAGE_CONFIG.length).fill(0),
+					total: 0,
+				}
+			}
+
+			user.picks.forEach(pick => {
+				if (pick.pick_type !== 'winner') return
+
+				const stageIdx = matchIdToStageIndex.get(pick.match_id)
+				if (stageIdx === undefined) return
+
+				const actualWinners = tournamentResults[pick.match_id]
+				const hasResults = actualWinners !== undefined
+				const isCorrect = hasResults && actualWinners.includes(pick.player_id)
+
+				const pickForDisplay: PickDisplay = {
+					playerId: pick.player_id,
+					playerName:
+						allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
+					passed: hasResults ? isCorrect : null,
+				}
+
+				const currentUserRow = usersMap[user.fantasy_user_id]
+				currentUserRow.stages[stageIdx].push(pickForDisplay)
+
+				if (isCorrect) {
+					currentUserRow.stagePassedCounts[stageIdx] += 1
+					currentUserRow.total += 1
+				}
+			})
+		})
+
+		return Object.values(usersMap)
+	}
+
+	useEffect(() => {
+		const fetchData = async () => {
+			try {
+				const res = await fetch('/api/fantasy/allPicksStage2')
+				if (!res.ok) throw new Error('Ошибка при загрузке данных')
+				const data: ApiUserData[] = await res.json()
+				const transformed = transformData(data)
+				setUsersData(transformed)
+			} catch (err) {
+				console.error('Ошибка при загрузке данных для таблицы:', err)
+			}
+		}
+		fetchData()
+	}, [])
+
+	// --- 5. ЛОГИКА СОРТИРОВКИ, ФИЛЬТРАЦИИ И ПАГИНАЦИИ ---
+	// Остается без изменений, так как она уже достаточно гибкая.
+
+	const sortedAndFilteredUsers = useMemo(() => {
+		const filtered = usersData.filter(user =>
+			user.name.toLowerCase().includes(search.toLowerCase())
+		)
+
+		return [...filtered].sort((a, b) => {
+			const { key, direction } = sortConfig
+			const dir = direction === 'asc' ? 1 : -1
+
+			if (key.startsWith('stage')) {
+				const idx = parseInt(key.slice(5))
+				return (a.stagePassedCounts[idx] - b.stagePassedCounts[idx]) * dir
+			}
+			if (key === 'total') return (a.total - b.total) * dir
+			if (key === 'name') return a.name.localeCompare(b.name) * dir
+			return 0
+		})
+	}, [usersData, search, sortConfig])
+
+	const handleSort = (key: string) => {
+		setSortConfig(prev => ({
+			key,
+			direction: prev.key === key && prev.direction === 'desc' ? 'asc' : 'desc',
+		}))
+	}
+
+	const totalPages = Math.ceil(sortedAndFilteredUsers.length / playersPerPage)
+	const currentUsers = sortedAndFilteredUsers.slice(
+		(currentPage - 1) * playersPerPage,
+		currentPage * playersPerPage
+	)
+
+	return (
+		<div className='fantasy-table-container'>
+			<h1>Рейтинг игроков фэнтези-сетки</h1>
+			<div className='filters'>
+				<input
+					type='text'
+					placeholder='Поиск по имени...'
+					value={search}
+					onChange={e => setSearch(e.target.value)}
+				/>
+			</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th onClick={() => handleSort('name')}>Имя участника</th>
+						{STAGE_CONFIG.map(({ title }, idx) => (
+							<th key={title} onClick={() => handleSort(`stage${idx}`)}>
+								{title}
+							</th>
+						))}
+						<th onClick={() => handleSort('total')}>Итого</th>
+					</tr>
+				</thead>
+				<tbody>
+					{currentUsers.map(user => (
+						<tr key={user.id}>
+							<td>
+								{/* Убедитесь, что роут верный */}
+								<Link to={`/fantasy/bracket-viewer/${user.id}`}>
+									{user.name}
+								</Link>
+							</td>
+							{user.stages.map((picks, stageIdx) => (
+								<td key={stageIdx}>
+									<div className='picks-cell'>
+										{picks.map(pick => (
+											<span
+												key={pick.playerId}
+												className={
+													pick.passed === true
+														? 'pick-correct'
+														: pick.passed === false
+														? 'pick-incorrect'
+														: 'pick-pending'
+												}
+											>
+												{pick.playerName}
+											</span>
+										))}
+									</div>
+									<div className='picks-count'>
+										{user.stagePassedCounts[stageIdx]}
+									</div>
+								</td>
+							))}
+							<td className='total-cell'>{user.total}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+
+			<div className='fantasy-table-pagination'>
+				{Array.from({ length: totalPages }, (_, i) => (
+					<button
+						key={i}
+						onClick={() => setCurrentPage(i + 1)}
+						className={currentPage === i + 1 ? 'active' : ''}
+					>
+						{i + 1}
+					</button>
+				))}
+			</div>
+		</div>
+	)
+}
+
+export default FantasyBracketTable

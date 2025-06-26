@@ -1,0 +1,44 @@
+/* FantasyTable.css */
+
+/* ... ваши существующие стили ... */
+
+.picks-cell {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 0.9em;
+}
+
+.picks-count {
+	font-weight: bold;
+	font-size: 1.1em;
+	margin-top: 4px;
+}
+
+.pick-correct {
+	color: green;
+	text-decoration: none; /* Убираем, если были */
+}
+
+.pick-incorrect {
+	color: red;
+	text-decoration: line-through;
+}
+
+.pick-pending {
+	color: #555; /* Серый для ожидающих результатов */
+}
+
+td .total-cell {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+th {
+	cursor: pointer;
+	user-select: none;
+}
+
+th:hover {
+	background-color: #f0f0f0;
+}

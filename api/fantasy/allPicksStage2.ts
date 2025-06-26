@@ -40,7 +40,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 const supabase: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey)
 
 const PAGE_SIZE = 1000
-const MAX_PAGES = 1
+const MAX_PAGES = 100
 
 export default async function handler(req: Request) {
 	const corsHeaders = {

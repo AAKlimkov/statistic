@@ -2,8 +2,8 @@ import { Box, Button, Stack } from '@mui/material'
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
+import FantasyTableStage2 from '../modules/Fantasy/FantasyTableStage2'
 import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
-import { FantasyBracketViewer } from '../modules/Fantasy/pages/FantasyBracketViewer'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
@@ -156,7 +156,7 @@ export const router = createHashRouter([
 		path: '/fantasyTable2stage',
 		element: (
 			<Layout>
-				<FantasyBracketViewer />
+				<FantasyTableStage2 />
 			</Layout>
 		),
 	},
