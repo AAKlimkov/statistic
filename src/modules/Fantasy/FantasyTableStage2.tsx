@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom'
 import './FantasyTableStage2.css' // Убедитесь, что путь к стилям верный
 import { bracketData, Match, Stage } from './data/summerLeagueData' // Убедитесь, что путь к данным верный
 
-// --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ ---
-
-// Данные, приходящие с API
+// --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (без изменений) ---
 interface ApiPick {
 	match_id: string
 	player_id: number
@@ -21,34 +19,27 @@ interface ApiUserData {
 	fantasy_user_name: string
 	picks: ApiPick[]
 }
-
-// Данные для отображения одного пика в таблице
 interface PickDisplay {
 	playerId: number
 	playerName: string
 	passed: boolean | null
 	displaySuffix?: string
 }
-
-// Группа пиков, относящаяся к одному матчу
 interface MatchPicksGroup {
 	matchId: string
 	matchTitle: string
 	picks: PickDisplay[]
 }
-
-// Финальная структура строки для одного пользователя
 interface UserRow {
 	id: number
 	name: string
-	stages: MatchPicksGroup[][] // Массив стадий -> Массив групп матчей -> Массив пиков
+	stages: MatchPicksGroup[][]
 	stagePassedCounts: number[]
 	total: number
-	potentialPicks: number // Количество "живых" пиков
+	potentialPicks: number
 }
 
-// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ИЗ `bracketData` ---
-
+// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ (без изменений) ---
 const allPlayersList = [
 	...bracketData.upperBracket.left.flatMap(s => s.matches),
 	...bracketData.upperBracket.right.flatMap(s => s.matches),
@@ -62,7 +53,6 @@ const allPlayersList = [
 		(player, index, self) => index === self.findIndex(p => p.id === player.id)
 	)
 const allPlayersMap = new Map(allPlayersList.map(p => [p.id, p.name]))
-
 const allMatches = [
 	...bracketData.upperBracket.left.flatMap(s => s.matches),
 	...bracketData.upperBracket.right.flatMap(s => s.matches),
@@ -71,7 +61,6 @@ const allMatches = [
 	...bracketData.finalStage.matches,
 ]
 const matchInfoMap = new Map<string, Match>(allMatches.map(m => [m.id, m]))
-
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: '1/8 Финала', matchIds: new Set() },
 	{ title: '1/4 Финала', matchIds: new Set() },
@@ -79,14 +68,12 @@ const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: 'Финал', matchIds: new Set() },
 ]
 const matchIdToStageIndex = new Map<string, number>()
-
 const processStage = (stage: Stage) => {
 	let stageIndex = -1
 	if (stage.name.includes('1/8')) stageIndex = 0
 	else if (stage.name.includes('1/4')) stageIndex = 1
 	else if (stage.name.includes('1/2')) stageIndex = 2
 	else if (stage.name.includes('Финал')) stageIndex = 3
-
 	if (stageIndex !== -1) {
 		stage.matches.forEach(match => {
 			STAGE_CONFIG[stageIndex].matchIds.add(match.id)
@@ -94,27 +81,26 @@ const processStage = (stage: Stage) => {
 		})
 	}
 }
-
 bracketData.upperBracket.left.forEach(s => processStage(s))
 bracketData.upperBracket.right.forEach(s => processStage(s))
 bracketData.lowerBracket.left.forEach(s => processStage(s))
 bracketData.lowerBracket.right.forEach(s => processStage(s))
 processStage(bracketData.finalStage)
 
-// --- 3. ИСТИННЫЕ ДАННЫЕ (единственная часть для ручного обновления) ---
+// --- 3. ИСТИННЫЕ ДАННЫЕ (без изменений) ---
 interface MatchResult {
 	winners?: number[]
 	places?: Record<number, number[]>
 }
 const tournamentResults: Record<string, MatchResult> = {
 	'U-1/8-1': {
-		winners: [35, 131, 259, 193],
-		places: { 6: [114] },
+		winners: [35, 131, 259, 193, 105],
+		places: { 6: [146] },
 	},
-	'U-1/8-2': {
-		winners: [15, 29, 153, 55, 32],
-		places: { 6: [18, 85, 74, 229, 51] },
-	},
+	// 'U-1/8-2': {
+	// 	winners: [15, 29, 153, 55, 32],
+	// 	places: { 6: [18, 85, 74, 229, 51] },
+	// },
 }
 
 const FantasyBracketTable = () => {
@@ -157,7 +143,6 @@ const FantasyBracketTable = () => {
 
 			const eliminatedPlayerIds = new Set<number>()
 
-			// Хронологический обход стадий
 			STAGE_CONFIG.forEach((stageConfig, stageIdx) => {
 				stageConfig.matchIds.forEach(matchId => {
 					const matchPicks = picksByMatch.get(matchId)
@@ -168,6 +153,12 @@ const FantasyBracketTable = () => {
 					const displayPicks: PickDisplay[] = []
 
 					matchPicks.forEach(pick => {
+						// Логика внутри этого цикла уже корректно пропускает 'loser'
+						// благодаря `else { return }`
+						if (pick.pick_type !== 'winner' && pick.pick_type !== 'place') {
+							return
+						}
+
 						let isCorrect = false
 						let displaySuffix = ''
 						let passed: boolean | null
@@ -187,17 +178,13 @@ const FantasyBracketTable = () => {
 									) ??
 										false)
 								displaySuffix = ` (${pick.place_value} место)`
-							} else {
-								return
 							}
 							passed = hasResults ? isCorrect : null
 						}
 
 						const playerName = allPlayersMap.get(pick.player_id)
 						if (!playerName) {
-							console.warn(
-								`Не найдено имя для игрока с ID: ${pick.player_id}. Проверьте соответствие данных API и summerLeagueData.ts`
-							)
+							console.warn(`Не найдено имя для игрока с ID: ${pick.player_id}.`)
 						}
 
 						displayPicks.push({
@@ -240,8 +227,11 @@ const FantasyBracketTable = () => {
 				})
 			})
 
+			// *** ИЗМЕНЕНИЕ: Добавлена фильтрация пиков типа 'loser' при подсчете потенциала ***
 			currentUserRow.potentialPicks = user.picks.filter(
-				pick => !eliminatedPlayerIds.has(pick.player_id)
+				pick =>
+					(pick.pick_type === 'winner' || pick.pick_type === 'place') && // Условие 1: пик должен быть на победителя или место
+					!eliminatedPlayerIds.has(pick.player_id) // Условие 2: игрок еще не выбыл
 			).length
 		})
 
@@ -263,7 +253,6 @@ const FantasyBracketTable = () => {
 		fetchData()
 	}, [])
 
-	// --- 5. ЛОГИКА СОРТИРОВКИ, ФИЛЬТРАЦИИ И ПАГИНАЦИИ ---
 	const sortedAndFilteredUsers = useMemo(() => {
 		const filtered = usersData.filter(user =>
 			user.name.toLowerCase().includes(search.toLowerCase())
