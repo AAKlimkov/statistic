@@ -3,6 +3,7 @@ import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
 import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
+import { FantasyBracketViewer } from '../modules/Fantasy/pages/FantasyBracketViewer'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
@@ -13,7 +14,6 @@ import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
 import TournamentsTablePage from '../pages/TournamentsTablePage'
-import FantasyPicksStage2Table from '../modules/Fantasy/pages/FantasyPicksStage2Table'
 
 const Layout = ({ children }) => (
 	<Box
@@ -156,7 +156,7 @@ export const router = createHashRouter([
 		path: '/fantasyTable2stage',
 		element: (
 			<Layout>
-				<FantasyPicksStage2Table />
+				<FantasyBracketViewer />
 			</Layout>
 		),
 	},

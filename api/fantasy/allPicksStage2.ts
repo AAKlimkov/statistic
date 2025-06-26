@@ -1,26 +1,27 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-// Интерфейс для КОНЕЧНОГО чистого объекта pick. Без вложенного 'fantasy_users'.
-interface Pick {
+// ИНТЕРФЕЙС 1: Для чистого объекта Pick ВНУТРИ массива.
+// В нем нет fantasy_user_name.
+interface CleanPick {
 	id: number
 	fantasy_user_id: number
 	match_id: string
 	player_id: number
 	pick_type: string
 	place_value: number | null
-	fantasy_user_name: string
 }
 
-// Интерфейс для структуры данных, которую возвращает Supabase с join'ом
-type PickFromQuery = Omit<Pick, 'fantasy_user_name'> & {
+// ИНТЕРФЕЙС 2: Для данных, которые приходят из Supabase (с вложенным именем).
+// Мы создаем его на основе CleanPick.
+type PickFromQuery = CleanPick & {
 	fantasy_users: { name: string } | null
 }
 
-// Интерфейс для итоговой сгруппированной выдачи
-interface GroupedPicks {
+// ИНТЕРФЕЙС 3: Для итогового сгруппированного результата.
+interface GroupedResult {
 	fantasy_user_id: number
 	fantasy_user_name: string
-	picks: Pick[] // Этот массив будет содержать чистые объекты Pick
+	picks: CleanPick[] // Массив теперь содержит объекты типа CleanPick
 }
 
 export const config = {
@@ -39,7 +40,7 @@ if (!supabaseUrl || !supabaseAnonKey) {
 const supabase: SupabaseClient = createClient(supabaseUrl, supabaseAnonKey)
 
 const PAGE_SIZE = 1000
-const MAX_PAGES = 100
+const MAX_PAGES = 1
 
 export default async function handler(req: Request) {
 	const corsHeaders = {
@@ -62,7 +63,8 @@ export default async function handler(req: Request) {
 	}
 
 	try {
-		const grouped: Record<string, GroupedPicks> = {}
+		// Используем новый тип для группировки
+		const grouped: Record<string, GroupedResult> = {}
 		let currentPage = 0
 		let hasMoreData = true
 
@@ -106,29 +108,24 @@ export default async function handler(req: Request) {
 				continue
 			}
 
-			// *** ИСПРАВЛЕНИЕ ЗДЕСЬ ***
-			// Обрабатываем каждый пик на странице, чтобы создать чистый объект
 			for (const rawPick of picksPage) {
-				// !inner join гарантирует, что fantasy_users не будет null
 				const userName = rawPick.fantasy_users!.name
 				const userId = rawPick.fantasy_user_id
 
 				if (!grouped[userId]) {
 					grouped[userId] = {
 						fantasy_user_id: userId,
-						fantasy_user_name: userName,
+						fantasy_user_name: userName, // Имя пользователя добавляется только сюда
 						picks: [],
 					}
 				}
 
-				// 1. Деструктурируем сырой объект, чтобы отделить ненужный вложенный объект
-				const { fantasy_users, ...restOfPick } = rawPick
+				// *** ФИНАЛЬНОЕ ИСПРАВЛЕНИЕ ***
+				// 1. Отделяем ненужный объект fantasy_users
+				const { fantasy_users, ...cleanPickObject } = rawPick
 
-				// 2. Создаем новый, чистый объект pick и добавляем его в массив
-				grouped[userId].picks.push({
-					...restOfPick,
-					fantasy_user_name: userName, // Добавляем имя пользователя на верхний уровень
-				})
+				// 2. Добавляем в массив только "чистый" объект пика, без лишних полей.
+				grouped[userId].picks.push(cleanPickObject)
 			}
 
 			if (picksPage.length < PAGE_SIZE) {
