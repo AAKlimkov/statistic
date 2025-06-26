@@ -13,6 +13,7 @@ import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
 import TournamentsTablePage from '../pages/TournamentsTablePage'
+import FantasyPicksStage2Table from '../modules/Fantasy/pages/FantasyPicksStage2Table'
 
 const Layout = ({ children }) => (
 	<Box
@@ -148,6 +149,14 @@ export const router = createHashRouter([
 		element: (
 			<Layout>
 				<FantasyTablePage />
+			</Layout>
+		),
+	},
+	{
+		path: '/fantasyTable2stage',
+		element: (
+			<Layout>
+				<FantasyPicksStage2Table />
 			</Layout>
 		),
 	},
