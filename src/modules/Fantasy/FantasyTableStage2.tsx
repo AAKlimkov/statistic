@@ -9,6 +9,7 @@ import { bracketData, Match, Stage } from './data/summerLeagueData' // Убед�
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ ---
 
+// Данные, приходящие с API
 interface ApiPick {
 	match_id: string
 	player_id: number
@@ -20,39 +21,57 @@ interface ApiUserData {
 	fantasy_user_name: string
 	picks: ApiPick[]
 }
+
+// Данные для отображения одного пика в таблице
 interface PickDisplay {
 	playerId: number
 	playerName: string
 	passed: boolean | null
 	displaySuffix?: string
 }
+
+// Группа пиков, относящаяся к одному матчу
 interface MatchPicksGroup {
 	matchId: string
 	matchTitle: string
 	picks: PickDisplay[]
 }
 
-// *** ИЗМЕНЕНИЕ: Добавлено поле potentialPicks ***
+// Финальная структура строки для одного пользователя
 interface UserRow {
 	id: number
 	name: string
-	stages: MatchPicksGroup[][]
+	stages: MatchPicksGroup[][] // Массив стадий -> Массив групп матчей -> Массив пиков
 	stagePassedCounts: number[]
 	total: number
 	potentialPicks: number // Количество "живых" пиков
 }
 
-// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ (без изменений) ---
+// --- 2. ДИНАМИЧЕСКАЯ КОНФИГУРАЦИЯ ИЗ `bracketData` ---
+
 const allPlayersList = [
-	/* ... */
-].filter(
-	(player, index, self) => index === self.findIndex(p => p.id === player.id)
-)
+	...bracketData.upperBracket.left.flatMap(s => s.matches),
+	...bracketData.upperBracket.right.flatMap(s => s.matches),
+	...bracketData.lowerBracket.left.flatMap(s => s.matches),
+	...bracketData.lowerBracket.right.flatMap(s => s.matches),
+	...bracketData.finalStage.matches,
+]
+	.flatMap(match => match.players)
+	.filter(player => !player.isPlaceholder)
+	.filter(
+		(player, index, self) => index === self.findIndex(p => p.id === player.id)
+	)
 const allPlayersMap = new Map(allPlayersList.map(p => [p.id, p.name]))
+
 const allMatches = [
-	/* ... */
+	...bracketData.upperBracket.left.flatMap(s => s.matches),
+	...bracketData.upperBracket.right.flatMap(s => s.matches),
+	...bracketData.lowerBracket.left.flatMap(s => s.matches),
+	...bracketData.lowerBracket.right.flatMap(s => s.matches),
+	...bracketData.finalStage.matches,
 ]
 const matchInfoMap = new Map<string, Match>(allMatches.map(m => [m.id, m]))
+
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: '1/8 Финала', matchIds: new Set() },
 	{ title: '1/4 Финала', matchIds: new Set() },
@@ -60,12 +79,14 @@ const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: 'Финал', matchIds: new Set() },
 ]
 const matchIdToStageIndex = new Map<string, number>()
+
 const processStage = (stage: Stage) => {
 	let stageIndex = -1
 	if (stage.name.includes('1/8')) stageIndex = 0
 	else if (stage.name.includes('1/4')) stageIndex = 1
 	else if (stage.name.includes('1/2')) stageIndex = 2
 	else if (stage.name.includes('Финал')) stageIndex = 3
+
 	if (stageIndex !== -1) {
 		stage.matches.forEach(match => {
 			STAGE_CONFIG[stageIndex].matchIds.add(match.id)
@@ -73,6 +94,7 @@ const processStage = (stage: Stage) => {
 		})
 	}
 }
+
 bracketData.upperBracket.left.forEach(s => processStage(s))
 bracketData.upperBracket.right.forEach(s => processStage(s))
 bracketData.lowerBracket.left.forEach(s => processStage(s))
@@ -122,7 +144,7 @@ const FantasyBracketTable = () => {
 					.map(() => []),
 				stagePassedCounts: Array(STAGE_CONFIG.length).fill(0),
 				total: 0,
-				potentialPicks: 0, // Инициализируем
+				potentialPicks: 0,
 			}
 			usersMap[user.fantasy_user_id] = currentUserRow
 
@@ -171,13 +193,20 @@ const FantasyBracketTable = () => {
 							passed = hasResults ? isCorrect : null
 						}
 
+						const playerName = allPlayersMap.get(pick.player_id)
+						if (!playerName) {
+							console.warn(
+								`Не найдено имя для игрока с ID: ${pick.player_id}. Проверьте соответствие данных API и summerLeagueData.ts`
+							)
+						}
+
 						displayPicks.push({
 							playerId: pick.player_id,
-							playerName:
-								allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
+							playerName: playerName || `ID:${pick.player_id}`,
 							passed: passed,
 							displaySuffix: displaySuffix,
 						})
+
 						if (isCorrect && passed === true) {
 							currentUserRow.stagePassedCounts[stageIdx] += 1
 							currentUserRow.total += 1
@@ -192,7 +221,6 @@ const FantasyBracketTable = () => {
 						})
 					}
 
-					// Обновляем список выбывших
 					if (hasResults) {
 						const allPlayersInMatch =
 							matchInfoMap
@@ -204,21 +232,17 @@ const FantasyBracketTable = () => {
 							...Object.values(matchResult.places || {}).flat(),
 						])
 						allPlayersInMatch.forEach(playerId => {
-							if (!advancingPlayerIds.has(playerId))
+							if (!advancingPlayerIds.has(playerId)) {
 								eliminatedPlayerIds.add(playerId)
+							}
 						})
 					}
 				})
 			})
 
-			// *** ИЗМЕНЕНИЕ: Расчет "живых" пиков после обработки всех стадий ***
-			let livePicksCount = 0
-			user.picks.forEach(pick => {
-				if (!eliminatedPlayerIds.has(pick.player_id)) {
-					livePicksCount++
-				}
-			})
-			currentUserRow.potentialPicks = livePicksCount
+			currentUserRow.potentialPicks = user.picks.filter(
+				pick => !eliminatedPlayerIds.has(pick.player_id)
+			).length
 		})
 
 		return Object.values(usersMap)
@@ -251,7 +275,6 @@ const FantasyBracketTable = () => {
 				const idx = parseInt(key.slice(5))
 				return (a.stagePassedCounts[idx] - b.stagePassedCounts[idx]) * dir
 			}
-			// *** ИЗМЕНЕНИЕ: Добавлена сортировка по потенциалу ***
 			if (key === 'potential')
 				return (a.potentialPicks - b.potentialPicks) * dir
 			if (key === 'total') return (a.total - b.total) * dir
@@ -300,7 +323,6 @@ const FantasyBracketTable = () => {
 									{title}
 								</th>
 							))}
-							{/* *** ИЗМЕНЕНИЕ: Новый заголовок колонки *** */}
 							<th onClick={() => handleSort('potential')}>Потенциал</th>
 							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
@@ -344,7 +366,6 @@ const FantasyBracketTable = () => {
 										)}
 									</td>
 								))}
-								{/* *** ИЗМЕНЕНИЕ: Новая ячейка для данных *** */}
 								<td className='potential-cell'>{user.potentialPicks}</td>
 								<td className='total-cell'>{user.total}</td>
 							</tr>
