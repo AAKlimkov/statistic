@@ -70,6 +70,16 @@ const HomePage = () => {
 				</Button>
 				<Button
 					variant='outlined'
+					color='primary'
+					size='large'
+					fullWidth
+					component={Link}
+					to='/fantasyTable2stage'
+				>
+					📊 Посмотреть таблицу (2 этап)
+				</Button>
+				<Button
+					variant='outlined'
 					color='secondary'
 					size='large'
 					fullWidth

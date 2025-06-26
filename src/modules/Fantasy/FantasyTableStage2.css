@@ -173,3 +173,17 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 		width: 25%;
 	}
 }
+.pick-separator {
+  border: 0;
+  border-top: 1px dashed #ccc; /* Пунктирная линия выглядит легко и не перегружает ячейку */
+  margin: 8px 0; /* Отступы сверху и снизу от линии */
+}
+
+/* Опционально: можно добавить заголовок для каждой группы матчей, если нужно */
+.match-group-title {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 4px;
+  text-align: center;
+}
