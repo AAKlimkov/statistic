@@ -86,13 +86,13 @@ div.fantasy-table-container table th:hover {
 /* Колонки 2-5: Стадии (1/8, 1/4, 1/2, Финал) */
 .fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
 .fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
-	width: 16%;
+	width: 12%;
 }
 
 /* Колонка 6: Потенциал */
 .fantasy-table-container th:nth-child(6),
 .fantasy-table-container td:nth-child(6) {
-	width: 9%;
+	width: 17%;
 	font-weight: bold;
 }
 .potential-cell {
@@ -175,34 +175,6 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	cursor: default;
 }
 
-/* --- 7. Адаптивность для мобильных устройств --- */
-@media screen and (max-width: 992px) {
-	/* На планшетах скрываем 2 первые стадии */
-	.fantasy-table-container th:nth-child(2),
-	.fantasy-table-container td:nth-child(2),
-	.fantasy-table-container th:nth-child(3),
-	.fantasy-table-container td:nth-child(3) {
-		display: none;
-	}
-	/* Перераспределяем ширину */
-	.fantasy-table-container th:first-child,
-	.fantasy-table-container td:first-child {
-		width: 30%;
-	}
-	.fantasy-table-container th:nth-child(4),
-	.fantasy-table-container td:nth-child(4),
-	.fantasy-table-container th:nth-child(5),
-	.fantasy-table-container td:nth-child(5) {
-		width: 25%;
-	}
-	.fantasy-table-container th:nth-child(6),
-	.fantasy-table-container td:nth-child(6),
-	.fantasy-table-container th:nth-child(7),
-	.fantasy-table-container td:nth-child(7) {
-		width: 10%;
-	}
-}
-
 @media screen and (max-width: 768px) {
 	/* На телефонах скрываем все стадии */
 	.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
@@ -220,11 +192,11 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	/* Перераспределяем ширину для 3 колонок: Имя, Потенциал, Итого */
 	.fantasy-table-container th:first-child,
 	.fantasy-table-container td:first-child {
-		width: 50%;
+		width: 40%;
 	}
 	.fantasy-table-container th:nth-child(6),
 	.fantasy-table-container td:nth-child(6) {
-		width: 25%;
+		width: 35%;
 	}
 	.fantasy-table-container th:nth-child(7),
 	.fantasy-table-container td:nth-child(7) {

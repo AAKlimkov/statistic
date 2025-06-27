@@ -80,10 +80,6 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	height: auto;
 }
 
-.fantasy-table-container th:nth-child(6),
-.fantasy-table-container td:nth-child(6) {
-	width: 5% !important;
-}
 @media screen and (max-width: 768px) {
 	div.fantasy-table-container table th:nth-child(n + 2):nth-child(-n + 5),
 	div.fantasy-table-container table td:nth-child(n + 2):nth-child(-n + 5) {
@@ -101,11 +97,5 @@ div.fantasy-table-container .fantasy-table-pagination button.active {
 	.fantasy-table-container th:first-child,
 	.fantasy-table-container td:first-child {
 		width: 80%;
-	}
-
-	/* Последний столбец (итого) — компактный */
-	.fantasy-table-container th:nth-child(6),
-	.fantasy-table-container td:nth-child(6) {
-		width: 20% !important;
 	}
 }
