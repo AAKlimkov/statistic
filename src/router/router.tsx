@@ -62,7 +62,7 @@ const Layout = ({ children }) => (
 				</Button>
 				<Button
 					component={Link}
-					to='/fantasyTable'
+					to='/fantasyTable2stage'
 					variant='contained'
 					color='primary'
 					size='small'
