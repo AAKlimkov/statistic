@@ -497,9 +497,9 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 				</Stack>
 			</Box>
 			<Box sx={{ mt: 3, textAlign: 'center' }}>
-				{/* <Button variant='contained' size='large' onClick={handleSubmit}>
+				<Button variant='contained' size='large' onClick={handleSubmit}>
 					Сохранить выбор
-				</Button> */}
+				</Button>
 			</Box>
 		</Box>
 	)
