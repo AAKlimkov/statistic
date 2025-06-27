@@ -9,7 +9,7 @@ import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
 import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
-import PlayersPickPage from '../pages/PlayersPickPage'
+import PlayersPickPage2stage from '../pages/PlayersPickPage2stage'
 import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
@@ -164,7 +164,7 @@ export const router = createHashRouter([
 		path: '/fantasyPickRate',
 		element: (
 			<Layout>
-				<PlayersPickPage />
+				<PlayersPickPage2stage />
 			</Layout>
 		),
 	},

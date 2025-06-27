@@ -2,7 +2,7 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
 // ИНТЕРФЕЙС 1: Для чистого объекта Pick ВНУТРИ массива.
 // В нем нет fantasy_user_name.
-interface CleanPick {
+export interface CleanPick {
 	id: number
 	fantasy_user_id: number
 	match_id: string
