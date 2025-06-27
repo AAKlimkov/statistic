@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { useMemo } from 'react'
 import { CleanPick } from '../../../../api/fantasy/allPicksStage2'
+import { tournamentResults } from '../data/result'
+import './PicksGroupedByMatch.css'
 
 interface Props {
 	picks: CleanPick[]
@@ -22,6 +24,15 @@ export default function PicksGroupedByMatch({ picks, playerNames }: Props) {
 		return map
 	}, [picks])
 
+	// Собираем всех выбывших из tournamentResults
+	const eliminatedPlayerIds = useMemo(() => {
+		const ids = new Set<number>()
+		for (const result of Object.values(tournamentResults)) {
+			result.losers?.forEach(id => ids.add(id))
+		}
+		return ids
+	}, [])
+
 	return (
 		<div className='container'>
 			<h1 className='heading'>Выбор игроков по матчам</h1>
@@ -38,12 +49,18 @@ export default function PicksGroupedByMatch({ picks, playerNames }: Props) {
 						<tbody>
 							{Object.entries(playerMap)
 								.sort((a, b) => b[1] - a[1])
-								.map(([playerId, count]) => (
-									<tr key={playerId}>
-										<td>{playerNames[+playerId] || '???'}</td>
-										<td>{count}</td>
-									</tr>
-								))}
+								.map(([playerId, count]) => {
+									const id = +playerId
+									const name = playerNames[id] || '???'
+									const isEliminated = eliminatedPlayerIds.has(id)
+
+									return (
+										<tr key={id} className={isEliminated ? 'eliminated' : ''}>
+											<td>{name}</td>
+											<td>{count}</td>
+										</tr>
+									)
+								})}
 						</tbody>
 					</table>
 				</div>

@@ -5,6 +5,7 @@ import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './FantasyTableStage2.css' // Убедитесь, что путь к стилям верный
+import { tournamentResults } from './data/result'
 import { bracketData, Match, Stage } from './data/summerLeagueData' // Убедитесь, что путь к данным верный
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (без изменений) ---
@@ -91,16 +92,6 @@ processStage(bracketData.finalStage)
 interface MatchResult {
 	winners?: number[]
 	places?: Record<number, number[]>
-}
-const tournamentResults: Record<string, MatchResult> = {
-	'U-1/8-1': {
-		winners: [35, 131, 259, 193, 105],
-		places: { 6: [146] },
-	},
-	// 'U-1/8-2': {
-	// 	winners: [15, 29, 153, 55, 32],
-	// 	places: { 6: [18, 85, 74, 229, 51] },
-	// },
 }
 
 const FantasyBracketTable = () => {
