@@ -2,12 +2,12 @@ import { Box, Button, Stack } from '@mui/material'
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
+import CombinedFantasyTable from '../modules/Fantasy/CombinedFantasyTable'
 import FantasyTableStage2 from '../modules/Fantasy/FantasyTableStage2'
 import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
 import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
-import FantasyTablePage from '../pages/FantasyTablePage'
 import PlayerPage from '../pages/PlayerPage'
 import PlayersPickPage2stage from '../pages/PlayersPickPage2stage'
 import PlayersTablePage from '../pages/PlayersTablePage'
@@ -148,7 +148,7 @@ export const router = createHashRouter([
 		path: '/fantasyTable',
 		element: (
 			<Layout>
-				<FantasyTablePage />
+				<CombinedFantasyTable />
 			</Layout>
 		),
 	},
