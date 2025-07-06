@@ -49,7 +49,7 @@ const SubmitFantasyTeamPage: React.FC = () => {
 				>
 					Общая таблица
 				</Button>
-				<Button
+				{/* <Button
 					component={Link}
 					to='/fantasyTable2stage'
 					variant='outlined'
@@ -57,7 +57,7 @@ const SubmitFantasyTeamPage: React.FC = () => {
 					size='medium'
 				>
 					2 этап
-				</Button>
+				</Button> */}
 			</Box>
 			<FantasyForm
 				name={name}

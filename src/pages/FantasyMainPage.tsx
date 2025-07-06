@@ -68,7 +68,7 @@ const HomePage = () => {
 				>
 					📊 Посмотреть таблицу
 				</Button>
-				<Button
+				{/* <Button
 					variant='outlined'
 					color='primary'
 					size='large'
@@ -77,7 +77,7 @@ const HomePage = () => {
 					to='/fantasyTable2stage'
 				>
 					📊 Посмотреть таблицу (2 этап)
-				</Button>
+				</Button> */}
 				<Button
 					variant='outlined'
 					color='secondary'
