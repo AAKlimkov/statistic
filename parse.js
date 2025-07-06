@@ -7,7 +7,6 @@ async function parseExcelToJson(filePath) {
 
 	const games = [] // Все игры
 
-	let gameCounter = 1 // Нумерация игр (1-200)
 
 	// Проходим по ВСЕМ листам (всего их 40)
 	for (let sheetIndex = 1; sheetIndex < 23; sheetIndex++) {

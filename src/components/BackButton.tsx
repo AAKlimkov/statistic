@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import * as React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const BackButton = () => {
@@ -8,14 +8,6 @@ const BackButton = () => {
 	const handleBackClick = () => {
 		// Переход назад
 		navigate(-1)
-
-		// Проверка URL после перехода
-		setTimeout(() => {
-			// Если URL не содержит 'aaklimkov', переходим на главную страницу
-			if (!window.location.href.includes('aaklimkov')) {
-				navigate('/statistic')
-			}
-		}, 100)
 	}
 
 	return (
