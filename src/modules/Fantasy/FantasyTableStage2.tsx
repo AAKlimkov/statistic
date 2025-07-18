@@ -162,14 +162,42 @@ const FantasyBracketTable = () => {
 									hasResults &&
 									(matchResult.winners?.includes(pick.player_id) ?? false)
 							} else if (pick.pick_type === 'place' && pick.place_value) {
-								isCorrect =
-									hasResults &&
-									(matchResult.places?.[pick.place_value]?.includes(
-										pick.player_id
-									) ??
-										false)
-								displaySuffix = ` (${pick.place_value} место)`
+								const actualPlaces = matchResult?.places ?? {}
+								const predictedPlace = pick.place_value
+								const playerId = pick.player_id
+
+								let awardedPoints = 0
+
+								for (const [actualPlaceStr, players] of Object.entries(
+									actualPlaces
+								)) {
+									const actualPlace = Number(actualPlaceStr)
+									if (actualPlace < 5 || actualPlace > 8) continue
+									if (!players.includes(playerId)) continue
+
+									if (actualPlace === predictedPlace) {
+										awardedPoints = 1
+									} else if (
+										[1, 3].includes(Math.abs(actualPlace - predictedPlace)) &&
+										predictedPlace >= 5 &&
+										predictedPlace <= 8
+									) {
+										awardedPoints = 0.5
+									}
+									break
+								}
+
+								if (awardedPoints > 0) {
+									isCorrect = true
+									currentUserRow.total += awardedPoints
+									if (awardedPoints === 1) {
+										currentUserRow.stagePassedCounts[stageIdx] += 1
+									}
+								}
+
+								displaySuffix = ` (${predictedPlace} место)`
 							}
+
 							passed = hasResults ? isCorrect : null
 						}
 

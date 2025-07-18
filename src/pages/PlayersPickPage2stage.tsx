@@ -3,6 +3,7 @@ import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { CleanPick } from '../../api/fantasy/allPicksStage2'
 import PicksGroupedByMatch from '../modules/Fantasy/components/PicksGroupedByMatch'
+import { tournamentResults } from '../modules/Fantasy/data/result'
 import { bracketData } from '../modules/Fantasy/data/summerLeagueData'
 
 export default function PlayersPickPage() {
@@ -50,36 +51,39 @@ export default function PlayersPickPage() {
 		fetchData()
 	}, [])
 
-	// Находим всех игроков, которые ещё остались в турнирной сетке
-	const activePlayerIds = useMemo(() => {
+	// --- Новое: определяем выбывших игроков по полю "losers" в результатах ---
+	const { activePlayerIds, eliminatedPlayerMap } = useMemo(() => {
 		const ids = new Set<number>()
+		const eliminated: Record<number, string> = {}
 
-		const collectIds = (stageList: { left: any[]; right: any[] }) => {
-			stageList.left.forEach(stage =>
-				stage.matches.forEach(match =>
-					match.players.forEach(p => {
-						if (!p.isPlaceholder) ids.add(p.id)
+		const processStage = (stage: { name: string; matches: any[] }) => {
+			stage.matches.forEach(match => {
+				// Добавляем всех игроков
+				match.players.forEach(p => {
+					if (!p.isPlaceholder) ids.add(p.id)
+				})
+
+				// Определяем, кто вылетел
+				const matchResult = tournamentResults[match.id]
+				if (matchResult?.losers) {
+					matchResult.losers.forEach(playerId => {
+						if (!eliminated[playerId]) {
+							eliminated[playerId] = stage.name
+						}
 					})
-				)
-			)
-			stageList.right.forEach(stage =>
-				stage.matches.forEach(match =>
-					match.players.forEach(p => {
-						if (!p.isPlaceholder) ids.add(p.id)
-					})
-				)
-			)
+				}
+			})
 		}
 
-		collectIds(bracketData.upperBracket)
-		collectIds(bracketData.lowerBracket)
-		bracketData.finalStage.matches.forEach(match =>
-			match.players.forEach(p => {
-				if (!p.isPlaceholder) ids.add(p.id)
-			})
-		)
+		;[
+			...bracketData.upperBracket.left,
+			...bracketData.upperBracket.right,
+			...bracketData.lowerBracket.left,
+			...bracketData.lowerBracket.right,
+			bracketData.finalStage,
+		].forEach(processStage)
 
-		return ids
+		return { activePlayerIds: ids, eliminatedPlayerMap: eliminated }
 	}, [])
 
 	if (loading) return <p>Загрузка...</p>
@@ -96,7 +100,12 @@ export default function PlayersPickPage() {
 				margin: 'auto',
 			}}
 		>
-			<PicksGroupedByMatch picks={picks} playerNames={playerNames} />
+			<PicksGroupedByMatch
+				picks={picks}
+				playerNames={playerNames}
+				activePlayerIds={activePlayerIds}
+				eliminatedPlayerMap={eliminatedPlayerMap}
+			/>
 		</Box>
 	)
 }

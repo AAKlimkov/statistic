@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import { CleanPick } from '../../../../api/fantasy/allPicksStage2'
 import { tournamentResults } from '../data/result'
 import './PicksGroupedByMatch.css'
@@ -7,9 +7,16 @@ import './PicksGroupedByMatch.css'
 interface Props {
 	picks: CleanPick[]
 	playerNames: Record<number, string>
+	eliminatedPlayerMap: Record<number, string>
+	activePlayerIds: Set<number>
 }
 
-export default function PicksGroupedByMatch({ picks, playerNames }: Props) {
+export default function PicksGroupedByMatch({
+	picks,
+	playerNames,
+	eliminatedPlayerMap,
+	activePlayerIds,
+}: Props) {
 	const grouped = useMemo(() => {
 		const map: Record<string, Record<number, number>> = {}
 
@@ -24,47 +31,92 @@ export default function PicksGroupedByMatch({ picks, playerNames }: Props) {
 		return map
 	}, [picks])
 
-	// Собираем всех выбывших из tournamentResults
-	const eliminatedPlayerIds = useMemo(() => {
-		const ids = new Set<number>()
-		for (const result of Object.values(tournamentResults)) {
-			result.losers?.forEach(id => ids.add(id))
+	// Инициализируем открытые дропдауны: открыты только для матчей, которых нет в tournamentResults (будущие)
+	const [openMatches, setOpenMatches] = useState<Record<string, boolean>>(
+		() => {
+			const initialState: Record<string, boolean> = {}
+			Object.keys(grouped).forEach(matchId => {
+				initialState[matchId] = !tournamentResults[matchId]
+			})
+			return initialState
 		}
-		return ids
-	}, [])
+	)
+
+	const toggleMatch = (matchId: string) => {
+		setOpenMatches(prev => ({
+			...prev,
+			[matchId]: !prev[matchId],
+		}))
+	}
 
 	return (
 		<div className='container'>
 			<h1 className='heading'>Выбор игроков по матчам</h1>
-			{Object.entries(grouped).map(([matchId, playerMap]) => (
-				<div key={matchId} className='match-block'>
-					<h2>Матч {matchId}</h2>
-					<table className='table'>
-						<thead>
-							<tr>
-								<th>Игрок</th>
-								<th>Выбран</th>
-							</tr>
-						</thead>
-						<tbody>
-							{Object.entries(playerMap)
-								.sort((a, b) => b[1] - a[1])
-								.map(([playerId, count]) => {
-									const id = +playerId
-									const name = playerNames[id] || '???'
-									const isEliminated = eliminatedPlayerIds.has(id)
+			{Object.entries(grouped).map(([matchId, playerMap]) => {
+				const isOpen = openMatches[matchId] ?? false
+				const hasActivePlayers = Object.keys(playerMap).some(id =>
+					activePlayerIds.has(+id)
+				)
 
-									return (
-										<tr key={id} className={isEliminated ? 'eliminated' : ''}>
-											<td>{name}</td>
-											<td>{count}</td>
-										</tr>
-									)
-								})}
-						</tbody>
-					</table>
-				</div>
-			))}
+				return (
+					<div key={matchId} className='match-block'>
+						<h2
+							className='match-header'
+							style={{ cursor: 'pointer' }}
+							onClick={() => toggleMatch(matchId)}
+						>
+							{isOpen ? '▼' : '▶'} Матч {matchId}
+							{!hasActivePlayers && (
+								<span
+									style={{ fontSize: '0.9em', color: '#888', marginLeft: 8 }}
+								>
+									(завершён)
+								</span>
+							)}
+						</h2>
+
+						{isOpen && (
+							<table className='table'>
+								<thead>
+									<tr>
+										<th>Игрок</th>
+										<th>Выбран</th>
+									</tr>
+								</thead>
+								<tbody>
+									{Object.entries(playerMap)
+										.sort((a, b) => b[1] - a[1])
+										.map(([playerId, count]) => {
+											const id = +playerId
+											const name = playerNames[id] || '???'
+											const eliminatedStage = eliminatedPlayerMap[id]
+
+											// Зачеркиваем, если игрок вылетел и не принёс очков
+											const shouldStrikeThrough = eliminatedStage && count === 0
+
+											return (
+												<tr
+													key={id}
+													className={shouldStrikeThrough ? 'eliminated' : ''}
+												>
+													<td>
+														{name}
+														{eliminatedStage && (
+															<span style={{ color: '#999', marginLeft: 6 }}>
+																(вылетел(а): {eliminatedStage})
+															</span>
+														)}
+													</td>
+													<td>{count}</td>
+												</tr>
+											)
+										})}
+								</tbody>
+							</table>
+						)}
+					</div>
+				)
+			})}
 		</div>
 	)
 }
