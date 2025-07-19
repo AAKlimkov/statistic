@@ -4,9 +4,9 @@ import { Paper } from '@mui/material'
 import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { tournamentResults } from '../data/result'
+import { bracketData, Match, Stage } from '../data/summerLeagueData' // Убедитесь, что путь к данным верный
 import './FantasyTableStage2.css' // Убедитесь, что путь к стилям верный
-import { tournamentResults } from './data/result'
-import { bracketData, Match, Stage } from './data/summerLeagueData' // Убедитесь, что путь к данным верный
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ (без изменений) ---
 interface ApiPick {
@@ -196,8 +196,8 @@ const FantasyBracketTable = () => {
 
 								if (awardedPoints > 0) {
 									isCorrect = true
-									// currentUserRow.total += awardedPoints
-									// currentUserRow.stagePassedCounts[stageIdx] += awardedPoints
+									currentUserRow.total += awardedPoints
+									currentUserRow.stagePassedCounts[stageIdx] += awardedPoints
 								}
 								partial = awardedPoints === 0.5
 								displaySuffix = ` (${predictedPlace} место)`

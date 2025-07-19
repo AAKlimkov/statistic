@@ -1,6 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material'
 import * as React from 'react'
-import FantasyTable from '../modules/Fantasy/FantasyTable'
+import FantasyTable from '../modules/Fantasy/pages/FantasyTable'
 
 const FantasyTablePage = () => {
 	return (

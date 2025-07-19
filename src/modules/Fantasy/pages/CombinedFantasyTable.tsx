@@ -2,9 +2,9 @@ import { Paper } from '@mui/material'
 import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import './FantasyTable.css' // Можно объединить стили в один файл
-import { tournamentResults } from './data/result'
-import { bracketData, Match, Stage } from './data/summerLeagueData'
+import { tournamentResults } from '../data/result'
+import { bracketData, Match, Stage } from '../data/summerLeagueData'
+import './FantasyTableStage2.css' // Можно объединить стили в один файл
 
 // --- 1. ОПРЕДЕЛЯЕМ СТРУКТУРЫ ДАННЫХ ---
 
@@ -36,7 +36,9 @@ interface BracketApiUserData {
 // Универсальные типы для отображения в таблице
 interface PickDisplay {
 	playerId: number
+	awardedPoints: number
 	playerName: string
+	partial: boolean
 	passed: boolean | null
 	displaySuffix?: string
 }
@@ -232,12 +234,16 @@ const CombinedFantasyTable = () => {
 					const displayPicks: PickDisplay[] = []
 
 					matchPicks.forEach(pick => {
-						if (pick.pick_type !== 'winner' && pick.pick_type !== 'place')
+						// Логика внутри этого цикла уже корректно пропускает 'loser'
+						// благодаря `else { return }`
+						if (pick.pick_type !== 'winner' && pick.pick_type !== 'place') {
 							return
-
+						}
+						let partial = false
 						let isCorrect = false
 						let displaySuffix = ''
 						let passed: boolean | null
+						let awardedPoints = 0
 
 						if (eliminatedPlayerIds.has(pick.player_id)) {
 							passed = false
@@ -246,25 +252,65 @@ const CombinedFantasyTable = () => {
 								isCorrect =
 									hasResults &&
 									(matchResult.winners?.includes(pick.player_id) ?? false)
+								if (isCorrect) {
+									awardedPoints = 1
+								}
 							} else if (pick.pick_type === 'place' && pick.place_value) {
-								isCorrect =
-									hasResults &&
-									(matchResult.places?.[pick.place_value]?.includes(
-										pick.player_id
-									) ??
-										false)
-								displaySuffix = ` (${pick.place_value} место)`
+								const actualPlaces = matchResult?.places ?? {}
+								const predictedPlace = pick.place_value
+								const playerId = pick.player_id
+
+								for (const [actualPlaceStr, players] of Object.entries(
+									actualPlaces
+								)) {
+									const actualPlace = Number(actualPlaceStr)
+									if (actualPlace < 5 || actualPlace > 8) continue
+									if (!players.includes(playerId)) continue
+
+									if (
+										actualPlace === predictedPlace ||
+										Math.abs(actualPlace - predictedPlace) === 2
+									) {
+										awardedPoints = 1
+									} else if (
+										[1, 3].includes(Math.abs(actualPlace - predictedPlace)) &&
+										predictedPlace >= 5 &&
+										predictedPlace <= 8
+									) {
+										awardedPoints = 0.5
+									}
+									break
+								}
+
+								if (awardedPoints > 0) {
+									isCorrect = true
+									// currentUserRow.total += awardedPoints
+									// currentUserRow.stagePassedCounts[stageIdx] += awardedPoints
+								}
+								partial = awardedPoints === 0.5
+								displaySuffix = ` (${predictedPlace} место)`
 							}
+
 							passed = hasResults ? isCorrect : null
 						}
 
+						const playerName = allPlayersMap.get(pick.player_id)
+						if (!playerName) {
+							console.warn(`Не найдено имя для игрока с ID: ${pick.player_id}.`)
+						}
 						displayPicks.push({
 							playerId: pick.player_id,
-							playerName:
-								allPlayersMap.get(pick.player_id) || `ID:${pick.player_id}`,
+							playerName: playerName || `ID:${pick.player_id}`,
 							passed: passed,
+							partial: partial,
+							awardedPoints: awardedPoints,
 							displaySuffix: displaySuffix,
 						})
+
+						if (awardedPoints) {
+							currentUserRow.stagePassedCounts[stageIdx] += awardedPoints
+							currentUserRow.total += awardedPoints
+						}
 					})
 
 					if (displayPicks.length > 0) {
@@ -412,7 +458,9 @@ const CombinedFantasyTable = () => {
 														<span
 															key={`${pick.playerId}-${pick.displaySuffix}`}
 															className={
-																pick.passed === true
+																pick.awardedPoints === 0.5
+																	? 'pick-partial' // Желтый цвет
+																	: pick.passed === true
 																	? 'pick-correct'
 																	: pick.passed === false
 																	? 'pick-incorrect'
