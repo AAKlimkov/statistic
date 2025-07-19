@@ -64,7 +64,7 @@ interface UserRow {
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: 'Квалификация', matchIds: new Set() }, // Этап 0
 	{ title: '1/8 Финала', matchIds: new Set() }, // Этап 1
-	{ title: '1/4 Финала', matchIds: new Set() }, // Этап 2
+	{ title: '1/4 Финала \n(желтый + 0,5)', matchIds: new Set() }, // Этап 2
 	{ title: '1/2 Финала', matchIds: new Set() }, // Этап 3
 	{ title: 'Финал', matchIds: new Set() }, // Этап 4
 ]
