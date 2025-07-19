@@ -265,11 +265,6 @@ const CombinedFantasyTable = () => {
 							passed: passed,
 							displaySuffix: displaySuffix,
 						})
-
-						if (isCorrect && passed === true) {
-							currentUserRow.stagePassedCounts[stageIdx] += 1
-							currentUserRow.total += 1
-						}
 					})
 
 					if (displayPicks.length > 0) {

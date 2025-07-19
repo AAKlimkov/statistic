@@ -4,7 +4,6 @@ import {
 	AccordionDetails,
 	AccordionSummary,
 	Box,
-	Button,
 	Stack,
 	Typography,
 } from '@mui/material'
@@ -405,7 +404,7 @@ export const FantasyBracketPage: React.FC<FantasyBracketPageProps> = ({
 						margin: 'auto',
 						display: 'flex',
 						flexDirection: 'column',
-						maxWidth: '400px',
+						maxWidth: '800px',
 					}}
 				>
 					<InputField
