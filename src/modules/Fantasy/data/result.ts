@@ -31,4 +31,9 @@ export const tournamentResults: Record<string, MatchResult> = {
 		places: { 5: [85], 6: [46], 7: [21], 8: [154] },
 		losers: [32, 229],
 	},
+	'U-1/4-3': {
+		winners: [34, 125, 83, 122],
+		places: { 5: [72], 6: [44], 7: [132], 8: [110] },
+		losers: [23, 45],
+	},
 }
