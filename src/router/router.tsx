@@ -61,7 +61,7 @@ const Layout = ({ children }) => (
 				</Button> */}
 				<Button
 					component={Link}
-					to='/fantasyTable2stage'
+					to='/fantasyTable'
 					variant='contained'
 					color='primary'
 					size='small'
@@ -151,14 +151,7 @@ export const router = createHashRouter([
 			</Layout>
 		),
 	},
-	{
-		path: '/fantasyTable2stage',
-		element: (
-			<Layout>
-				<CombinedFantasyTable />
-			</Layout>
-		),
-	},
+
 	{
 		path: '/fantasyPickRate',
 		element: (
