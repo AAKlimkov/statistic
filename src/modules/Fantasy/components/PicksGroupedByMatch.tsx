@@ -100,14 +100,45 @@ export default function PicksGroupedByMatch({
 													className={shouldStrikeThrough ? 'eliminated' : ''}
 												>
 													<td>
-														{name}
+														<span
+															style={
+																eliminatedStage
+																	? {
+																			textDecoration: 'line-through',
+																			color: '#999',
+																	  }
+																	: undefined
+															}
+														>
+															{name}
+														</span>
+
 														{eliminatedStage && (
-															<span style={{ color: '#999', marginLeft: 6 }}>
+															<span
+																style={{
+																	color: '#999',
+																	marginLeft: 6,
+																}}
+															>
 																(вылетел(а): {eliminatedStage})
 															</span>
 														)}
 													</td>
-													<td>{count}</td>
+													<td>
+														{' '}
+														<span
+															style={
+																eliminatedStage
+																	? {
+																			color: '#999',
+																			textDecoration: 'line-through',
+																	  }
+																	: undefined
+															}
+														>
+															{count}
+														</span>
+													</td>
 												</tr>
 											)
 										})}

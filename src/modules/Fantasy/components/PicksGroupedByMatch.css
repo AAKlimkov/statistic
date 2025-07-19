@@ -1,8 +1,8 @@
-.eliminated td {
+.eliminated {
 	opacity: 0.5;
 	text-decoration: line-through;
 }
 .half-point {
-  background-color: #fff3cd; /* светло-жёлтый фон */
-  font-weight: bold;
+	background-color: #fff3cd; /* светло-жёлтый фон */
+	font-weight: bold;
 }
