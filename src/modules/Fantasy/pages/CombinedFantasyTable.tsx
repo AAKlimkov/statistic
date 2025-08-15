@@ -485,7 +485,8 @@ const CombinedFantasyTable = () => {
 																	: 'pick-pending'
 															}
 															style={
-																pick.playerName === 'Зверюга'
+																pick.playerName === 'Зверюга' ||
+																pick.playerName === 'NLIP'
 																	? { color: 'orange', textDecoration: 'none' }
 																	: undefined
 															}
