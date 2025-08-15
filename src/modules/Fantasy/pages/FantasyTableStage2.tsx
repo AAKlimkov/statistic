@@ -337,7 +337,7 @@ const FantasyBracketTable = () => {
 									{title}
 								</th>
 							))}
-							<th onClick={() => handleSort('potential')}>Потенциал</th>
+							{/* <th onClick={() => handleSort('potential')}>Потенциал</th> */}
 							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
 					</thead>
@@ -382,7 +382,7 @@ const FantasyBracketTable = () => {
 										)}
 									</td>
 								))}
-								<td className='potential-cell'>{user.potentialPicks}</td>
+								{/* <td className='potential-cell'>{user.potentialPicks}</td> */}
 								<td className='total-cell'>{user.total}</td>
 							</tr>
 						))}

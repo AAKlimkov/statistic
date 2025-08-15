@@ -234,6 +234,9 @@ const CombinedFantasyTable = () => {
 					const displayPicks: PickDisplay[] = []
 
 					matchPicks.forEach(pick => {
+						if (pick.match_id === 'L-1/2-C') {
+							console.log(pick)
+						}
 						// Логика внутри этого цикла уже корректно пропускает 'loser'
 						// благодаря `else { return }`
 						if (pick.pick_type !== 'winner' && pick.pick_type !== 'place') {
@@ -245,7 +248,22 @@ const CombinedFantasyTable = () => {
 						let passed: boolean | null
 						let awardedPoints = 0
 
-						if (eliminatedPlayerIds.has(pick.player_id)) {
+						if (pick.match_id === 'L-1/2-B' || pick.match_id === 'L-1/2-C') {
+							const semiFinals = ['L-1/2-B', 'L-1/2-C']
+
+							if (pick.pick_type === 'place') {
+								isCorrect =
+									hasResults &&
+									(matchResult.winners?.includes(pick.player_id) ?? false)
+								if (isCorrect) {
+									awardedPoints = 1
+									passed = true
+								} else {
+									awardedPoints = 0
+									passed = false
+								}
+							}
+						} else if (eliminatedPlayerIds.has(pick.player_id)) {
 							passed = false
 						} else {
 							if (pick.pick_type === 'winner') {
@@ -438,7 +456,7 @@ const CombinedFantasyTable = () => {
 									{title}
 								</th>
 							))}
-							<th onClick={() => handleSort('potential')}>Потенциал</th>
+							{/* <th onClick={() => handleSort('potential')}>Потенциал</th> */}
 							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
 					</thead>
@@ -466,6 +484,11 @@ const CombinedFantasyTable = () => {
 																	? 'pick-incorrect'
 																	: 'pick-pending'
 															}
+															style={
+																pick.playerName === 'Зверюга'
+																	? { color: 'orange', textDecoration: 'none' }
+																	: undefined
+															}
 														>
 															{pick.playerName}
 															{pick.displaySuffix}
@@ -485,7 +508,7 @@ const CombinedFantasyTable = () => {
 									</td>
 								))}
 
-								<td className='potential-cell'>{user.potentialPicks}</td>
+								{/* <td className='potential-cell'>{user.potentialPicks}</td> */}
 								<td className='total-cell'>{user.total}</td>
 							</tr>
 						))}
