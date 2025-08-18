@@ -260,7 +260,9 @@ const CombinedFantasyTable = () => {
 							}
 						} else if (
 							eliminatedPlayerIds.has(pick.player_id) &&
-							pick.player_id !== 23
+							pick.player_id !== 23 &&
+							pick.player_id !== 22 &&
+							pick.player_id !== 3
 						) {
 							passed = false
 						} else {
@@ -484,7 +486,8 @@ const CombinedFantasyTable = () => {
 															}
 															style={
 																pick.playerName === 'Зверюга' ||
-																pick.playerName === 'NLIP'
+																pick.playerName === 'NLIP' ||
+																pick.playerName === 'Юрия'
 																	? { color: 'orange', textDecoration: 'none' }
 																	: undefined
 															}
