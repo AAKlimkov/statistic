@@ -234,9 +234,6 @@ const CombinedFantasyTable = () => {
 					const displayPicks: PickDisplay[] = []
 
 					matchPicks.forEach(pick => {
-						if (pick.match_id === 'L-1/2-C') {
-							console.log(pick)
-						}
 						// Логика внутри этого цикла уже корректно пропускает 'loser'
 						// благодаря `else { return }`
 						if (pick.pick_type !== 'winner' && pick.pick_type !== 'place') {
@@ -249,8 +246,6 @@ const CombinedFantasyTable = () => {
 						let awardedPoints = 0
 
 						if (pick.match_id === 'L-1/2-B' || pick.match_id === 'L-1/2-C') {
-							const semiFinals = ['L-1/2-B', 'L-1/2-C']
-
 							if (pick.pick_type === 'place') {
 								isCorrect =
 									hasResults &&
@@ -263,7 +258,10 @@ const CombinedFantasyTable = () => {
 									passed = false
 								}
 							}
-						} else if (eliminatedPlayerIds.has(pick.player_id)) {
+						} else if (
+							eliminatedPlayerIds.has(pick.player_id) &&
+							pick.player_id !== 23
+						) {
 							passed = false
 						} else {
 							if (pick.pick_type === 'winner') {
@@ -330,7 +328,7 @@ const CombinedFantasyTable = () => {
 							currentUserRow.total += awardedPoints
 						}
 					})
-
+					console.log(displayPicks)
 					if (displayPicks.length > 0) {
 						currentUserRow.stages[stageIdx].push({
 							matchId: matchId,

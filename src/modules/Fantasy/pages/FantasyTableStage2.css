@@ -131,15 +131,15 @@ div.fantasy-table-container table th:hover {
 	color: #0056b3;
 }
 
+.pick-pending {
+	color: #6c757d;
+}
 .pick-correct {
 	color: #198754;
 }
 .pick-incorrect {
 	color: #dc3545;
 	text-decoration: line-through;
-}
-.pick-pending {
-	color: #6c757d;
 }
 
 .pick-separator {
