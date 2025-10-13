@@ -1,4 +1,11 @@
-import { Paper } from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import {
+	Accordion,
+	AccordionDetails,
+	AccordionSummary,
+	Paper,
+	Typography,
+} from '@mui/material'
 import * as React from 'react'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
@@ -64,7 +71,7 @@ interface UserRow {
 const STAGE_CONFIG: { title: string; matchIds: Set<string> }[] = [
 	{ title: 'Квалификация', matchIds: new Set() }, // Этап 0
 	{ title: '1/8 Финала', matchIds: new Set() }, // Этап 1
-	{ title: '1/4 Финала \n(желтый + 0,5)', matchIds: new Set() }, // Этап 2
+	{ title: '1/4 Финала ', matchIds: new Set() }, // Этап 2
 	{ title: '1/2 Финала', matchIds: new Set() }, // Этап 3
 	{ title: 'Финал', matchIds: new Set() }, // Этап 4
 ]
@@ -258,13 +265,13 @@ const CombinedFantasyTable = () => {
 									passed = false
 								}
 							}
-						} else if (
-							eliminatedPlayerIds.has(pick.player_id) &&
-							pick.player_id !== 23 &&
-							pick.player_id !== 22 &&
-							pick.player_id !== 3
-						) {
-							passed = false
+						} else if (pick.match_id === 'Final') {
+							isCorrect =
+								hasResults &&
+								(matchResult.winners?.includes(pick.player_id) ?? false)
+							if (isCorrect) {
+								awardedPoints = 2
+							}
 						} else {
 							if (pick.pick_type === 'winner') {
 								isCorrect =
@@ -469,47 +476,67 @@ const CombinedFantasyTable = () => {
 
 								{user.stages.map((stageGroups, stageIdx) => (
 									<td key={stageIdx}>
-										{stageGroups.map((matchGroup, groupIndex) => (
-											<div key={matchGroup.matchId}>
-												<div className='picks-cell'>
-													{matchGroup.picks.map(pick => (
-														<span
-															key={`${pick.playerId}-${pick.displaySuffix}`}
-															className={
-																pick.awardedPoints === 0.5
-																	? 'pick-partial' // Желтый цвет
-																	: pick.passed === true
-																	? 'pick-correct'
-																	: pick.passed === false
-																	? 'pick-incorrect'
-																	: 'pick-pending'
-															}
-															style={
-																pick.playerName === 'Зверюга' ||
-																pick.playerName === 'NLIP' ||
-																pick.playerName === 'Юрия'
-																	? { color: 'orange', textDecoration: 'none' }
-																	: undefined
-															}
-														>
-															{pick.playerName}
-															{pick.displaySuffix}
+										<Accordion
+											sx={{ bgcolor: 'transparent', boxShadow: 'none' }}
+										>
+											<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+												<Typography variant='subtitle2'>
+													{STAGE_CONFIG[stageIdx].title}
+													{user.stagePassedCounts[stageIdx] > 0 && (
+														<span style={{ marginLeft: 8, fontWeight: 'bold' }}>
+															{user.stagePassedCounts[stageIdx]}
 														</span>
-													))}
-												</div>
-												{groupIndex < stageGroups.length - 1 && (
-													<hr className='pick-separator' />
-												)}
-											</div>
-										))}
-										{user.stagePassedCounts[stageIdx] > 0 && (
-											<div className='picks-count'>
-												{user.stagePassedCounts[stageIdx]}
-											</div>
-										)}
+													)}
+												</Typography>
+											</AccordionSummary>
+
+											<AccordionDetails>
+												{stageGroups.map((matchGroup, groupIndex) => (
+													<div key={matchGroup.matchId}>
+														<div className='picks-cell'>
+															{matchGroup.picks.map(pick => (
+																<span
+																	key={`${pick.playerId}-${pick.displaySuffix}`}
+																	className={
+																		pick.awardedPoints === 0.5
+																			? 'pick-partial'
+																			: pick.passed === true
+																			? 'pick-correct'
+																			: pick.passed === false
+																			? 'pick-incorrect'
+																			: 'pick-pending'
+																	}
+																	style={
+																		pick.playerName === 'NLIP' ||
+																		pick.playerName === 'Юрия'
+																			? {
+																					color: 'orange',
+																					textDecoration: 'none',
+																			  }
+																			: pick.playerName === 'Путедьют' ||
+																			  pick.playerName === 'Зверюга' ||
+																			  pick.playerName === 'Инсомнич'
+																			? {
+																					color: 'purple',
+																					textDecoration: 'none',
+																			  }
+																			: undefined
+																	}
+																>
+																	{pick.playerName}
+																	{pick.displaySuffix}
+																</span>
+															))}
+														</div>
+														{groupIndex < stageGroups.length - 1 && (
+															<hr className='pick-separator' />
+														)}
+													</div>
+												))}
+											</AccordionDetails>
+										</Accordion>
 									</td>
 								))}
-
 								{/* <td className='potential-cell'>{user.potentialPicks}</td> */}
 								<td className='total-cell'>{user.total}</td>
 							</tr>

@@ -13,6 +13,7 @@ export default async function handler(req: Request) {
 		Vary: 'Origin',
 	}
 
+	// Preflight CORS
 	if (req.method === 'OPTIONS') {
 		return new Response(null, { status: 204, headers: corsHeaders })
 	}
@@ -39,37 +40,41 @@ export default async function handler(req: Request) {
 			})
 		}
 
-		// Проверка на уникальность по name + secret
-		const { data: existingUser, error: fetchError } = await supabase
+		// Проверяем, есть ли пользователь с таким именем
+		const { data: existingUserByName, error: fetchError } = await supabase
 			.from('fantasy_users')
-			.select('id')
+			.select('id, secret, name')
 			.eq('name', name)
-			.eq('secret', secret)
 			.single()
 
-		if (existingUser) {
-			return new Response(
-				JSON.stringify({
-					message: 'Пользователь уже существует',
-					user: existingUser,
-				}),
-				{
-					status: 200,
-					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-				}
-			)
+		if (existingUserByName) {
+			if (existingUserByName.secret === secret) {
+				// Секрет совпадает — возвращаем пользователя
+				return new Response(
+					JSON.stringify({
+						message: 'Пользователь найден',
+						user: existingUserByName,
+					}),
+					{
+						status: 200,
+						headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+					}
+				)
+			} else {
+				// Секрет не совпадает — ошибка
+				return new Response(
+					JSON.stringify({
+						error: 'Пользователь уже существует, неверный секрет',
+					}),
+					{
+						status: 400,
+						headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+					}
+				)
+			}
 		}
 
-		// Игнорируем ошибку «не найдено», это OK
-		if (fetchError && fetchError.code !== 'PGRST116') {
-			console.error('Fetch error:', fetchError)
-			return new Response(JSON.stringify({ error: fetchError.message }), {
-				status: 500,
-				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-			})
-		}
-
-		// Вставка нового пользователя
+		// Если пользователя с таким именем нет — создаём нового
 		const { data, error } = await supabase
 			.from('fantasy_users')
 			.insert([{ name, secret }])

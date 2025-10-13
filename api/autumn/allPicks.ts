@@ -1,24 +1,18 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
-
 import { PickDataWithUser } from '../../src/modules/Fantasy/types'
 
 const supabaseUrl = process.env.SUPABASE_URL
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY
 
 if (!supabaseUrl || !supabaseAnonKey) {
-	throw new Error(
-		'Supabase URL or Anon Key is missing. Please check your environment variables.'
-	)
+	throw new Error('Supabase URL or Anon Key is missing.')
 }
 
 const supabase: SupabaseClient = createClient(supabaseUrl!, supabaseAnonKey!)
 
-export const config = {
-	runtime: 'edge',
-}
+export const config = { runtime: 'edge' }
 
 const PAGE_SIZE = 1000
-
 const MAX_PAGES = 100
 
 export default async function handler(req: Request) {
@@ -26,7 +20,7 @@ export default async function handler(req: Request) {
 		'Access-Control-Allow-Origin': '*',
 		'Access-Control-Allow-Headers':
 			'authorization, x-client-info, apikey, content-type, accept',
-		'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+		'Access-Control-Allow-Methods': 'GET, OPTIONS',
 		Vary: 'Origin',
 	}
 
@@ -54,13 +48,14 @@ export default async function handler(req: Request) {
 				.from('autumn_fantasy_picks')
 				.select(
 					`
-						id,
-						fantasy_user_id,
-						qualification_index,
-						player_id,
-						fantasy_users ( id, name ),
-						players_autumn ( id, name )
-					`
+          id,
+          fantasy_user_id,
+          stage_name,
+          player_id,
+          place,
+          fantasy_users (id, name),
+          players_autumn (id, name)
+        `
 				)
 				.order('id')
 				.range(rangeFrom, rangeTo)) as {
@@ -79,12 +74,10 @@ export default async function handler(req: Request) {
 				})
 			}
 
-			if (picksPage && picksPage.length > 0) {
+			if (picksPage && picksPage.length > 0)
 				allPicks = allPicks.concat(picksPage)
-			}
-
 			if (!picksPage || picksPage.length < PAGE_SIZE) {
-				hasMoreData = false // Это была последняя страница
+				hasMoreData = false
 			} else {
 				currentPage++
 			}
@@ -92,47 +85,55 @@ export default async function handler(req: Request) {
 
 		if (currentPage >= MAX_PAGES && hasMoreData) {
 			console.warn(
-				`Reached MAX_PAGES limit (${MAX_PAGES}). Data might be incomplete if there were more pages.`
+				`Reached MAX_PAGES limit (${MAX_PAGES}). Data might be incomplete.`
 			)
 		}
 
 		if (allPicks.length === 0) {
-			return new Response(JSON.stringify({}), {
+			return new Response(JSON.stringify([]), {
 				status: 200,
 				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 			})
 		}
 
-		const grouped: Record<string, any[]> = {}
+		// Группируем пики по пользователям и stage_name
+		const usersMap: Record<
+			number,
+			{
+				userId: number
+				name: string
+				picksByStage: Record<
+					string,
+					{ playerId: number; playerName: string; place: number | null }[]
+				>
+			}
+		> = {}
 
 		for (const pick of allPicks) {
-			if (!pick.fantasy_users || !pick.players_autumn) {
-				console.warn('Skipping pick due to missing related data:', pick.id)
-				continue
-			}
+			if (!pick.fantasy_users || !pick.players_autumn) continue
 
-			const kval = pick.qualification_index.toString()
 			const userId = pick.fantasy_users.id
 			const userName = pick.fantasy_users.name
+			const stage = pick.stage_name || `Stage ${pick.fantasy_user_id}`
 
-			if (!grouped[kval]) {
-				grouped[kval] = []
+			if (!usersMap[userId]) {
+				usersMap[userId] = { userId, name: userName, picksByStage: {} }
 			}
 
-			let userEntry = grouped[kval].find(u => u.userId === userId)
-
-			if (!userEntry) {
-				userEntry = { userId, name: userName, picks: [] }
-				grouped[kval].push(userEntry)
+			if (!usersMap[userId].picksByStage[stage]) {
+				usersMap[userId].picksByStage[stage] = []
 			}
 
-			userEntry.picks.push({
+			usersMap[userId].picksByStage[stage].push({
 				playerId: pick.player_id,
 				playerName: pick.players_autumn.name,
+				place: pick.place ?? null,
 			})
 		}
 
-		return new Response(JSON.stringify(grouped), {
+		const result = Object.values(usersMap)
+
+		return new Response(JSON.stringify(result), {
 			status: 200,
 			headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 		})

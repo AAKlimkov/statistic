@@ -1,49 +1,55 @@
-div.fantasy-table-container table {
+.fantasy-table-container {
+	width: 100%;
+	overflow-x: auto; /* горизонтальный скролл только внутри контейнера */
+	padding: 1em;
+	box-sizing: border-box;
+}
+
+.fantasy-table-container table {
 	width: 100%;
 	border-collapse: collapse;
-	table-layout: fixed;
+	table-layout: fixed; /* фиксированная ширина столбцов */
+	background-color: #ccc;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	color: #333;
 }
 
-div.fantasy-table-container table th,
-div.fantasy-table-container table td {
-	padding: 12px 16px;
+.fantasy-table-container table th,
+.fantasy-table-container table td {
+	padding: 12px;
 	border: 1px solid #ddd;
 	text-align: center;
 	vertical-align: middle;
-	max-width: 300px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
+	white-space: normal; /* перенос строк внутри ячейки */
+	word-break: keep-all; /* слова не разрываются */
 }
 
-div.fantasy-table-container table th {
+.fantasy-table-container table th {
 	background-color: #f5f5f5;
 	font-weight: 600;
 	cursor: pointer;
 	user-select: none;
 }
 
-div.fantasy-table-container table th:hover {
+.fantasy-table-container table th:hover {
 	background-color: #e0e0e0;
 }
 
-div.fantasy-table-container table td:first-child,
-div.fantasy-table-container table th:first-child {
+.fantasy-table-container table td:first-child,
+.fantasy-table-container table th:first-child {
 	text-align: left;
 	max-width: 150px;
 	white-space: normal;
 	word-break: break-word;
 }
 
-div.fantasy-table-container .fantasy-table-pagination {
+.fantasy-table-container .fantasy-table-pagination {
 	margin-top: 16px;
 	text-align: center;
 }
 
-div.fantasy-table-container .fantasy-table-pagination button {
+.fantasy-table-container .fantasy-table-pagination button {
 	margin: 0 4px;
 	padding: 6px 12px;
 	border: 1px solid #ccc;
@@ -54,52 +60,44 @@ div.fantasy-table-container .fantasy-table-pagination button {
 	transition: background-color 0.2s ease;
 }
 
-div.fantasy-table-container .fantasy-table-pagination button:hover {
+.fantasy-table-container .fantasy-table-pagination button:hover {
 	background-color: #eee;
 }
 
-div.fantasy-table-container .fantasy-table-pagination button.active {
+.fantasy-table-container .fantasy-table-pagination button.active {
 	background-color: #007bff;
 	color: white;
 	border-color: #007bff;
 	cursor: default;
 }
 
-.fantasy-table-container th:first-child,
-.fantasy-table-container td:first-child {
-	width: 10%;
-	text-align: left;
-}
-
-.fantasy-table-container th:nth-child(n + 2):nth-child(-n + 5),
-.fantasy-table-container td:nth-child(n + 2):nth-child(-n + 5) {
-	width: 21%;
+.fantasy-table-container td span {
+	display: inline-block;
+	margin-right: 0.5em;
 	white-space: normal;
-	word-break: break-word;
-	overflow: visible;
-	height: auto;
+	word-break: keep-all; /* не ломаем слова */
 }
 
+.fantasy-table-container td span.place {
+	color: #b5651d; /* мягкая подсветка для игроков с place */
+	font-weight: 600;
+}
+
+/* Скрываем колонки с никами игроков на маленьких экранах */
 @media screen and (max-width: 768px) {
-	div.fantasy-table-container table th:nth-child(n + 2):nth-child(-n + 5),
-	div.fantasy-table-container table td:nth-child(n + 2):nth-child(-n + 5) {
+	.stage-col {
 		display: none;
 	}
 
-	/* Уменьшаем паддинги для компактности */
-	div.fantasy-table-container table th,
-	div.fantasy-table-container table td {
-		padding: 8px 10px;
-		font-size: 14px;
-	}
-
-	/* Первый столбец (ник) теперь занимает почти всё место */
-	.fantasy-table-container th:first-child,
-	.fantasy-table-container td:first-child {
-		width: 80%;
+	/* Скрываем чекбокс showKvals на мобильных */
+	.desktop-only {
+		display: none;
 	}
 }
 
-.pick-partial {
-	color: #ffd700;
+
+@media (max-width: 768px) {
+  .round8-column {
+    display: none;
+  }
 }

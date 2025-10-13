@@ -54,7 +54,7 @@ const HomePage = () => {
 					size='large'
 					fullWidth
 					component={Link}
-					to='/FantasyBracketPage'
+					to='autumn/qualRegister'
 				>
 					📋 Заполнить фэнтези-пик
 				</Button>

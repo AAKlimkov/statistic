@@ -80,7 +80,7 @@ export const useFantasyForm = () => {
 			)
 
 			// 3. Отправка всех пиков одним запросом
-			const picksRes = await fetch('/api/fantasy_picks', {
+			const picksRes = await fetch('/api/autumn/autumn_fantasy_picks', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(picksPayload),

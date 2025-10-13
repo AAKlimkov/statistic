@@ -2,9 +2,10 @@ import { Box, Button, Stack } from '@mui/material'
 import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
-import CombinedFantasyTable from '../modules/Fantasy/pages/CombinedFantasyTable'
 import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
-import EditFantasyTeamPage from '../pages/EditFantasyTeamPage'
+import EditFantasyTeamPage from '../pages/autumn/EditFantasyTeamPage'
+import FantasyTableStage2 from '../pages/autumn/FantasyTableStage2'
+import SubmitFantasyTeamPageFull from '../pages/autumn/SubmitFantasyTeamPageFull'
 import FantasyMainPage from '../pages/FantasyMainPage'
 import FantasyRulesPage from '../pages/FantasyRulesPage'
 import PlayerPage from '../pages/PlayerPage'
@@ -13,12 +14,13 @@ import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
 import TournamentsTablePage from '../pages/TournamentsTablePage'
+import FantasyTable from '../modules/Fantasy/pages/FantasyTable'
 
 const Layout = ({ children }) => (
 	<Box
 		sx={{
 			minHeight: '100vh',
-			backgroundImage: `url(/assets/setka_upd.jpg)`,
+			backgroundImage: `url(/assets/01-setka-dark.jpg)`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat',
@@ -70,7 +72,7 @@ const Layout = ({ children }) => (
 				</Button>
 			</Stack>
 			<Stack>
-				<Button
+				{/* <Button
 					component={Link}
 					to='/fantasyPickRate'
 					variant='contained'
@@ -78,7 +80,7 @@ const Layout = ({ children }) => (
 					size='small'
 				>
 					Пикрейт
-				</Button>
+				</Button> */}
 				<Button
 					component={Link}
 					to='/fantasyRules'
@@ -144,10 +146,22 @@ export const router = createHashRouter([
 		element: <TournamentsTablePage />,
 	},
 	{
+		path: '/autumn/qualRegister',
+		element: <SubmitFantasyTeamPageFull />,
+	},
+	{
+		path: '/autumn/FantasyTableStage2',
+		element: (
+			<Layout>
+				<FantasyTableStage2 />
+			</Layout>
+		),
+	},
+	{
 		path: '/fantasyTable',
 		element: (
 			<Layout>
-				<CombinedFantasyTable />
+				<FantasyTable />
 			</Layout>
 		),
 	},
@@ -169,7 +183,7 @@ export const router = createHashRouter([
 		),
 	},
 	{
-		path: '/fantasy/player/:userId',
+		path: '/fantasy/player/:fantasy_user',
 		element: (
 			<Layout>
 				<EditFantasyTeamPage />
@@ -178,7 +192,6 @@ export const router = createHashRouter([
 	},
 	{
 		path: '/FantasyBracketPage',
-		// path: '/fantasyQual',
 		element: (
 			<Layout>
 				<AddFantasyPlayerPage />
