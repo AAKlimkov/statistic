@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { gamesResult } from '../data/autumn/result'
 import './FantasyTable.css'
 
@@ -29,12 +30,16 @@ interface PlayerRow {
 	kvalTotal?: number
 	round16Total?: number
 	round8Total?: number
+	lastChanceTotal?: number
+	round4Total?: number
 }
 
 const SUM_KEYS = {
 	kvalTotal: 'kvalTotal',
 	round16Total: 'round16Total',
 	round8Total: 'round8Total',
+	round4Total: 'round4Total',
+	lastChanceTotal: 'lastChanceTotal',
 }
 
 const FantasyTable = () => {
@@ -44,7 +49,10 @@ const FantasyTable = () => {
 	const [sortConfig, setSortConfig] = useState<{
 		key: string
 		direction: 'asc' | 'desc'
-	}>({ key: 'total', direction: 'desc' })
+	}>({
+		key: 'total',
+		direction: 'desc',
+	})
 	const [showKvals, setShowKvals] = useState(false)
 	const playersPerPage = 25
 
@@ -56,6 +64,8 @@ const FantasyTable = () => {
 	]
 	const round16Stages = ['1/8 #1', '1/8 #2', '1/8 #3', '1/8 #4']
 	const round8Stages = ['1/4 #1', '1/4 #2', '1/4 #3', '1/4 #4']
+	const lastChanceStages = ['ПШ 1', 'ПШ 2']
+	const round4Stages = ['1/2 #1', '1/2 #2']
 
 	const transformData = (data: UserData[]): PlayerRow[] => {
 		const usersMap: Record<number, PlayerRow> = {}
@@ -71,6 +81,8 @@ const FantasyTable = () => {
 					kvalTotal: 0,
 					round16Total: 0,
 					round8Total: 0,
+					round4Total: 0,
+					lastChanceTotal: 0,
 				}
 			}
 
@@ -79,7 +91,7 @@ const FantasyTable = () => {
 				const passedIds = stageData?.passed ?? []
 				const placeIds = stageData?.place ?? []
 
-				const kvalPicks: PickWithPoints[] = picks.map(p => {
+				const picksWithPoints: PickWithPoints[] = picks.map(p => {
 					let point = 0
 					let passed = false
 
@@ -94,13 +106,12 @@ const FantasyTable = () => {
 					return { ...p, passed, point }
 				})
 
-				usersMap[user.userId].kvals[stage] = kvalPicks
-				const stagePoints = kvalPicks.reduce((sum, p) => sum + p.point, 0)
+				usersMap[user.userId].kvals[stage] = picksWithPoints
+				const stagePoints = picksWithPoints.reduce((sum, p) => sum + p.point, 0)
 				usersMap[user.userId].kvalPassedCounts[stage] = stagePoints
 				usersMap[user.userId].total += stagePoints
 			})
 
-			// Считаем суммы по группам этапов
 			usersMap[user.userId].kvalTotal = kvalStages.reduce(
 				(sum, s) => sum + (usersMap[user.userId].kvalPassedCounts[s] || 0),
 				0
@@ -110,6 +121,14 @@ const FantasyTable = () => {
 				0
 			)
 			usersMap[user.userId].round8Total = round8Stages.reduce(
+				(sum, s) => sum + (usersMap[user.userId].kvalPassedCounts[s] || 0),
+				0
+			)
+			usersMap[user.userId].lastChanceTotal = lastChanceStages.reduce(
+				(sum, s) => sum + (usersMap[user.userId].kvalPassedCounts[s] || 0),
+				0
+			)
+			usersMap[user.userId].round4Total = round4Stages.reduce(
 				(sum, s) => sum + (usersMap[user.userId].kvalPassedCounts[s] || 0),
 				0
 			)
@@ -138,30 +157,25 @@ const FantasyTable = () => {
 
 	const sortedPlayers = [...filteredPlayers].sort((a, b) => {
 		const key = sortConfig.key
-
 		let aVal: number | string = 0
 		let bVal: number | string = 0
 
-		if (key === 'total') {
-			aVal = a.total
-			bVal = b.total
-		} else if (key === 'name') {
-			aVal = a.name.toLowerCase()
-			bVal = b.name.toLowerCase()
-		} else if (key === SUM_KEYS.kvalTotal) {
-			aVal = a.kvalTotal
-			bVal = b.kvalTotal
-		} else if (key === SUM_KEYS.round16Total) {
-			aVal = a.round16Total
-			bVal = b.round16Total
-		} else if (key === SUM_KEYS.round8Total) {
-			aVal = a.round8Total
-			bVal = b.round8Total
-		} else {
-			// Сортируем по отдельной стадии
-			aVal = a.kvalPassedCounts[key] || 0
-			bVal = b.kvalPassedCounts[key] || 0
-		}
+		if (key === 'total') (aVal = a.total), (bVal = b.total)
+		else if (key === 'name')
+			(aVal = a.name.toLowerCase()), (bVal = b.name.toLowerCase())
+		else if (key === SUM_KEYS.kvalTotal)
+			(aVal = a.kvalTotal), (bVal = b.kvalTotal)
+		else if (key === SUM_KEYS.round16Total)
+			(aVal = a.round16Total), (bVal = b.round16Total)
+		else if (key === SUM_KEYS.round8Total)
+			(aVal = a.round8Total), (bVal = b.round8Total)
+		else if (key === SUM_KEYS.lastChanceTotal)
+			(aVal = a.lastChanceTotal), (bVal = b.lastChanceTotal)
+		else if (key === SUM_KEYS.round4Total)
+			(aVal = a.round4Total), (bVal = b.round4Total)
+		else
+			(aVal = a.kvalPassedCounts[key] || 0),
+				(bVal = b.kvalPassedCounts[key] || 0)
 
 		if (typeof aVal === 'string' && typeof bVal === 'string') {
 			return sortConfig.direction === 'asc'
@@ -189,29 +203,22 @@ const FantasyTable = () => {
 		}))
 	}
 
-	const renderStageCell = (stage: string, picks: Pick[] = []) => {
-		return (
-			<td>
-				{picks.map((p, i) => {
-					const stageData = gamesResult[stage]
-					const placeIds = stageData?.place ?? []
-					const isPlacePassed = p.place != null && placeIds.includes(p.playerId)
+	const renderStageCell = (stage: string, picks: PickWithPoints[] = []) => (
+		<td>
+			{picks.map((p, i) => {
+				let color = 'red'
+				if (p.place != null) color = p.passed ? '#F1C905' : 'rgba(255,0,0,0.6)'
+				else if (p.passed) color = 'green'
 
-					let color = 'red'
-					if (p.place != null)
-						color = isPlacePassed ? '#F1C905' : 'rgba(255,0,0,0.6)'
-					else if (p.passed) color = 'green'
-
-					return (
-						<span key={p.playerId} style={{ color, marginRight: '0.3em' }}>
-							{p.playerName}
-							{i < picks.length - 1 ? ',' : ''}
-						</span>
-					)
-				})}
-			</td>
-		)
-	}
+				return (
+					<span key={p.playerId} style={{ color, marginRight: '0.3em' }}>
+						{p.playerName}
+						{i < picks.length - 1 ? ',' : ''}
+					</span>
+				)
+			})}
+		</td>
+	)
 
 	return (
 		<div className='fantasy-table-container'>
@@ -229,7 +236,7 @@ const FantasyTable = () => {
 						checked={showKvals}
 						onChange={() => setShowKvals(prev => !prev)}
 					/>
-					Показывать пики квалификаций
+					Показывать пики квалификаций и 1/4 финала
 				</label>
 			</div>
 
@@ -245,8 +252,7 @@ const FantasyTable = () => {
 										{stage}
 									</th>
 								))}
-
-							<th onClick={() => handleSort(SUM_KEYS.kvalTotal)}>Рез квал</th>
+							<th onClick={() => handleSort(SUM_KEYS.kvalTotal)}>квал</th>
 
 							{showKvals &&
 								round16Stages.map(stage => (
@@ -254,19 +260,31 @@ const FantasyTable = () => {
 										{stage}
 									</th>
 								))}
+							<th onClick={() => handleSort(SUM_KEYS.round16Total)}>1/8</th>
 
-							<th onClick={() => handleSort(SUM_KEYS.round16Total)}>Рез 1/8</th>
+							{showKvals &&
+								round8Stages.map(stage => (
+									<th key={stage} onClick={() => handleSort(stage)}>
+										{stage}
+									</th>
+								))}
+							<th onClick={() => handleSort(SUM_KEYS.round8Total)}>1/4</th>
 
-							{round8Stages.map(stage => (
-								<th
-									key={stage}
-									className='round8-column'
-									onClick={() => handleSort(stage)}
-								>
+							{showKvals &&
+								lastChanceStages.map(stage => (
+									<th key={stage} onClick={() => handleSort(stage)}>
+										{stage}
+									</th>
+								))}
+							<th onClick={() => handleSort(SUM_KEYS.lastChanceTotal)}>ПШ</th>
+
+							{round4Stages.map(stage => (
+								<th key={stage} onClick={() => handleSort(stage)}>
 									{stage}
 								</th>
 							))}
-							<th onClick={() => handleSort(SUM_KEYS.round8Total)}>Рез 1/4</th>
+							<th onClick={() => handleSort(SUM_KEYS.round4Total)}>1/2</th>
+
 							<th onClick={() => handleSort('total')}>Итого</th>
 						</tr>
 					</thead>
@@ -285,37 +303,54 @@ const FantasyTable = () => {
 								(sum, s) => sum + (player.kvalPassedCounts[s] || 0),
 								0
 							)
+							const lastChanceResult = lastChanceStages.reduce(
+								(sum, s) => sum + (player.kvalPassedCounts[s] || 0),
+								0
+							)
+							const round4Result = round8Stages.reduce(
+								(sum, s) => sum + (player.kvalPassedCounts[s] || 0),
+								0
+							)
 
 							return (
 								<tr key={player.id}>
-									<td>{player.name}</td>
-									{/* Квалификации */}
+									<td>
+										<Link
+											to={`/fantasy/player/${player.id}`}
+											className='player-link'
+										>
+											{player.name}
+										</Link>
+									</td>
+
 									{showKvals &&
 										kvalStages.map(stage =>
 											renderStageCell(stage, player.kvals[stage])
 										)}
 									<td>{kvalResult}</td>
-									{/* 1/8 финала */}
-									{showKvals
-										? round16Stages.map(stage =>
-												renderStageCell(stage, player.kvals[stage])
-										  )
-										: null}
-									{showKvals && <td>{round16Result}</td>}
-									{!showKvals && <td>{round16Result}</td>}{' '}
-									{/* всегда показываем результат 1/8 */}
-									{/* 1/4 финала */}
-									{round8Stages.map(stage =>
-										renderStageCell(stage, player.kvals[stage]) ? (
-											<td key={stage} className='round8-column'>
-												{
-													renderStageCell(stage, player.kvals[stage]).props
-														.children
-												}
-											</td>
-										) : null
-									)}
+
+									{showKvals &&
+										round16Stages.map(stage =>
+											renderStageCell(stage, player.kvals[stage])
+										)}
+									<td>{round16Result}</td>
+
+									{showKvals &&
+										round8Stages.map(stage =>
+											renderStageCell(stage, player.kvals[stage])
+										)}
 									<td>{round8Result}</td>
+
+									{showKvals &&
+										lastChanceStages.map(stage =>
+											renderStageCell(stage, player.kvals[stage])
+										)}
+									<td>{lastChanceResult}</td>
+									{round4Stages.map(stage =>
+										renderStageCell(stage, player.kvals[stage])
+									)}
+									<td>{round4Result}</td>
+
 									<td>{player.total}</td>
 								</tr>
 							)

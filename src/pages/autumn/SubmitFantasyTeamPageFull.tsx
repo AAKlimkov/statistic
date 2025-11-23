@@ -5,7 +5,6 @@ import {
 	Card,
 	CardContent,
 	Chip,
-	Grid,
 	Snackbar,
 	TextField,
 	Typography,
@@ -30,9 +29,15 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 
 	// 🔹 Правила выбора для разных этапов
 	const getLimits = (stageIndex: number) => {
-		// 1/4 финалы: 4 прошедших + 3 с place = 5
+		// 1/4 финалы: 4 прошедших + 3 с place = 7
 		if (stageIndex >= 8 && stageIndex <= 11) {
 			return { winners: 4, places: 3, placeValue: 5 }
+		}
+		if (stageIndex >= 12 && stageIndex <= 11) {
+			return { winners: 2, places: 0, placeValue: 0 }
+		}
+		if (stageIndex >= 14 && stageIndex <= 15) {
+			return { winners: 5, places: 0, placeValue: 0 }
 		}
 		// можно добавить другие этапы позже
 		return { winners: 5, places: 2, placeValue: 6 }
@@ -47,7 +52,6 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 		const currentPlaces = current.filter(p => p.place === placeValue)
 
 		if (isSelected) {
-			// убираем игрока
 			const updated = current.filter(p => p.player_id !== playerId)
 			setSelected({ ...selected, [stageIndex]: updated })
 		} else {
@@ -72,10 +76,7 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 		(selected[stageIndex] || []).length
 
 	const isSubmitDisabled = () => {
-		// Все 4 стадии должны быть заполнены (4 + 3 = 7)
-		const allPicked = [8, 9, 10, 11].every(
-			i => (selected[i]?.length || 0) === 7
-		)
+		const allPicked = [14, 15].every(i => (selected[i]?.length || 0) === 5)
 		const nameOk = name.trim().length >= 2
 		const secretOk = secret.trim().length > 5
 		return !(nameOk && secretOk && allPicked)
@@ -85,28 +86,19 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 		if (isSubmitDisabled()) return
 
 		try {
-			// 1. Создание или получение игрока
 			const playerRes = await fetch('/api/fantasy_users', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ name, secret }),
 			})
-
 			const playerData = await playerRes.json()
-
-			if (!playerRes.ok) {
-				// сервер возвращает { error: '...' }
+			if (!playerRes.ok)
 				throw new Error(playerData?.error || 'Ошибка при сохранении игрока')
-			}
-
 			setPlayerId(playerData.id ?? playerData.user?.id)
 
-			// 2. Формируем пэйлоад пиков
 			const stageNames: Record<number, string> = {
-				8: '1/4 #1',
-				9: '1/4 #2',
-				10: '1/4 #3',
-				11: '1/4 #4',
+				14: '1/2 #1',
+				15: '1/2 #2',
 			}
 
 			const picksPayload = Object.entries(selected).flatMap(
@@ -122,16 +114,14 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 				}
 			)
 
-			// 3. Отправка пиков
 			const picksRes = await fetch('/api/autumn/autumn_fantasy_picks', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(picksPayload),
 			})
 			const picksData = await picksRes.json()
-			if (!picksRes.ok) {
+			if (!picksRes.ok)
 				throw new Error(picksData?.error || 'Ошибка при отправке пиков')
-			}
 
 			setToast({
 				open: true,
@@ -142,11 +132,7 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 			setToast({
 				open: true,
 				severity: 'error',
-				message:
-					err.message ===
-					'Имя уже используется другим кодовым словом. Проверь секрет.'
-						? err.message
-						: err.message || 'Ошибка при сохранении игрока',
+				message: err.message || 'Ошибка при сохранении игрока',
 			})
 		}
 	}
@@ -161,8 +147,8 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 					mb: 3,
 				}}
 			>
-				<Typography variant='h4'>
-					Добавление участника фэнтези-лиги (1/4 финала)
+				<Typography variant='h4' color='white'>
+					Добавление участника фэнтези-лиги (последние шанс)
 				</Typography>
 				<Button component={Link} to='/fantasyTable' variant='outlined'>
 					Общая таблица
@@ -192,7 +178,7 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 						sx={{ minWidth: 240 }}
 						helperText='Больше 5 символов'
 					/>
-					<Box sx={{ ml: 'auto' }}>
+					{/* <Box sx={{ ml: 'auto' }}>
 						<Button
 							variant='contained'
 							onClick={handleSubmit}
@@ -200,84 +186,93 @@ const SubmitFantasyTeamPageFull: React.FC = () => {
 						>
 							Отправить пики
 						</Button>
-					</Box>
+					</Box> */}
 				</CardContent>
 			</Card>
 
-			<Grid container spacing={2}>
+			{/* 🔹 Контейнер всех этапов */}
+			<Box
+				sx={{
+					display: 'flex',
+					flexWrap: 'wrap',
+					gap: 2,
+				}}
+			>
 				{mainStage.map((qual, kvalIdx) => {
-					const realIdx = kvalIdx + 8 // начинаем с 1/4
+					const realIdx = kvalIdx + 14
 					const { winners, places, placeValue } = getLimits(realIdx)
 
 					return (
-						<Grid item xs={12} md={3} key={qual.title}>
-							<Card>
-								<CardContent>
-									<Box
-										sx={{
-											display: 'flex',
-											justifyContent: 'space-between',
-											alignItems: 'center',
-											mb: 1,
-										}}
-									>
-										<Typography variant='h6'>{qual.title}</Typography>
-										<Typography variant='caption'>{qual.date}</Typography>
-									</Box>
+						<Card
+							key={realIdx}
+							sx={{
+								flex: '1 1 45%', // 2 карточки в ряд на мобилке
+								minWidth: 240,
+								'@media (min-width: 900px)': { flex: '1 1 22%' }, // 4 в ряд на десктопе
+							}}
+						>
+							<CardContent>
+								<Box
+									sx={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										mb: 1,
+									}}
+								>
+									<Typography variant='h6'>{qual.title}</Typography>
+									<Typography variant='caption'>{qual.date}</Typography>
+								</Box>
 
-									<Typography variant='body2' sx={{ mb: 1 }}>
-										Выбрано: {getSelectedCount(realIdx)} / {winners + places}
-									</Typography>
+								<Typography variant='body2' sx={{ mb: 1 }}>
+									Выбрано: {getSelectedCount(realIdx)} / {winners + places}
+								</Typography>
 
-									<Box
-										sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}
-									>
-										{qual.players.map(player => {
-											const sel = (selected[realIdx] || []).find(
-												p => p.player_id === player.id
-											)
-											const isSelected = Boolean(sel)
-											const isPlace = sel?.place === placeValue
+								<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+									{qual.players.map(player => {
+										const sel = (selected[realIdx] || []).find(
+											p => p.player_id === player.id
+										)
+										const isSelected = Boolean(sel)
+										const isPlace = sel?.place === placeValue
+										const currentWinners = (selected[realIdx] || []).filter(
+											p => p.place === null
+										).length
+										const currentPlaces = (selected[realIdx] || []).filter(
+											p => p.place === placeValue
+										).length
+										const alreadyFull =
+											currentWinners >= winners && currentPlaces >= places
 
-											const currentWinners = (selected[realIdx] || []).filter(
-												p => p.place === null
-											).length
-											const currentPlaces = (selected[realIdx] || []).filter(
-												p => p.place === placeValue
-											).length
-											const alreadyFull =
-												currentWinners >= winners && currentPlaces >= places
-
-											return (
-												<Chip
-													key={player.id}
-													label={
-														isPlace
-															? `${player.name} (место ${placeValue})`
-															: player.name
-													}
-													clickable
-													onClick={() => handleSelect(realIdx, player.id)}
-													color={
-														isSelected
-															? isPlace
-																? 'warning'
-																: 'success'
-															: 'default'
-													}
-													variant={isSelected ? 'filled' : 'outlined'}
-													aria-pressed={isSelected}
-													disabled={!isSelected && alreadyFull}
-												/>
-											)
-										})}
-									</Box>
-								</CardContent>
-							</Card>
-						</Grid>
+										return (
+											<Chip
+												key={player.id}
+												label={
+													isPlace
+														? `${player.name} (место ${placeValue})`
+														: player.name
+												}
+												clickable
+												onClick={() => handleSelect(realIdx, player.id)}
+												color={
+													isSelected
+														? isPlace
+															? 'warning'
+															: 'success'
+														: 'default'
+												}
+												variant={isSelected ? 'filled' : 'outlined'}
+												aria-pressed={isSelected}
+												disabled={!isSelected && alreadyFull}
+												sx={{ flex: '1 1 100px' }}
+											/>
+										)
+									})}
+								</Box>
+							</CardContent>
+						</Card>
 					)
 				})}
-			</Grid>
+			</Box>
 
 			<Snackbar
 				open={toast.open}

@@ -159,9 +159,9 @@ const FantasyTable = () => {
 				<tbody>
 					{currentPlayers.map(player => (
 						<tr key={player.id}>
-							<td>
-								<Link to={`/fantasy/player/${player.id}`}>{player.name}</Link>
-							</td>
+								<td>
+									<Link to={`/fantasy/player/${player.id}`}>{player.name}</Link>
+								</td>
 							{player.stages.map((picks, stageIdx) => (
 								<td key={stageIdx}>
 									{picks.map((pick, i) => (

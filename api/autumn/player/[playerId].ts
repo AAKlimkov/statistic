@@ -36,7 +36,7 @@ export default async function handler(req: Request) {
 		const fantasyUserId = url.pathname.split('/').pop()
 		if (!fantasyUserId) throw new Error('User ID is missing')
 
-		// Запрос с join на таблицу fantasy_users для имени
+		// Запрос с join на таблицу fantasy_users для имени и players_autumn
 		const { data: picks, error } = await supabase
 			.from('autumn_fantasy_picks')
 			.select(
@@ -45,6 +45,7 @@ export default async function handler(req: Request) {
 				fantasy_user_id,
 				stage_name,
 				player_id,
+				place,
 				players_autumn(id, name),
 				fantasy_users(id, name)
 			`
@@ -65,7 +66,7 @@ export default async function handler(req: Request) {
 			{
 				userId: number
 				name: string
-				picks: { playerId: number; playerName: string }[]
+				picks: { playerId: number; playerName: string; place?: number | null }[]
 			}[]
 		> = {}
 
@@ -85,6 +86,7 @@ export default async function handler(req: Request) {
 			userEntry.picks.push({
 				playerId: pick.player_id,
 				playerName: pick.players_autumn.name,
+				place: pick.place ?? null, // добавляем place
 			})
 		})
 

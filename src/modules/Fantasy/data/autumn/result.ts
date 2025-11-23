@@ -9,8 +9,14 @@ export const gamesResult: Record<string, number[]> = {
 	'1/8 #3': { passed: [44, 18, 29, 282, 273], place: [55, 272] },
 	'1/8 #4': { passed: [42, 60, 78, 282, 26], place: [246, 11] },
 
-	'1/4 #1': { passed: [], place: [] },
-	'1/4 #2': { passed: [], place: [] },
-	'1/4 #3': { passed: [], place: [] },
-	'1/4 #4': { passed: [], place: [] },
+	'1/4 #1': { passed: [25, 46, 95, 70], place: [67, 21, 83] },
+	'1/4 #2': { passed: [132, 123, 23, 144], place: [15, 160, 68] },
+	'1/4 #3': { passed: [58, 2, 136, 82], place: [29, 44, 254] },
+	'1/4 #4': { passed: [282, 26, 8, 73], place: [246, 60, 11] },
+
+	'ПШ 1': { passed: [29, 68], place: [] },
+	'ПШ 2': { passed: [178, 44], place: [] },
+	'1/2 #1': { passed: [70, 123, 132, 44, 25], place: [] },
+	'1/2 #2': { passed: [], place: [] },
+	final: { passed: [], place: [] },
 }

@@ -41,57 +41,33 @@ export default async function handler(req: Request) {
 			)
 		}
 
-		// ✅ Валидация структуры
-		for (const item of body) {
-			if (
-				typeof item.fantasy_user_id !== 'number' ||
-				typeof item.qualification_index !== 'number' ||
-				typeof item.player_id !== 'number'
-			) {
-				return new Response(JSON.stringify({ error: 'Invalid pick data' }), {
-					status: 400,
+		// 🧩 Уникальные комбинации (user + qualification)
+		const uniqueCombos = Array.from(
+			new Set(body.map(i => `${i.fantasy_user_id}-${i.qualification_index}`))
+		).map(c => {
+			const [fantasy_user_id, qualification_index] = c.split('-').map(Number)
+			return { fantasy_user_id, qualification_index }
+		})
+
+		// 🧹 1️⃣ Удаляем все старые записи для этих комбинаций
+		for (const combo of uniqueCombos) {
+			const { error: deleteError } = await supabase
+				.from('autumn_fantasy_picks')
+				.delete()
+				.eq('fantasy_user_id', combo.fantasy_user_id)
+				.eq('qualification_index', combo.qualification_index)
+
+			if (deleteError) {
+				console.error('Delete error:', deleteError)
+				return new Response(JSON.stringify({ error: deleteError.message }), {
+					status: 500,
 					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 				})
 			}
-			if (
-				item.place !== undefined &&
-				item.place !== null &&
-				typeof item.place !== 'number'
-			) {
-				return new Response(JSON.stringify({ error: 'Invalid place value' }), {
-					status: 400,
-					headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-				})
-			}
 		}
 
-		// ✅ Валидация правил — максимум 5 победителей без place + 2 с place=6 на квалификацию
-		const grouped: Record<string, { winners: number; fives: number }> = {}
-
-		for (const item of body) {
-			const key = `${item.fantasy_user_id}-${item.qualification_index}`
-			if (!grouped[key]) grouped[key] = { winners: 0, fives: 0 }
-
-			if (item.place === 5) grouped[key].fives++
-			else grouped[key].winners++
-		}
-
-		for (const [key, { winners, fives }] of Object.entries(grouped)) {
-			if (winners > 4 || fives > 3) {
-				return new Response(
-					JSON.stringify({
-						error: `Too many picks for ${key}: winners=${winners}, fives=${fives}`,
-					}),
-					{
-						status: 400,
-						headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-					}
-				)
-			}
-		}
-
-		// ✅ Вставка в таблицу с place
-		const { data, error } = await supabase
+		// 🧩 2️⃣ Вставляем новые записи
+		const { data, error: insertError } = await supabase
 			.from('autumn_fantasy_picks')
 			.insert(
 				body.map(item => ({
@@ -104,9 +80,9 @@ export default async function handler(req: Request) {
 			)
 			.select('id, fantasy_user_id, qualification_index, player_id, place')
 
-		if (error) {
-			console.error('Insert error:', error)
-			return new Response(JSON.stringify({ error: error.message }), {
+		if (insertError) {
+			console.error('Insert error:', insertError)
+			return new Response(JSON.stringify({ error: insertError.message }), {
 				status: 500,
 				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 			})

@@ -3,7 +3,9 @@ import * as React from 'react'
 import { createHashRouter, Link } from 'react-router-dom'
 
 import { FantasyBracketPage } from '../modules/Fantasy/pages/FantasyBracketPage'
-import EditFantasyTeamPage from '../pages/autumn/EditFantasyTeamPage'
+import FantasyPlayerPage from '../modules/Fantasy/pages/FantasyPlayerPage'
+import FantasyTable from '../modules/Fantasy/pages/FantasyTable'
+// import EditFantasyTeamPage from '../pages/autumn/EditFantasyTeamPage'
 import FantasyTableStage2 from '../pages/autumn/FantasyTableStage2'
 import SubmitFantasyTeamPageFull from '../pages/autumn/SubmitFantasyTeamPageFull'
 import FantasyMainPage from '../pages/FantasyMainPage'
@@ -14,7 +16,6 @@ import PlayersTablePage from '../pages/PlayersTablePage'
 import AddFantasyPlayerPage from '../pages/SubmitFantasyTeamPage'
 import TournamentPage from '../pages/TournamentPage'
 import TournamentsTablePage from '../pages/TournamentsTablePage'
-import FantasyTable from '../modules/Fantasy/pages/FantasyTable'
 
 const Layout = ({ children }) => (
 	<Box
@@ -147,7 +148,11 @@ export const router = createHashRouter([
 	},
 	{
 		path: '/autumn/qualRegister',
-		element: <SubmitFantasyTeamPageFull />,
+		element: (
+			<Layout>
+				<SubmitFantasyTeamPageFull />
+			</Layout>
+		),
 	},
 	{
 		path: '/autumn/FantasyTableStage2',
@@ -182,11 +187,20 @@ export const router = createHashRouter([
 			</Layout>
 		),
 	},
+
+	// {
+	// 	path: '/fantasy/player/:fantasy_user',
+	// 	element: (
+	// 		<Layout>
+	// 			<EditFantasyTeamPage />
+	// 		</Layout>
+	// 	),
+	// },
 	{
-		path: '/fantasy/player/:fantasy_user',
+		path: '/fantasy/player/:id',
 		element: (
 			<Layout>
-				<EditFantasyTeamPage />
+				<FantasyPlayerPage />
 			</Layout>
 		),
 	},

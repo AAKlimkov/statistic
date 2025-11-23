@@ -48,7 +48,7 @@ const HomePage = () => {
 			</Typography>
 
 			<Stack spacing={2} my={4}>
-				<Button
+				{/* <Button
 					variant='contained'
 					color='primary'
 					size='large'
@@ -57,7 +57,7 @@ const HomePage = () => {
 					to='autumn/qualRegister'
 				>
 					📋 Заполнить фэнтези-пик
-				</Button>
+				</Button> */}
 				<Button
 					variant='outlined'
 					color='primary'

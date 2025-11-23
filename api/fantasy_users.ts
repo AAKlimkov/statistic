@@ -13,7 +13,7 @@ export default async function handler(req: Request) {
 		Vary: 'Origin',
 	}
 
-	// Preflight CORS
+	// --- Preflight CORS ---
 	if (req.method === 'OPTIONS') {
 		return new Response(null, { status: 204, headers: corsHeaders })
 	}
@@ -27,12 +27,21 @@ export default async function handler(req: Request) {
 
 	const supabaseUrl = process.env.SUPABASE_URL
 	const supabaseAnonKey = process.env.SUPABASE_ANON_KEY
-	const supabase = createClient(supabaseUrl!, supabaseAnonKey!)
+
+	if (!supabaseUrl || !supabaseAnonKey) {
+		return new Response(JSON.stringify({ error: 'Supabase env missing' }), {
+			status: 500,
+			headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+		})
+	}
+
+	const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 	try {
 		const body = await req.json()
 		const { name, secret } = body
 
+		// --- Validation ---
 		if (!name || !secret || name.length < 2 || secret.length <= 5) {
 			return new Response(JSON.stringify({ error: 'Invalid name or secret' }), {
 				status: 400,
@@ -40,20 +49,30 @@ export default async function handler(req: Request) {
 			})
 		}
 
-		// Проверяем, есть ли пользователь с таким именем
-		const { data: existingUserByName, error: fetchError } = await supabase
+		// --- Check for existing user by name ---
+		const { data: existingByName, error: fetchError } = await supabase
 			.from('fantasy_users')
-			.select('id, secret, name')
+			.select('id, name, secret')
 			.eq('name', name)
-			.single()
+			.limit(1)
 
-		if (existingUserByName) {
-			if (existingUserByName.secret === secret) {
-				// Секрет совпадает — возвращаем пользователя
+		if (fetchError) {
+			console.error('Fetch error:', fetchError)
+			return new Response(JSON.stringify({ error: fetchError.message }), {
+				status: 500,
+				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+			})
+		}
+
+		if (existingByName && existingByName.length > 0) {
+			const user = existingByName[0]
+
+			if (user.secret === secret) {
+				// ✅ Пользователь уже существует с таким паролем
 				return new Response(
 					JSON.stringify({
-						message: 'Пользователь найден',
-						user: existingUserByName,
+						message: 'Пользователь уже существует',
+						user: { id: user.id, name: user.name },
 					}),
 					{
 						status: 200,
@@ -61,11 +80,9 @@ export default async function handler(req: Request) {
 					}
 				)
 			} else {
-				// Секрет не совпадает — ошибка
+				// 🚫 Имя уже занято другим пользователем
 				return new Response(
-					JSON.stringify({
-						error: 'Пользователь уже существует, неверный секрет',
-					}),
+					JSON.stringify({ error: 'Имя уже занято другим пользователем' }),
 					{
 						status: 400,
 						headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -74,22 +91,22 @@ export default async function handler(req: Request) {
 			}
 		}
 
-		// Если пользователя с таким именем нет — создаём нового
-		const { data, error } = await supabase
+		// --- Create new user ---
+		const { data: newUser, error: insertError } = await supabase
 			.from('fantasy_users')
 			.insert([{ name, secret }])
 			.select('id, name')
 			.single()
 
-		if (error) {
-			console.error('Insert error:', error)
-			return new Response(JSON.stringify({ error: error.message }), {
+		if (insertError) {
+			console.error('Insert error:', insertError)
+			return new Response(JSON.stringify({ error: insertError.message }), {
 				status: 500,
 				headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 			})
 		}
 
-		return new Response(JSON.stringify(data), {
+		return new Response(JSON.stringify(newUser), {
 			status: 201,
 			headers: { ...corsHeaders, 'Content-Type': 'application/json' },
 		})
